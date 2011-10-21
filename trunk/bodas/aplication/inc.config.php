@@ -2,8 +2,8 @@
 	$x = 0;
 	if( $x == 0 ){
 
-		$_cfg['sitio']['url'] = "http://localhost:82/bodas/";
-		$_cfg['sitio']['ruta']= $_SERVER['DOCUMENT_ROOT']."/bodas/";
+		$_cfg['sitio']['url'] = "http://localhost:82/svn_bodas/bodas/";
+		$_cfg['sitio']['ruta']= $_SERVER['DOCUMENT_ROOT']."/svn_bodas/bodas/";
 
 		$_cfg['bd']['host']		= "localhost";
 		$_cfg['bd']['bd']		= "bd_bodas";
