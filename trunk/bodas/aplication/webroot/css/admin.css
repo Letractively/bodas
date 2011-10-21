@@ -1,45 +1,16 @@
 
-BODY{ margin:0px 0px 0px 0px; font: normal 11px Arial, Helvetica, sans-serif; }
-TD{ vertical-align:top; }
+body, html{ height:100%; margin:0px; font: normal 11px Arial, Helvetica, sans-serif; }
+input{ font: normal 11px Arial, Helvetica, sans-serif; margin:1px; }
+textarea{ background-image:url(img/cat_producto.jpg); font: normal 11px Arial, Helvetica, sans-serif; height:50px; color:#FFFFFF; }
+form{ margin:0px 0px 0px 0px; }
 
-INPUT{ font: normal 11px Arial, Helvetica, sans-serif; margin:1px; }
-TEXTAREA{ background-image:url(img/cat_producto.jpg); font: normal 11px Arial, Helvetica, sans-serif; height:50px; color:#FFFFFF; }
-FORM{ margin:0px 0px 0px 0px; }
+.busqueda{ background-image:url(img/busqueda.jpg);background-repeat:no-repeat; width:200px; height:51px; }
 
-.busqueda{
-background-image:url(img/busqueda.jpg);
-background-repeat:no-repeat;
-width:200px;
-height:51px;
-}
-
-.input_text{
-background-color: #999900;
-color:#FFFFFF;
-}
+.input_text{ background-color: #999900; color:#FFFFFF; }
 .input{ width:280px; border:1px solid #BED6E0; vertical-align:top; }
 .input_nums{ width:100px; border:1px solid #BED6E0  }
-.submit{
-background-image:url(img/boton_3.gif);
-border-style:0px;
-color:#FFFFFF;
-}
-CHECKBOX,INPUT, RADIO, SELECT, TEXTAREA{
-font:normal 11px Arial, Helvetica, sans-serif;
-color:#666666;
-}
-
-TABLE{
-/*table-layout:fixed;
-border-collapse:collapse;
-margin:0px 0px 0px 0px;*/
-}
-/*FORM{
-margin: 0px 0px 0px 0px;
-}*/
-TD{
-vertical-align:top;
-} 
+.submit{ background-image:url(img/boton_3.gif); border-style:0px; color:#FFFFFF; }
+CHECKBOX,INPUT, RADIO, SELECT, TEXTAREA{ font:normal 11px Arial, Helvetica, sans-serif; color:#666666; }
 
 #principal .menu{
 width:20%;
@@ -155,7 +126,7 @@ width:200px
 #menu_izquierdo{
 width:200px;
 background-color:#ffffff;
-height:470px;
+height:auto;
 }
 
 #menu_izquierdo .item{

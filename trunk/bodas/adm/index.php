@@ -7,18 +7,10 @@
     <?php include("includes/header.php"); ?>
     <body>
 
-		<style>
-            html, body { height: 100%; }
-            .wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -4em; }
-            .pie, .push { height: 4em; }
-        </style>
-
     	<div class="contenedor-principal">
             <div class="cabecera"><?php $objPlantilla->cabecera(); ?></div>
         	<div class="cuerpo">
-
                 <div class="opciones"><?php $objPlantilla->izquierda(); ?></div>
-
                 <div class="contenido">
                 	<?php
 						if($_GET['opcion']=='recuperar'){						
@@ -30,14 +22,11 @@
 						}
                     ?>
                 </div>
-
             </div>
-
-			<div class="wrapper"><div class="push"></div></div>
-
-            <div class="pie"><?php $objPlantilla->pie(); ?></div>
-
         </div>
+
+        <div class="wrapper"><div class="push"></div></div>
+		<div class="pie"><?php $objPlantilla->pie(); ?></div>
 
     </body>
 
