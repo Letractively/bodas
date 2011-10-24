@@ -55,7 +55,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control').bindAll(listeners);
@@ -122,7 +122,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-noticias').bindAll(listeners_noticias);
@@ -189,7 +189,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-bandas').bindAll(listeners_bandas);
@@ -260,7 +260,7 @@ $(document).ready(function(){
 					$('.swfupload-control-auspiciadores2').swfupload('startUpload');
 				}
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-auspiciadores1').bindAll(listeners_auspiciadores1);
@@ -323,7 +323,7 @@ $(document).ready(function(){
 				$('#nombre_archivo2').after('<b id="load2">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-auspiciadores2').bindAll(listeners_auspiciadores2);
@@ -388,7 +388,7 @@ $(document).ready(function(){
 				$('#nombre_archivo').after('<b id="load">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-eventos').bindAll(listener_eventos);
@@ -453,7 +453,7 @@ $(document).ready(function(){
 				$('#nombre_archivo').after('<b id="load">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-concursos').bindAll(listener_concursos);
@@ -519,7 +519,7 @@ $(document).ready(function(){
 				$('#nombre_archivo').after('<b id="load">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-articuloAudio').bindAll(listener_concursos);
@@ -586,7 +586,7 @@ $(document).ready(function(){
 				$('#nombre_archivo').after('<b id="load">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-staf').bindAll(listener_staf);
@@ -651,7 +651,7 @@ $(document).ready(function(){
 				$('#nombre_archivo').after('<b id="load">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-webamiga').bindAll(listeners_webamiga);
@@ -723,7 +723,7 @@ $(document).ready(function(){
 					$('.swfupload-control-programaSonido').swfupload('startUpload');
 				}
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-programaImagen').bindAll(listeners_imagen_programa);
@@ -789,7 +789,7 @@ $(document).ready(function(){
 				$('#nombre_archivo2').after('<b id="load2">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-programaSonido').bindAll(listeners_sonido_programa);
@@ -861,7 +861,7 @@ $(document).ready(function(){
 					document.f1.submit();
 				}
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-PROGRAMACION').bindAll(listeners_config_PROGRAMACION);
@@ -925,7 +925,7 @@ $(document).ready(function(){
 				$('#ARCHIVO_INGRESO_SEMANA').after('<b id="load2">'+sus+'</b>');
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-ARCHIVO_INGRESO_SEMANA').bindAll(listeners_config_ARCHIVO_INGRESO_SEMANA);
@@ -1062,7 +1062,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-temas').bindAll(listeners_noticias);
@@ -1127,7 +1127,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-blog').bindAll(listeners_blog);
@@ -1194,7 +1194,7 @@ $(document).ready(function(){
 			if (us == true) {
 				document.f1.submit();
 			}
-		},
+		}
 	};
 
 	$('.swfupload-control-articulos').bindAll(listeners_articulos);

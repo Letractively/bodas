@@ -1,5 +1,3 @@
-// Javascript control de administrador.
-
 	$(document).ready(function(){
 	
 		if($('.dp').length > 0){ $('.dp').datepicker({dateFormat:'yy-mm-dd'}); }
@@ -55,7 +53,7 @@
 				]
 			});
 		}
-	
+
 		if($('#des_3').length){
 			CKEDITOR.replace('des_3',
 				{
@@ -73,48 +71,15 @@
 				]
 			});
 		}
-	
-	});
 
-	function validar_usuarios(opcion, id){
-		if(document.f1.nombre.value==""){
-			alert(" ERROR: Por favor ingrese el nombre ");
-			document.f1.nombre.focus();
-			return false
-		}else if(document.f1.apellidos.value==""){
-			alert(" ERROR: Por favor ingrese el apellido ");
-			document.f1.apellidos.focus();
-			return false	
-		}else if(document.f1.email.value==""){
-			alert(" ERROR: Por favor ingrese el email ");
-			document.f1.email.focus();
-			return false	
-		}else if(document.f1.rol.value==""){
-			alert(" ERROR: Por favor Seleccione un rol ");
-			document.f1.rol.focus();
-			return false	
-		}else if(document.f1.usuario.value==""){
-			alert(" ERROR: Por favor ingrese un admin \n que le servira para logearse en el sistema ");
-			document.f1.usuario.focus();
-			return false	
-		}else if(document.f1.password.value==""){
-			alert(" ERROR: Por favor ingrese el password \n que le servira para ingresar al sistema ");
-			document.f1.password.focus();	
-			return false;				
-		}else{
-			document.f1.action='usuarios.php?opcion='+opcion+'&id='+id;
-			document.f1.submit();
-		}
-	}
-	
-	function mantenimiento(url,id,opcion){
-		if(opcion!="delete"){ 
-			location.replace(url+'?id='+id+'&opcion='+opcion);
-		}else if(opcion=="delete"){
-			if(!confirm("Esta Seguro que desea Eliminar el Registro")){
-				return false;	
-			}else{
-				location.replace(url+'?id='+id+'&opcion='+opcion);			
-			}		
-		}
-	}	
+		$('.delete').click(function(){
+			if($(this).attr('class') == "delete"){
+				if(!confirm("Esta Seguro que desea Eliminar el Registro")){
+					return false;
+				}else{
+					location.replace( $(this).attr('name') + '?id=' + $(this).attr('id') + '&opcion=' + $(this).attr('class') );		
+				}		
+			}
+		});
+
+	});

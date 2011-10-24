@@ -1,7 +1,8 @@
 <?php
 class Usuarios{
 
-	function UsuariosCabezera(){ 
+
+	public function UsuariosCabezera(){ 
 		?>
             <div id="menuSuperior">
                 <div class="tit_pagina">Listado de usuarios.</div>
@@ -15,20 +16,17 @@ class Usuarios{
 		<?php		
 	}
 
-	function UsuariosList(){
-		$sqln = "SELECT 
+
+	public function UsuariosList(){
+		$sql = "SELECT 
 					a.id_usuario, 
-					CONCAT(a.nombre_usuario,
-					' ',
-					a.apellidos_usuario) AS Usuario, 
+					CONCAT(a.nombre_usuario,' ',a.apellidos_usuario) AS Usuario, 
 					a.email_usuario AS Email, 
-					r.nombre_rol as Rol, 
-					lectura_usuario AS Lectura, 
-					escritura_usuario AS Escritura
+					r.nombre_rol AS Rol
 				FROM usuarios a, rol r 
-				WHERE a.id_rol=r.id_rol ";
-		$qryn = new Consulta($sqln);		
-		$numc = $qryn->NumeroRegistros();
+				WHERE a.id_rol = r.id_rol ";
+		$qry = new Consulta($sql);		
+		$num = $qry->NumeroRegistros();
 		?>
 		<table class='reporte display' cellpadding="0" cellspacing="0" border="0">
 			<thead>
@@ -36,29 +34,24 @@ class Usuarios{
 					<th>Nombre</th>
 					<th>Correo</th>
 					<th>Rol</th>
-                    <th>Lectura</th>
-                    <th>Escritura</th>
                     <th>Opciones</th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php
-				while ($rown = mysql_fetch_array($qryn->Consulta_ID)) {
+				while ($row = mysql_fetch_array($qry->Consulta_ID)) {
 					?>
 					<tr>
-						<td><?php echo $rown[1]?></td>
-                        <td><?php echo $rown[2]?></td>
-                        <td><?php echo $rown[3]?></td>
-                        <td><?php echo $rown[4]?></td>
-                        <td><?php echo $rown[5]?></td>
+						<td><?php echo $row[1]?></td>
+                        <td><?php echo $row[2]?></td>
+                        <td><?php echo $row[3]?></td>
 						<td>
-						<?php if($_SESSION['session'][4]=="SI" ){ ?>
-                        	<a title="Editar" onclick="mantenimiento('usuarios.php',<?php echo $rown[0]?>,'edit')" href="#"> <img src="../aplication/webroot/imgs/icons/x_edit.png"></a>
-                        	
-                            <a title="Eliminar" onclick="mantenimiento('usuarios.php',<?php echo $rown[0]?>,'delete')" href="#"> <img src="../aplication/webroot/imgs/icons/x_delete.png"></a>
-                        
-                        	<a title="Permisos" onclick="mantenimiento_det('modulo_usuario.php',<?php echo $rown[0]?>)" href="#"><img border="0" src="../aplication/webroot/imgs/icons/x-detail.png"></a>
-						<?php }
+                        	<a title="Editar" href="usuarios.php?opcion=edit&id=<?php echo $row[0]?>"> <img src="<?php echo _icn_ ?>x_edit.png"></a>
+
+                            <a title="Eliminar" class="delete" id="<?php echo $row[0]?>" name="usuarios.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
+
+                        	<a title="Permisos" href="modulo_usuario.php?id=<?php echo $row[0]?>"><img src="<?php echo _icn_ ?>x-detail.png"></a>
+						<?php
 					echo "</td></tr>";
 				}
 			?>
@@ -67,7 +60,8 @@ class Usuarios{
 		<?php
 	}
 
-	function UsuariosNew(){
+
+	public function UsuariosNew(){
 				
 		$QueryRol= new Consulta("SELECT * FROM rol ");?>
 		<form name="f1" action="" method="post">
@@ -102,12 +96,6 @@ class Usuarios{
 					<td align="right"> Password :</td>
 					<td colspan="3" align="left"><input type="text" size="30"  name="password" ></td></tr>
 				<tr>
-					<td align="right">Lectura :</td>
-					<td align="left"><input type="checkbox" name="lectura" value="SI" ></td>
-				  	<td align="right">Escritura :</td>
-				  	<td align="left"><input type="checkbox" name="escritura" value="SI"></td>
-				</tr>
-				<tr>
 					<td colspan="4">&nbsp;</td></tr>
 				<tr>
 					<td colspan="5" align="center"><input type="submit" name="enviar2" value="GUARDAR" onclick="return  validar_usuarios('add')" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -121,7 +109,7 @@ class Usuarios{
 	}
 
 
-	function UsuariosAdd(){
+	public function UsuariosAdd(){
 		if(!$_POST){
 			echo "<div id=error>ERROR: No se pudo Agregar Usuario por falta de datos </div><br>";		
 		}else{
@@ -158,7 +146,8 @@ class Usuarios{
 		
 	}
 
-	function UsuariosUpdate($id, $_POST){
+
+	public function UsuariosUpdate($id, $_POST){
 		if(empty($id)){
 			echo "<br><div id=error>La actualizacion no se puede efectuar por falta de Id </div><br>";	
 		}else if(!$_POST){
@@ -181,7 +170,7 @@ class Usuarios{
 	}
 
 
-	function UsuariosEdit($id){ 
+	public function UsuariosEdit($id){ 
 		if(!$id){
 			echo "<br><div id=error>ERROR: no se encontro ningun usuario con ese Id ó le falta Id  </div><br>";	
 		}else{
@@ -218,12 +207,6 @@ class Usuarios{
 					<tr>
 						<td align="right"> Password :</td>
 						<td colspan="3"><input type="text" size="30"  name="password" value="<?php echo $Row['password_usuario']?>"></td></tr>
-					<tr>
-					  <td  align="right">Lectura :</td>
-						<td align="left"><input type="checkbox" name="lectura" value="SI" <?php if($Row['lectura_usuario']=="SI"){  echo "checked";} ?> />                    
-					  <td align="right">Escritura: </td>                      
-					  <td align="left"><input type="checkbox" name="escritura" value="SI"  <?php if($Row['escritura_usuario']=="SI"){  echo "checked";} ?>/></td>                      
-					</tr>
 					<tr><td colspan="4">&nbsp;&nbsp;&nbsp;</tr>
 					<tr>
 						<td colspan="5" align="center"><input type="submit" name="enviar2" value="GUARDAR" onclick="return  validar_usuarios('update', <?php echo $id?>)" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -234,15 +217,16 @@ class Usuarios{
 		}
 	}
 
-	function UsuariosDelete($id){
+
+	public function UsuariosDelete($id){
 		if(empty($id)){
 			echo "<br><div id=error>La actualizacion no se puede efectuar por falta de Id </div><br>";	
 		}else{		
-			
 			$Query= new Consulta($sql = "DELETE FROM usuarios WHERE id_usuario='$id'");
 			echo "<br><div id=error>Se elimino el registro Correctamente </div><br>";
 		}
 	}
+
 
 }
 ?>

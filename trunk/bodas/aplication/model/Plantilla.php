@@ -1,7 +1,6 @@
 <?php
 	class Plantilla{
 
-
 		public function logeo(){
 			?>
 				<div id="cnt_login">
@@ -44,26 +43,26 @@
 			?>
             <div class="logo-imagen-empresa"><img src="../aplication/webroot/imgs/logo_admin.png" alt="Logo empresa"></div>
             <?php if($_SESSION['session']){ ?>
-                <div class="nombre-usuario"><?php echo $_SESSION['session'][1]; ?></div>
+                <div class="nombre-usuario">Bienvenido: <?php echo $_SESSION['session'][1]; ?></div>
                 <div class="salir"><a href="salir.php">Salir</a></div>
             <?php }
 		}
 
 
 		public function izquierda(){
-			?>
+			if($_SESSION['session']){ ?>
 				<div id="menu_izquierdo">
 					<div class="date">Opciones</div>
 					<div><?php Menu::MenuIzquierdo(); ?></div>
 				</div>
 			<?php
+			}
 		}	
 
 
 		public function pie(){ 
 			?>Powered by <a href="mailto:receapd@gmail.com">Rael</a><?php
 		}
-
 
 	}
 ?>

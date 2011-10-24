@@ -1,0 +1,5 @@
+
+body, html{ height:100%; margin:0px; font-family:arial,sans-serif; font-size:12px; }
+input{ font: normal 11px Arial, Helvetica, sans-serif; margin:1px; }
+textarea{ background-image:url(img/cat_producto.jpg); font: normal 11px Arial, Helvetica, sans-serif; height:50px; color:#FFFFFF; }
+form{ margin:0px 0px 0px 0px; }

@@ -10,7 +10,9 @@
     	<div class="contenedor-principal">
             <div class="cabecera"><?php $objPlantilla->cabecera(); ?></div>
         	<div class="cuerpo">
+
                 <div class="opciones"><?php $objPlantilla->izquierda(); ?></div>
+
                 <div class="contenido">
                 	<?php
 						if($_GET['opcion']=='recuperar'){						
