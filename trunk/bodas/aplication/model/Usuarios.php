@@ -62,50 +62,34 @@ class Usuarios{
 
 
 	public function UsuariosNew(){
-				
-		$QueryRol= new Consulta("SELECT * FROM rol ");?>
+		$QueryRol = new Consulta(" SELECT * FROM rol ");
+		?>
 		<form name="f1" action="" method="post">
-			<table id="mantenimiento" cellpadding="0" cellspacing="1">
-				<tr>
-				  <td colspan="5" class="accion">NUEVO USUARIO</td>
-				</tr>
-				<tr>
-					<td align="right" width="40%"><br>Nombre :</td>
-					<td width="60%" colspan="3" align="left"><br><input type="text" size="30" name="nombre" ></td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				</tr>
-				<tr>
-					<td align="right"> Apellidos :</td>
-					<td colspan="3" align="left"><input type="text" size="30"  name="apellidos" ></td></tr>
-				<tr>
-					<td align="right"> Email :</td>
-					<td colspan="3" align="left"><input type="text" size="30"  name="email" ></td></tr>
-				<tr>
-					<td align="right"> Rol :</td>
-					<td colspan="3" align="left"><select name="rol">
-						<option value="">--------- Seleccione Rol --------</option>
-						<?php while($RowRol= $QueryRol->VerRegistro()){ ?>
-							<option value="<?php echo $RowRol[0] ?>" <?php if($RowRol[0]==$rol){ echo "Selected";}?>><?php echo $RowRol[1] ?></option>
-						<?php } ?>
-						</select></td></tr>
-				<tr>
-					<td align="right"> Usuario :</td>
-					<td colspan="3" align="left"><input type="text" size="30" id="usuario"  name="usuario" >&nbsp;<a href="#" onClick="checkName(document.f1.usuario)" title="Ver Disponibilidad">Disponible</a>
-					<div id="result"></div></td></tr>
-				<tr>
-					<td align="right"> Password :</td>
-					<td colspan="3" align="left"><input type="text" size="30"  name="password" ></td></tr>
-				<tr>
-					<td colspan="4">&nbsp;</td></tr>
-				<tr>
-					<td colspan="5" align="center"><input type="submit" name="enviar2" value="GUARDAR" onclick="return  validar_usuarios('add')" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				    <input type="reset" name="cancelar" value="CANCELAR" onClick="javascript:window.history.go(-1)"></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-				</tr>
-			</table>
-		</form> <?php		
+
+            <h2>Nuevo usuario</h2>
+            
+            <p><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></p>
+            <p><label>Apellido(s): </label><input type="text" id="txtApellido" name="txtApellido" /></p>
+            <p><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></p>
+            <p>
+                <label>Nivel: </label>
+                <select name="rol">
+                    <option value="">Seleccione un nivel</option>
+                    <?php while( $RowRol = $QueryRol->VerRegistro() ){ ?>
+                        <option value="<?php echo $RowRol[0] ?>" <?php if($RowRol[0] == $rol){ echo "Selected";}?>> <?php echo $RowRol[1] ?> </option>
+                    <?php } ?>
+                </select>
+            </p>
+            <p><label>Usuario: </label><input type="text" id="txtUsuario" name="txtUsuario" /></p>
+            <p><label>Contraseña: </label><input type="password" id="txtPassword" name="txtPassword" /></p>
+            <p>
+            	
+                <input type="submit" name="enviar_nuevo" value="Guardar y crear nuevo" onclick="return validar_usuarios('add')" />
+                <input type="submit" name="enviar_listar" value="Guardar y listar" onclick="return validar_usuarios('add')" />
+            </p>
+			<p><a href="usuarios.php">Regresar</a></p>
+		</form>
+		<?php		
 	}
 
 

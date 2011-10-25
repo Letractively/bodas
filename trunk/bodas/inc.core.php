@@ -1,4 +1,7 @@
 <?php 	
+
+	header ('Content-type: text/html; charset=iso-8859-1');
+
 	include("aplication/inc.config.php");
 
 	define("_includes_",$_cfg['sitio']['ruta']."aplication/includes/");
