@@ -59,10 +59,20 @@
 	float: left;
 }
 
+.dataTables_length select {
+	width: 13%;
+	float: left;
+}
+
 .dataTables_filter {
 	width: 50%;
 	float: right;
 	text-align: right;
+}
+
+.dataTables_filter input[type="text"]{
+	width: 30% !important;
+	float: right !important;
 }
 
 .dataTables_info {

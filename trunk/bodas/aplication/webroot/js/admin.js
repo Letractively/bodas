@@ -27,7 +27,7 @@
 				"aaSorting": [[ 0, "desc" ]]
 			}); 
 		}
-	
+
 		$('.coment').tooltip({
 			track: true,
 			delay: 0,
@@ -35,7 +35,7 @@
 			showBody: " - ",
 			fade: 250
 		});
-	
+
 		if($('#des_2').length){
 			CKEDITOR.replace('des_2',
 				{

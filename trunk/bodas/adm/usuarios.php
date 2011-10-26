@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <?php include("includes/header.php"); ?>
     <body>
-
+		<script type="text/javascript" src="<?php echo _js_?>usuario.js"></script>
     	<div class="contenedor-principal">
             <div class="cabecera"><?php $objPlantilla->cabecera(); ?></div>
         	<div class="cuerpo">
@@ -16,37 +16,37 @@
                 <div class="opciones"><?php $objPlantilla->izquierda(); ?></div>
 
                 <div class="contenido">
-                	<?php
-							Usuarios::UsuariosCabezera();
-							?><div class="contenido_item"><?php
-							switch($_GET['opcion']){
-								case 'new':
-									Usuarios::UsuariosNew();		
-								break;
-								case 'add':
-									Usuarios::UsuariosAdd();
-									Usuarios::UsuariosList();			
-								break;									
-								case 'edit':										
-									Usuarios::UsuariosEdit($_GET['id']);	
-								break;
-								case 'update':
-									Usuarios::UsuariosUpdate($id, $_POST);
-									Usuarios::UsuariosList();			
-								break;
-								case 'delete':
-									Usuarios::UsuariosDelete($_GET['id']);	
-									Usuarios::UsuariosList();			
-								break;
-								case 'list':
-									Usuarios::UsuariosList();	
-								break;					
-								default:	
-									Usuarios::UsuariosList();
-								break; 
-							}
-							?>
-                     </div>
+                	<div class="opciones_internas"><?php Usuarios::UsuariosCabezera(); ?></div>
+                    <div class="contenido_interno">
+					<?php
+					switch($_GET['opcion']){
+						case 'new':
+							Usuarios::UsuariosNew();		
+						break;
+						case 'add':
+							Usuarios::UsuariosAdd();
+							Usuarios::UsuariosList();			
+						break;									
+						case 'edit':										
+							Usuarios::UsuariosEdit($_GET['id']);	
+						break;
+						case 'update':
+							Usuarios::UsuariosUpdate($id, $_POST);
+							Usuarios::UsuariosList();			
+						break;
+						case 'delete':
+							Usuarios::UsuariosDelete($_GET['id']);	
+							Usuarios::UsuariosList();			
+						break;
+						case 'list':
+							Usuarios::UsuariosList();	
+						break;					
+						default:	
+							Usuarios::UsuariosList();
+						break; 
+					}
+					?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,9 +24,10 @@
 
     <script type="text/javascript" src="<?php echo _js_?>jquery.tooltip.min.js"></script>    
 	<script type="text/javascript" src="<?php echo _js_?>jquery.timepicker.js"></script>
+	<script type="text/javascript" src="<?php echo _js_?>jquery.validate.min.js"></script>
 
     <script type="text/javascript" src="<?php echo _js_?>admin.js"></script>
     
-    <title>Administraci&oacute;n</title>
+    <title>Administración</title>
     
 </head>

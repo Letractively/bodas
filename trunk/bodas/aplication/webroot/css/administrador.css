@@ -13,6 +13,7 @@
 #cnt_recuperar_contrasenia div{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
 #cnt_recuperar_contrasenia .error{ color:#FF0000; }
 
+
 .contenedor-principal{ position:relative; float:left; width:100%; height:auto; }
 
 .contenedor-principal .cabecera{ position:relative; float:left; width:98%; height:auto; border-bottom:1px solid #999; margin:10px; }
@@ -20,10 +21,23 @@
 .contenedor-principal .cabecera .nombre-usuario{ position:relative; float:left; width:auto; height:auto; padding:6px 0px; }
 .contenedor-principal .cabecera .salir{ position:relative; float:right; width:auto; height:auto; padding:6px 0px; }
 
-.contenedor-principal .contenido { position:relative; float:left; width:100%; height:auto; }
-
 .contenedor-principal .cuerpo{ position:relative; float:left; width:98%; height:auto; margin:10px; }
+.contenedor-principal .opciones{ position:relative; float:left; width:20%; height:auto; }
+.contenedor-principal .contenido { position:relative; float:left; width:80%; height:auto; }
+.contenedor-principal .contenido_ses { position:relative; float:left; width:100%; height:auto; }
+
+.contenedor-principal .contenido .opciones_internas{ position:relative; float:left; width:100%; height:auto; }
+.contenedor-principal .contenido .contenido_interno{ position:relative; float:left; width:100%; height:auto; }
+.contenedor-principal .contenido .contenido_interno label{ float:left; width:20%; }
+.contenedor-principal .contenido .contenido_interno input[type='text'], input[type='password'], select{ float:left; width:50%; }
+.contenedor-principal .contenido .contenido_interno .itm{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; }
+
 
 .wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -50px; }
 .push{ height: 20px; }
 .pie { position:relative; float:left; text-align:center; width:98%; height: auto; margin:10px; padding:10px 0px 0px 0px; border-top:1px solid #CCC; }
+
+.ok{ color:#0C0; }
+label.error{ position:relative; float:left; width:auto; height:auto; color:#F60; text-align:left; padding:3px 3px 3px 20px; margin:0 0 0 3px; background:url(../imgs/icons/alert.png) left center no-repeat; }
+.alert{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; text-align:center; color:#F90; }
+.alert img{ vertical-align:top; }

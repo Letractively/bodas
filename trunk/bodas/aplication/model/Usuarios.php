@@ -1,17 +1,14 @@
 <?php
 class Usuarios{
 
-
 	public function UsuariosCabezera(){ 
 		?>
-            <div id="menuSuperior">
-                <div class="tit_pagina">Listado de usuarios.</div>
-                <div class="cont_items_menu">
-                    <ul>
-                        <li><a href="usuarios.php?opcion=list"> Listar </a></li>
-                        <li><a href="usuarios.php?opcion=new"> Nuevo </a></li>
-                    </ul>
-                </div>
+            <div class="tit_pagina">Listado de usuarios.</div>
+            <div class="cont_items_menu">
+                <ul>
+                    <li><a href="usuarios.php?opcion=list">Listar</a></li>
+                    <li><a href="usuarios.php?opcion=new">Nuevo</a></li>
+                </ul>
             </div>
 		<?php		
 	}
@@ -47,9 +44,7 @@ class Usuarios{
                         <td><?php echo $row[3]?></td>
 						<td>
                         	<a title="Editar" href="usuarios.php?opcion=edit&id=<?php echo $row[0]?>"> <img src="<?php echo _icn_ ?>x_edit.png"></a>
-
                             <a title="Eliminar" class="delete" id="<?php echo $row[0]?>" name="usuarios.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
-
                         	<a title="Permisos" href="modulo_usuario.php?id=<?php echo $row[0]?>"><img src="<?php echo _icn_ ?>x-detail.png"></a>
 						<?php
 					echo "</td></tr>";
@@ -64,34 +59,33 @@ class Usuarios{
 	public function UsuariosNew(){
 		$QueryRol = new Consulta(" SELECT * FROM rol ");
 		?>
-		<form name="f1" action="" method="post">
+		<form id="frmUsuario" name="frmUsuario" action="" method="post">
 
             <h2>Nuevo usuario</h2>
-            
-            <p><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></p>
-            <p><label>Apellido(s): </label><input type="text" id="txtApellido" name="txtApellido" /></p>
-            <p><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></p>
-            <p>
+
+            <div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></div>
+            <div class="itm"><label>Apellido(s): </label><input type="text" id="txtApellido" name="txtApellido" /></div>
+            <div class="itm"><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></div>
+            <div class="itm">
                 <label>Nivel: </label>
                 <select name="rol">
-                    <option value="">Seleccione un nivel</option>
                     <?php while( $RowRol = $QueryRol->VerRegistro() ){ ?>
                         <option value="<?php echo $RowRol[0] ?>" <?php if($RowRol[0] == $rol){ echo "Selected";}?>> <?php echo $RowRol[1] ?> </option>
                     <?php } ?>
                 </select>
-            </p>
-            <p><label>Usuario: </label><input type="text" id="txtUsuario" name="txtUsuario" /></p>
-            <p><label>Contraseña: </label><input type="password" id="txtPassword" name="txtPassword" /></p>
-            <p>
-            	
-                <input type="submit" name="enviar_nuevo" value="Guardar y crear nuevo" onclick="return validar_usuarios('add')" />
-                <input type="submit" name="enviar_listar" value="Guardar y listar" onclick="return validar_usuarios('add')" />
-            </p>
-			<p><a href="usuarios.php">Regresar</a></p>
+            </div>
+            <div class="itm"><label>Usuario: </label><input type="text" id="txtUsuario" name="txtUsuario" /></div>
+            <div class="itm"><label>ContraseÃ±a: </label><input type="password" id="txtPassword1" name="txtPassword1" /></div>
+            <div class="itm"><label>Ingrese de nuevo la contraseÃ±a: </label><input type="password" id="txtPassword2" name="txtPassword2" /></div>
+            <div class="itm">
+                <input type="submit" id="enviar_nuevo" name="enviar_nuevo" value="Guardar y crear nuevo" />
+                <input type="submit" id="enviar_listar" name="enviar_listar" value="Guardar y listar" />
+              <input type="reset" name="reset" value="Limpiar">
+            </div>
+			<div class="itm"><a href="usuarios.php">Regresar</a></div>
 		</form>
 		<?php		
 	}
-
 
 	public function UsuariosAdd(){
 		if(!$_POST){
@@ -156,7 +150,7 @@ class Usuarios{
 
 	public function UsuariosEdit($id){ 
 		if(!$id){
-			echo "<br><div id=error>ERROR: no se encontro ningun usuario con ese Id ó le falta Id  </div><br>";	
+			echo "<br><div id=error>ERROR: no se encontro ningun usuario con ese Id ï¿½ le falta Id  </div><br>";	
 		}else{
 			$Query= new Consulta($sql = " SELECT * FROM usuarios WHERE id_usuario='".$id."'");
 			$Row= $Query->VerRegistro();

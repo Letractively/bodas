@@ -13,17 +13,18 @@
 
                 <div class="opciones"><?php $objPlantilla->izquierda(); ?></div>
 
-                <div class="contenido">
+                <div class="contenido<?php if( !isset($_SESSION['session']) ){ echo "_ses"; } ?>">
                 	<?php
-						if($_GET['opcion']=='recuperar'){						
+						if( $_GET['opcion'] == 'recuperar' ){						
 							$objPlantilla->recuperar_acceso();
-						}else if($_SESSION['session']){
+						}else if( isset($_SESSION['session']) ){
 							
 						}else{
 							$objPlantilla->logeo();
 						}
                     ?>
                 </div>
+
             </div>
         </div>
 
