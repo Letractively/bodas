@@ -68,7 +68,7 @@
 		{
 			$sql = "SELECT email_usuario FROM usuarios WHERE email_usuario = '".mysql_real_escape_string($correo)."'";
 			$qry = new Consulta($sql);
-			if( $qry->NumeroRegistros() > 0 ){ 
+			if( $qry->NumeroRegistros() > 0 ){
 				return 'false';
 			}else{ 
 				return 'true'; 
