@@ -27,7 +27,7 @@
 				"aaSorting": [[ 0, "desc" ]]
 			}); 
 		}
-
+	
 		$('.coment').tooltip({
 			track: true,
 			delay: 0,

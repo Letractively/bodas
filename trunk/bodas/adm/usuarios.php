@@ -21,29 +21,33 @@
 					<?php
 					switch($_GET['opcion']){
 						case 'new':
-							Usuarios::UsuariosNew();		
+							Usuarios::UsuariosNew();
 						break;
-						case 'add':
+						case 'add_new':
 							Usuarios::UsuariosAdd();
-							Usuarios::UsuariosList();			
-						break;									
-						case 'edit':										
-							Usuarios::UsuariosEdit($_GET['id']);	
+							Usuarios::UsuariosNew();
+						break;
+						case 'add_list':
+							Usuarios::UsuariosAdd();
+							Usuarios::UsuariosList();
+						break;
+						case 'edit':
+							Usuarios::UsuariosEdit($_GET['id']);
 						break;
 						case 'update':
-							Usuarios::UsuariosUpdate($id, $_POST);
-							Usuarios::UsuariosList();			
+							Usuarios::UsuariosUpdate($_GET['id']);
+							Usuarios::UsuariosList();
 						break;
 						case 'delete':
-							Usuarios::UsuariosDelete($_GET['id']);	
-							Usuarios::UsuariosList();			
+							Usuarios::UsuariosDelete($_GET['id']);
+							Usuarios::UsuariosList();
 						break;
 						case 'list':
-							Usuarios::UsuariosList();	
-						break;					
-						default:	
 							Usuarios::UsuariosList();
-						break; 
+						break;
+						default:
+							Usuarios::UsuariosList();
+						break;
 					}
 					?>
                     </div>

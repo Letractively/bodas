@@ -14,7 +14,9 @@
 	require_once(_model_."Menu.php");
 	require_once(_model_."Acceso.php");
 	require_once(_model_."Sesion.php");
+	require_once(_model_."Usuario.php");
 	require_once(_model_."Usuarios.php");
+	
 	require_once(_model_."ModuloUsuario.php");
 	require_once(_model_."Mysql.php");
 
