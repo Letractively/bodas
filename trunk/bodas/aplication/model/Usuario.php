@@ -15,9 +15,9 @@
 
 		public function __construct($id = 0)
 		{
-			
+
 			$this->id_usuario = $id;
-			
+
 			if($this->id_usuario > 0){
 				$sql = " SELECT * FROM usuarios WHERE id_usuario = '".$this->id_usuario."' ";
 
