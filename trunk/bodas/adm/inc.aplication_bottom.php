@@ -1,1 +1,1 @@
-<?php	$_SESSION['usuario'] = $usuario; ?>
+<?php $_SESSION['usuario'] = $usuario; ?>
