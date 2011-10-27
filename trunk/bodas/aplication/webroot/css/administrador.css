@@ -44,4 +44,8 @@ label.error{ position:relative; float:left; width:auto; height:auto; color:#F60;
 
 .alert{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; text-align:center; color:#F90; }
 .alert img{ vertical-align:top; }
+
+.alert2{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; text-align:left; color:#F90; }
+.alert2 img{ vertical-align:top; }
+
 .delete{ cursor:pointer; }

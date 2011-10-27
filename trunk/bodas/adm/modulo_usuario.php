@@ -20,17 +20,18 @@
                 	<div class="opciones_internas"><?php SeccionAdmin::SeccionAdminCabezera(); ?></div>
                     <div class="contenido_interno">
 						<?php
-							switch($_GET['opcion']){
-								case 'add':
+						switch($_GET['opcion']){
+							case 'add':
 								SeccionAdmin::SeccionAdminAdd($id, $_POST);
-								break;
-								case 'list':
-								SeccionAdmin::SeccionAdminList($i1);
-								break;
-								default:
 								SeccionAdmin::SeccionAdminList($id);
-								break;
-							}
+							break;
+							case 'list':
+								SeccionAdmin::SeccionAdminList($id);
+							break;
+							default:
+								SeccionAdmin::SeccionAdminList($id);
+							break;
+						}
 						?>
                     </div>
                 </div>
@@ -41,5 +42,4 @@
 		<div class="pie"><?php $objPlantilla->pie(); ?></div>
 
     </body>
-
 </html>

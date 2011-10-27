@@ -9,7 +9,6 @@
 
 	require_once(_model_."AdminMain.php");
 	require_once(_model_."Conexion.php");
-	require_once(_model_."Configuration.php");
 	require_once(_model_."Plantilla.php");
 	require_once(_model_."Menu.php");
 	require_once(_model_."Acceso.php");
@@ -22,12 +21,4 @@
 
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']); 
 	session_start();
-
-	$config_site = new Configuration();
-	$configs = $config_site->getData();
-
-	foreach($configs as $clave=>$valor){
-		define($clave,$valor);
-	}
-
 ?>

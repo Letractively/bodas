@@ -69,8 +69,13 @@
 			$sql = "SELECT email_usuario FROM usuarios WHERE email_usuario = '".mysql_real_escape_string($correo)."'";
 			$qry = new Consulta($sql);
 			if( $qry->NumeroRegistros() > 0 ){
-				return 'false';
-			}else{ 
+				$rw = $qry->VerRegistro();
+				if($rw["email_usuario"] == $correo2){
+					return 'true';
+				}else{
+					return 'false';
+				}
+			}else{
 				return 'true'; 
 			}
 		}
@@ -80,7 +85,12 @@
 			$sql = "SELECT login_usuario FROM usuarios WHERE login_usuario = '".mysql_real_escape_string($usuario)."'";
 			$qry = new Consulta($sql);
 			if( $qry->NumeroRegistros() > 0 ){ 
-				return 'false';
+				$rw = $qry->VerRegistro();
+				if($rw["login_usuario"] == $usuario2){
+					return 'true';
+				}else{
+					return 'false';
+				}
 			}else{ 
 				return 'true'; 
 			}

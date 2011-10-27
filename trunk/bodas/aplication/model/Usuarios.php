@@ -26,7 +26,7 @@ class Usuarios{
 		$qry = new Consulta($sql);		
 		$num = $qry->NumeroRegistros();
 		?>
-		<table class='reporte display' cellpadding="0" cellspacing="0" border="0">
+		<table class='reporte display'>
 			<thead>
 				<tr>
 					<th>Nombre</th>
@@ -43,9 +43,9 @@ class Usuarios{
 						<td><?php echo $row[1]?></td>
                         <td><?php echo $row[2]?></td>
                         <td><?php echo $row[3]?></td>
-						<td>
+						<td align="center">
                         	<a title="Editar" href="usuarios.php?opcion=edit&id=<?php echo $row[0]?>"> <img src="<?php echo _icn_ ?>x_edit.png"></a>
-                            <a title="Eliminar" class="delete" id="<?php echo $row[0]?>" name="usuarios.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
+                            <?php if($row[0] != 2){ ?><a title="Eliminar" class="delete" id="<?php echo $row[0]?>" name="usuarios.php"><img src="<?php echo _icn_ ?>x_delete.png"></a><?php } ?>
                         	<a title="Permisos" href="modulo_usuario.php?id=<?php echo $row[0]?>"><img src="<?php echo _icn_ ?>x-detail.png"></a>
 						<?php
 					echo "</td></tr>";
@@ -133,8 +133,8 @@ class Usuarios{
 			</div>
 			<div class="itm"><label>Usuario: </label><input type="text" id="txtUsuario" name="txtUsuario" value="<?php echo $objUsuario->login_usuario; ?>" /></div>
             <input type="hidden" id="txtUsuario2" name="txtUsuario2" value="<?php echo $objUsuario->login_usuario; ?>" />
-            
-			<div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" /></div>
+            <div class="itm"><br><div class="alert2"><img src="<?php echo _icn_?>alert.png">Si no desea cambiar la contraseña, solo deje los campos en blanco</div></div>
+			<div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" autocomplete="off" /></div>
 			<div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" /></div>
 
 			<div class="itm">
@@ -150,28 +150,33 @@ class Usuarios{
 
 
 	public function UsuariosUpdate($id){
-		$Query=new Consulta($sql = " UPDATE usuarios SET 
+		$Query = new Consulta(" UPDATE usuarios SET 
 				nombre_usuario = '".$_POST['txtNombre']."' ,
 				apellidos_usuario = '".$_POST['txtApellido']."',
 				email_usuario = '".$_POST['txtCorreo']."',
 				id_rol = '".$_POST['sleRol']."',
-				login_usuario = '".$_POST['txtUsuario']."',
-				password_usuario = '".$_POST['txtPassword1']."'
+				login_usuario = '".$_POST['txtUsuario']."'
 			WHERE id_usuario = '".$id."'
 		");
+
+		if(isset($_POST['txtPassword1']) && $_POST['txtPassword1'] != ''){
+			if(isset($_POST['txtPassword2']) && $_POST['txtPassword2'] != ''){
+				$Query = new Consulta(" UPDATE usuarios SET password_usuario = '".$_POST['txtPassword1']."'");
+			}
+		}
 		?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php
 	}
 
 
-	public function UsuariosDelete($id){
-		if(empty($id)){
-			echo "<br><div id=error>La actualizacion no se puede efectuar por falta de Id </div><br>";	
-		}else{		
+	public function UsuariosDelete($id = ''){
+		if($id != 2){
 			$Query= new Consulta($sql = "DELETE FROM usuarios WHERE id_usuario='$id'");
-			echo "<br><div id=error>Se elimino el registro Correctamente </div><br>";
+			$Query= new Consulta($sql = "DELETE FROM usuarios_paginas WHERE id_usuario='$id'");
+			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro eliminado correctamente.</div><?php
+		}else if($id == ''){
+			?><div class="alert"><img src="<?php echo _icn_?>alert.png"> Error al eliminar</div><?php
 		}
 	}
-
 
 }
 ?>
