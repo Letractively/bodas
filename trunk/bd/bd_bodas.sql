@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 27-10-2011 a las 18:49:42
+-- Tiempo de generación: 28-10-2011 a las 19:57:32
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -45,13 +45,38 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
 -- 
 
 INSERT INTO `paginas` VALUES (1, 1, 'Administraci&oacute;n de usuarios', 'usuarios.php');
+INSERT INTO `paginas` VALUES (19, 1, 'Proveedores rubros', 'ProveedorRubro.php');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `proveedores_rubros`
+-- 
+
+CREATE TABLE `proveedores_rubros` (
+  `id_proveedor_rubro` int(11) NOT NULL auto_increment,
+  `nombre_proveedor_rubro` text NOT NULL,
+  PRIMARY KEY  (`id_proveedor_rubro`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+-- 
+-- Volcar la base de datos para la tabla `proveedores_rubros`
+-- 
+
+INSERT INTO `proveedores_rubros` VALUES (4, 'Accesorios y calzado');
+INSERT INTO `proveedores_rubros` VALUES (5, 'Aerolineas');
+INSERT INTO `proveedores_rubros` VALUES (6, 'Agencias de viajes');
+INSERT INTO `proveedores_rubros` VALUES (7, 'Albumes');
+INSERT INTO `proveedores_rubros` VALUES (8, 'Asesoria, Wedding Planner');
+INSERT INTO `proveedores_rubros` VALUES (9, 'Autos & Limousines');
+INSERT INTO `proveedores_rubros` VALUES (10, 'Belleza corporal y cirugia');
 
 -- --------------------------------------------------------
 
@@ -130,4 +155,5 @@ CREATE TABLE `usuarios_paginas` (
 -- Volcar la base de datos para la tabla `usuarios_paginas`
 -- 
 
+INSERT INTO `usuarios_paginas` VALUES (2, 19);
 INSERT INTO `usuarios_paginas` VALUES (2, 1);
