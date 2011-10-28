@@ -49,3 +49,4 @@ label.error{ position:relative; float:left; width:auto; height:auto; color:#F60;
 .alert2 img{ vertical-align:top; }
 
 .delete{ cursor:pointer; }
+.eliminar{ cursor:pointer; }

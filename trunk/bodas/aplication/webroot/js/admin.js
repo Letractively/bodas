@@ -72,8 +72,8 @@
 			});
 		}
 
-		$('.delete').click(function(){
-			if($(this).attr('class') == "delete"){
+		$('.delete, .eliminar').click(function(){
+			if($(this).attr('class') == "delete" || $(this).attr('class') == "eliminar"){
 				if(!confirm("Esta Seguro que desea Eliminar el Registro")){
 					return false;
 				}else{

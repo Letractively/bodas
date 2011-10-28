@@ -19,6 +19,9 @@
 	require_once(_model_."ModuloUsuario.php");
 	require_once(_model_."Mysql.php");
 
+	require_once(_model_."ProveedorRubro.php");
+	require_once(_model_."ProveedoresRubros.php");
+
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']); 
 	session_start();
 ?>

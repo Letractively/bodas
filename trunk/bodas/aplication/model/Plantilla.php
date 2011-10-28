@@ -41,7 +41,10 @@
 
 		public function cabecera(){ 
 			?>
-            <div class="logo-imagen-empresa"><img src="../aplication/webroot/imgs/logo_admin.png" alt="Logo empresa"></div>
+            <div class="logo-imagen-empresa">
+            	<!--<img src="../aplication/webroot/imgs/logo_admin.png" alt="Logo empresa">-->
+                Bodas
+            </div>
             <?php if($_SESSION['session']){ ?>
                 <div class="nombre-usuario">Bienvenido: <?php echo $_SESSION['session'][1]; ?></div>
                 <div class="salir"><a href="salir.php">Salir</a></div>

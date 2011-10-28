@@ -26,7 +26,7 @@ class Usuarios{
 		$qry = new Consulta($sql);		
 		$num = $qry->NumeroRegistros();
 		?>
-		<table class='reporte display'>
+		<table class='reporte2 display'>
 			<thead>
 				<tr>
 					<th>Nombre</th>
@@ -63,7 +63,6 @@ class Usuarios{
         <form id="frmUsuarioNuevo" name="frmUsuarioNuevo" action="" method="post">
 
             <h2>Nuevo usuario</h2>
-
             <div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></div>
             <div class="itm"><label>Apellido(s): </label><input type="text" id="txtApellido" name="txtApellido" /></div>
             <div class="itm"><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></div>
