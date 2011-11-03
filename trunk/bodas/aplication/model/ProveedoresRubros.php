@@ -3,6 +3,7 @@
 
 		public function cabecera(){
 			?>
+            <script type="text/javascript" src="<?php echo _js_?>ProveedorRubro.js"></script>
             <div id="menuSuperior">
                 <div class="tit_pagina">Listado de rubros del proveedor.</div>
                 <div class="cont_items_menu">

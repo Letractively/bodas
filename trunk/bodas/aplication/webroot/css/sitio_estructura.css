@@ -1,0 +1,8 @@
+/* CSS Document */
+
+#window{ width:100%; overflow:hidden; }
+#pagina{ width:980px; margin:0 auto 0 auto; height:auto;  position:relative; z-index:1; }
+#cabecera{ position:relative; float:left; width:980px; height:auto; }
+#cuerpo{ position:relative; float:left; width:970px; height:auto; background:url(../imgs/borde_sombra.png) repeat-y; padding:0 5px 8px 5px; }
+* html #cuerpo{ min-height:100px; }
+#pie_pagina{ position:relative; float:left; width:970px; height:auto; padding:0 5px 0 5px; margin:0 0 0px 0; }

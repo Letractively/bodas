@@ -8,7 +8,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <?php include("includes/header.php"); ?>
     <body>
-		<script type="text/javascript" src="<?php echo _js_?>usuario.js"></script>
     	<div class="contenedor-principal">
             <div class="cabecera"><?php $objPlantilla->cabecera(); ?></div>
         	<div class="cuerpo">
