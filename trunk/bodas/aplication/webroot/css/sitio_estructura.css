@@ -1,8 +1,11 @@
 /* CSS Document */
 
 #window{ width:100%; overflow:hidden; }
-#pagina{ width:980px; margin:0 auto 0 auto; height:auto;  position:relative; z-index:1; }
-#cabecera{ position:relative; float:left; width:980px; height:auto; }
-#cuerpo{ position:relative; float:left; width:970px; height:auto; background:url(../imgs/borde_sombra.png) repeat-y; padding:0 5px 8px 5px; }
-* html #cuerpo{ min-height:100px; }
-#pie_pagina{ position:relative; float:left; width:970px; height:auto; padding:0 5px 0 5px; margin:0 0 0px 0; }
+#window-cabecera{ width:100%; overflow:hidden; background:#808080; }
+#window-pie-menu{ width:100%; overflow:hidden; background:#b3b3b3; border-top:1px solid #3c363d; }
+#window-pie-datos{ width:100%; height:148px; overflow:hidden; background:#3c363d; }
+
+#pagina{  position:relative; width:984px; height:auto; margin:0 auto 0 auto; }
+#cabecera{ position:relative; float:left; width:984px; height:auto; }
+#cuerpo{ position:relative; float:left; width:984px; height:800px; background:#ffffff; }
+#pie{ position:relative; float:left; width:984px; height:auto; }

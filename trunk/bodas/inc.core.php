@@ -4,7 +4,7 @@
 
 	include("aplication/inc.config.php");
 
-	define("_includes_",$_cfg['sitio']['ruta']."aplication/includes/");
+	define("_inc_",$_cfg['sitio']['ruta']."aplication/includes/");
 
 	define("_img_",$_cfg['sitio']['url']."aplication/webroot/imgs/");
 	define("_icn_",$_cfg['sitio']['url']."aplication/webroot/imgs/icons/");
