@@ -20,5 +20,17 @@
 			return $this->$atributo;
 		}
 
+		public function obtenerProveedores(){
+			$sql = "SELECT * FROM proveedores_rubros ORDER BY nombre_proveedor_rubro ASC";
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_proveedor_rubro'		=> $rw['id_proveedor_rubro'],
+					'nombre_proveedor_rubro'	=> $rw['nombre_proveedor_rubro']
+				);
+			}
+			return $rst;			
+		}
+
 	}
 ?>
