@@ -25,7 +25,7 @@
 	
 	// Vistas
 	require_once(_view_."VwIndex.php");
-	
+	require_once(_view_."VwProveedores.php");
 	
 	session_start();
 

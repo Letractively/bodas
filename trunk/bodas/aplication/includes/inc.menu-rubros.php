@@ -7,7 +7,7 @@
     <div class="lista">
         <ul>
         <?php for($x = 0 ; $x < count($aryRubros) ; $x++){ ?>
-                <li><p><a href="<?php echo $aryRubros[$x]['id_proveedor_rubro']?>"><?php echo $aryRubros[$x]['nombre_proveedor_rubro']?></a></p></li>
+                <li><p><a href="/proveedores/<?php echo $aryRubros[$x]['id_proveedor_rubro']?>/<?php echo $aryRubros[$x]['nombre_proveedor_rubro']?>"><?php echo $aryRubros[$x]['nombre_proveedor_rubro']?></a></p></li>
         <?php } ?>
         </ul>
     </div>

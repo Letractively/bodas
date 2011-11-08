@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="menu-general">
-	<a href="#">Inicio</a>
+	<a href="/portada/">Inicio</a>
     <a href="#">Revista</a>
     <a href="#">Eventos</a>
     <a href="#">Tu Boda</a>

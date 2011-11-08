@@ -1,0 +1,10 @@
+Options All -Indexes
+Options +FollowSymlinks
+
+RewriteEngine on
+RewriteBase /
+
+Rewriterule ^portada/$ index.php [L,QSA]
+Rewriterule ^proveedores/([0-9]+)/.*$ proveedores.php?id_rubro=$1 [L,QSA]
+
+ErrorDocument 404 http://local.bodas.com/error.php
