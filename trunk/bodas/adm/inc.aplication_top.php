@@ -20,6 +20,8 @@
 
 	require_once(_model_."ProveedorRubro.php");
 	require_once(_model_."ProveedoresRubros.php");
+	require_once(_model_."Proveedor.php");
+	require_once(_model_."Proveedores.php");	
 
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']); 
 	session_start();

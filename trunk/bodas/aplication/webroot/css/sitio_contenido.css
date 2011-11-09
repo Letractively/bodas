@@ -89,3 +89,10 @@
 .contenido-derecha .video-semana img{ padding:4px; }
 .contenido-derecha .video-semana .video{ position:relative; float:left; width:auto; height:auto; padding:4px; background:#9c00c4; }
 
+/*	Contenido lista de proveedores	*/
+.contenido-central-proveedor{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-proveedor .titulo{ position:relative; float:left; width:100%; height:auto; background:#efefef; padding:4px 0px; }
+.contenido-central-proveedor .titulo .nombre-rubro{ position:relative; float:left; width:auto; height:auto; padding:0 0 0 8px; color:#a657c2; text-transform: uppercase; font-weight:bold; }
+.contenido-central-proveedor .titulo .regresar{ position:relative; float:right; width:auto; height:auto; padding:0 8px 0 0; color:#a657c2; }
+.contenido-central-proveedor .titulo .regresar a{ color:#787878; }
+.contenido-central-proveedor .titulo .regresar a:hover{ text-decoration:underline; }

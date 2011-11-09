@@ -53,6 +53,11 @@
                 	<h2>Nuevo rubro</h2>
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" /></div>
                     <div class="itm">
+                    	<label>Estado: </label>
+                        <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
+                        <input type="radio" id="rdoEstado" name="rdoEstado" value="0">Desactivado
+                    </div>
+                    <div class="itm">
                         <input type="submit" id="ProveedorRubros_guardar_nuevo" value="Guardar y crear nuevo" />
                         <input type="submit" id="ProveedorRubros_guardar_listar" value="Guardar y listar" />
                       <input type="reset" name="reset" value="Limpiar">
@@ -64,7 +69,8 @@
 
 		public function agregar(){
 			$Query = new Consulta("INSERT INTO proveedores_rubros VALUES('',
-				'".$_POST['txtNombre']."'
+				'".$_POST['txtNombre']."',
+				'".$_POST['rdoEstado']."'
 			)");
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro insertado correctamente.</div><?php
 		}
@@ -75,6 +81,11 @@
                 <form id="frmProveedorRubrosEdita" name="frmProveedorRubrosEdita" action="" method="post">
                     <h2>Editar rubro</h2>
                     <div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objProveedorRubro->nombre_proveedor_rubro; ?>" /></div>
+                    <div class="itm">
+                    	<label>Estado: </label>
+                        <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
+                        <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objProveedorRubro->estado_proveedor_rubro !=1){ echo "checked='checked'"; }?>>Desactivado
+                    </div>
                     <div class="itm">
                         <input type="hidden" id="id_proveedor_rubro" value="<?php echo $objProveedorRubro->id_proveedor_rubro; ?>" />
                         <input type="submit" id="ProveedorRubros_editar_listar" value="Editar y listar" />
@@ -87,7 +98,8 @@
 
 		public function actualizar($id){
 			$Query = new Consulta(" UPDATE proveedores_rubros SET 
-										nombre_proveedor_rubro = '".$_POST['txtNombre']."'
+										nombre_proveedor_rubro = '".$_POST['txtNombre']."',
+										estado_proveedor_rubro = '".$_POST['rdoEstado']."'
 									WHERE id_proveedor_rubro = '".$id."'");
 
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php

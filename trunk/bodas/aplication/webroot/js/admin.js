@@ -36,26 +36,8 @@
 			fade: 250
 		});
 
-		if($('#des_2').length){
-			CKEDITOR.replace('des_2',
-				{
-				skin:'kama',
-				uiColor:'#e6edf3',
-				toolbar:[
-					['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],
-					['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-					['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
-					['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-					['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-					['Styles','Format','Font','FontSize','-','TextColor','BGColor'],
-					['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
-					['Link','Unlink','Anchor']
-				]
-			});
-		}
-
-		if($('#des_3').length){
-			CKEDITOR.replace('des_3',
+		if($('#des_1').length){
+			CKEDITOR.replace('des_1',
 				{
 				skin:'kama',
 				uiColor:'#e6edf3',

@@ -22,6 +22,7 @@
     <script type="text/javascript" src="<?php echo _js_?>swfupload/jquery.swfupload.js"></script>
 	<script type="text/javascript" src="<?php echo _js_?>swfupload/swf_upload.js"></script>
 
+	<script type="text/javascript" src="<?php echo _js_?>ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo _js_?>jquery.tooltip.min.js"></script>    
 	<script type="text/javascript" src="<?php echo _js_?>jquery.timepicker.js"></script>
 	<script type="text/javascript" src="<?php echo _js_?>jquery.validate.min.js"></script>
