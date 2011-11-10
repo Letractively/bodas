@@ -1,7 +1,7 @@
 <?php
 	class Utilitarios {
 		private $_notificacion;
-		
+
 		public function updateCampo($table, $value, $id){
 			$sql = "UPDATE ".$table." SET ".$value." WHERE ".$id;
 			$sq = new Consulta($sql);
@@ -10,6 +10,7 @@
 
 		public function subirImagen($ftmp, $nombre){
 			$fname = '../aplication/webroot/imgs/catalogo/'.date('His').'_'.$nombre;
+			chmod($fname, 0777);
 			move_uploaded_file($ftmp, $fname);
 			return date('His').'_'.$nombre;
 		}

@@ -17,7 +17,6 @@
 			$('#frmProveedorRubrosNuevo').submit();
 		});
 
-
 		$('#ProveedorRubros_guardar_listar').click(function(){
 			$('#frmProveedorRubrosNuevo').attr('action','?opcion=add_list');
 			$('#frmProveedorRubrosNuevo').submit();

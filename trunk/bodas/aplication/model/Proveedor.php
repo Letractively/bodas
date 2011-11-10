@@ -19,8 +19,8 @@
 		private $estado_cuenta_proveedor;
 
 		public function __construct($id = 0){
-			$this->id_proveedor_rubro = $id;
-			if($this->id_proveedor_rubro > 0){
+			$this->id_proveedor = $id;
+			if($this->id_proveedor > 0){
 				$sql = "SELECT * FROM proveedores WHERE id_proveedor = ".$id;
 				$qry = new Consulta($sql);
 				if($qry->NumeroRegistros() > 0){
