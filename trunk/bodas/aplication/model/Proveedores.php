@@ -49,6 +49,7 @@
                                 <td><?php echo $rw[3]?></td>
                                 <td align="center">
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
+                                    <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
                                     <a title="Eliminar" class="eliminar" id="<?php echo $rw[0]?>" name="Proveedor.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
 							<?php echo "</td></tr>";
                         }
@@ -138,17 +139,19 @@
 		public function editar($id){
 			
 			$objProveedor = new Proveedor($id);
-			
 			$objProveedorRubro = new ProveedorRubro;
 			$aryRubros = $objProveedorRubro->obtenerProveedores();
+
 			?>
                 <form id="frmProveedorEdita" name="frmProveedorEdita" action="" method="post">
-                	<h2>Nuevo Proveedor</h2>
+                	<h2>Editar Proveedor</h2>
                     <div class="itm">
                     	<label>Rubro: </label>
                         <select id="selRubro" name="selRubro">
                         	<?php for($x = 0 ; $x < count($aryRubros) ; $x++){?>
-                        		<option value="<?php echo $aryRubros[$x]['id_proveedor_rubro'] ?>"><?php echo $aryRubros[$x]['nombre_proveedor_rubro'] ?></option>
+                        		<option value="<?php echo $aryRubros[$x]['id_proveedor_rubro'] ?>"
+                                <?php if( $objProveedor->id_proveedor_rubro == $aryRubros[$x]['id_proveedor_rubro'] ){ echo 'selected="selected"'; } ?>
+                                ><?php echo $aryRubros[$x]['nombre_proveedor_rubro'] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -161,27 +164,32 @@
                         </div>
                     </div>
                     <div class="itm">
+                    	<label>Logo actual: </label>
+                        <img src="<?php echo _tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=170";?>" alt="<?php echo $objProveedor->nombre_proveedor; ?>" />
+                        <?php echo $objProveedor->logo_proveedor; ?>
+                    </div>
+                    <div class="itm">
                     	<label>Descripción corta: </label>
-                    	<textarea id="txtDescripcionCorta" name="txtDescripcionCorta"></textarea>
+                    	<textarea id="txtDescripcionCorta" name="txtDescripcionCorta"><?php echo $objProveedor->descripcion1_proveedor; ?></textarea>
                     </div>
                     <div class="itm">
                     	<label>Descripción larga: </label>
                         <br clear="all">
-                        <textarea id="des_2" name="des_2"></textarea>
+                        <textarea id="des_2" name="des_2"><?php echo $objProveedor->descripcion2_proveedor; ?></textarea>
                     </div>
-                    <div class="itm"><label>Dirección: </label><input type="text" id="txtDireccion" name="txtDireccion" /></div>
-                    <div class="itm"><label>Teléfono 1: </label><input type="text" id="txtTelefono1" name="txtTelefono1" /></div>
-                    <div class="itm"><label>Teléfono 2: </label><input type="text" id="txtTelefono2" name="txtTelefono2" /></div>
-                    <div class="itm"><label>Teléfono 3: </label><input type="text" id="txtTelefono3" name="txtTelefono3" /></div>
-                    <div class="itm"><label>Teléfono 4: </label><input type="text" id="txtTelefono4" name="txtTelefono4" /></div>
-                    <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" /></div>
-                    <div class="itm"><label>Web: </label><input type="text" id="txtWeb" name="txtWeb" /></div>
-                    <div class="itm"><label>Mapa: </label><input type="text" id="txtMapa" name="txtMapa" /></div>
+                    <div class="itm"><label>Dirección: </label><input type="text" id="txtDireccion" name="txtDireccion" value="<?php echo $objProveedor->direccion_proveedor; ?>"/></div>
+                    <div class="itm"><label>Teléfono 1: </label><input type="text" id="txtTelefono1" name="txtTelefono1" value="<?php echo $objProveedor->telefono1_proveedor; ?>"/></div>
+                    <div class="itm"><label>Teléfono 2: </label><input type="text" id="txtTelefono2" name="txtTelefono2" value="<?php echo $objProveedor->telefono2_proveedor; ?>"/></div>
+                    <div class="itm"><label>Teléfono 3: </label><input type="text" id="txtTelefono3" name="txtTelefono3" value="<?php echo $objProveedor->telefono3_proveedor; ?>"/></div>
+                    <div class="itm"><label>Teléfono 4: </label><input type="text" id="txtTelefono4" name="txtTelefono4" value="<?php echo $objProveedor->telefono4_proveedor; ?>"/></div>
+                    <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" value="<?php echo $objProveedor->email_proveedor; ?>"/></div>
+                    <div class="itm"><label>Web: </label><input type="text" id="txtWeb" name="txtWeb" value="<?php echo $objProveedor->web_proveedor; ?>"/></div>
+                    <div class="itm"><label>Mapa: </label><input type="text" id="txtMapa" name="txtMapa" value="<?php echo $objProveedor->mapa_proveedor; ?>"/></div>
                     
                     <div class="itm">
                     	<label>Estado: </label>
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
-                        <input type="radio" id="rdoEstado" name="rdoEstado" value="0">Desactivado
+                        <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objProveedor->estado_cuenta_proveedor == 0){ echo 'checked="checked"'; }?>>Desactivado
                     </div>
 
                     <div class="itm">
@@ -195,11 +203,53 @@
 		}
 
 		public function actualizar($id){
-			$Query = new Consulta(" UPDATE proveedores_rubros SET 
-										nombre_proveedor_rubro = '".$_POST['txtNombre']."'
-									WHERE id_proveedor_rubro = '".$id."'");
+			$Query = new Consulta(" UPDATE proveedores SET 
+										nombre_proveedor = '".$_POST['txtNombre']."',
+										id_proveedor_rubro = '".$_POST['selRubro']."',
+										logo_proveedor = '".$_POST['campo_archivo']."',
+										descripcion1_proveedor = '".$_POST['txtDescripcionCorta']."',
+										descripcion2_proveedor = '".$_POST['des_2']."',
+										direccion_proveedor = '".$_POST['txtDireccion']."',
+										telefono1_proveedor = '".$_POST['txtTelefono1']."',
+										telefono2_proveedor = '".$_POST['txtTelefono2']."',
+										telefono3_proveedor = '".$_POST['txtTelefono3']."',
+										telefono4_proveedor = '".$_POST['txtTelefono4']."',
+										email_proveedor = '".$_POST['txtEmail']."',
+										web_proveedor = '".$_POST['txtWeb']."',
+										mapa_proveedor = '".$_POST['txtMapa']."',
+										estado_cuenta_proveedor = '".$_POST['rdoEstado']."'
+									WHERE id_proveedor = '".$id."'");
 
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php
+		}
+
+		public function imagenes($id){
+
+			$_SESSION['id_gal'] = $_GET['id_gal'];
+			$objGaleria = new Galeria($_SESSION['id_gal']);
+			$aryFotos = $objGaleria->getFotos($_SESSION['id_gal']);
+
+			?>
+				<h2>Editar imagenes del proveedor</h2>
+                <div class="swfupload-control-galeria">
+                    <input type="button" id="upload_button" />
+                    <input type="hidden" id="nombre_archivo" name="nombre_archivo" class="input file" readonly>
+                    <ol class="log"></ol>
+                </div>
+                
+                <div class="cont_imagenes">
+                    <div class="eliminar_imagen"></div>
+                    <?php for($x=0 ; $x < count($aryFotos) ; $x++){ ?>
+                        <div id="foto_<?php echo $aryFotos[$x]['id'] ?>" nom_foto="<?php echo $aryFotos[$x]['foto']; ?>" class="item_img">
+                            <div class="eliminar_imagen" title="<?php echo $aryFotos[$x]['id'] ?>" >X</div>
+                            <div class="nombre"><img src="<?=_tt_."src=../aplication/webroot/imgs/galeria/".$aryFotos[$x]['foto']."&w=80";?>"></div>
+                        </div>
+                    <?php } ?>
+                </div>
+                
+                <input type="hidden" id="id_gal" name="id_gal" value="<?php echo $_SESSION['id_gal'] ?>">
+                
+			<?php	
 		}
 
 		public function eliminar($id){

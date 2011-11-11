@@ -42,8 +42,8 @@
 								$objProveedores->eliminar($_GET['id']);
 								$objProveedores->listar();
 							break;
-							case 'listar':
-								$objProveedores->listar();
+							case 'imagenes':
+								$objProveedores->imagenes($_GET['id']);
 							break;
 							default:
 								$objProveedores->listar();

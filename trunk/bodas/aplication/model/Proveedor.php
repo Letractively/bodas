@@ -2,7 +2,7 @@
 	class Proveedor{
 
 		private $id_proveedor;
-		private $id_rubro_proveedor;
+		private $id_proveedor_rubro;
 		private $nombre_proveedor;
 		private $logo_proveedor;
 		private $descripcion1_proveedor;
@@ -25,7 +25,7 @@
 				$qry = new Consulta($sql);
 				if($qry->NumeroRegistros() > 0){
 					$rw = $qry->VerRegistro();
-					$this->id_rubro_proveedor 		= $rw['id_rubro_proveedor'];
+					$this->id_proveedor_rubro 		= $rw['id_proveedor_rubro'];
 					$this->nombre_proveedor 		= $rw['nombre_proveedor'];
 					$this->logo_proveedor 			= $rw['logo_proveedor'];
 					$this->descripcion1_proveedor 	= $rw['descripcion1_proveedor'];

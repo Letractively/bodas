@@ -2,7 +2,6 @@
 $(document).ready(function(){
 
 
-
 	var peso_proveedor = '50 KB';
 	var trig = false;
 	var gif = '../aplication/webroot/js/swfupload/ajax-loader.gif';
@@ -10,7 +9,7 @@ $(document).ready(function(){
 	var flash_url = '../aplication/webroot/js/swfupload/swfupload.swf';
 	var button_image_url = '../aplication/webroot/js/swfupload/XPButtonUploadText_61x22.png';
 
-
+	$.fn.bindAll = function(options) { var $this = this; $.each(options, function(key, val){ $this.bind(key, val); }); return this; }
 
 	$('#frmProveedorNuevo').validate({
 		errorElement: 'label', errorClass: 'error',
@@ -40,7 +39,6 @@ $(document).ready(function(){
 	});
 
 
-
 	$('#frmProveedorEdita').validate({
 		errorElement: 'label', errorClass: 'error',
 		rules:{
@@ -65,9 +63,6 @@ $(document).ready(function(){
 		}
 	});
 
-
-
-	$.fn.bindAll = function(options) { var $this = this; $.each(options, function(key, val){ $this.bind(key, val); }); return this; }
 
 	var listeners = {
 		fileQueued: function(event, file){
@@ -108,7 +103,12 @@ $(document).ready(function(){
 		},
 		uploadComplete: function(event, file){
 			if(us == true){
-				$('#frmProveedorNuevo').submit();
+				if ($('#frmProveedorNuevo').length){
+					$('#frmProveedorNuevo').submit();
+				}else{
+					$('#frmProveedorEdita').submit();
+				}
+				
 			}
 		}
 	};

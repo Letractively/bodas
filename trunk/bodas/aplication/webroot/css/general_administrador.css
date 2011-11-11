@@ -9,7 +9,7 @@ select{ border:1px solid #CCC; border-radius:4px; }
 
 input[type='text']{ border:1px solid #CCC; border-radius:4px; }
 input[type='password']{ border:1px solid #CCC; border-radius:4px; }
-textarea{ float:left; width:444px; height:61px; border:1px solid #CCC; border-radius:4px; }
+textarea{ float:left; width:50%; height:61px; border:1px solid #CCC; border-radius:4px; }
 
 .wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -50px; }
 .push{ height: 20px; }
@@ -27,6 +27,6 @@ label.error{ position:relative; float:left; width:auto; height:auto; color:#F60;
 .alert2 img{ vertical-align:top; }
 
 .delete{ cursor:pointer; }
-.eliminar{ cursor:pointer; }
-#campo_archivo{ width:43%; }
-.file_upload .swfupload{ position:relative; float:left;}
+.eliminar{ cursor:pointer; margin:0 0 0 15px; }
+#campo_archivo{ width:44%; }
+.file_upload .swfupload{ position:relative; float:left; }
