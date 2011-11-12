@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 03-11-2011 a las 19:56:29
+-- Tiempo de generación: 11-11-2011 a las 19:00:50
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -45,7 +45,7 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
@@ -53,6 +53,7 @@ CREATE TABLE `paginas` (
 
 INSERT INTO `paginas` VALUES (1, 1, 'Administraci&oacute;n de usuarios', 'usuarios.php');
 INSERT INTO `paginas` VALUES (19, 1, 'Proveedores rubros', 'ProveedorRubro.php');
+INSERT INTO `paginas` VALUES (20, 1, 'Proveedores', 'Proveedor.php');
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,8 @@ INSERT INTO `paginas` VALUES (19, 1, 'Proveedores rubros', 'ProveedorRubro.php')
 
 CREATE TABLE `proveedores` (
   `id_proveedor` int(11) NOT NULL auto_increment,
-  `id_rubro_proveedor` int(11) NOT NULL,
-  `nombre_proveedor_rubro` text NOT NULL,
+  `id_proveedor_rubro` int(11) NOT NULL,
+  `nombre_proveedor` text NOT NULL,
   `logo_proveedor` varchar(300) NOT NULL,
   `descripcion1_proveedor` text NOT NULL,
   `descripcion2_proveedor` text NOT NULL,
@@ -78,12 +79,16 @@ CREATE TABLE `proveedores` (
   `fecha_registro_proveedor` datetime NOT NULL,
   `estado_cuenta_proveedor` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores`
 -- 
 
+INSERT INTO `proveedores` VALUES (16, 4, 'Proveedor de ejemplo 01', '152553_apple.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (17, 4, 'Proveedor de ejemplo 02', '153759_chrome.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (18, 4, 'Proveedor de ejemplo 03', '161504_indice.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (19, 4, 'Proveedor de ejemplo 04', '161719_look.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 
 -- --------------------------------------------------------
 
@@ -93,15 +98,23 @@ CREATE TABLE `proveedores` (
 
 CREATE TABLE `proveedores_imagenes` (
   `id_proveedor_imagen` int(11) NOT NULL auto_increment,
+  `id_proveedor` int(11) NOT NULL,
   `imagen_proveedor_imagen` varchar(250) NOT NULL,
+  `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
 -- 
 
+INSERT INTO `proveedores_imagenes` VALUES (27, 19, '190010_chrome.jpg', '2011-11-11 07:00:10', 1);
+INSERT INTO `proveedores_imagenes` VALUES (28, 19, '190010_firefox.jpg', '2011-11-11 07:00:10', 1);
+INSERT INTO `proveedores_imagenes` VALUES (29, 19, '190010_hp.jpg', '2011-11-11 07:00:10', 1);
+INSERT INTO `proveedores_imagenes` VALUES (30, 19, '190010_indice.jpg', '2011-11-11 07:00:10', 1);
+INSERT INTO `proveedores_imagenes` VALUES (31, 19, '190010_look.jpg', '2011-11-11 07:00:10', 1);
+INSERT INTO `proveedores_imagenes` VALUES (32, 19, '190010_win7.jpg', '2011-11-11 07:00:10', 1);
 
 -- --------------------------------------------------------
 
@@ -150,59 +163,59 @@ CREATE TABLE `proveedores_recomendados` (
 CREATE TABLE `proveedores_rubros` (
   `id_proveedor_rubro` int(11) NOT NULL auto_increment,
   `nombre_proveedor_rubro` text NOT NULL,
+  `estado_proveedor_rubro` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_rubro`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_rubros`
 -- 
 
-INSERT INTO `proveedores_rubros` VALUES (4, 'Accesorios y calzado');
-INSERT INTO `proveedores_rubros` VALUES (5, 'Aerolineas');
-INSERT INTO `proveedores_rubros` VALUES (6, 'Agencias de viajes');
-INSERT INTO `proveedores_rubros` VALUES (7, 'Albumes');
-INSERT INTO `proveedores_rubros` VALUES (8, 'Asesoria, Wedding Planner');
-INSERT INTO `proveedores_rubros` VALUES (9, 'Autos & Limousines');
-INSERT INTO `proveedores_rubros` VALUES (10, 'Belleza corporal y cirugia');
-INSERT INTO `proveedores_rubros` VALUES (11, 'Bouquets & Arreglos florales');
-INSERT INTO `proveedores_rubros` VALUES (12, 'Catering');
-INSERT INTO `proveedores_rubros` VALUES (13, 'Chocolates');
-INSERT INTO `proveedores_rubros` VALUES (14, 'Clases de Vals');
-INSERT INTO `proveedores_rubros` VALUES (15, 'Coros e instrumentos');
-INSERT INTO `proveedores_rubros` VALUES (16, 'CotillÃ³n');
-INSERT INTO `proveedores_rubros` VALUES (17, 'DecoraciÃ³n');
-INSERT INTO `proveedores_rubros` VALUES (18, 'Despedidas de Solteros');
-INSERT INTO `proveedores_rubros` VALUES (19, 'ElectrodomÃ©sticos');
-INSERT INTO `proveedores_rubros` VALUES (20, 'Equipos de sonido, DJÂ´s');
-INSERT INTO `proveedores_rubros` VALUES (21, 'EstÃ©tica Dental');
-INSERT INTO `proveedores_rubros` VALUES (22, 'EstÃ©tica Integral');
-INSERT INTO `proveedores_rubros` VALUES (23, 'Fitness');
-INSERT INTO `proveedores_rubros` VALUES (24, 'Fotografias');
-INSERT INTO `proveedores_rubros` VALUES (25, 'Hogar');
-INSERT INTO `proveedores_rubros` VALUES (26, 'Hoteles');
-INSERT INTO `proveedores_rubros` VALUES (27, 'Inmobiliarias, Hipotecarios');
-INSERT INTO `proveedores_rubros` VALUES (28, 'Joyas');
-INSERT INTO `proveedores_rubros` VALUES (29, 'Lenceria');
-INSERT INTO `proveedores_rubros` VALUES (30, 'Licores & bar');
-INSERT INTO `proveedores_rubros` VALUES (31, 'Lista de Novios');
-INSERT INTO `proveedores_rubros` VALUES (32, 'Locales & Salones');
-INSERT INTO `proveedores_rubros` VALUES (33, 'Luna de Miel');
-INSERT INTO `proveedores_rubros` VALUES (34, 'Maestro de Ceremonias');
-INSERT INTO `proveedores_rubros` VALUES (35, 'Maquillaje y Peinado');
-INSERT INTO `proveedores_rubros` VALUES (36, 'Orquestas');
-INSERT INTO `proveedores_rubros` VALUES (37, 'Partes y Caligrafia');
-INSERT INTO `proveedores_rubros` VALUES (38, 'Plateria');
-INSERT INTO `proveedores_rubros` VALUES (39, 'ProducciÃ³n de eventos');
-INSERT INTO `proveedores_rubros` VALUES (40, 'Recuerdos y Petalos');
-INSERT INTO `proveedores_rubros` VALUES (41, 'ReproducciÃ³n y Maternidad');
-INSERT INTO `proveedores_rubros` VALUES (42, 'Restaurantes');
-INSERT INTO `proveedores_rubros` VALUES (43, 'Salones de Belleza');
-INSERT INTO `proveedores_rubros` VALUES (44, 'Tiaras');
-INSERT INTO `proveedores_rubros` VALUES (45, 'Tortas');
-INSERT INTO `proveedores_rubros` VALUES (46, 'Trajes de Noche');
-INSERT INTO `proveedores_rubros` VALUES (47, 'Trajes de Novio');
-INSERT INTO `proveedores_rubros` VALUES (48, 'Vestidos de Novia');
-INSERT INTO `proveedores_rubros` VALUES (49, 'Video');
+INSERT INTO `proveedores_rubros` VALUES (4, 'Accesorios y calzado', 1);
+INSERT INTO `proveedores_rubros` VALUES (5, 'Aerolineas', 1);
+INSERT INTO `proveedores_rubros` VALUES (6, 'Agencias de viajes', 1);
+INSERT INTO `proveedores_rubros` VALUES (7, 'Albumes', 1);
+INSERT INTO `proveedores_rubros` VALUES (8, 'Asesoria, Wedding Planner', 1);
+INSERT INTO `proveedores_rubros` VALUES (9, 'Autos & Limousines', 1);
+INSERT INTO `proveedores_rubros` VALUES (10, 'Belleza corporal y cirugia', 1);
+INSERT INTO `proveedores_rubros` VALUES (11, 'Bouquets & Arreglos florales', 1);
+INSERT INTO `proveedores_rubros` VALUES (12, 'Catering', 1);
+INSERT INTO `proveedores_rubros` VALUES (14, 'Clases de Vals', 1);
+INSERT INTO `proveedores_rubros` VALUES (15, 'Coros e instrumentos', 1);
+INSERT INTO `proveedores_rubros` VALUES (16, 'CotillÃ³n', 1);
+INSERT INTO `proveedores_rubros` VALUES (17, 'DecoraciÃ³n', 1);
+INSERT INTO `proveedores_rubros` VALUES (18, 'Despedidas de Solteros', 1);
+INSERT INTO `proveedores_rubros` VALUES (19, 'ElectrodomÃ©sticos', 1);
+INSERT INTO `proveedores_rubros` VALUES (20, 'Equipos de sonido, DJÂ´s', 1);
+INSERT INTO `proveedores_rubros` VALUES (21, 'EstÃ©tica Dental', 1);
+INSERT INTO `proveedores_rubros` VALUES (22, 'EstÃ©tica Integral', 1);
+INSERT INTO `proveedores_rubros` VALUES (23, 'Fitness', 1);
+INSERT INTO `proveedores_rubros` VALUES (24, 'Fotografias', 1);
+INSERT INTO `proveedores_rubros` VALUES (25, 'Hogar', 1);
+INSERT INTO `proveedores_rubros` VALUES (26, 'Hoteles', 1);
+INSERT INTO `proveedores_rubros` VALUES (27, 'Inmobiliarias, Hipotecarios', 1);
+INSERT INTO `proveedores_rubros` VALUES (28, 'Joyas', 1);
+INSERT INTO `proveedores_rubros` VALUES (29, 'Lenceria', 1);
+INSERT INTO `proveedores_rubros` VALUES (30, 'Licores & bar', 1);
+INSERT INTO `proveedores_rubros` VALUES (31, 'Lista de Novios', 1);
+INSERT INTO `proveedores_rubros` VALUES (32, 'Locales & Salones', 1);
+INSERT INTO `proveedores_rubros` VALUES (33, 'Luna de Miel', 1);
+INSERT INTO `proveedores_rubros` VALUES (34, 'Maestro de Ceremonias', 1);
+INSERT INTO `proveedores_rubros` VALUES (35, 'Maquillaje y Peinado', 1);
+INSERT INTO `proveedores_rubros` VALUES (36, 'Orquestas', 1);
+INSERT INTO `proveedores_rubros` VALUES (37, 'Partes y Caligrafia', 1);
+INSERT INTO `proveedores_rubros` VALUES (38, 'Plateria', 1);
+INSERT INTO `proveedores_rubros` VALUES (39, 'ProducciÃ³n de eventos', 1);
+INSERT INTO `proveedores_rubros` VALUES (40, 'Recuerdos y Petalos', 1);
+INSERT INTO `proveedores_rubros` VALUES (41, 'ReproducciÃ³n y Maternidad', 1);
+INSERT INTO `proveedores_rubros` VALUES (42, 'Restaurantes', 1);
+INSERT INTO `proveedores_rubros` VALUES (43, 'Salones de Belleza', 1);
+INSERT INTO `proveedores_rubros` VALUES (44, 'Tiaras', 1);
+INSERT INTO `proveedores_rubros` VALUES (45, 'Tortas', 1);
+INSERT INTO `proveedores_rubros` VALUES (46, 'Trajes de Noche', 1);
+INSERT INTO `proveedores_rubros` VALUES (47, 'Trajes de Novio', 1);
+INSERT INTO `proveedores_rubros` VALUES (48, 'Vestidos de Novia', 1);
+INSERT INTO `proveedores_rubros` VALUES (49, 'Video', 1);
 
 -- --------------------------------------------------------
 
@@ -391,5 +404,6 @@ CREATE TABLE `usuarios_paginas` (
 -- Volcar la base de datos para la tabla `usuarios_paginas`
 -- 
 
-INSERT INTO `usuarios_paginas` VALUES (2, 19);
+INSERT INTO `usuarios_paginas` VALUES (2, 20);
 INSERT INTO `usuarios_paginas` VALUES (2, 1);
+INSERT INTO `usuarios_paginas` VALUES (2, 19);
