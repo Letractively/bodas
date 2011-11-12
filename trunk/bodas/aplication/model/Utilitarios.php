@@ -9,18 +9,31 @@
 		}
 
 		public function subirImagen($ftmp, $nombre){
-			$fname = '../aplication/webroot/imgs/catalogo/'.date('His').'_'.$nombre;
+			$nombre = $this->procesar_nombre_imagen($nombre);
+			$fname = '../aplication/webroot/imgs/catalogo/'.$nombre;
 			chmod($fname, 0777);
 			move_uploaded_file($ftmp, $fname);
-			return date('His').'_'.$nombre;
+			return $nombre;
 		}
 
 		public function subirImagenCarpeta($ftmp, $nombre, $carpeta){
-			$nombre = strtolower($nombre);
-			$fname = '../aplication/webroot/imgs/'.$carpeta.'/'.date('His').'_'.$nombre;
+			$nombre = $this->procesar_nombre_imagen($nombre);
+			$fname = '../aplication/webroot/imgs/'.$carpeta.'/'.$nombre;
 			move_uploaded_file($ftmp, $fname);
-			$nombre_final = basename($fname);
-			return $nombre_final;
+			return $nombre;
+		}
+
+		public function procesar_nombre_imagen($string) {
+			$string = substr($string,0, -4);
+			$string = utf8_decode($string);
+			$find = array('á', 'é', 'í', 'ó', 'ú', 'ñ');
+			$repl = array('a', 'e', 'i', 'o', 'u', 'n');
+			$string = str_replace ($find, $repl, $string);
+			$NOT_acceptable_caracteres_regex = '#[^-a-zA-Z0-9_ ]#';
+			$string = preg_replace($NOT_acceptable_caracteres_regex, '', $string);
+			$string = trim($string);
+			$string = preg_replace('#[-_ ]+#', '-', $string);
+			return date('His').'_'.strtolower($string).".jpg";
 		}
 
 		public function subirImagenCarpetaValidar($ftmp, $nombre, $size, $tipo, $carpeta){
@@ -136,6 +149,7 @@
 			$texto_filtrado = kses($texto,$tags_permitidos); 
 			return $texto_filtrado;
 		}
+
 
 		public function procesar_url_2($string) {
 			

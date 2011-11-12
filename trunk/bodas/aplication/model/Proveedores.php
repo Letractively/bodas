@@ -34,7 +34,6 @@
                     	<th>Id</th>
                         <th>Nombre</th>
                         <th>Rubro</th>
-                        <th>Email</th>
                         <th>Opc.</th>
                     </tr>
                 </thead>
@@ -46,7 +45,6 @@
                             	<td><?php echo $rw[0]?></td>
                                 <td><?php echo $rw[1]?></td>
                                 <td><?php echo $rw[2]?></td>
-                                <td><?php echo $rw[3]?></td>
                                 <td align="center">
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
@@ -203,10 +201,13 @@
 		}
 
 		public function actualizar($id){
+			if(isset($_POST['campo_archivo']) && $_POST['campo_archivo'] != ''){
+					$logo = "logo_proveedor = '".$_POST['campo_archivo']."',";
+			}
 			$Query = new Consulta(" UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										id_proveedor_rubro = '".$_POST['selRubro']."',
-										logo_proveedor = '".$_POST['campo_archivo']."',
+										".$logo."
 										descripcion1_proveedor = '".$_POST['txtDescripcionCorta']."',
 										descripcion2_proveedor = '".$_POST['des_2']."',
 										direccion_proveedor = '".$_POST['txtDireccion']."',
@@ -225,13 +226,12 @@
 
 		public function imagenes($id){
 
-			$_SESSION['id_gal'] = $_GET['id_gal'];
-			$objGaleria = new Galeria($_SESSION['id_gal']);
-			$aryFotos = $objGaleria->getFotos($_SESSION['id_gal']);
+			$objGaleria = new ProveedorGaleria;
+			$aryFotos = $objGaleria->getGaleriaXProveedor($id);
 
 			?>
 				<h2>Editar imagenes del proveedor</h2>
-                <div class="swfupload-control-galeria">
+                <div class="swfupload-proveedor-imagenes">
                     <input type="button" id="upload_button" />
                     <input type="hidden" id="nombre_archivo" name="nombre_archivo" class="input file" readonly>
                     <ol class="log"></ol>
@@ -240,15 +240,14 @@
                 <div class="cont_imagenes">
                     <div class="eliminar_imagen"></div>
                     <?php for($x=0 ; $x < count($aryFotos) ; $x++){ ?>
-                        <div id="foto_<?php echo $aryFotos[$x]['id'] ?>" nom_foto="<?php echo $aryFotos[$x]['foto']; ?>" class="item_img">
-                            <div class="eliminar_imagen" title="<?php echo $aryFotos[$x]['id'] ?>" >X</div>
-                            <div class="nombre"><img src="<?=_tt_."src=../aplication/webroot/imgs/galeria/".$aryFotos[$x]['foto']."&w=80";?>"></div>
+                        <div id="foto_<?php echo $aryFotos[$x]['id_proveedor_imagen'] ?>" nom_foto="<?php echo $aryFotos[$x]['imagen_proveedor_imagen']; ?>" class="item_img">
+                            <div class="eliminar_imagen" title="<?php echo $aryFotos[$x]['id_proveedor_imagen'] ?>" >X</div>
+                            <div class="nombre"><img src="<?=_tt_."src=../aplication/webroot/imgs/proveedores_fotos/".$aryFotos[$x]['imagen_proveedor_imagen']."&w=80";?>"></div>
                         </div>
                     <?php } ?>
                 </div>
                 
-                <input type="hidden" id="id_gal" name="id_gal" value="<?php echo $_SESSION['id_gal'] ?>">
-                
+                <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $id ?>">
 			<?php	
 		}
 

@@ -31,3 +31,8 @@
 .contenedor-principal .contenido .contenido_interno label{ float:left; width:20%; }
 .contenedor-principal .contenido .contenido_interno input[type='text'], input[type='password'], select{ float:left; width:50%; }
 .contenedor-principal .contenido .contenido_interno .itm{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; }
+
+/*	Galeria de imagenes	*/
+.cont_imagenes{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; }
+.cont_imagenes .item_img{ position:relative; float:left; width:auto; height:auto; padding:9px; }
+.cont_imagenes .eliminar_imagen{ position:absolute; float:right; width:auto; height:auto; top:3px; right:3px; cursor:pointer; font-size:10px; }

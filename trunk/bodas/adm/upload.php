@@ -4,5 +4,9 @@
 	if(isset($_GET['proveedor'])){
 		$img = $objUtilitarios->subirImagenCarpeta($_FILES['Filedata']['tmp_name'], $_FILES['Filedata']['name'], 'proveedores');
 		echo $img;
+	}else if(isset($_GET['proveedores_fotos'])){
+		$img = $objUtilitarios->subirImagenCarpeta($_FILES['Filedata']['tmp_name'], $_FILES['Filedata']['name'], 'proveedores_fotos');
+		$objProveedorGaleria = new ProveedorGaleria();
+		echo $objProveedorGaleria->agregarFotos($img, $_GET['id_proveedor']);
 	}
 ?>

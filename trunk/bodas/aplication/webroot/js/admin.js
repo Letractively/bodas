@@ -53,7 +53,7 @@ $(document).ready(function(){
 			]
 		});
 	}
-	
+
 	if($('#des_2').length){
 		CKEDITOR.replace('des_2',
 			{
