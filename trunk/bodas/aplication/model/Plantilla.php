@@ -43,6 +43,12 @@
 			?>
             <div class="logo-imagen-empresa">
             	<img src="<?php echo _img_?>logo-cabecera.png" alt="Bodas">
+                <p><?php
+					$tiempo_inicio = microtime(true);
+					for ($i=0; $i<3000000; $i++){}
+					$tiempo_fin = microtime(true);
+					echo "<br>Tiempo de ejecución: " . round($tiempo_fin - $tiempo_inicio, 4);
+				?></p>
             </div>
             <?php if($_SESSION['session']){ ?>
                 <div class="nombre-usuario">Bienvenido: <?php echo $_SESSION['session'][1]; ?></div>

@@ -34,5 +34,5 @@
 
 /*	Galeria de imagenes	*/
 .cont_imagenes{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; }
-.cont_imagenes .item_img{ position:relative; float:left; width:auto; height:auto; padding:9px; }
+.cont_imagenes .item_img{ position:relative; float:left; width:80px; height:80px; padding:9px; }
 .cont_imagenes .eliminar_imagen{ position:absolute; float:right; width:auto; height:auto; top:3px; right:3px; cursor:pointer; font-size:10px; }

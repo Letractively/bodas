@@ -14,16 +14,20 @@
 	require_once(_model_."Sesion.php");
 	require_once(_model_."Usuario.php");
 	require_once(_model_."Usuarios.php");
-	
+
 	require_once(_model_."ModuloUsuario.php");
 	require_once(_model_."Mysql.php");
 
 	require_once(_model_."ProveedorRubro.php");
 	require_once(_model_."ProveedoresRubros.php");
 	require_once(_model_."ProveedorGaleria.php");
+
 	require_once(_model_."Proveedor.php");
 	require_once(_model_."Proveedores.php");
 
-	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']); 
+	require_once(_model_."ProveedorTipo.php");
+	require_once(_model_."Proveedores.php");
+
+	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();
 ?>

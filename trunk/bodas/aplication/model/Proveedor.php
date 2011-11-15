@@ -3,6 +3,7 @@
 
 		private $id_proveedor;
 		private $id_proveedor_rubro;
+		private $id_proveedor_tipo;
 		private $nombre_proveedor;
 		private $logo_proveedor;
 		private $descripcion1_proveedor;
@@ -26,6 +27,7 @@
 				if($qry->NumeroRegistros() > 0){
 					$rw = $qry->VerRegistro();
 					$this->id_proveedor_rubro 		= $rw['id_proveedor_rubro'];
+					$this->id_proveedor_tipo 		= $rw['id_proveedor_tipo'];
 					$this->nombre_proveedor 		= $rw['nombre_proveedor'];
 					$this->logo_proveedor 			= $rw['logo_proveedor'];
 					$this->descripcion1_proveedor 	= $rw['descripcion1_proveedor'];

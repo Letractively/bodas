@@ -21,6 +21,8 @@
 
 	// Modelos
 	require_once(_model_."ProveedorRubro.php");
+	require_once(_model_."ProveedorTipo.php");
+	require_once(_model_."Proveedor.php");
 	
 	
 	// Vistas

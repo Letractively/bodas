@@ -17,14 +17,20 @@
 		}
 
 		public function listar(){
-			$sql = "SELECT 
-						p.id_proveedor,
-						p.nombre_proveedor,
-						pr.nombre_proveedor_rubro,
-						p.email_proveedor
-					FROM proveedores p, proveedores_rubros pr
-					WHERE p.id_proveedor_rubro = pr.id_proveedor_rubro
-					ORDER BY p.id_proveedor DESC";
+			$sql = "
+				SELECT 
+					p.id_proveedor,
+					p.nombre_proveedor,
+					pt.nombre_proveedor_tipo,
+					pr.nombre_proveedor_rubro,
+					p.email_proveedor
+				FROM 
+					proveedores p 
+					JOIN proveedores_rubros pr ON p.id_proveedor_rubro = pr.id_proveedor_rubro
+					JOIN proveedores_tipos pt ON p.id_proveedor_tipo = pt.id_proveedor_tipo
+				ORDER BY p.id_proveedor DESC
+			";
+
 			$qry = new Consulta($sql);		
 			$num = $qry->NumeroRegistros();
 			?>
@@ -33,6 +39,7 @@
                     <tr>
                     	<th>Id</th>
                         <th>Nombre</th>
+                        <th>Tipo</th>
                         <th>Rubro</th>
                         <th>Opc.</th>
                     </tr>
@@ -45,6 +52,7 @@
                             	<td><?php echo $rw[0]?></td>
                                 <td><?php echo $rw[1]?></td>
                                 <td><?php echo $rw[2]?></td>
+                                <td><?php echo $rw[3]?></td>
                                 <td align="center">
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
@@ -60,9 +68,14 @@
 		public function nuevo(){
 			$objProveedorRubro = new ProveedorRubro;
 			$aryRubros = $objProveedorRubro->obtenerProveedores();
+			
+			$objProveedorTipo = new ProveedorTipo;
+			$aryTipos = $objProveedorTipo->obtenerProveedoresTipos();
+
 			?>
                 <form id="frmProveedorNuevo" name="frmProveedorNuevo" action="" method="post">
                 	<h2>Nuevo Proveedor</h2>
+
                     <div class="itm">
                     	<label>Rubro: </label>
                         <select id="selRubro" name="selRubro">
@@ -71,6 +84,16 @@
                             <?php } ?>
                         </select>
                     </div>
+
+                    <div class="itm">
+                    	<label>Tipo de proveedor: </label>
+                        <select id="selProveedorTipo" name="selProveedorTipo">
+                        	<?php for($x = 0 ; $x < count($aryTipos) ; $x++){?>
+                        		<option value="<?php echo $aryTipos[$x]['id_proveedor_tipo'] ?>"><?php echo $aryTipos[$x]['nombre_proveedor_tipo'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>                    
+
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" /></div>
                     <div class="itm">
                     	<label>Logo: </label>
@@ -116,6 +139,7 @@
 		public function agregar(){
 			$Query = new Consulta("INSERT INTO proveedores VALUES('',
 				'".$_POST['selRubro']."',
+				'".$_POST['selProveedorTipo']."',
 				'".$_POST['txtNombre']."',
 				'".$_POST['campo_archivo']."',
 				'".$_POST['txtDescripcionCorta']."',
@@ -137,8 +161,12 @@
 		public function editar($id){
 			
 			$objProveedor = new Proveedor($id);
+			
 			$objProveedorRubro = new ProveedorRubro;
 			$aryRubros = $objProveedorRubro->obtenerProveedores();
+			
+			$objProveedorTipo = new ProveedorTipo;
+			$aryTipos = $objProveedorTipo->obtenerProveedoresTipos();
 
 			?>
                 <form id="frmProveedorEdita" name="frmProveedorEdita" action="" method="post">
@@ -153,6 +181,18 @@
                             <?php } ?>
                         </select>
                     </div>
+
+                    <div class="itm">
+                    	<label>Tipo de proveedor: </label>
+                        <select id="selProveedorTipo" name="selProveedorTipo">
+                        	<?php for($x = 0 ; $x < count($aryTipos) ; $x++){?>
+                        		<option value="<?php echo $aryTipos[$x]['id_proveedor_tipo'] ?>"
+                                <?php if( $objProveedor->id_proveedor_tipo == $aryTipos[$x]['id_proveedor_tipo'] ){ echo 'selected="selected"'; } ?>
+                                ><?php echo $aryTipos[$x]['nombre_proveedor_tipo'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objProveedor->nombre_proveedor; ?>" /></div>
                     <div class="itm">
                     	<label>Logo: </label>
@@ -207,6 +247,7 @@
 			$Query = new Consulta(" UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										id_proveedor_rubro = '".$_POST['selRubro']."',
+										id_proveedor_tipo = '".$_POST['selProveedorTipo']."',
 										".$logo."
 										descripcion1_proveedor = '".$_POST['txtDescripcionCorta']."',
 										descripcion2_proveedor = '".$_POST['des_2']."',
