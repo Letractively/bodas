@@ -1,7 +1,6 @@
 // JavaScript Document
 $(document).ready(function(){
 
-
 	var peso_proveedor = '50 KB';
 	var trig = false;
 	var gif = '../aplication/webroot/js/swfupload/ajax-loader.gif';
@@ -25,6 +24,7 @@ $(document).ready(function(){
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
 		},
 		submitHandler: function(form) {
+			alert(trig);
 			if(trig == false){ trig = true; return false; }else{ form.submit();	}
 		}
 	});
@@ -218,7 +218,6 @@ $(document).ready(function(){
 			);
 		});
 	}
-
 
 
 });

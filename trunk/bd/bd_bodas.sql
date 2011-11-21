@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 15-11-2011 a las 18:57:49
+-- Tiempo de generación: 21-11-2011 a las 18:54:04
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -45,7 +45,7 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
@@ -54,6 +54,7 @@ CREATE TABLE `paginas` (
 INSERT INTO `paginas` VALUES (1, 1, 'Administraci&oacute;n de usuarios', 'usuarios.php');
 INSERT INTO `paginas` VALUES (19, 1, 'Proveedores rubros', 'ProveedorRubro.php');
 INSERT INTO `paginas` VALUES (20, 1, 'Proveedores', 'Proveedor.php');
+INSERT INTO `paginas` VALUES (21, 1, 'Usuarios registrados', 'UsuarioCliente.php');
 
 -- --------------------------------------------------------
 
@@ -390,35 +391,44 @@ CREATE TABLE `usuarios_clientes` (
   `id_usuario_cliente` int(11) NOT NULL auto_increment,
   `id_tipo_cuenta` int(11) NOT NULL,
   `nombre_usuario_cliente` varchar(250) NOT NULL,
+  `foto_usuario_cliente` text NOT NULL,
   `email_usuario_cliente` varchar(250) NOT NULL,
-  `nick_usuario_cliente` varchar(250) NOT NULL,
   `clave_usuario_cliente` varchar(250) NOT NULL,
   `fecha_registro_usuario_cliente` datetime NOT NULL,
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes`
 -- 
 
+INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '2011-11-21 04:37:52', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '2011-11-21 04:38:07', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '185131_apple.jpg', 'mael@localhost.com', '123456', '2011-11-21 06:51:31', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (11, 1, 'qewrqewr', '185320_look.jpg', 'qerqewr@asdf.com', '1234', '2011-11-21 06:53:21', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (10, 2, 'raasdf', '185218_hp.jpg', 'rafeewf@asdf.com', '1234', '2011-11-21 06:52:30', 1, 1);
 
 -- --------------------------------------------------------
 
 -- 
--- Estructura de tabla para la tabla `usuarios_clientes_cuentas_relacionadas`
+-- Estructura de tabla para la tabla `usuarios_clientes_proveedores`
 -- 
 
-CREATE TABLE `usuarios_clientes_cuentas_relacionadas` (
+CREATE TABLE `usuarios_clientes_proveedores` (
+  `id_usuario_cliente_proveedor` int(11) NOT NULL auto_increment,
   `id_usuario_cliente` int(11) NOT NULL,
-  `id_cuenta_relacionada` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id_proveedor` int(11) NOT NULL,
+  PRIMARY KEY  (`id_usuario_cliente_proveedor`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
--- Volcar la base de datos para la tabla `usuarios_clientes_cuentas_relacionadas`
+-- Volcar la base de datos para la tabla `usuarios_clientes_proveedores`
 -- 
 
+INSERT INTO `usuarios_clientes_proveedores` VALUES (4, 10, 0);
+INSERT INTO `usuarios_clientes_proveedores` VALUES (3, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -435,6 +445,7 @@ CREATE TABLE `usuarios_paginas` (
 -- Volcar la base de datos para la tabla `usuarios_paginas`
 -- 
 
-INSERT INTO `usuarios_paginas` VALUES (2, 20);
-INSERT INTO `usuarios_paginas` VALUES (2, 1);
 INSERT INTO `usuarios_paginas` VALUES (2, 19);
+INSERT INTO `usuarios_paginas` VALUES (2, 20);
+INSERT INTO `usuarios_paginas` VALUES (2, 21);
+INSERT INTO `usuarios_paginas` VALUES (2, 1);

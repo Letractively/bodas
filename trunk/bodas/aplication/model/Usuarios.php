@@ -146,8 +146,8 @@
 			</form>
 			<?php
 		}
-	
-	
+
+
 		public function UsuariosUpdate($id){
 			$Query = new Consulta(" UPDATE usuarios SET 
 					nombre_usuario = '".$_POST['txtNombre']."' ,
@@ -160,7 +160,7 @@
 	
 			if(isset($_POST['txtPassword1']) && $_POST['txtPassword1'] != ''){
 				if(isset($_POST['txtPassword2']) && $_POST['txtPassword2'] != ''){
-					$Query = new Consulta(" UPDATE usuarios SET password_usuario = '".$_POST['txtPassword1']."'");
+					$Query = new Consulta(" UPDATE usuarios SET password_usuario = '".$_POST['txtPassword1']."' WHERE id_usuario = ".$id);
 				}
 			}
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php

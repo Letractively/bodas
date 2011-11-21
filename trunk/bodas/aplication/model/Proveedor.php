@@ -50,5 +50,31 @@
 			return $this->$atributo;
 		}
 
+		public function obtenerProveedores(){
+			$sql = "SELECT * FROM proveedores WHERE estado_cuenta_proveedor = 1";
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_proveedor'		=> $rw['id_proveedor'],
+					'nombre_proveedor'	=> $rw['nombre_proveedor']
+				);
+			}
+			return $rst;			
+		}
+
+		public function obtenerProveedoresDestacadoNormal(){
+			$sql = "SELECT * FROM proveedores 
+				WHERE estado_cuenta_proveedor = 1 AND
+				id_proveedor_tipo = 1 OR id_proveedor_tipo = 2";
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_proveedor'		=> $rw['id_proveedor'],
+					'nombre_proveedor'	=> $rw['nombre_proveedor']
+				);
+			}
+			return $rst;			
+		}
+
 	}
 ?>
