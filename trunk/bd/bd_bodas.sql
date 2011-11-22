@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 22-11-2011 a las 18:44:51
+-- Tiempo de generación: 21-11-2011 a las 18:54:04
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -81,17 +81,16 @@ CREATE TABLE `proveedores` (
   `fecha_registro_proveedor` datetime NOT NULL,
   `estado_cuenta_proveedor` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores`
 -- 
 
-INSERT INTO `proveedores` VALUES (44, 1, 4, 'Proveedor de ejemplo 05', '171407_look.jpg', 'Proveedor de ejemplo 05', '', '', '', '', '', '', '', '', '', '2011-11-22 05:14:07', 1);
-INSERT INTO `proveedores` VALUES (43, 3, 4, 'Proveedor de ejemplo 03', '173804_apple.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-22 05:13:43', 1);
-INSERT INTO `proveedores` VALUES (42, 1, 4, 'Proveedor de ejemplo 04', '173854_indice.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-22 05:12:56', 1);
-INSERT INTO `proveedores` VALUES (41, 1, 4, 'Proveedor de ejemplo 02', '170641_indice.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-22 05:06:41', 1);
-INSERT INTO `proveedores` VALUES (40, 1, 4, 'Proveedor de ejemplo 01', '170626_chrome.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-22 05:06:26', 1);
+INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '152553_apple.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '153759_chrome.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '161504_indice.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (19, 3, 4, 'Proveedor de ejemplo 04', '161719_look.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 
 -- --------------------------------------------------------
 
@@ -176,7 +175,7 @@ CREATE TABLE `proveedores_rubros` (
   `nombre_proveedor_rubro` text NOT NULL,
   `estado_proveedor_rubro` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_rubro`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_rubros`
@@ -191,7 +190,6 @@ INSERT INTO `proveedores_rubros` VALUES (9, 'Autos & Limousines', 1);
 INSERT INTO `proveedores_rubros` VALUES (10, 'Belleza corporal y cirugia', 1);
 INSERT INTO `proveedores_rubros` VALUES (11, 'Bouquets & Arreglos florales', 1);
 INSERT INTO `proveedores_rubros` VALUES (12, 'Catering', 1);
-INSERT INTO `proveedores_rubros` VALUES (52, 'waefawefawef', 1);
 INSERT INTO `proveedores_rubros` VALUES (14, 'Clases de Vals', 1);
 INSERT INTO `proveedores_rubros` VALUES (15, 'Coros e instrumentos', 1);
 INSERT INTO `proveedores_rubros` VALUES (16, 'CotillÃ³n', 1);
@@ -228,7 +226,6 @@ INSERT INTO `proveedores_rubros` VALUES (46, 'Trajes de Noche', 1);
 INSERT INTO `proveedores_rubros` VALUES (47, 'Trajes de Novio', 1);
 INSERT INTO `proveedores_rubros` VALUES (48, 'Vestidos de Novia', 1);
 INSERT INTO `proveedores_rubros` VALUES (49, 'Video', 1);
-INSERT INTO `proveedores_rubros` VALUES (51, 'eafewf', 1);
 
 -- --------------------------------------------------------
 
@@ -401,14 +398,17 @@ CREATE TABLE `usuarios_clientes` (
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes`
 -- 
 
-INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '184003_chrome.jpg', 'recemace@hotmail.com', '123456', '2011-11-21 04:37:52', 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '183949_apple.jpg', 'macerece@hotmail.com', '123456', '2011-11-21 04:38:07', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '2011-11-21 04:37:52', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '2011-11-21 04:38:07', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '185131_apple.jpg', 'mael@localhost.com', '123456', '2011-11-21 06:51:31', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (11, 1, 'qewrqewr', '185320_look.jpg', 'qerqewr@asdf.com', '1234', '2011-11-21 06:53:21', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (10, 2, 'raasdf', '185218_hp.jpg', 'rafeewf@asdf.com', '1234', '2011-11-21 06:52:30', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -421,12 +421,14 @@ CREATE TABLE `usuarios_clientes_proveedores` (
   `id_usuario_cliente` int(11) NOT NULL,
   `id_proveedor` int(11) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes_proveedores`
 -- 
 
+INSERT INTO `usuarios_clientes_proveedores` VALUES (4, 10, 0);
+INSERT INTO `usuarios_clientes_proveedores` VALUES (3, 8, 0);
 
 -- --------------------------------------------------------
 
