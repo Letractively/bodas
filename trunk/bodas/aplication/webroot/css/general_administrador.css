@@ -9,6 +9,7 @@ select{ border:1px solid #CCC; border-radius:4px; }
 
 input[type='text']{ border:1px solid #CCC; border-radius:4px; }
 input[type='password']{ border:1px solid #CCC; border-radius:4px; }
+input[type='file']{ border:1px solid #CCC; border-radius:4px; }
 textarea{ float:left; width:50%; height:61px; border:1px solid #CCC; border-radius:4px; }
 
 .wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -50px; }

@@ -29,7 +29,7 @@
 .contenedor-principal .contenido .opciones_internas{ position:relative; float:left; width:100%; height:auto; }
 .contenedor-principal .contenido .contenido_interno{ position:relative; float:left; width:100%; height:auto; }
 .contenedor-principal .contenido .contenido_interno label{ float:left; width:20%; }
-.contenedor-principal .contenido .contenido_interno input[type='text'], input[type='password'], select{ float:left; width:50%; }
+.contenedor-principal .contenido .contenido_interno input[type='text'], input[type='password'], input[type='file'], select{ float:left; width:50%; }
 .contenedor-principal .contenido .contenido_interno .itm{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; }
 
 /*	Galeria de imagenes	*/

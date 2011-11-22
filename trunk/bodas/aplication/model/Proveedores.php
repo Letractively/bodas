@@ -73,7 +73,7 @@
 			$aryTipos = $objProveedorTipo->obtenerProveedoresTipos();
 
 			?>
-                <form id="frmProveedorNuevo" name="frmProveedorNuevo" action="" method="post">
+                <form id="frmProveedorNuevo" name="frmProveedorNuevo" action="" method="post" enctype="multipart/form-data">
                 	<h2>Nuevo Proveedor</h2>
 
                     <div class="itm">
@@ -97,11 +97,9 @@
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" /></div>
                     <div class="itm">
                     	<label>Logo: </label>
-                        <div class="file_upload swfupload-proveedor">
-                            <input type="button" id="upload_button" class="file"/>
-                            <input type="text" id="campo_archivo" name="campo_archivo" readonly>
-                        </div>
+                    	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                     </div>
+                    
                     <div class="itm">
                     	<label>Descripción corta: </label>
                     	<textarea id="txtDescripcionCorta" name="txtDescripcionCorta"></textarea>
@@ -137,11 +135,15 @@
 		}
 
 		public function agregar(){
+
+			if($_FILES['fleLogo']['type'] == 'image/jpeg'){ $img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'proveedores');
+			}else{ $img = "sin-imagen.jpg"; }
+
 			$Query = new Consulta("INSERT INTO proveedores VALUES('',
-				'".$_POST['selRubro']."',
 				'".$_POST['selProveedorTipo']."',
+				'".$_POST['selRubro']."',
 				'".$_POST['txtNombre']."',
-				'".$_POST['campo_archivo']."',
+				'".$img."',
 				'".$_POST['txtDescripcionCorta']."',
 				'".$_POST['des_2']."',
 				'".$_POST['txtDireccion']."',
@@ -169,7 +171,7 @@
 			$aryTipos = $objProveedorTipo->obtenerProveedoresTipos();
 
 			?>
-                <form id="frmProveedorEdita" name="frmProveedorEdita" action="" method="post">
+                <form id="frmProveedorEdita" name="frmProveedorEdita" action="" method="post" enctype="multipart/form-data">
                 	<h2>Editar Proveedor</h2>
                     <div class="itm">
                     	<label>Rubro: </label>
@@ -196,10 +198,7 @@
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objProveedor->nombre_proveedor; ?>" /></div>
                     <div class="itm">
                     	<label>Logo: </label>
-                        <div class="file_upload swfupload-proveedor">
-                            <input type="button" id="upload_button" class="file"/>
-                            <input type="text" id="campo_archivo" name="campo_archivo" readonly>
-                        </div>
+                    	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                     </div>
                     <div class="itm">
                     	<label>Logo actual: </label>
@@ -241,9 +240,12 @@
 		}
 
 		public function actualizar($id){
-			if(isset($_POST['campo_archivo']) && $_POST['campo_archivo'] != ''){
-					$logo = "logo_proveedor = '".$_POST['campo_archivo']."',";
+
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo']['name'] != ''){
+					$img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'proveedores');
+					$logo = "logo_proveedor = '".$img."',";
 			}
+
 			$Query = new Consulta(" UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										id_proveedor_rubro = '".$_POST['selRubro']."',

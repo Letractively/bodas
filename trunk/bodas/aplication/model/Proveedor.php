@@ -1,6 +1,7 @@
 <?php
 	class Proveedor{
 
+
 		private $id_proveedor;
 		private $id_proveedor_rubro;
 		private $id_proveedor_tipo;
@@ -18,6 +19,7 @@
 		private $mapa_proveedor;
 		private $fecha_registro_proveedor;
 		private $estado_cuenta_proveedor;
+
 
 		public function __construct($id = 0){
 			$this->id_proveedor = $id;
@@ -46,9 +48,11 @@
 			}
 		}
 
+
 		public function __get($atributo){
 			return $this->$atributo;
 		}
+
 
 		public function obtenerProveedores(){
 			$sql = "SELECT * FROM proveedores WHERE estado_cuenta_proveedor = 1";
@@ -62,10 +66,18 @@
 			return $rst;			
 		}
 
-		public function obtenerProveedoresDestacadoNormal(){
-			$sql = "SELECT * FROM proveedores 
-				WHERE estado_cuenta_proveedor = 1 AND
-				id_proveedor_tipo = 1 OR id_proveedor_tipo = 2";
+
+		public function obtenerProveedoresDestacadoNormal(){	
+			$sql = "
+				SELECT 
+						p.id_proveedor,
+						p.nombre_proveedor
+					FROM proveedores p 
+					LEFT JOIN usuarios_clientes_proveedores ucp ON p.id_proveedor = ucp.id_proveedor 
+					WHERE p.estado_cuenta_proveedor = 1 
+					AND ucp.id_proveedor IS NULL
+					AND p.id_proveedor_tipo = 1 OR p.id_proveedor_tipo = 2
+			";	
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
@@ -75,6 +87,7 @@
 			}
 			return $rst;			
 		}
-
+		
+		
 	}
 ?>

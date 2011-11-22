@@ -23,10 +23,12 @@
 				SELECT 
 					uc.id_usuario_cliente,
 					uc.nombre_usuario_cliente,
-					uc.email_usuario_cliente
+					uc.email_usuario_cliente,
+					tc.nombre_tipo_cuenta
 				FROM 
 					usuarios_clientes uc
-				ORDER BY uc.id_usuario_cliente DESC
+					JOIN tipos_cuentas tc ON uc.id_tipo_cuenta = tc.id_tipo_cuenta
+				ORDER BY uc.id_tipo_cuenta DESC
 			";
 
 			$qry = new Consulta($sql);		
@@ -38,6 +40,7 @@
                     	<th>Id</th>
                         <th>Nombre</th>
                         <th>Email</th>
+                        <th>Tipo de cuenta</th>
                         <th>Opc.</th>
                     </tr>
                 </thead>
@@ -49,6 +52,7 @@
                             	<td><?php echo $rw[0]?></td>
                                 <td><?php echo $rw[1]?></td>
                                 <td><?php echo $rw[2]?></td>
+                                <td><?php echo $rw[3]?></td>
                                 <td align="center">
                                     <a href='UsuarioCliente.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                     <a title="Eliminar" class="eliminar" id="<?php echo $rw[0]?>" name="UsuarioCliente.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
@@ -65,18 +69,15 @@
 			$objProveedor = new Proveedor;
 			$aryProveedores = $objProveedor->obtenerProveedoresDestacadoNormal();
 			?>
-			<form id="frmUsuarioNuevo" name="frmUsuarioNuevo" action="" method="post">
+			<form id="frmUsuarioNuevo" name="frmUsuarioNuevo" action="" method="post" enctype="multipart/form-data">
 
 				<h2>Nuevo usuario</h2>
 
 				<div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></div>
                 <div class="itm">
-                    <label>Foto: </label>
-                    <div class="file_upload swfupload-usuarioCliente">
-                        <input type="button" id="upload_button" class="file"/>
-                        <input type="text" id="campo_archivo" name="campo_archivo" readonly>
+                    	<label>Imagen: </label>
+                    	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                     </div>
-                </div>
 				<div class="itm"><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></div>
 				<div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" /></div>
 				<div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" /></div>
@@ -92,7 +93,7 @@
             	</div>
                 <div class="itm panel_admin_proveedor">
                 	<label>Proveedor: </label>
-                    <select id="selProveedores" name="sleProveedores" size="10">
+                    <select id="selProveedores" name="selProveedores" size="10">
                     	<?php for($x = 0 ; $x < count($aryProveedores) ; $x++){ ?>
                     	<option value="<?php echo $aryProveedores[$x]['id_proveedor']?>" <?php if($x == 0){ echo 'selected="selected"'; }?>><?php echo $aryProveedores[$x]['nombre_proveedor']?></option>
                         <?php } ?>
@@ -110,10 +111,14 @@
 
 
 		public function agregar(){
+			
+			if($_FILES['fleLogo']['type'] == 'image/jpeg'){ $img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'usuarios_clientes');
+			}else{ $img = "sin-imagen.jpg"; }
+			
 			$Query = new Consulta("INSERT INTO usuarios_clientes VALUES('',
 				'1',
 				'".$_POST['txtNombre']."',
-				'".$_POST['campo_archivo']."',
+				'".$img."',
 				'".$_POST['txtCorreo']."',
 				'".$_POST['txtPassword2']."',
 				'".date('Y-m-d h:i:s')."',
@@ -121,18 +126,14 @@
 				'1'
 			)");
 
-			if(isset($_POST['rdoAdmin']) && $_POST['rdoAdmin'] == 1){
-
+			if($_POST['rdoAdmin'] == 1){
 				$id_new_usuario = mysql_insert_id();
-
 				$Query = new Consulta("UPDATE usuarios_clientes SET id_tipo_cuenta = '2' 
 					WHERE id_usuario_cliente = '".$id_new_usuario."'");
-
 				$Query = new Consulta("INSERT INTO usuarios_clientes_proveedores VALUES('',
 					".$id_new_usuario.",
 					".$_POST['selProveedores']."
 				)");
-
 			}
 
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro insertado correctamente.</div><?php
@@ -143,17 +144,14 @@
 
 			$objUsuarioCliente = new UsuarioCliente($id);
 			?>
-                <form id="frmUsuarioEditar" name="frmUsuarioEditar" action="" method="post">
+                <form id="frmUsuarioEditar" name="frmUsuarioEditar" action="" method="post" enctype="multipart/form-data">
                 	<h2>Editar Usuario</h2>
 
                 	<div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objUsuarioCliente->nombre_usuario_cliente; ?>" /></div>
 
                     <div class="itm">
-                        <label>Foto: </label>
-                        <div class="file_upload swfupload-usuarioCliente">
-                            <input type="button" id="upload_button" class="file"/>
-                            <input type="text" id="campo_archivo" name="campo_archivo" readonly>
-                        </div>
+                    	<label>Logo: </label>
+                    	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                     </div>
 
 					<div class="itm">
@@ -190,17 +188,19 @@
 
 
 		public function actualizar($id){
-			if(isset($_POST['campo_archivo']) && $_POST['campo_archivo'] != ''){
-					$logo = "foto_usuario_cliente = '".$_POST['campo_archivo']."',";
-			}
 			
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo']['name'] != ''){
+					$img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'usuarios_clientes');
+					$logo = "foto_usuario_cliente = '".$img."',";
+			}
+
 			$sqlUpdate = " UPDATE usuarios_clientes SET 
 										nombre_usuario_cliente = '".$_POST['txtNombre']."',
 										".$logo."
 										email_usuario_cliente = '".$_POST['txtCorreo']."',
 										estado_cuenta_usuario_cliente = '".$_POST['rdoEstado']."'
 									WHERE id_usuario_cliente = '".$id."'";
-			
+
 			$Query = new Consulta($sqlUpdate);
 
 			if(isset($_POST['txtPassword1']) && $_POST['txtPassword1'] != ''){
@@ -218,6 +218,7 @@
 				$objUsuarioCliente = new UsuarioCliente($id);
 				unlink('../aplication/webroot/imgs/usuarios_clientes/'.$objUsuarioCliente->foto_usuario_cliente);
 				$Query = new Consulta("DELETE FROM usuarios_clientes WHERE id_usuario_cliente = ".$id."");
+				$Query = new Consulta("DELETE FROM usuarios_clientes_proveedores WHERE id_usuario_cliente = ".$id."");
 				?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro eliminado correctamente.</div><?php
 			}else if($id == ''){
 				?><div class="alert"><img src="<?php echo _icn_?>alert.png"> Error al eliminar</div><?php
