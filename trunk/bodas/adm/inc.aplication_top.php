@@ -29,6 +29,8 @@
 	require_once(_model_."UsuarioCliente.php");
 	require_once(_model_."UsuariosClientes.php");
 
+	require_once(_model_."UsuarioClienteProveedor.php");
+
 	require_once(_model_."ProveedorTipo.php");
 	require_once(_model_."Proveedores.php");
 

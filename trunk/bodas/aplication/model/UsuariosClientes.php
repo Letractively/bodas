@@ -143,6 +143,15 @@
 		public function editar($id){
 
 			$objUsuarioCliente = new UsuarioCliente($id);
+			$objUsuarioClienteProveedor = new UsuarioClienteProveedor;
+			$aryAdminDeProveedor = $objUsuarioClienteProveedor->verificarRelacionClienteProveedor($id);
+			if(count($aryAdminDeProveedor ) > 0){
+				$objProveedor = new Proveedor($aryAdminDeProveedor[0]['id_proveedor']);
+			}
+			
+			$objNewProveedor = new Proveedor;
+			$aryProveedores = $objNewProveedor->obtenerProveedoresDestacadoNormal();			
+			
 			?>
                 <form id="frmUsuarioEditar" name="frmUsuarioEditar" action="" method="post" enctype="multipart/form-data">
                 	<h2>Editar Usuario</h2>
@@ -175,6 +184,32 @@
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objUsuarioCliente->estado_cuenta_usuario_cliente == 0){ echo 'checked="checked"'; }?>>Desactivado
                     </div>
+
+					<?php if(count($aryAdminDeProveedor ) > 0){ ?>
+                        <div class="itm">
+                            <label>Administrador de </label>
+                            <label class="resultado"><?php echo $objProveedor->nombre_proveedor; ?></label>
+                        </div>
+
+                        <div class="itm">
+                            <label>Opciones: </label>
+                            <label class="resultado">
+                                <input type="radio" name="rdoAdmin" value="0" checked="checked">No hacer nada<br>
+                                <input type="radio" name="rdoAdmin" value="1">Cambiar administracion<br>
+                                <input type="radio" name="rdoAdmin" value="2">Quitar administracion<br>
+                            </label>
+                        </div>
+
+                        <div class="itm panel_admin_proveedor">
+                            <label>Proveedor: </label>
+                            <select id="selProveedores" name="selProveedores" size="10">
+                                <?php for($x = 0 ; $x < count($aryProveedores) ; $x++){ ?>
+                                <option value="<?php echo $aryProveedores[$x]['id_proveedor']?>" <?php if($x == 0){ echo 'selected="selected"'; }?>><?php echo $aryProveedores[$x]['nombre_proveedor']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>                        
+                        
+					<?php } ?>
 
                     <div class="itm">
                    		<input type="hidden" id="id_usuario" value="<?php echo $objUsuarioCliente->id_usuario_cliente; ?>" />
