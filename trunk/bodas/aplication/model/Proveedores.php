@@ -58,6 +58,7 @@
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
                                     <a href='ProveedorPublicacion.php?id_proveedor=<?php echo $rw[0]?>' title="Publicaciones"><img src="<?php echo _icn_ ?>publicaciones.png"></a>
                                     <a href='ProveedorRecomendado.php?id_proveedor=<?php echo $rw[0]?>' title="Recomendados"><img src="<?php echo _icn_ ?>recomendados.png"></a>
+                                    <a href='ProveedorRed.php?id_proveedor=<?php echo $rw[0]?>' title="Redes sociales"><img src="<?php echo _icn_ ?>redes.png"></a>
                                     <a title="Eliminar" class="eliminar" id="<?php echo $rw[0]?>" name="Proveedor.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
 							<?php echo "</td></tr>";
                         }
@@ -299,6 +300,12 @@
 		public function eliminar($id){
 			if($id > 0){
 
+				/*	Eliminar recomendados del proveedor		*/
+				$Query = new Consulta("DELETE FROM proveedores_recomendados WHERE id_proveedor = ".$id."");
+
+				/*	Eliminar redes sociales		*/
+				$Query = new Consulta("DELETE FROM proveedores_redes_sociales WHERE id_proveedor = ".$id."");
+
 				/*	Eliminar todas las imagenes del proveedor (archivos)	*/
 				$objGaleria = new ProveedorGaleria;
 				$aryFotos = $objGaleria->getGaleriaXProveedor($id);
@@ -317,9 +324,10 @@
 				$Query = new Consulta("UPDATE usuarios_clientes SET id_tipo_cuenta = '1' 
 						WHERE id_usuario_cliente = '".$aryDatosUsuario[0]['id_usuario_cliente']."'");
 
+
+
 				/*	Eliminar la relacion usuario cliente proveedor	*/
 				$Query = new Consulta("DELETE FROM usuarios_clientes_proveedores WHERE id_proveedor = ".$id."");
-
 
 				/*	Finalmente eliminar el registro del proveedor	*/
 				$Query = new Consulta("DELETE FROM proveedores WHERE id_proveedor = ".$id."");

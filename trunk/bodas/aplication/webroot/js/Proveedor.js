@@ -40,9 +40,6 @@ $(document).ready(function(){
 			txtNombre: 'Ingresa un nombre.',
 			fleLogo: { accept:'solo se acepta archivos de tipo jpg.' },
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
-		},
-		submitHandler: function(form) {
-			if(trig == false){ trig = true; return false; }else{ form.submit();	}
 		}
 	});
 

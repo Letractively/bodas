@@ -31,9 +31,13 @@
 	require_once(_model_."ProveedorRecomendado.php");
 	require_once(_model_."ProveedoresRecomendados.php");
 
+	require_once(_model_."ProveedorRed.php");
+	require_once(_model_."ProveedoresRedes.php");
+
 	require_once(_model_."Proveedor.php");
 	require_once(_model_."Proveedores.php");
 
+	require_once(_model_."RedSocial.php");
 	require_once(_model_."TipoCuenta.php");
 	require_once(_model_."UsuarioCliente.php");
 	require_once(_model_."UsuariosClientes.php");

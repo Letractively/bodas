@@ -1,6 +1,7 @@
 <?php
 	class ProveedoresRecomendados extends Utilitarios{
 
+
 		public function cabecera(){
 			$objProveedor = new Proveedor($_SESSION['id_proveedor']);
 			?>
@@ -15,6 +16,7 @@
             </div>
 			<?php
 		}
+
 
 		public function listar(){
 			$sql = "
@@ -47,8 +49,8 @@
                             ?>
                             <tr>
                             	<td><?php echo $rw[0]?></td>
-                                <td><?php echo $rw[1]?></td>
-                                <td><?php echo $rw[2]?></td>
+                                <td><img src="<?php echo _tt_."src=/aplication/webroot/imgs/proveedores_recomendados/".$rw[1]."&w=30";?>" /></td>
+                                <td><a href="<?php echo $rw[2]?>" target="_blank"><?php echo $rw[2]?></a></td>
                                 <td align="center">
                                     <a title="Eliminar" class="eliminar" id="<?php echo $rw[0]?>" name="ProveedorPublicacion.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
 							<?php echo "</td></tr>";
@@ -62,6 +64,7 @@
 			<?php	
 		}
 
+
 		public function eliminar($id){
 			if($id > 0){
 
@@ -72,6 +75,7 @@
 				?><div class="alert"><img src="<?php echo _icn_?>alert.png"> Error al eliminar</div><?php
 			}	
 		}
+
 
 	}
 ?>
