@@ -74,7 +74,7 @@ $(document).ready(function(){
 
 	$('.delete, .eliminar').click(function(){
 		if($(this).attr('class') == "delete" || $(this).attr('class') == "eliminar"){
-			if(!confirm("Esta Seguro que desea Eliminar el Registro")){
+			if(!confirm("Esta completamente seguro?, recuerde que puede cambiar de estado el registro.")){
 				return false;
 			}else{
 				location.replace( $(this).attr('name') + '?id=' + $(this).attr('id') + '&opcion=' + $(this).attr('class') );		

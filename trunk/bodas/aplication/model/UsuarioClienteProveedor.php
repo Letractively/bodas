@@ -24,6 +24,18 @@
 			return $this->$atributo;
 		}
 
+		public function obtenerUsuarioClienteAdministradorXProveedor($id)
+		{
+			$sql = "SELECT * FROM usuarios_clientes_proveedores WHERE id_proveedor = ".$id;
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_usuario_cliente' => $rw['id_usuario_cliente'],
+					'id_proveedor'	=> $rw['id_proveedor']
+				);
+			}
+			return $rst;			
+		}
 
 		public function verificarRelacionClienteProveedor($id)
 		{

@@ -73,6 +73,7 @@ $(document).ready(function(){
 		$('#frmUsuarioEditar').submit();
 	});
 
+
 	$(".rdoAdmin").click(function () {
 		if($(this).val() == 1){
 			$(".panel_admin_proveedor").show('fast');
@@ -80,6 +81,8 @@ $(document).ready(function(){
 			$(".panel_admin_proveedor").hide('fast');
 		}
 	});
+
+
 	$(".panel_admin_proveedor").hide('fast');
 
 });

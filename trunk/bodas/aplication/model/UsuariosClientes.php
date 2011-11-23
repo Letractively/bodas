@@ -143,15 +143,16 @@
 		public function editar($id){
 
 			$objUsuarioCliente = new UsuarioCliente($id);
-			$objUsuarioClienteProveedor = new UsuarioClienteProveedor;
-			$aryAdminDeProveedor = $objUsuarioClienteProveedor->verificarRelacionClienteProveedor($id);
-			if(count($aryAdminDeProveedor ) > 0){
-				$objProveedor = new Proveedor($aryAdminDeProveedor[0]['id_proveedor']);
+
+			if($objUsuarioCliente->id_tipo_cuenta == 2){
+				$objUsuarioClienteProveedor = new UsuarioClienteProveedor;
+				$aryAdminDeProveedor = $objUsuarioClienteProveedor->verificarRelacionClienteProveedor($id);
+				$objProveedor = new Proveedor( $aryAdminDeProveedor[0]['id_proveedor'] );
 			}
-			
+
 			$objNewProveedor = new Proveedor;
 			$aryProveedores = $objNewProveedor->obtenerProveedoresDestacadoNormal();			
-			
+
 			?>
                 <form id="frmUsuarioEditar" name="frmUsuarioEditar" action="" method="post" enctype="multipart/form-data">
                 	<h2>Editar Usuario</h2>
@@ -185,19 +186,21 @@
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objUsuarioCliente->estado_cuenta_usuario_cliente == 0){ echo 'checked="checked"'; }?>>Desactivado
                     </div>
 
-					<?php if(count($aryAdminDeProveedor ) > 0){ ?>
+					<input type="hidden" id="id_tipo_cuenta" name="id_tipo_cuenta" value="<?php echo $objUsuarioCliente->id_tipo_cuenta ?>">
+
+					<?php if( $objUsuarioCliente->id_tipo_cuenta == 2 ){ ?>
                         <div class="itm">
                             <label>Administrador de </label>
-                            <label class="resultado"><?php echo $objProveedor->nombre_proveedor; ?></label>
+                            <label class="resultado"><b><?php echo $objProveedor->nombre_proveedor; ?></b></label>
                         </div>
 
                         <div class="itm">
                             <label>Opciones: </label>
-                            <label class="resultado">
-                                <input type="radio" name="rdoAdmin" value="0" checked="checked">No hacer nada<br>
-                                <input type="radio" name="rdoAdmin" value="1">Cambiar administracion<br>
-                                <input type="radio" name="rdoAdmin" value="2">Quitar administracion<br>
-                            </label>
+                            <div class="resultado">
+                                <input type="radio" name="rdoAdmin" class="rdoAdmin" value="0" checked="checked">No hacer nada<br>
+                                <input type="radio" name="rdoAdmin" class="rdoAdmin" value="1">Cambiar administracion<br>
+                                <input type="radio" name="rdoAdmin" class="rdoAdmin" value="2">Quitar administracion<br>
+                            </div>
                         </div>
 
                         <div class="itm panel_admin_proveedor">
@@ -209,7 +212,24 @@
                             </select>
                         </div>                        
                         
-					<?php } ?>
+					<?php }else{ ?>
+
+                        <div class="itm">
+                            <label>Administrador: </label>
+                            <input type="radio" id="rdoAdmin" name="rdoAdmin" class="rdoAdmin" value="1">Si |
+                            <input type="radio" id="rdoAdmin" name="rdoAdmin" class="rdoAdmin" value="0" checked="checked">No
+                        </div>
+
+                        <div class="itm panel_admin_proveedor">
+                            <label>Proveedor: </label>
+                            <select id="selProveedores" name="selProveedores" size="10">
+                                <?php for($x = 0 ; $x < count($aryProveedores) ; $x++){ ?>
+                                <option value="<?php echo $aryProveedores[$x]['id_proveedor']?>" <?php if($x == 0){ echo 'selected="selected"'; }?>><?php echo $aryProveedores[$x]['nombre_proveedor']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                    <?php } ?>
 
                     <div class="itm">
                    		<input type="hidden" id="id_usuario" value="<?php echo $objUsuarioCliente->id_usuario_cliente; ?>" />
@@ -244,6 +264,38 @@
 				}
 			}
 
+			/*	Si el tipo de la cuenta ya es de un administrador	*/
+			if(isset($_POST['id_tipo_cuenta']) && $_POST['id_tipo_cuenta'] == 2){
+
+				if($_POST['rdoAdmin'] == 1){
+					/*	Si se cambia la administracion	*/
+					$Query = new Consulta("DELETE FROM usuarios_clientes_proveedores WHERE id_usuario_cliente = ".$id."");
+					$Query = new Consulta("INSERT INTO usuarios_clientes_proveedores VALUES('',
+						".$id.",
+						".$_POST['selProveedores']."
+					)");
+				}elseif($_POST['rdoAdmin'] == 2){
+					/*	Si se quita la administracion	*/
+					$Query = new Consulta("DELETE FROM usuarios_clientes_proveedores WHERE id_usuario_cliente = ".$id."");
+					$Query = new Consulta("UPDATE usuarios_clientes SET id_tipo_cuenta = '1' 
+						WHERE id_usuario_cliente = '".$id."'");
+				}
+
+			/*	Si es un usuario normal	*/
+			}else{
+
+				if($_POST['rdoAdmin'] == 1){
+					$id_new_usuario = mysql_insert_id();
+					$Query = new Consulta("UPDATE usuarios_clientes SET id_tipo_cuenta = '2' 
+						WHERE id_usuario_cliente = '".$id."'");
+					$Query = new Consulta("INSERT INTO usuarios_clientes_proveedores VALUES('',
+						".$id.",
+						".$_POST['selProveedores']."
+					)");
+				}
+
+			}
+
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php
 		}
 
@@ -251,7 +303,9 @@
 		public function eliminar($id){
 			if($id > 0){
 				$objUsuarioCliente = new UsuarioCliente($id);
-				unlink('../aplication/webroot/imgs/usuarios_clientes/'.$objUsuarioCliente->foto_usuario_cliente);
+				if (file_exists('../aplication/webroot/imgs/usuarios_clientes/'.$objUsuarioCliente->foto_usuario_cliente)){ 
+					unlink('../aplication/webroot/imgs/usuarios_clientes/'.$objUsuarioCliente->foto_usuario_cliente);
+				}
 				$Query = new Consulta("DELETE FROM usuarios_clientes WHERE id_usuario_cliente = ".$id."");
 				$Query = new Consulta("DELETE FROM usuarios_clientes_proveedores WHERE id_usuario_cliente = ".$id."");
 				?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro eliminado correctamente.</div><?php

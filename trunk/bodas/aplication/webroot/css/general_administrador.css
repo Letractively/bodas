@@ -27,7 +27,7 @@ label.error{ position:relative; float:left; width:auto; height:auto; color:#F60;
 .alert2{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; text-align:left; color:#F90; }
 .alert2 img{ vertical-align:top; }
 
-label.resultado{ text-align:left !important; }
+div.resultado{ position:relative; float:left; width:auto; height:auto; text-align:left !important; }
 .delete{ cursor:pointer; }
 .eliminar{ cursor:pointer; margin:0 0 0 15px; }
 #campo_archivo{ width:44%; }

@@ -22,6 +22,15 @@
 	require_once(_model_."ProveedoresRubros.php");
 	require_once(_model_."ProveedorGaleria.php");
 
+	require_once(_model_."ProveedorPublicacion.php");
+	require_once(_model_."ProveedoresPublicaciones.php");
+
+	require_once(_model_."ProveedorPublicacionComentario.php");
+	require_once(_model_."ProveedoresPublicacionesComentarios.php");
+
+	require_once(_model_."ProveedorRecomendado.php");
+	require_once(_model_."ProveedoresRecomendados.php");
+
 	require_once(_model_."Proveedor.php");
 	require_once(_model_."Proveedores.php");
 
@@ -33,6 +42,8 @@
 
 	require_once(_model_."ProveedorTipo.php");
 	require_once(_model_."Proveedores.php");
+
+	
 
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();

@@ -69,14 +69,12 @@
 
 		public function obtenerProveedoresDestacadoNormal(){	
 			$sql = "
-				SELECT 
-						p.id_proveedor,
-						p.nombre_proveedor
-					FROM proveedores p 
-					LEFT JOIN usuarios_clientes_proveedores ucp ON p.id_proveedor = ucp.id_proveedor 
-					WHERE p.estado_cuenta_proveedor = 1 
-					AND ucp.id_proveedor IS NULL
-					AND p.id_proveedor_tipo = 1 OR p.id_proveedor_tipo = 2
+				SELECT p.id_proveedor, p.nombre_proveedor
+				FROM proveedores p
+				LEFT JOIN usuarios_clientes_proveedores ucp ON p.id_proveedor = ucp.id_proveedor
+				WHERE p.estado_cuenta_proveedor =1
+				AND ucp.id_proveedor IS NULL
+				AND p.id_proveedor_tipo IN(1,2)
 			";	
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
