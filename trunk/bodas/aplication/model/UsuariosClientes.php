@@ -79,8 +79,8 @@
                     	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                     </div>
 				<div class="itm"><label>Correo: </label><input type="text" id="txtCorreo" name="txtCorreo" /></div>
-				<div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" /></div>
-				<div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" /></div>
+				<div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" autocomplete="off" /></div>
+				<div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" autocomplete="off" /></div>
 				<div class="itm">
                     <label>Estado: </label>
                     <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
@@ -176,9 +176,11 @@
                     	<input type="hidden" id="txtCorreo2" name="txtCorreo2" value="<?php echo $objUsuarioCliente->email_usuario_cliente; ?>" />
                     </div>
 
-                    <div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" /></div>
+					<div class="itm"><br><div class="alert2"><img src="<?php echo _icn_?>alert.png">Si no desea cambiar la contraseña, solo deje los campos en blanco</div></div>
 
-                    <div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" /></div>
+                    <div class="itm"><label>Contraseña: </label><input type="password" id="txtPassword1" name="txtPassword1" autocomplete="off" /></div>
+
+                    <div class="itm"><label>Ingrese de nuevo la contraseña: </label><input type="password" id="txtPassword2" name="txtPassword2" autocomplete="off" /></div>
 
                     <div class="itm">
                     	<label>Estado: </label>

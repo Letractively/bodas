@@ -23,11 +23,18 @@
 					p.nombre_proveedor,
 					pt.nombre_proveedor_tipo,
 					pr.nombre_proveedor_rubro,
-					p.email_proveedor
+					uc.id_usuario_cliente,
+					uc.nombre_usuario_cliente
 				FROM 
 					proveedores p 
 					JOIN proveedores_rubros pr ON p.id_proveedor_rubro = pr.id_proveedor_rubro
 					JOIN proveedores_tipos pt ON p.id_proveedor_tipo = pt.id_proveedor_tipo
+					LEFT JOIN 
+						(
+							usuarios_clientes_proveedores ucp 
+								JOIN usuarios_clientes uc ON ucp.id_usuario_cliente = uc.id_usuario_cliente
+						)
+						ON p.id_proveedor = ucp.id_proveedor
 				ORDER BY p.id_proveedor DESC
 			";
 
@@ -41,6 +48,7 @@
                         <th>Nombre</th>
                         <th>Tipo</th>
                         <th>Rubro</th>
+                        <th>Administrador</th>
                         <th>Opc.</th>
                     </tr>
                 </thead>
@@ -53,6 +61,7 @@
                                 <td><?php echo $rw[1]?></td>
                                 <td><?php echo $rw[2]?></td>
                                 <td><?php echo $rw[3]?></td>
+                                <td><a href="UsuarioCliente.php?id=<?php echo $rw[4]?>&opcion=editar" title="Editar cuenta del administrador"><?php echo $rw[5]?></a></td>
                                 <td align="center">
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
