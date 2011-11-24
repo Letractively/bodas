@@ -8,7 +8,7 @@
     <div class="lista">
         <ul>
         <?php for($x = 0 ; $x < count($aryRubros) ; $x++){ ?>
-                <li><p><a href="/proveedores/<?php echo $aryRubros[$x]['id_proveedor_rubro']?>/1/<?php echo $objUtilitarios->procesar_url_2($aryRubros[$x]['nombre_proveedor_rubro']) ?>"><?php echo $aryRubros[$x]['nombre_proveedor_rubro']?></a></p></li>
+                <li><p><a href="<?=_bs_?>proveedores/<?php echo $aryRubros[$x]['id_proveedor_rubro']?>/1/<?php echo $objUtilitarios->procesar_url_2($aryRubros[$x]['nombre_proveedor_rubro']) ?>"><?php echo $aryRubros[$x]['nombre_proveedor_rubro']?></a></p></li>
         <?php } ?>
         </ul>
     </div>

@@ -6,12 +6,12 @@ $(document).ready(function(){
 		errorElement: 'label', errorClass: 'error',
 		rules:{
 			txtNombre: 'required',
-			fleLogo: { required:true, accept:'jpg' },
+			fleLogo: { required:true, accept:'jpg|gif' },
 			txtDescripcionCorta: 'required'
 		},
 		messages:{
 			txtNombre: 'Ingresa un nombre.',
-			fleLogo: { required:'Seleccione un archivo', accept:'solo se acepta archivos .jpg' },
+			fleLogo: { required:'Seleccione un archivo', accept:'solo se acepta archivos .jpg y .gif' },
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
 		}
 	});
@@ -33,12 +33,12 @@ $(document).ready(function(){
 		errorElement: 'label', errorClass: 'error',
 		rules:{
 			txtNombre: 'required',
-			fleLogo: { accept:'jpg' },
+			fleLogo: { accept:'jpg|gif' },
 			txtDescripcionCorta: 'required'
 		},
 		messages:{
 			txtNombre: 'Ingresa un nombre.',
-			fleLogo: { accept:'solo se acepta archivos de tipo jpg.' },
+			fleLogo: { accept:'solo se acepta archivos .jpg y .gif' },
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
 		}
 	});

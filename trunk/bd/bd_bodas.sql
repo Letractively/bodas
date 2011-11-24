@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 23-11-2011 a las 14:30:29
+-- Tiempo de generación: 24-11-2011 a las 18:43:23
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -87,11 +87,11 @@ CREATE TABLE `proveedores` (
 -- Volcar la base de datos para la tabla `proveedores`
 -- 
 
-INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '152553_apple.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
-INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '153759_chrome.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
-INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '161504_indice.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
-INSERT INTO `proveedores` VALUES (19, 3, 4, 'Proveedor de ejemplo 04', '161719_look.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
-INSERT INTO `proveedores` VALUES (20, 1, 4, 'proveedor ejemplo 05', '121844_cello.jpg', 'proveedor ejemplo 05', '', '', '', '', '', '', '', '', '', '2011-11-23 12:18:44', 1);
+INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '173730_apple.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '173717_win7.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '173709_hp.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (19, 3, 4, 'Proveedor de ejemplo 04', '173659_look.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (20, 1, 4, 'proveedor ejemplo 05', '173650_apple.jpg', 'proveedor ejemplo 05', '', '', '', '', '', '', '', '', '', '2011-11-23 12:18:44', 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=82 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
@@ -126,6 +126,12 @@ INSERT INTO `proveedores_imagenes` VALUES (62, 17, '155605_chrome.jpg', '2011-11
 INSERT INTO `proveedores_imagenes` VALUES (63, 17, '155605_firefox.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (66, 17, '155605_look.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (67, 17, '155605_win7.jpg', '2011-11-14 03:56:05', 1);
+INSERT INTO `proveedores_imagenes` VALUES (76, 20, '165451_chrome.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (77, 20, '165451_firefox.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (78, 20, '165451_hp.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (79, 20, '165451_indice.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (80, 20, '165451_look.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (81, 20, '165451_win7.jpg', '2011-11-23 04:54:51', 1);
 
 -- --------------------------------------------------------
 
@@ -183,12 +189,14 @@ CREATE TABLE `proveedores_recomendados` (
   `link_proveedor_recomendado` varchar(250) NOT NULL,
   `estado_proveedor_recomendado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_recomendado`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_recomendados`
 -- 
 
+INSERT INTO `proveedores_recomendados` VALUES (1, 20, 'sin-imagen.jpg', 'http://www.empresa1.com', 1);
+INSERT INTO `proveedores_recomendados` VALUES (2, 20, 'sin-imagen.jpg', 'http://www.empresa2.com', 1);
 
 -- --------------------------------------------------------
 
@@ -199,14 +207,20 @@ CREATE TABLE `proveedores_recomendados` (
 CREATE TABLE `proveedores_redes_sociales` (
   `id_proveedor_red_social` int(11) NOT NULL auto_increment,
   `id_proveedor` int(11) NOT NULL,
+  `id_red_social` int(11) NOT NULL,
   `link_proveedor_red_social` text NOT NULL,
+  `estado_proveedores_red_social` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_red_social`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_redes_sociales`
 -- 
 
+INSERT INTO `proveedores_redes_sociales` VALUES (11, 20, 1, 'http://facebool.com/rece', 0);
+INSERT INTO `proveedores_redes_sociales` VALUES (12, 20, 5, 'http://youtube.com/raulmace', 1);
+INSERT INTO `proveedores_redes_sociales` VALUES (13, 20, 4, 'http://vimeo.com/rece', 0);
+INSERT INTO `proveedores_redes_sociales` VALUES (14, 20, 2, 'http://twitter.com/rece', 0);
 
 -- --------------------------------------------------------
 
@@ -316,17 +330,19 @@ CREATE TABLE `proveedor_seguidor` (
 CREATE TABLE `redes_sociales` (
   `id_red_social` int(11) NOT NULL auto_increment,
   `nombre_red_social` varchar(250) NOT NULL,
+  `imagen_red_social` text NOT NULL,
   `estado_red_social` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_red_social`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- 
 -- Volcar la base de datos para la tabla `redes_sociales`
 -- 
 
-INSERT INTO `redes_sociales` VALUES (1, 'Facebook', 1);
-INSERT INTO `redes_sociales` VALUES (2, 'Twitter', 1);
-INSERT INTO `redes_sociales` VALUES (3, 'MySpace', 1);
+INSERT INTO `redes_sociales` VALUES (1, 'Facebook', 'logo-facebook.png', 1);
+INSERT INTO `redes_sociales` VALUES (2, 'Twitter', 'logo-twitter.png', 1);
+INSERT INTO `redes_sociales` VALUES (4, 'Vimeo', 'logo-vimeo.png', 1);
+INSERT INTO `redes_sociales` VALUES (5, 'Youtube', 'logo-youtube.png', 1);
 
 -- --------------------------------------------------------
 

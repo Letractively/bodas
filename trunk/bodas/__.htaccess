@@ -1,0 +1,11 @@
+Options All -Indexes
+Options +FollowSymlinks
+
+RewriteEngine on
+RewriteBase /new_bodas/
+
+Rewriterule ^portada/$ index.php [L,QSA]
+#Rewriterule ^proveedores/([0-9]+)/.*$ proveedores.php?id_rubro=$1 [L,QSA]
+Rewriterule ^proveedores/([0-9]+)/([0-9]+)/.*$ proveedores.php?id_rubro=$1&pag=$2 [L,QSA]
+
+ErrorDocument 404 http://www.bodas.com.pe/new_bodas/

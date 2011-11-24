@@ -106,7 +106,7 @@
 
 .contenido-central-proveedor .proveedores-destacados{ position:relative; float:left; width:100%; }
 .contenido-central-proveedor .proveedores-destacados .titulo{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; margin:5px 0 0 0; background:#b370cb; color:#FFF; text-align:center; font-weight:bold; }
-.contenido-central-proveedor .proveedores-destacados .item{ position:relative; float:left; width:auto; height:138px; padding:5px 2px; }
+.contenido-central-proveedor .proveedores-destacados .item{ position:relative; float:left; width:auto; height:138px; padding:5px 8px; }
 .contenido-central-proveedor .proveedores-destacados .item img{ border:1px solid #b370cb; }
 .contenido-central-proveedor .proveedores-destacados .item a{ color:#b370cb; }
 
@@ -114,6 +114,6 @@
 .contenido-central-proveedor .proveedores-normal{ position:relative; float:left; width:100%; }
 .contenido-central-proveedor .proveedores-normal .titulo{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; margin:5px 0 0 0; background:#b370cb; color:#FFF; text-align:left; font-weight:bold; }
 .contenido-central-proveedor .proveedores-normal .titulo p{ padding:0 6px; }
-.contenido-central-proveedor .proveedores-normal .item{ position:relative; float:left; width:168px; height:138px; padding:5px 2px; }
+.contenido-central-proveedor .proveedores-normal .item{ position:relative; float:left; width:auto; height:138px; padding:5px 8px; }
 .contenido-central-proveedor .proveedores-normal .item img{ border:1px solid #b370cb; }
 .contenido-central-proveedor .proveedores-normal .item a{ color:#b370cb; }
