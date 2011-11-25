@@ -45,8 +45,8 @@
 							$aryProveedoresDestacados = $objProveedor->obtenerProveedoresXRubroYTipo(1,$_GET['id_rubro']);
 							for($x = 0 ; $x < count($aryProveedoresDestacados) ; $x++){?>
                                 <div class="item">
-                                    <p><a href="#"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$aryProveedoresDestacados[$x]['logo_proveedor']."&w=150&h=80";?>"></a></p>
-                                    <p><b><a href="#"><?php echo $aryProveedoresDestacados[$x]['nombre_proveedor'] ?></a></b></p>
+                                    <p><a href="<?=_bs_?>catalogo/<?php echo $aryProveedoresDestacados[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryProveedoresDestacados[$x]['nombre_proveedor']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$aryProveedoresDestacados[$x]['logo_proveedor']."&w=150&h=80";?>"></a></p>
+                                    <p><b><a href="<?=_bs_?>catalogo/<?php echo $aryProveedoresDestacados[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryProveedoresDestacados[$x]['nombre_proveedor']) ?>"><?php echo $aryProveedoresDestacados[$x]['nombre_proveedor'] ?></a></b></p>
                                     <p><?php echo $aryProveedoresDestacados[$x]['descripcion1_proveedor'] ?></p>
                                 </div>
                             <?php } ?>
@@ -59,8 +59,8 @@
 							$aryProveedoresNormal = $objProveedor->obtenerProveedoresXRubroYTipo(2,$_GET['id_rubro']);
 							for($x = 0 ; $x < count($aryProveedoresNormal) ; $x++){?>
                                 <div class="item">
-                                    <p><a href="#"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$aryProveedoresNormal[$x]['logo_proveedor']."&w=150&h=80";?>"></a></p>
-                                    <p><b><a href="#"><?php echo $aryProveedoresNormal[$x]['nombre_proveedor'] ?></a></b></p>
+                                    <p><a href="<?=_bs_?>catalogo/<?php echo $aryProveedoresNormal[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryProveedoresNormal[$x]['nombre_proveedor']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$aryProveedoresNormal[$x]['logo_proveedor']."&w=150&h=80";?>"></a></p>
+                                    <p><b><a href="<?=_bs_?>catalogo/<?php echo $aryProveedoresNormal[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryProveedoresNormal[$x]['nombre_proveedor']) ?>"><?php echo $aryProveedoresNormal[$x]['nombre_proveedor'] ?></a></b></p>
                                     <p><?php echo $aryProveedoresNormal[$x]['descripcion1_proveedor'] ?></p>
                                 </div>
                             <?php } ?>

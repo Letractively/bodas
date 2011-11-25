@@ -31,6 +31,7 @@
 			$sql = "SELECT * FROM proveedores_imagenes 
 					WHERE id_proveedor = ".$id."
 					ORDER BY id_proveedor_imagen DESC";
+	
 			$query = new Consulta($sql);
 			while( $row = $query->VerRegistro() ){
 				$result[] = array(

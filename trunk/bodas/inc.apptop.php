@@ -22,12 +22,14 @@
 	// Modelos
 	require_once(_model_."ProveedorRubro.php");
 	require_once(_model_."ProveedorTipo.php");
+	require_once(_model_."ProveedorGaleria.php");
 	require_once(_model_."Proveedor.php");
 	
 	
 	// Vistas
 	require_once(_view_."VwIndex.php");
 	require_once(_view_."VwProveedores.php");
+	require_once(_view_."VwCatalogo.php");
 	
 	session_start();
 
