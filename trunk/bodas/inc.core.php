@@ -20,5 +20,7 @@
 	define("_nativos_",$_cfg['sitio']['ruta']."aplication/nativos/");
 	define('_bs_',$_cfg['sitio']['url']);
 
+	define('_file_',basename($_SERVER['PHP_SELF']));
+
 	define("_tt_",_bs_."aplication/utilities/tt.php?");
 ?>
