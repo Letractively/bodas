@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 24-11-2011 a las 18:43:23
+-- Tiempo de generación: 28-11-2011 a las 14:22:59
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -87,11 +87,11 @@ CREATE TABLE `proveedores` (
 -- Volcar la base de datos para la tabla `proveedores`
 -- 
 
-INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '173730_apple.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
-INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '173717_win7.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
-INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '173709_hp.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
-INSERT INTO `proveedores` VALUES (19, 3, 4, 'Proveedor de ejemplo 04', '173659_look.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
-INSERT INTO `proveedores` VALUES (20, 1, 4, 'proveedor ejemplo 05', '173650_apple.jpg', 'proveedor ejemplo 05', '', '', '', '', '', '', '', '', '', '2011-11-23 12:18:44', 1);
+INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (19, 1, 4, 'Proveedor de ejemplo 04', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (20, 1, 4, 'proveedor ejemplo 05', '123817_protones.jpg', 'proveedor ejemplo 05', '<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel congue purus. Nam velit urna, imperdiet id convallis non, sodales eu quam. Etiam id ante nec sapien volutpat euismod. Duis at fringilla nisi. Vestibulum in sem et nibh blandit luctus. Suspendisse eu dictum neque. Duis nulla leo, pellentesque bibendum semper ut, vulputate id mauris. Sed in turpis purus, id lacinia tellus. Vestibulum congue vulputate massa sit amet ornare.</p>\r\n', 'direccion', '12341324', '13241234', '13241324', '13241324', 'proveedor05@sitio.com', 'www.proveedor05.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A&output=embed"></iframe><br /><small><a href="http://maps.google.es/maps?f=q&source=embed&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-11-23 12:18:44', 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=82 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
@@ -126,12 +126,10 @@ INSERT INTO `proveedores_imagenes` VALUES (62, 17, '155605_chrome.jpg', '2011-11
 INSERT INTO `proveedores_imagenes` VALUES (63, 17, '155605_firefox.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (66, 17, '155605_look.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (67, 17, '155605_win7.jpg', '2011-11-14 03:56:05', 1);
-INSERT INTO `proveedores_imagenes` VALUES (76, 20, '165451_chrome.jpg', '2011-11-23 04:54:51', 1);
-INSERT INTO `proveedores_imagenes` VALUES (77, 20, '165451_firefox.jpg', '2011-11-23 04:54:51', 1);
-INSERT INTO `proveedores_imagenes` VALUES (78, 20, '165451_hp.jpg', '2011-11-23 04:54:51', 1);
-INSERT INTO `proveedores_imagenes` VALUES (79, 20, '165451_indice.jpg', '2011-11-23 04:54:51', 1);
-INSERT INTO `proveedores_imagenes` VALUES (80, 20, '165451_look.jpg', '2011-11-23 04:54:51', 1);
-INSERT INTO `proveedores_imagenes` VALUES (81, 20, '165451_win7.jpg', '2011-11-23 04:54:51', 1);
+INSERT INTO `proveedores_imagenes` VALUES (76, 20, '135504_aerosmith-en-lima.jpg', '2011-11-25 01:55:04', 1);
+INSERT INTO `proveedores_imagenes` VALUES (77, 20, '135504_protones.jpg', '2011-11-25 01:55:04', 1);
+INSERT INTO `proveedores_imagenes` VALUES (78, 20, '135504_radiohead.jpg', '2011-11-25 01:55:04', 1);
+INSERT INTO `proveedores_imagenes` VALUES (79, 20, '135505_vanessa.jpg', '2011-11-25 01:55:05', 1);
 
 -- --------------------------------------------------------
 
@@ -189,14 +187,12 @@ CREATE TABLE `proveedores_recomendados` (
   `link_proveedor_recomendado` varchar(250) NOT NULL,
   `estado_proveedor_recomendado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_recomendado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_recomendados`
 -- 
 
-INSERT INTO `proveedores_recomendados` VALUES (1, 20, 'sin-imagen.jpg', 'http://www.empresa1.com', 1);
-INSERT INTO `proveedores_recomendados` VALUES (2, 20, 'sin-imagen.jpg', 'http://www.empresa2.com', 1);
 
 -- --------------------------------------------------------
 
@@ -209,18 +205,16 @@ CREATE TABLE `proveedores_redes_sociales` (
   `id_proveedor` int(11) NOT NULL,
   `id_red_social` int(11) NOT NULL,
   `link_proveedor_red_social` text NOT NULL,
-  `estado_proveedores_red_social` tinyint(1) NOT NULL,
+  `estado_proveedores_red_social` text NOT NULL,
   PRIMARY KEY  (`id_proveedor_red_social`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_redes_sociales`
 -- 
 
-INSERT INTO `proveedores_redes_sociales` VALUES (11, 20, 1, 'http://facebool.com/rece', 0);
-INSERT INTO `proveedores_redes_sociales` VALUES (12, 20, 5, 'http://youtube.com/raulmace', 1);
-INSERT INTO `proveedores_redes_sociales` VALUES (13, 20, 4, 'http://vimeo.com/rece', 0);
-INSERT INTO `proveedores_redes_sociales` VALUES (14, 20, 2, 'http://twitter.com/rece', 0);
+INSERT INTO `proveedores_redes_sociales` VALUES (1, 20, 1, 'http://facebook.com/miempresa', '1');
+INSERT INTO `proveedores_redes_sociales` VALUES (2, 20, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -312,9 +306,11 @@ INSERT INTO `proveedores_tipos` VALUES (3, 'Mensionado');
 -- 
 
 CREATE TABLE `proveedor_seguidor` (
+  `id_proveedor_seguidor` int(11) NOT NULL auto_increment,
   `id_proveedor` int(11) NOT NULL,
-  `id_usuario_cliente` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id_usuario_cliente` int(11) NOT NULL,
+  PRIMARY KEY  (`id_proveedor_seguidor`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedor_seguidor`
@@ -329,11 +325,11 @@ CREATE TABLE `proveedor_seguidor` (
 
 CREATE TABLE `redes_sociales` (
   `id_red_social` int(11) NOT NULL auto_increment,
-  `nombre_red_social` varchar(250) NOT NULL,
+  `nombre_red_social` text NOT NULL,
   `imagen_red_social` text NOT NULL,
   `estado_red_social` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_red_social`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Volcar la base de datos para la tabla `redes_sociales`
@@ -341,8 +337,8 @@ CREATE TABLE `redes_sociales` (
 
 INSERT INTO `redes_sociales` VALUES (1, 'Facebook', 'logo-facebook.png', 1);
 INSERT INTO `redes_sociales` VALUES (2, 'Twitter', 'logo-twitter.png', 1);
+INSERT INTO `redes_sociales` VALUES (3, 'Youtube', 'logo-youtube.png', 1);
 INSERT INTO `redes_sociales` VALUES (4, 'Vimeo', 'logo-vimeo.png', 1);
-INSERT INTO `redes_sociales` VALUES (5, 'Youtube', 'logo-youtube.png', 1);
 
 -- --------------------------------------------------------
 
@@ -436,9 +432,14 @@ CREATE TABLE `usuarios_clientes` (
   `id_usuario_cliente` int(11) NOT NULL auto_increment,
   `id_tipo_cuenta` int(11) NOT NULL,
   `nombre_usuario_cliente` varchar(250) NOT NULL,
+  `apellido_usuario_cliente` text NOT NULL,
   `foto_usuario_cliente` text NOT NULL,
   `email_usuario_cliente` varchar(250) NOT NULL,
   `clave_usuario_cliente` varchar(250) NOT NULL,
+  `telefono_usuario_cliente` text NOT NULL,
+  `fecha_cumple_usuario_cliente` date NOT NULL,
+  `nombre_pareja_usuario_cliente` text NOT NULL,
+  `fecha_boda_usuario_cliente` date NOT NULL,
   `fecha_registro_usuario_cliente` datetime NOT NULL,
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
@@ -449,11 +450,11 @@ CREATE TABLE `usuarios_clientes` (
 -- Volcar la base de datos para la tabla `usuarios_clientes`
 -- 
 
-INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '2011-11-21 04:37:52', 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '2011-11-21 04:38:07', 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '185131_apple.jpg', 'mael@localhost.com', '123456', '2011-11-21 06:51:31', 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (12, 2, 'Administrador de proveedor 05', '122012_cello.jpg', 'recemace@hotmail.co', '123456', '2011-11-23 12:20:12', 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (10, 2, 'Asrael', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '2011-11-21 06:52:30', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:37:52', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:38:07', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '', '185131_apple.jpg', 'mael@localhost.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:51:31', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (12, 2, 'Administrador de proveedor 05', '', '122012_cello.jpg', 'recemace@hotmail.co', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-23 12:20:12', 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (10, 2, 'Asrael', '', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:52:30', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -466,7 +467,7 @@ CREATE TABLE `usuarios_clientes_proveedores` (
   `id_usuario_cliente` int(11) NOT NULL,
   `id_proveedor` int(11) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes_proveedores`
@@ -474,7 +475,7 @@ CREATE TABLE `usuarios_clientes_proveedores` (
 
 INSERT INTO `usuarios_clientes_proveedores` VALUES (15, 10, 16);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (14, 8, 18);
-INSERT INTO `usuarios_clientes_proveedores` VALUES (16, 12, 20);
+INSERT INTO `usuarios_clientes_proveedores` VALUES (17, 12, 17);
 
 -- --------------------------------------------------------
 

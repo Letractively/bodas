@@ -23,6 +23,8 @@
 	require_once(_model_."ProveedorRubro.php");
 	require_once(_model_."ProveedorTipo.php");
 	require_once(_model_."ProveedorGaleria.php");
+	require_once(_model_."ProveedorRed.php");
+	require_once(_model_."ProveedorRecomendado.php");
 	require_once(_model_."Proveedor.php");
 	
 	
@@ -30,6 +32,7 @@
 	require_once(_view_."VwIndex.php");
 	require_once(_view_."VwProveedores.php");
 	require_once(_view_."VwCatalogo.php");
+	require_once(_view_."VwUsuarioCliente.php");
 	
 	session_start();
 

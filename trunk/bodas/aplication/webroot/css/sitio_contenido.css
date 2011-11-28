@@ -121,12 +121,23 @@
 
 /*	Catalogo	*/
 .contenido-central-catalogo{ position:relative; float:left; width:815px; height:auto; padding:0 0 0 8px; }
-.contenido-central-catalogo .titulo{ position:relative; float:left; width:809px; height:auto; background:#efefef; padding:3px 0px 3px 6px; color:#bd56c6; font-weight:bold; }
+.contenido-central-catalogo .titulo{ position:relative; float:left; width:809px; height:auto; background:#efefef; padding:3px 0px 3px 6px; color:#bd56c6; font-weight:bold; margin:0 0 9px 0; }
 .contenido-central-catalogo .regresar{ position:relative; float:right; width:auto; height:auto; padding:0 6px 0 0; }
 .contenido-central-catalogo .regresar a{ color:#999; }
 .contenido-central-catalogo .regresar a:hover{ text-decoration:underline; }
 
-.contenido-central-catalogo .izquierda{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
-.contenido-central-catalogo .derecha{ position:relative; float:left; width:300px; height:auto; }
+.contenido-central-catalogo .izquierda{ position:relative; float:left; width:505px; height:auto; padding:0 10px 0 0; }
+.contenido-central-catalogo .texto{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; font-size:11px; font-family:Verdana, Geneva, sans-serif; }
+.contenido-central-catalogo .texto img{ padding:0 6px 6px 0; }
 
-#galleria{ height:320px; }
+.contenido-central-catalogo .derecha{ position:relative; float:left; width:300px; height:auto; }
+.contenido-central-catalogo .derecha .titulo{ position:relative; float:left; width:294px; height:auto; background:#efefef; padding:3px 0px 3px 6px; color:#bd56c6; font-weight:bold; }
+.contenido-central-catalogo .derecha .datos-direccion{ position:relative; float:left; width:280px; height:auto; border:1px solid #ebebeb; padding:9px; }
+.contenido-central-catalogo .derecha .datos-direccion b{ position:relative; float:left; width:100%; height:auto; color:#bd56c6; padding:4px 0px; }
+.contenido-central-catalogo .derecha .mapa{ position:relative; float:left; width:300px; height:260px; padding:0 0 9px 0; margin:9px 0px; }
+.contenido-central-catalogo .derecha .mapa iframe{ width:300px; height:260px; }
+
+.contenido-central-catalogo .derecha .redes{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
+
+.contenido-central-catalogo .derecha .recomendados{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
+.contenido-central-catalogo .derecha .recomendados img{ padding:8px; }

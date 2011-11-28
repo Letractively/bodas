@@ -128,7 +128,7 @@
                     <div class="itm"><label>Teléfono 4: </label><input type="text" id="txtTelefono4" name="txtTelefono4" /></div>
                     <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" /></div>
                     <div class="itm"><label>Web: </label><input type="text" id="txtWeb" name="txtWeb" /></div>
-                    <div class="itm"><label>Mapa: </label><input type="text" id="txtMapa" name="txtMapa" /></div>
+                    <div class="itm"><label>Mapa: </label><textarea id="txtMapa" name="txtMapa"></textarea></div>
                     
                     <div class="itm">
                     	<label>Estado: </label>
@@ -233,7 +233,7 @@
                     <div class="itm"><label>Teléfono 4: </label><input type="text" id="txtTelefono4" name="txtTelefono4" value="<?php echo $objProveedor->telefono4_proveedor; ?>"/></div>
                     <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" value="<?php echo $objProveedor->email_proveedor; ?>"/></div>
                     <div class="itm"><label>Web: </label><input type="text" id="txtWeb" name="txtWeb" value="<?php echo $objProveedor->web_proveedor; ?>"/></div>
-                    <div class="itm"><label>Mapa: </label><input type="text" id="txtMapa" name="txtMapa" value="<?php echo $objProveedor->mapa_proveedor; ?>"/></div>
+                    <div class="itm"><label>Mapa: </label><textarea id="txtMapa" name="txtMapa"><?php echo $objProveedor->mapa_proveedor; ?></textarea></div>
                     
                     <div class="itm">
                     	<label>Estado: </label>

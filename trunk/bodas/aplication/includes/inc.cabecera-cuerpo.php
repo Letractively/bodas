@@ -1,7 +1,7 @@
 <div class="logo-opciones">
     <div class="logo"><img src="<?php echo _img_?>logo-cabecera.png"></div>
     <div class="opciones">
-    	<div class="contenedor-cuenta"><a href="#">Inicia sesión</a> / <a href="#">Regístrate</a></div>
+    	<div class="contenedor-cuenta"><a href="#">Inicia sesión</a> / <a href="<?=_bs_?>registrate/">Regístrate</a></div>
         <div class="contenedor-buscar">
         	<form id="frmBuscar" name="frmBuscar">
             	<input type="text" id="txtBuscar" name="txtBuscar" />
@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="menu-general">
-	<a href="/portada/">Inicio</a>
+	<a href="<?=_bs_?>portada/">Inicio</a>
     <a href="#">Revista</a>
     <a href="#">Eventos</a>
     <a href="#">Tu Boda</a>
