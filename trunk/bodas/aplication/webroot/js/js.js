@@ -66,4 +66,41 @@ $(document).ready(function() {
 		});
 	}
 
+
+	/*	Acceso	*/
+	if($('.contenedor-login').length > 0){ 
+		if($('#frmAcceso').length > 0){ 
+			$('#frmAcceso').validate({
+				errorElement: 'label',
+				errorClass: 'error',
+				rules:{
+					txtUsuario: { required: true, email: true },
+					txtPassword: 'required'
+				},
+				messages:{
+					txtUsuario: { required: '' , email: '' },
+					txtPassword: ''
+				}
+			});
+		}
+
+		$('#des_login').click(function() {
+			$('.contenedor-login').toggle('fast');
+		});
+	}
+
+	/*	Recuperar clave	*/
+	if($('#frmRecuperarClave').length > 0){ 
+		$('#frmRecuperarClave').validate({
+			errorElement: 'label',
+			errorClass: 'error',
+			rules:{
+				txtEmailRecuperar: { required: true, email: true },
+			},
+			messages:{
+				txtEmailRecuperar: { required: 'Ingrese un correo' , email: 'Correo invalido' },
+			}
+		});
+	}
+
 });

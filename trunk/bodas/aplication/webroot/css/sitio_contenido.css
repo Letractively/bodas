@@ -164,3 +164,15 @@
 .contenido-central-registrese .formulario .itm2{ position:relative; float:left; width:64%; height:auto; padding:4px 0px 4px 60px; }
 .contenido-central-registrese .formulario .itm2 input[type='checkbox']{ float:left; width:auto; margin:0px 4px; }
 .contenido-central-registrese .formulario .itm2 label.error{ float:right; width:auto; height:auto; color:red; text-align:left; }
+
+/*	Acceso	*/
+.contenedor-login{ position:absolute; float:right; width:205px; height:auto; padding:16px; z-index:100; background:#efefef; border:1px solid #999; top:83px; right:0px; display:none; }
+.contenedor-login p{ padding:3px 0px;}
+.contenedor-login a{ position:relative; float:left; width:100%; color:#999; text-align:right; padding:6px 0px; }
+.contenedor-login a:hover{ color:#a657c2; text-decoration:underline; }
+.contenedor-login input[type='text']{ width:100%; padding:3px 0px; }
+.contenedor-login input[type='text'].error{ border:1px solid #F00; }
+.contenedor-login input[type='password']{ width:100%; padding:3px 0px; }
+.contenedor-login input[type='password'].error{ border:1px solid #F00; }
+.contenedor-login input[type='submit']{ width:74px; background:#303030; color:#FFF; float:right; border:none; padding:3px 6px; }
+.contenedor-login .mensaje{ text-align:center; color:#F00; }

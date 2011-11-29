@@ -61,5 +61,44 @@
 			}
 		}
 
+		public function verificarEmailDeUsuario($user){
+			$sql = "SELECT * FROM usuarios_clientes WHERE email_usuario_cliente = '".mysql_real_escape_string($user)."' ";
+			$query = new Consulta($sql);
+			$res = $query->NumeroRegistros();
+			if($res > 0){
+				while( $row = $query->VerRegistro() ){
+					$result[] = array(
+						'id_usuario_cliente'		=> $row['id_usuario_cliente'],
+						'nombre_usuario_cliente'	=> $row['nombre_usuario_cliente'],
+						'apellido_usuario_cliente'	=> $row['apellido_usuario_cliente'],
+						'email_usuario_cliente'		=> $row['email_usuario_cliente'],
+						'clave_usuario_cliente'		=> $row['clave_usuario_cliente']
+					);
+				} 
+				$res = $result;
+			}else{
+				$res = 0;
+			}
+			return $res;
+		}
+
+		public function verificarUsuario($user, $clave){
+			$sql = "SELECT * FROM usuarios_clientes WHERE email_usuario_cliente = '".mysql_real_escape_string($user)."' AND clave_usuario_cliente = '".mysql_real_escape_string($clave)."' ";
+
+			$query = new Consulta($sql);
+			$res = $query->NumeroRegistros();
+			if($res > 0){
+				while( $row = $query->VerRegistro() ){
+					$result[] = array(
+						'id'			=> $row['id_usuario_cliente']
+					);
+				} 
+				$res = $result[0]['id'];
+			}else{
+				$res = 0;
+			}
+			return $res;
+		}
+
 	}
 ?>

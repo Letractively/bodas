@@ -13,11 +13,11 @@
     	<script type="text/javascript" src="<?php echo _js_?>galleria/galleria-1.2.5.min.js"></script>
 	<?php }?>
 
-	<?php if(_file_ == 'registrate.php'){?>
+	<?php //if(_file_ == 'usuarioCliente.php'){ ?>
     	<link rel="stylesheet" type="text/css" href="<?php echo _css_?>smoothness/jquery-ui-1.8.16.custom.css"/>
     	<script type="text/javascript" src="<?php echo _js_?>jquery-ui-1.8.16.custom.min.js"></script>
         <script type="text/javascript" src="<?php echo _js_?>jquery.validate.min.js"></script>
-    <?php }?>
+    <?php //} ?>
 
     <script type="text/javascript" src="<?php echo _js_?>js.js"></script>
 </head>

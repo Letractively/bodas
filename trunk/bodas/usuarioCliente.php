@@ -19,6 +19,18 @@
 							case 'addusuario':
 								$objVwUsuarioCliente->agregar_usuario(); 
 							break;
+							case 'editar_cuenta':
+								$objVwUsuarioCliente->editar_cuenta(); 
+							break;
+							case 'login':
+								$objVwUsuarioCliente->login(); 
+							break;
+							case 'recordar_contrasenia':
+								$objVwUsuarioCliente->recordar(); 
+							break;
+							case 'salir':
+								$objVwUsuarioCliente->salir(); 
+							break;
 							default:
 								$objVwUsuarioCliente->registrate();
 							break;
