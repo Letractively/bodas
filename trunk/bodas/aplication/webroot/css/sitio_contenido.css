@@ -176,7 +176,8 @@
 .contenedor-login input[type='password'].error{ border:1px solid #F00; }
 .contenedor-login input[type='submit']{ width:74px; background:#303030; color:#FFF; float:right; border:none; padding:3px 6px; cursor:pointer; }
 .contenedor-login .mensaje{ text-align:center; color:#F00; }
-
+.contenedor-login .recordar-cuenta{ position:relative; float:left; width:auto; height:auto; padding:3px 0px; vertical-align:top; }
+.contenedor-login .recordar-cuenta input[type='checkbox']{ margin:2px; }
 
 /*	Editar cuenta	*/
 .opciones-editarcuenta{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; }

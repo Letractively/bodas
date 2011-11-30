@@ -13,7 +13,10 @@
                     <input type="hidden" id="url_actual" name="url_actual" value="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
                     <p class="mensaje"><?php echo $_SESSION['mensaje_error'] ?></p>
                     <p><a href="<?=_bs_?>usuario/recordar_contrasenia/">Olvide mi contrase&ntilde;a</a></p>
-                    <p><input type="submit" value="ENTRAR"></p>
+                    <p>
+                    	<div class="recordar-cuenta"><input type="checkbox" id="chkRecordar" name="chkRecordar">Recordar cuenta</div>
+                        <input type="submit" value="ENTRAR">
+                    </p>
                 </form>
             </div>
         <?php }else{ ?>

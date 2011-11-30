@@ -117,15 +117,13 @@
 			if(!isset($_SESSION['login_usuario_cliente'])){
 				?><script type="text/javascript">location.replace('<?=_bs_?>/');</script><?php
 			}
-			
+
 			$objUsuarioCliente = new UsuarioCliente($_SESSION['login_usuario_cliente']);
-			
+
 			?>
 				<div class="margen-index">
-                
-                	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
-					
+                	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
 					<?php if($objUsuarioCliente->id_tipo_cuenta == 1){ ?>
                         <div class="opciones-editarcuenta">
