@@ -22,6 +22,9 @@
 							case 'editar_cuenta':
 								$objVwUsuarioCliente->editar_cuenta(); 
 							break;
+							case 'updateusuario':
+								$objVwUsuarioCliente->updateusuario(); 
+							break;
 							case 'login':
 								$objVwUsuarioCliente->login(); 
 							break;
@@ -30,6 +33,9 @@
 							break;
 							case 'salir':
 								$objVwUsuarioCliente->salir(); 
+							break;
+							case 'faqs_usuario_cliente':
+								$objVwUsuarioCliente->faqs_usuario_cliente(); 
 							break;
 							default:
 								$objVwUsuarioCliente->registrate();

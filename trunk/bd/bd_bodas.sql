@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 29-11-2011 a las 13:30:47
+-- Tiempo de generación: 29-11-2011 a las 19:01:24
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -445,7 +445,7 @@ CREATE TABLE `usuarios_clientes` (
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes`
@@ -456,6 +456,7 @@ INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '', '180003_win7.jpg', 'ma
 INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '', '185131_apple.jpg', 'mael@localhost.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:51:31', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (12, 2, 'Administrador de proveedor 05', '', '122012_cello.jpg', 'recemace@hotmail.co', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-23 12:20:12', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (10, 2, 'Asrael', '', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:52:30', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (51, 1, 'mace', 'rece', '164813_win7.jpg', 'raulmace@hotmail.com', 'miterimos', '996828889', '1985-07-28', 'Cinthia', '2011-12-30', '2011-11-29 04:48:13', 1, 1, 1);
 
 -- --------------------------------------------------------
 

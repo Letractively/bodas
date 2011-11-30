@@ -159,7 +159,7 @@
 .contenido-central-registrese .formulario .itm input[type='text']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-registrese .formulario .itm input[type='file']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-registrese .formulario .itm input[type='password']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
-.contenido-central-registrese .formulario .itm input[type='submit']{ width:auto; border:none; padding:3px 20px; background:#a657c2; color:#FFF; font-size:10px; font-weight:bold; }
+.contenido-central-registrese .formulario .itm input[type='submit']{ width:auto; border:none; padding:3px 20px; background:#a657c2; color:#FFF; font-size:10px; font-weight:bold; cursor:pointer; }
 
 .contenido-central-registrese .formulario .itm2{ position:relative; float:left; width:64%; height:auto; padding:4px 0px 4px 60px; }
 .contenido-central-registrese .formulario .itm2 input[type='checkbox']{ float:left; width:auto; margin:0px 4px; }
@@ -167,12 +167,44 @@
 
 /*	Acceso	*/
 .contenedor-login{ position:absolute; float:right; width:205px; height:auto; padding:16px; z-index:100; background:#efefef; border:1px solid #999; top:83px; right:0px; display:none; }
-.contenedor-login p{ padding:3px 0px;}
+.contenedor-login p{ padding:2px 0px;}
 .contenedor-login a{ position:relative; float:left; width:100%; color:#999; text-align:right; padding:6px 0px; }
 .contenedor-login a:hover{ color:#a657c2; text-decoration:underline; }
 .contenedor-login input[type='text']{ width:100%; padding:3px 0px; }
 .contenedor-login input[type='text'].error{ border:1px solid #F00; }
 .contenedor-login input[type='password']{ width:100%; padding:3px 0px; }
 .contenedor-login input[type='password'].error{ border:1px solid #F00; }
-.contenedor-login input[type='submit']{ width:74px; background:#303030; color:#FFF; float:right; border:none; padding:3px 6px; }
+.contenedor-login input[type='submit']{ width:74px; background:#303030; color:#FFF; float:right; border:none; padding:3px 6px; cursor:pointer; }
 .contenedor-login .mensaje{ text-align:center; color:#F00; }
+
+
+/*	Editar cuenta	*/
+.opciones-editarcuenta{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; }
+.opciones-editarcuenta .item{ position:relative; float:left; display:block; width:auto; height:auto; padding:3px 10px; border-top:1px solid #b16ec9; border-left:1px solid #b16ec9; border-right:1px solid #b16ec9; margin:3px 0 0 0; }
+.opciones-editarcuenta .btn-verperfil{ position:relative; float:right; width:auto; height:auto; background:#b16ec9; border:none; padding:3px 10px; margin:0 0 3px 0; color:#FFF; font-weight:bold; }
+.opciones-editarcuenta #activo{ background:#f2f2f2; cursor:default; }
+
+.contenido-central-editarcuenta{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; font-size:12px; border:1px solid #b16ec9; }
+.contenido-central-editarcuenta .izquierda{ position:relative; float:left; width:100%; height:auto; padding:40px 0px; }
+.contenido-central-editarcuenta .formulario .itm{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; }
+.contenido-central-editarcuenta .formulario .itm label{ float:left; width:160px; height:auto; text-align:right; padding:3px 10px 3px 0; }
+.contenido-central-editarcuenta .formulario .itm label.error{ float:left; width:auto; height:auto; padding:3px; color:red; text-align:left; }
+.contenido-central-editarcuenta .formulario .itm label.advertencia{ float:left; width:409px; height:auto; text-align:right; padding:3px 10px 3px 0; }
+.contenido-central-editarcuenta .formulario .itm input[type='text']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
+.contenido-central-editarcuenta .formulario .itm input[type='file']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
+.contenido-central-editarcuenta .formulario .itm input[type='password']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
+.contenido-central-editarcuenta .formulario .itm input[type='submit']{ width:auto; border:none; padding:3px 20px; background:#a657c2; color:#FFF; font-size:10px; font-weight:bold; cursor:pointer; }
+
+.contenido-central-editarcuenta .formulario .itm2{ position:relative; float:left; width:64%; height:auto; padding:4px 0px 4px 60px; }
+.contenido-central-editarcuenta .formulario .itm2 input[type='checkbox']{ float:left; width:auto; margin:0px 4px; }
+.contenido-central-editarcuenta .formulario .itm2 label.error{ float:right; width:auto; height:auto; color:red; text-align:left; }
+
+/*	faqs	*/
+.contenido-central-faqs{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; font-size:12px; border:1px solid #b16ec9; }
+.contenido-central-faqs .izquierda{ position:relative; float:left; width:600px; height:auto; padding:30px 0 0 100px; }
+.contenido-central-faqs .izquierda ul{ position:relative; float:left; width:600px; height:auto; padding:18px 0 35px 10px; }
+
+.contenido-central-faqs .izquierda p{ position:relative; float:left; width:100%; height:auto; padding:6px 0px;}
+.contenido-central-faqs .izquierda li{ position:relative; float:left; width:100%; height:auto; list-style:none; }
+.contenido-central-faqs .izquierda li p{ position:relative; float:left; width:100%; height:auto; padding:12px 0px;}
+.contenido-central-faqs .izquierda li b{ color:#a657c2; }

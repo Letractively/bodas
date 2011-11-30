@@ -44,7 +44,7 @@ $(document).ready(function() {
 				txtPais: 'required',
 				txtProvincia: 'required',
 				txtDistrito: 'required',
-				chkCondiciones: 'required',
+				chkCondiciones: 'required'
 				
 			},
 			messages:{
@@ -61,7 +61,52 @@ $(document).ready(function() {
 				txtPais: 'Ingrese su Pais',
 				txtProvincia: 'Ingrese su provincia / estado',
 				txtDistrito: 'Ingrese su distrito',
-				chkCondiciones: 'Debe aceptar las condiciones',
+				chkCondiciones: 'Debe aceptar las condiciones'
+			}
+		});
+	}
+
+
+	/*	Editar cuenta	*/
+	if($('#frmEditarCuenta').length > 0){ 
+		$('#frmEditarCuenta').validate({
+			errorElement: 'label',
+			errorClass: 'error',
+			rules:{
+				fleLogo: { accept:'jpg' },
+				txtNombre: 'required',
+				txtApellido: 'required',
+				txtCorreo: { 
+					required: true, 
+					email: true,
+					remote: {
+						url: base+"usuario_cliente_validacion.php",
+						type: "post",
+						data: { verificar_email_repetido: "2", correo_actual: $('#correo_actual').val() }
+					}
+				},
+				txtTelefono: 'required',
+				txtPassword2: { equalTo: "#txtPassword1" },
+				txtFechaCumple: 'required',
+				txtNombrePareja: 'required',
+				txtFechaBoda: 'required',
+				txtPais: 'required',
+				txtProvincia: 'required',
+				txtDistrito: 'required'
+			},
+			messages:{
+				fleLogo: { accept:'solo se acepta archivos .jpg' },
+				txtNombre: 'Ingresa su nombre.',
+				txtApellido: 'Ingresa su apellido.',
+				txtCorreo: { required: 'Ingrese un correo' , email: 'Correo invalido', remote:'Correo en uso' },
+				txtTelefono: 'Ingresa su telefono.',
+				txtPassword2: { equalTo: "La contraseña no coincide" },
+				txtFechaCumple: 'Ingrese la fecha de su cumpleaños',
+				txtNombrePareja: 'Ingrese el nombre de su pareja',
+				txtFechaBoda: 'Ingrese la fecha de su boda',
+				txtPais: 'Ingrese su Pais',
+				txtProvincia: 'Ingrese su provincia / estado',
+				txtDistrito: 'Ingrese su distrito'
 			}
 		});
 	}
@@ -95,10 +140,10 @@ $(document).ready(function() {
 			errorElement: 'label',
 			errorClass: 'error',
 			rules:{
-				txtEmailRecuperar: { required: true, email: true },
+				txtEmailRecuperar: { required: true, email: true }
 			},
 			messages:{
-				txtEmailRecuperar: { required: 'Ingrese un correo' , email: 'Correo invalido' },
+				txtEmailRecuperar: { required: 'Ingrese un correo' , email: 'Correo invalido' }
 			}
 		});
 	}

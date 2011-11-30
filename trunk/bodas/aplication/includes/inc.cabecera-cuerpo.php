@@ -1,6 +1,6 @@
 
 <div class="logo-opciones">
-    <div class="logo"><!--<img src="<?php echo _img_?>logo-cabecera.png">--></div>
+    <div class="logo"><img src="<?php echo _img_?>logo-cabecera.png"></div>
     <div class="opciones">
     	<?php if(!isset($_SESSION['login_usuario_cliente'])){ ?>
             <div class="contenedor-cuenta"><a id="des_login" href="#">Inicia sesión</a> / <a href="<?=_bs_?>usuario/registrate/">Regístrate</a></div>
@@ -10,7 +10,7 @@
                     <p><input type="text" id="txtUsuario" name="txtUsuario"></p>
                     <p>Contrase&ntilde;a</p>
                     <p><input type="password" id="txtPassword" name="txtPassword"></p>
-                    <p><input type="hidden" id="url_actual" name="url_actual" value="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>"></p>
+                    <input type="hidden" id="url_actual" name="url_actual" value="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
                     <p class="mensaje"><?php echo $_SESSION['mensaje_error'] ?></p>
                     <p><a href="<?=_bs_?>usuario/recordar_contrasenia/">Olvide mi contrase&ntilde;a</a></p>
                     <p><input type="submit" value="ENTRAR"></p>

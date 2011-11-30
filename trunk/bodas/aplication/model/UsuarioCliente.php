@@ -4,10 +4,16 @@
 		private $id_usuario_cliente;
 		private $id_tipo_cuenta;
 		private $nombre_usuario_cliente;
+		private $apellido_usuario_cliente;
 		private $foto_usuario_cliente;
 		private $email_usuario_cliente;
 		private $clave_usuario_cliente;
+		private $telefono_usuario_cliente;
+		private $fecha_cumple_usuario_cliente;
+		private $nombre_pareja_usuario_cliente;
+		private $fecha_boda_usuario_cliente;
 		private $fecha_registro_usuario_cliente;
+		private $estado_boletin_usuario_cliente;
 		private $estado_registro_usuario_cliente;
 		private $estado_cuenta_usuario_cliente;
 
@@ -18,12 +24,18 @@
 				$qry = new Consulta($sql);
 				if($qry->NumeroRegistros() > 0){
 					$rw = $qry->VerRegistro();
-					$this->id_tipo_cuenta 			= $rw['id_tipo_cuenta'];
-					$this->nombre_usuario_cliente 	= $rw['nombre_usuario_cliente'];
-					$this->foto_usuario_cliente 	= $rw['foto_usuario_cliente'];
-					$this->email_usuario_cliente 	= $rw['email_usuario_cliente'];
-					$this->clave_usuario_cliente 	= $rw['clave_usuario_cliente'];
+					$this->id_tipo_cuenta 					= $rw['id_tipo_cuenta'];
+					$this->nombre_usuario_cliente 			= $rw['nombre_usuario_cliente'];
+					$this->apellido_usuario_cliente 		= $rw['apellido_usuario_cliente'];
+					$this->foto_usuario_cliente 			= $rw['foto_usuario_cliente'];
+					$this->email_usuario_cliente 			= $rw['email_usuario_cliente'];
+					$this->clave_usuario_cliente 			= $rw['clave_usuario_cliente'];
+					$this->telefono_usuario_cliente 		= $rw['telefono_usuario_cliente'];
+					$this->fecha_cumple_usuario_cliente 	= $rw['fecha_cumple_usuario_cliente'];
+					$this->nombre_pareja_usuario_cliente 	= $rw['nombre_pareja_usuario_cliente'];
+					$this->fecha_boda_usuario_cliente 		= $rw['fecha_boda_usuario_cliente'];
 					$this->fecha_registro_usuario_cliente 	= $rw['fecha_registro_usuario_cliente'];
+					$this->estado_boletin_usuario_cliente 	= $rw['estado_boletin_usuario_cliente'];
 					$this->estado_registro_usuario_cliente 	= $rw['estado_registro_usuario_cliente'];
 					$this->estado_cuenta_usuario_cliente 	= $rw['estado_cuenta_usuario_cliente'];
 				}					
