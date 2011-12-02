@@ -11,9 +11,9 @@
         <script type="text/javascript" src="<?php echo _js_?>ckeditor/ckeditor.js"></script>
 	<?php } ?>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo _css_?>jquery-ui-1.8.16.custom.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo _css_?>smoothness/jquery-ui-1.8.16.custom.css"/>
     <script type="text/javascript" src="<?php echo _js_?>jquery-ui-1.8.16.custom.min.js"></script>
-    
+
 	<link rel="stylesheet" type="text/css" href="<?php echo _css_?>datatables/css/demo_page.css">
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>datatables/css/demo_table.css">
 	<script type="text/javascript" src="<?php echo _js_?>jquery.dataTables.min.js"></script>

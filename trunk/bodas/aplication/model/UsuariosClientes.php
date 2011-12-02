@@ -68,12 +68,17 @@
 		public function nuevo(){
 			$objProveedor = new Proveedor;
 			$aryProveedores = $objProveedor->obtenerProveedoresDestacadoNormal();
+			
+			$objDistrito = new Distrito;
+			$aryDistritos = $objDistrito->obtenerDistritos();
+			
 			?>
 			<form id="frmUsuarioNuevo" name="frmUsuarioNuevo" action="" method="post" enctype="multipart/form-data">
 
 				<h2>Nuevo usuario</h2>
 
 				<div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" /></div>
+                <div class="itm"><label>Apellido(s):</label><input type="text" id="txtApellido" name="txtApellido"></div>
                 <div class="itm">
                     	<label>Imagen: </label>
                     	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
@@ -99,6 +104,26 @@
                         <?php } ?>
                     </select>
                 </div>
+                
+                <div class="itm"><br><h4>Datos de usuario normal</h4></div>
+                
+                <div class="itm">
+                    <label>Distrito:</label>
+                    <select id="sleDistritos" name="sleDistritos">
+                        <?php for($x = 0 ; $x < count($aryDistritos) ; $x++){ ?>
+                      <option value="<?php echo $aryDistritos[$x]['id_distrito']?>"
+                      <?php if($aryDistritos[$x]['id_distrito'] == 16){ echo "selected='selected'";}?>
+                      ><?php echo utf8_encode($aryDistritos[$x]['nombre_distrito'])?></option>
+                        <?php }?>
+                    </select>
+                </div>
+                
+                <div class="itm"><label>Tel&eacute;fono:</label><input type="text" id="txtTelefono" name="txtTelefono"></div>
+             	<div class="itm"><label>Fecha de cumplea&ntilde;os:</label><input type="text" id="txtFechaCumple" name="txtFechaCumple" class="dp" readonly="readonly"></div>
+                <div class="itm"><label>Nombre de tu pareja:</label><input type="text" id="txtNombrePareja" name="txtNombrePareja"></div>
+                <div class="itm"><label>Fecha de boda:</label><input type="text" id="txtFechaBoda" name="txtFechaBoda" class="dp" readonly="readonly"></div>
+                <div class="itm2"><label></label><input type="checkbox" id="chkBoletin" name="chkBoletin">Activar / Desactivar solicitud de boletin</div>
+
 				<div class="itm">
 					<input type="submit" id="usuario_guardar_nuevo" value="Guardar y crear nuevo" />
 					<input type="submit" id="usuario_guardar_listar" value="Guardar y listar" />
@@ -111,17 +136,26 @@
 
 
 		public function agregar(){
-			
+
 			if($_FILES['fleLogo']['type'] == 'image/jpeg'){ $img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'usuarios_clientes');
 			}else{ $img = "sin-imagen.jpg"; }
-			
+
+			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }
+
 			$Query = new Consulta("INSERT INTO usuarios_clientes VALUES('',
 				'1',
+				'".$_POST['sleDistritos']."',
 				'".$_POST['txtNombre']."',
+				'".$_POST['txtApellido']."',				
 				'".$img."',
 				'".$_POST['txtCorreo']."',
 				'".$_POST['txtPassword2']."',
+				'".$_POST['txtTelefono']."',
+				'".$_POST['txtFechaCumple']."',
+				'".$_POST['txtNombrePareja']."',
+				'".$_POST['txtFechaBoda']."',
 				'".date('Y-m-d h:i:s')."',
+				'".$bol."',
 				'1',
 				'1'
 			)");
@@ -153,12 +187,15 @@
 			$objNewProveedor = new Proveedor;
 			$aryProveedores = $objNewProveedor->obtenerProveedoresDestacadoNormal();			
 
+			$objDistrito = new Distrito;
+			$aryDistritos = $objDistrito->obtenerDistritos();
+
 			?>
                 <form id="frmUsuarioEditar" name="frmUsuarioEditar" action="" method="post" enctype="multipart/form-data">
                 	<h2>Editar Usuario</h2>
 
                 	<div class="itm"><label>Nombre(s): </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objUsuarioCliente->nombre_usuario_cliente; ?>" /></div>
-
+					<div class="itm"><label>Apellido(s):</label><input type="text" id="txtApellido" name="txtApellido" value="<?php echo $objUsuarioCliente->apellido_usuario_cliente; ?>" /></div>
                     <div class="itm">
                     	<label>Logo: </label>
                     	<input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
@@ -233,6 +270,25 @@
 
                     <?php } ?>
 
+                    <div class="itm"><br><h4>Datos de usuario normal</h4></div>
+                                    
+                    <div class="itm">
+                        <label>Distrito:</label>
+                        <select id="sleDistritos" name="sleDistritos">
+                            <?php for($x = 0 ; $x < count($aryDistritos) ; $x++){ ?>
+                          <option value="<?php echo $aryDistritos[$x]['id_distrito']?>"
+                          <?php if($aryDistritos[$x]['id_distrito'] == $objUsuarioCliente->id_distrito){ echo "selected='selected'";}?>
+                          ><?php echo utf8_encode($aryDistritos[$x]['nombre_distrito'])?></option>
+                            <?php }?>
+                        </select>
+                    </div>
+                    
+                    <div class="itm"><label>Tel&eacute;fono:</label><input type="text" id="txtTelefono" name="txtTelefono" value="<?php echo $objUsuarioCliente->telefono_usuario_cliente; ?>"/></div>
+                    <div class="itm"><label>Fecha de cumplea&ntilde;os:</label><input type="text" id="txtFechaCumple" name="txtFechaCumple" class="dp" readonly="readonly" value="<?php echo $objUsuarioCliente->fecha_cumple_usuario_cliente; ?>"/></div>
+                    <div class="itm"><label>Nombre de tu pareja:</label><input type="text" id="txtNombrePareja" name="txtNombrePareja" value="<?php echo $objUsuarioCliente->	nombre_pareja_usuario_cliente; ?>"/></div>
+                    <div class="itm"><label>Fecha de boda:</label><input type="text" id="txtFechaBoda" name="txtFechaBoda" class="dp" readonly="readonly" value="<?php echo $objUsuarioCliente->	fecha_boda_usuario_cliente; ?>"/></div>
+                    <div class="itm2"><label></label><input type="checkbox" id="chkBoletin" name="chkBoletin" <?php if($objUsuarioCliente->estado_boletin_usuario_cliente == 1){ echo "checked='checked'";}?>>Activar / Desactivar solicitud de boletin</div>
+
                     <div class="itm">
                    		<input type="hidden" id="id_usuario" value="<?php echo $objUsuarioCliente->id_usuario_cliente; ?>" />
                         <input type="submit" id="usuario_editar_listar" value="Guardar y listar" />
@@ -251,11 +307,18 @@
 					$logo = "foto_usuario_cliente = '".$img."',";
 			}
 
+			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }
+
 			$sqlUpdate = " UPDATE usuarios_clientes SET 
 										nombre_usuario_cliente = '".$_POST['txtNombre']."',
 										".$logo."
 										email_usuario_cliente = '".$_POST['txtCorreo']."',
-										estado_cuenta_usuario_cliente = '".$_POST['rdoEstado']."'
+										estado_cuenta_usuario_cliente = '".$_POST['rdoEstado']."',
+										telefono_usuario_cliente = '".$_POST['txtTelefono']."',
+										fecha_cumple_usuario_cliente = '".$_POST['txtFechaCumple']."',
+										nombre_pareja_usuario_cliente = '".$_POST['txtNombrePareja']."',
+										fecha_boda_usuario_cliente = '".$_POST['txtFechaBoda']."',
+										estado_boletin_usuario_cliente = '".$bol."'
 									WHERE id_usuario_cliente = '".$id."'";
 
 			$Query = new Consulta($sqlUpdate);

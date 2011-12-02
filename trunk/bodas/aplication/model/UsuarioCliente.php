@@ -3,6 +3,7 @@
 
 		private $id_usuario_cliente;
 		private $id_tipo_cuenta;
+		private $id_distrito;
 		private $nombre_usuario_cliente;
 		private $apellido_usuario_cliente;
 		private $foto_usuario_cliente;
@@ -25,6 +26,7 @@
 				if($qry->NumeroRegistros() > 0){
 					$rw = $qry->VerRegistro();
 					$this->id_tipo_cuenta 					= $rw['id_tipo_cuenta'];
+					$this->id_distrito 						= $rw['id_distrito'];
 					$this->nombre_usuario_cliente 			= $rw['nombre_usuario_cliente'];
 					$this->apellido_usuario_cliente 		= $rw['apellido_usuario_cliente'];
 					$this->foto_usuario_cliente 			= $rw['foto_usuario_cliente'];

@@ -118,6 +118,9 @@
 .contenido-central-proveedor .proveedores-normal .item img{ border:1px solid #b370cb; }
 .contenido-central-proveedor .proveedores-normal .item a{ color:#b370cb; }
 
+.contenido-central-proveedor .contenedor-paginacion{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-proveedor .contenedor-paginacion .paginacion{ margin:0 auto 0 auto;
+width:auto; text-align:center; }
 
 /*	Catalogo	*/
 .contenido-central-catalogo{ position:relative; float:left; width:815px; height:auto; padding:0 0 0 8px; }
@@ -142,6 +145,8 @@
 .contenido-central-catalogo .derecha .recomendados{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
 .contenido-central-catalogo .derecha .recomendados img{ padding:8px; }
 
+
+
 /*	Registrese	*/
 .contenido-central-registrese{ position:relative; float:left; width:815px; height:auto; padding:0 0 0 8px; font-size:12px; }
 .contenido-central-registrese .titulo{ position:relative; float:left; width:809px; height:auto; background:#a657c2; padding:3px 0px 3px 6px; color:#FFF; font-weight:bold; margin:0 0 9px 0; }
@@ -160,6 +165,7 @@
 .contenido-central-registrese .formulario .itm input[type='file']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-registrese .formulario .itm input[type='password']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-registrese .formulario .itm input[type='submit']{ width:auto; border:none; padding:3px 20px; background:#a657c2; color:#FFF; font-size:10px; font-weight:bold; cursor:pointer; }
+.contenido-central-registrese .formulario select{ float:left; width:238px; border:1px solid #CCC; padding:3px; }
 
 .contenido-central-registrese .formulario .itm2{ position:relative; float:left; width:64%; height:auto; padding:4px 0px 4px 60px; }
 .contenido-central-registrese .formulario .itm2 input[type='checkbox']{ float:left; width:auto; margin:0px 4px; }

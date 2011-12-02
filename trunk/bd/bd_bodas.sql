@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 29-11-2011 a las 19:01:24
+-- Tiempo de generación: 02-12-2011 a las 18:54:26
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -12,6 +12,71 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- 
 -- Base de datos: `bd_bodas`
 -- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `distritos`
+-- 
+
+CREATE TABLE `distritos` (
+  `id_distrito` int(11) NOT NULL auto_increment,
+  `nombre_distrito` text NOT NULL,
+  PRIMARY KEY  (`id_distrito`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+
+-- 
+-- Volcar la base de datos para la tabla `distritos`
+-- 
+
+INSERT INTO `distritos` VALUES (1, 'Ancón');
+INSERT INTO `distritos` VALUES (2, 'Santa Rosa');
+INSERT INTO `distritos` VALUES (3, 'Ventanilla');
+INSERT INTO `distritos` VALUES (4, 'Callao');
+INSERT INTO `distritos` VALUES (5, 'La Punta');
+INSERT INTO `distritos` VALUES (6, 'Carmen de La Legua-Reynoso');
+INSERT INTO `distritos` VALUES (7, 'Bellavista');
+INSERT INTO `distritos` VALUES (8, 'La Perla');
+INSERT INTO `distritos` VALUES (9, 'Carabayllo');
+INSERT INTO `distritos` VALUES (10, 'Puente Piedra');
+INSERT INTO `distritos` VALUES (11, 'San Martín de Porres');
+INSERT INTO `distritos` VALUES (12, 'Los Olivos');
+INSERT INTO `distritos` VALUES (13, 'Comas');
+INSERT INTO `distritos` VALUES (14, 'Independencia');
+INSERT INTO `distritos` VALUES (15, 'San Juan de Lurigancho');
+INSERT INTO `distritos` VALUES (16, 'Lima');
+INSERT INTO `distritos` VALUES (17, 'Breña');
+INSERT INTO `distritos` VALUES (18, 'Rímac');
+INSERT INTO `distritos` VALUES (19, 'El Agustino');
+INSERT INTO `distritos` VALUES (20, 'San Miguel');
+INSERT INTO `distritos` VALUES (21, 'Pueblo Libre');
+INSERT INTO `distritos` VALUES (22, 'Jesús María');
+INSERT INTO `distritos` VALUES (23, 'Magdalena del Mar');
+INSERT INTO `distritos` VALUES (24, 'Lince');
+INSERT INTO `distritos` VALUES (25, 'La Victoria');
+INSERT INTO `distritos` VALUES (26, 'San Luis');
+INSERT INTO `distritos` VALUES (27, 'Miraflores');
+INSERT INTO `distritos` VALUES (28, 'Surquillo');
+INSERT INTO `distritos` VALUES (29, 'Barranco');
+INSERT INTO `distritos` VALUES (30, 'San Borja');
+INSERT INTO `distritos` VALUES (31, 'Santiago de Surco');
+INSERT INTO `distritos` VALUES (32, 'Chorrillos');
+INSERT INTO `distritos` VALUES (33, 'Santa Anita');
+INSERT INTO `distritos` VALUES (34, 'Ate');
+INSERT INTO `distritos` VALUES (35, 'La Molina');
+INSERT INTO `distritos` VALUES (36, 'Lurigancho-Chosica');
+INSERT INTO `distritos` VALUES (37, 'Chaclacayo');
+INSERT INTO `distritos` VALUES (38, 'Cieneguilla');
+INSERT INTO `distritos` VALUES (39, 'Pachacámac');
+INSERT INTO `distritos` VALUES (40, 'San Juan de Miraflores');
+INSERT INTO `distritos` VALUES (41, 'Villa María del Triunfo');
+INSERT INTO `distritos` VALUES (42, 'Villa El Salvador');
+INSERT INTO `distritos` VALUES (43, 'Lurín');
+INSERT INTO `distritos` VALUES (44, 'Punta Hermosa');
+INSERT INTO `distritos` VALUES (45, 'Punta Negra');
+INSERT INTO `distritos` VALUES (46, 'San Bartolo');
+INSERT INTO `distritos` VALUES (47, 'Santa María del Mar');
+INSERT INTO `distritos` VALUES (48, 'Pucusana');
 
 -- --------------------------------------------------------
 
@@ -81,7 +146,7 @@ CREATE TABLE `proveedores` (
   `fecha_registro_proveedor` datetime NOT NULL,
   `estado_cuenta_proveedor` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores`
@@ -91,7 +156,31 @@ INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '123917_r
 INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
 INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (19, 1, 4, 'Proveedor de ejemplo 04', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
-INSERT INTO `proveedores` VALUES (20, 1, 4, 'proveedor ejemplo 05', '123817_protones.jpg', 'proveedor ejemplo 05', '<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel congue purus. Nam velit urna, imperdiet id convallis non, sodales eu quam. Etiam id ante nec sapien volutpat euismod. Duis at fringilla nisi. Vestibulum in sem et nibh blandit luctus. Suspendisse eu dictum neque. Duis nulla leo, pellentesque bibendum semper ut, vulputate id mauris. Sed in turpis purus, id lacinia tellus. Vestibulum congue vulputate massa sit amet ornare.</p>\r\n', 'direccion', '12341324', '13241234', '13241324', '13241324', 'proveedor05@sitio.com', 'www.proveedor05.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A&output=embed"></iframe><br /><small><a href="http://maps.google.es/maps?f=q&source=embed&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-11-23 12:18:44', 1);
+INSERT INTO `proveedores` VALUES (20, 2, 4, 'proveedor ejemplo 05', '123817_protones.jpg', 'proveedor ejemplo 05', '<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel congue purus. Nam velit urna, imperdiet id convallis non, sodales eu quam. Etiam id ante nec sapien volutpat euismod. Duis at fringilla nisi. Vestibulum in sem et nibh blandit luctus. Suspendisse eu dictum neque. Duis nulla leo, pellentesque bibendum semper ut, vulputate id mauris. Sed in turpis purus, id lacinia tellus. Vestibulum congue vulputate massa sit amet ornare.</p>\r\n', 'direccion', '12341324', '13241234', '13241324', '13241324', 'proveedor05@sitio.com', 'www.proveedor05.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A&output=embed"></iframe><br /><small><a href="http://maps.google.es/maps?f=q&source=embed&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-11-23 12:18:44', 1);
+INSERT INTO `proveedores` VALUES (21, 3, 4, 'Proveedor de ejemplo 001', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (22, 3, 4, 'Proveedor de ejemplo 002', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (23, 3, 4, 'Proveedor de ejemplo 003', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (24, 3, 4, 'Proveedor de ejemplo 004', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (25, 3, 4, 'Proveedor de ejemplo 005', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (26, 3, 4, 'Proveedor de ejemplo 006', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (27, 3, 4, 'Proveedor de ejemplo 007', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (28, 3, 4, 'Proveedor de ejemplo 008', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (29, 3, 4, 'Proveedor de ejemplo 009', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (30, 3, 4, 'Proveedor de ejemplo 010', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (31, 3, 4, 'Proveedor de ejemplo 011', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (32, 3, 4, 'Proveedor de ejemplo 012', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (33, 3, 4, 'Proveedor de ejemplo 013', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (34, 3, 4, 'Proveedor de ejemplo 014', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (35, 3, 4, 'Proveedor de ejemplo 015', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (36, 3, 4, 'Proveedor de ejemplo 016', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (37, 3, 4, 'Proveedor de ejemplo 017', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (38, 3, 4, 'Proveedor de ejemplo 018', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (39, 3, 4, 'Proveedor de ejemplo 019', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (40, 3, 4, 'Proveedor de ejemplo 020', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (41, 3, 4, 'Proveedor de ejemplo 021', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
+INSERT INTO `proveedores` VALUES (42, 3, 4, 'Proveedor de ejemplo 022', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (43, 3, 4, 'Proveedor de ejemplo 023', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (44, 3, 4, 'Proveedor de ejemplo 024', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +195,7 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
@@ -126,10 +215,13 @@ INSERT INTO `proveedores_imagenes` VALUES (62, 17, '155605_chrome.jpg', '2011-11
 INSERT INTO `proveedores_imagenes` VALUES (63, 17, '155605_firefox.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (66, 17, '155605_look.jpg', '2011-11-14 03:56:05', 1);
 INSERT INTO `proveedores_imagenes` VALUES (67, 17, '155605_win7.jpg', '2011-11-14 03:56:05', 1);
-INSERT INTO `proveedores_imagenes` VALUES (76, 20, '135504_aerosmith-en-lima.jpg', '2011-11-25 01:55:04', 1);
-INSERT INTO `proveedores_imagenes` VALUES (77, 20, '135504_protones.jpg', '2011-11-25 01:55:04', 1);
-INSERT INTO `proveedores_imagenes` VALUES (78, 20, '135504_radiohead.jpg', '2011-11-25 01:55:04', 1);
-INSERT INTO `proveedores_imagenes` VALUES (79, 20, '135505_vanessa.jpg', '2011-11-25 01:55:05', 1);
+INSERT INTO `proveedores_imagenes` VALUES (80, 20, '182445_apple.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (81, 20, '182445_chrome.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (82, 20, '182445_firefox.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (83, 20, '182445_hp.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (84, 20, '182445_indice.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (85, 20, '182445_look.jpg', '2011-12-02 06:24:45', 1);
+INSERT INTO `proveedores_imagenes` VALUES (86, 20, '182445_win7.jpg', '2011-12-02 06:24:45', 1);
 
 -- --------------------------------------------------------
 
@@ -431,6 +523,7 @@ INSERT INTO `usuarios` VALUES (2, 1, 'usuario', 'usuario', 'usuario@sitio.com', 
 CREATE TABLE `usuarios_clientes` (
   `id_usuario_cliente` int(11) NOT NULL auto_increment,
   `id_tipo_cuenta` int(11) NOT NULL,
+  `id_distrito` int(11) NOT NULL,
   `nombre_usuario_cliente` varchar(250) NOT NULL,
   `apellido_usuario_cliente` text NOT NULL,
   `foto_usuario_cliente` text NOT NULL,
@@ -445,18 +538,19 @@ CREATE TABLE `usuarios_clientes` (
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes`
 -- 
 
-INSERT INTO `usuarios_clientes` VALUES (3, 1, 'rece', '', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:37:52', 0, 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (4, 1, 'mace', '', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:38:07', 0, 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (8, 2, 'mael', '', '185131_apple.jpg', 'mael@localhost.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:51:31', 0, 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (12, 2, 'Administrador de proveedor 05', '', '122012_cello.jpg', 'recemace@hotmail.co', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-23 12:20:12', 0, 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (10, 2, 'Asrael', '', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:52:30', 0, 1, 1);
-INSERT INTO `usuarios_clientes` VALUES (51, 1, 'mace', 'rece', '164813_win7.jpg', 'raulmace@hotmail.com', 'miterimos', '996828889', '1985-07-28', 'Cinthia', '2011-12-30', '2011-11-29 04:48:13', 1, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (3, 1, 16, 'rece', '', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:37:52', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (4, 1, 16, 'mace', '', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:38:07', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (8, 2, 16, 'mael', '', '185131_apple.jpg', 'mael@localhost.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:51:31', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (12, 2, 16, 'Administrador de proveedor 05', '', '122012_cello.jpg', 'recemace@hotmail.co', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-23 12:20:12', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (10, 2, 16, 'Asrael', '', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:52:30', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (51, 1, 16, 'mace', 'rece', '164813_win7.jpg', 'raulmace@hotmail.com', 'miterimos', '996828889', '1985-07-28', 'Cinthia', '2011-12-30', '2011-11-29 04:48:13', 1, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (52, 1, 20, 'macuco', 'macaco', '165738_apple.jpg', 'macuco@hotmail.com', '123456', '996828889', '2011-12-31', 'Katty', '2011-12-31', '2011-12-02 04:57:38', 0, 1, 1);
 
 -- --------------------------------------------------------
 
