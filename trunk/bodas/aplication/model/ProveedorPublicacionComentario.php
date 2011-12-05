@@ -1,5 +1,5 @@
 <?php
-	class ProveedorPublicacionComentario{
+	class ProveedorPublicacionComentario extends Utilitarios{
 
 
 		private $id_proveedor_publicacion_comentario;
@@ -40,6 +40,7 @@
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
+					'id_proveedor_publicacion_comentario' => $rw['id_proveedor_publicacion_comentario'],
 					'id_usuario_cliente'	=> $rw['id_usuario_cliente'],
 					'foto_usuario_cliente'	=> $rw['foto_usuario_cliente'],
 					'nombre_usuario_cliente'	=> $rw['nombre_usuario_cliente'],
@@ -53,10 +54,12 @@
 
 		public function agregar_comentario(){
 			$texto_filtrado = $this->filtro_tags($_POST['comentario']);
-			$Query = new Consulta("INSERT INTO bandas_posts_comentarios VALUES('',
-				'".$_POST['id_banda_post']."',
-				'".$_POST['id_user']."',
-				'".$texto_filtrado."'
+			$Query = new Consulta("INSERT INTO proveedores_publicaciones_comentarios VALUES('',
+				'".$_POST['id_proveedor_publicacion']."',
+				'".$_POST['id_usuario_cliente']."',
+				'".$texto_filtrado."',
+				'".date('Y-m-d h:i:s')."',
+				'1' 
 			)");
 
 			$id = mysql_insert_id();
@@ -68,20 +71,22 @@
 		}
 
 		public function getComentarioJson($id){
-
-			$sql = "SELECT * FROM bandas_posts_comentarios WHERE id_banda_post_comentario = ".$id;
+			$sql = "SELECT * FROM proveedores_publicaciones_comentarios WHERE id_proveedor_publicacion_comentario 	 = ".$id;
 			$query = new Consulta($sql);
 
 			while( $row = $query->VerRegistro() ){
 
-				$objRiuser = new Riuser($row['id_user']);
+				$objUsuarioCliente = new UsuarioCliente($row['id_usuario_cliente']);
 				$result[] = array(
-					'nom_user'		=> $objRiuser->nombre_user,
-					'comentario' 	=> $row['comentario']
+					'nombre_usuario_cliente'	=> $objUsuarioCliente->nombre_usuario_cliente,
+					'comentario' 				=> $row['comentario']
 				);
 			}
 			return $result;
+		}
 
+		public function eliminar_comentario(){
+			$Query = new Consulta("DELETE FROM proveedores_publicaciones_comentarios WHERE id_proveedor_publicacion_comentario = ".$_POST['id_comentario']);
 		}
 
 	}

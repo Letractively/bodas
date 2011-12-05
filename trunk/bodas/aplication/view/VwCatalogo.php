@@ -58,16 +58,17 @@
 
 							<?php if(isset($_SESSION['login_usuario_cliente'])){
 								if($objUsuarioCliente->id_tipo_cuenta == 2){
+									if( $objProveedor->id_proveedor == $_GET['id_proveedor'] ){
 								?>
 								<div class="frmPublicar">
                                     <form id="frmPublicar" name="frmPublicar">
-                                        <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objUsuarioCliente->foto_usuario_cliente."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" id="img_proveedor" style="display:none" />
+                                        <img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" id="img_proveedor" style="display:none" />
                                         <textarea id="areaPublicacion" name="areaPublicacion" title="Escribe aqui tu publicacion" class="labely"></textarea>
                                         <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $objProveedor->id_proveedor; ?>" />
                                         <div id="btnPublicar">Publicar</div>
                                     </form>
                                 </div>
-                            <?php }} ?>
+                            <?php }}} ?>
 
 							<div class="cnt_actividad">
 
@@ -76,7 +77,7 @@
                                 ?>
                                     <div id="post<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" class="item">
 
-                                        <div class="imagen"><img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objUsuarioCliente->foto_usuario_cliente."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" /></div>
+                                        <div class="imagen"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" /></div>
                                         
                                         <div class="contenido">
 											<p><b><?php echo $objProveedor->nombre_proveedor; ?></b></p>
@@ -113,26 +114,45 @@
 										?>
                                         
 										<div class="contenedor-comentarios">
-                                            <p class="comentarios_post_banda">
+
+											<?php if(isset($_SESSION['login_usuario_cliente'])){ ?>
+												<input type="hidden" id="hidImagenUser" name="hidImagenUser" value="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objUsuarioCliente->foto_usuario_cliente."&w=36&h=36";?>" />
+                                            <?php } ?>
+
+                                            <div class="lista-publicacion-comentarios">
                                                 <ul class="lista_comentarios">
+                                                	
                                                     <?php 
                                                         if(count($aryPostsComentarios) > 0){ 
                                                             for( $y = 0 ; $y < count($aryPostsComentarios) ; $y++ ){
-                                                                ?><li>
-                                                                <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$aryPostsComentarios[$y]['foto_usuario_cliente']."&w=26&h=26";?>" align="left" alt="<?php echo $aryPostsComentarios[$y]['nombre_usuario_cliente'] ?>" />
+                                                                ?><li id="comentario_<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">
+                                                                
+                                                                <?php 
+																	if(isset($_SESSION['login_usuario_cliente'])){
+																		if($objUsuarioCliente->id_tipo_cuenta == 2){ 
+																			?><div class="del_comentario" id="<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">x</div><?php
+																		}else{
+																			if($_SESSION['login_usuario_cliente'] == $aryPostsComentarios[$y]['id_usuario_cliente']){
+																				?><div class="del_comentario" id="<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">x</div><?php
+																			}
+																		}
+																	} 
+																?>
+                                                                
+                                                                <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$aryPostsComentarios[$y]['foto_usuario_cliente']."&w=36&h=36";?>" align="left" alt="<?php echo $aryPostsComentarios[$y]['nombre_usuario_cliente'] ?>" />
                                                                 <b><?php echo $aryPostsComentarios[$y]['nombre_usuario_cliente'] ?> dijo: </b><?php echo $aryPostsComentarios[$y]['comentario'] ?></li><?php
                                                             }
                                                         }
                                                     ?>
                                                 </ul>
-                                            </p>
-    
+                                            </div>
+
                                             <?php if(isset($_SESSION['login_usuario_cliente'])){ ?>
                                                 <div class="frmComentarios">
                                                     <form id="frmComentarios" name="frmComentarios">
                                                         <p><textarea id="areaPublicacionComentario<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" name="areaPublicacionComentario" title="Comentario" class="areaPublicacionComentario labely"></textarea></p>
-                                                        <input type="hidden" id="id_banda_post" name="id_banda_post" value="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>">
-                                                        <input type="hidden" id="id_user" name="id_user" value="<?php echo $_SESSION['login_usuario_cliente'] ?>">
+                                                        <input type="hidden" id="id_proveedor_publicacion" name="id_proveedor_publicacion" value="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>">
+                                                        <input type="hidden" id="id_usuario_cliente" name="id_usuario_cliente" value="<?php echo $_SESSION['login_usuario_cliente'] ?>">
                                                         <div id="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" class="btnPublicarComentario">Publicar comentario</div>
                                                     </form>
                                                 </div>

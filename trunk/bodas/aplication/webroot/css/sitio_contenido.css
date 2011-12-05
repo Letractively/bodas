@@ -135,22 +135,29 @@ width:auto; text-align:center; }
 .contenido-central-catalogo .izquierda .frmPublicar{ position:relative; float:left; width:488px; border:2px solid #bd56c6; padding:5px; }
 .contenido-central-catalogo .izquierda .frmPublicar textarea{ width:485px; height:46px; border:1px solid #CCC; }
 .contenido-central-catalogo .izquierda .frmPublicar .originalDisplayInfo{ position:relative; float:left; width:auto !important; height:auto; margin:6px 0 0 0; }
-.contenido-central-catalogo .izquierda .frmPublicar #btnPublicar{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; }
+.contenido-central-catalogo .izquierda .frmPublicar #btnPublicar{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; cursor:pointer; }
 
 
 .contenido-central-catalogo .izquierda  .cnt_actividad{ position:relative; float:left; width:490px; padding:5px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .del{ cursor:pointer; }
+
 .contenido-central-catalogo .izquierda  .cnt_actividad .item{ position:relative; float:left; width:100%; height:auto; border-top:1px solid #CCC; margin:15px 0 0 0; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .imagen{ position:relative; float:left; width:auto; height:auto; padding:5px; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido{ position:relative; float:left; width:415px; height:auto; padding:5px; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido b{ color:#000; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido p{ margin:4px 0px; padding:0px; }
-.contenido-central-catalogo .izquierda  .cnt_actividad .item .del{ position:absolute; float:right; width:auto; height:auto; margin:5px; top:0px; right:0px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .del{ position:absolute; float:right; width:auto; height:auto; margin:5px; top:0px; right:0px; cursor:pointer; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .del_comentario{ position:absolute; float:right; width:auto; height:auto; margin:5px; top:0px; right:0px; cursor:pointer; }
 
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios{ position:relative; float:left; width:488px; height:auto; padding:5px; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios textarea{ width:485px; height:46px; border:1px solid #CCC; }
 .contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .originalDisplayInfo{ position:relative; float:left; width:auto !important; height:auto; margin:6px 0 0 0; }
-.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .btnPublicarComentario{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .btnPublicarComentario{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; cursor:pointer; }
 
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .lista-publicacion-comentarios{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .lista-publicacion-comentarios ul{ list-style:none; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .lista-publicacion-comentarios li{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; border-bottom:1px solid #CCC; background:#f3e9f7; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .lista-publicacion-comentarios li img{ padding:5px; }
 
 .contenido-central-catalogo .texto{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; font-size:11px; font-family:Verdana, Geneva, sans-serif; }
 .contenido-central-catalogo .texto img{ padding:0 6px 6px 0; }

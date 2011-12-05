@@ -319,7 +319,7 @@ $(document).ready(function() {
 
 
 	$('#btnPublicar').click(function(){
-		if( $('#areaPublicacion').val() != ''){
+		if( $('#areaPublicacion').val() != '' && $('#areaPublicacion').val() != 'Escribe aqui tu publicacion' ){
 			$(loader).insertAfter( $('#btnPublicar') );
 			$('.aler_error').remove();
 			
@@ -378,17 +378,17 @@ $(document).ready(function() {
 			$(loader).insertAfter( $('#btnPublicar') );
 			$('.aler_error').remove();
 
-			$.post(url_full+'ajax.php',{
-					publicar_comentario_banda: 1,
-					id_banda_post: var_c,
-					id_user: $('#id_user').val(),
+			$.post(base+'ajax.php',{
+					agregar_publicacion_comentario: 1,
+					id_proveedor_publicacion: var_c,
+					id_usuario_cliente: $('#id_usuario_cliente').val(),
 					comentario: $('#post'+var_c+' .areaPublicacionComentario').val()
 				},
 				function (response) {
 					var record = response.data;
 					$('#loader, .aler_error, #sin_publicacion').remove();
 
-					$('#post'+var_c+' .lista_comentarios').append('<li><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nom_user+' dijo: </b>'+record[0].comentario+'</li>');
+					$('#post'+var_c+' .lista_comentarios').append('<li><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nombre_usuario_cliente+' dijo: </b>'+record[0].comentario+'</li>');
 
 				}, 'json'
 			);
@@ -398,6 +398,16 @@ $(document).ready(function() {
 			$('#post'+var_c+' .areaPublicacionComentario').val('');
 		}
 		return false;
+	});
+
+	$('.del_comentario').live("click", function(){
+		$.post(base+'ajax.php',{
+				eliminar_comentario: 1,
+				id_comentario: $(this).attr('id')
+			},
+			function (response) {}
+		);
+		$('#comentario_'+$(this).attr('id')).remove();
 	});
 
 });
