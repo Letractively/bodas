@@ -16,8 +16,11 @@
 			$aryRecomendados = $objProveedorRecomendado->obtenerProveedoresRecomendadosXProveedor($_GET['id_proveedor']);
 			if(isset($_SESSION['login_usuario_cliente'])){
 				$objUsuarioCliente = new UsuarioCliente($_SESSION['login_usuario_cliente']);
+				if($objUsuarioCliente->id_tipo_cuenta == 2){
+					$id_proveedor_del_usuario = $objUsuarioCliente->obtenerProveedorXAdministrador($_SESSION['login_usuario_cliente']);
+				}
 			}
-			
+
 			$objProveedorPublicacion = new ProveedorPublicacion;
 			$aryPosts = $objProveedorPublicacion->obtenerPublicacionesXProveedor($_GET['id_proveedor']);
 			
@@ -58,7 +61,8 @@
 
 							<?php if(isset($_SESSION['login_usuario_cliente'])){
 								if($objUsuarioCliente->id_tipo_cuenta == 2){
-									if( $objProveedor->id_proveedor == $_GET['id_proveedor'] ){
+									
+									if( $objProveedor->id_proveedor == $id_proveedor_del_usuario[0]['id_proveedor'] ){
 								?>
 								<div class="frmPublicar">
                                     <form id="frmPublicar" name="frmPublicar">
@@ -103,9 +107,10 @@
 
 											<?php if(isset($_SESSION['login_usuario_cliente'])){
 											if($objUsuarioCliente->id_tipo_cuenta == 2){
+												if( $objProveedor->id_proveedor == $id_proveedor_del_usuario[0]['id_proveedor'] ){
 											?>
                                         		<div class="del" id="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>">x</div>
-											<?php }} ?>
+											<?php }}} ?>
 
 										</div>
 
@@ -129,8 +134,12 @@
                                                                 
                                                                 <?php 
 																	if(isset($_SESSION['login_usuario_cliente'])){
-																		if($objUsuarioCliente->id_tipo_cuenta == 2){ 
+																		if($objUsuarioCliente->id_tipo_cuenta == 2){
+																			if( $objProveedor->id_proveedor == $id_proveedor_del_usuario[0]['id_proveedor'] ){
 																			?><div class="del_comentario" id="<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">x</div><?php
+																			}elseif($_SESSION['login_usuario_cliente'] == $aryPostsComentarios[$y]['id_usuario_cliente']){
+																				?><div class="del_comentario" id="<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">x</div><?php
+																			}
 																		}else{
 																			if($_SESSION['login_usuario_cliente'] == $aryPostsComentarios[$y]['id_usuario_cliente']){
 																				?><div class="del_comentario" id="<?php echo $aryPostsComentarios[$y]['id_proveedor_publicacion_comentario'] ?>">x</div><?php

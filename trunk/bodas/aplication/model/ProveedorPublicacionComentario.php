@@ -78,6 +78,7 @@
 
 				$objUsuarioCliente = new UsuarioCliente($row['id_usuario_cliente']);
 				$result[] = array(
+					'id_comentario' => $row['id_proveedor_publicacion_comentario'],
 					'nombre_usuario_cliente'	=> $objUsuarioCliente->nombre_usuario_cliente,
 					'comentario' 				=> $row['comentario']
 				);

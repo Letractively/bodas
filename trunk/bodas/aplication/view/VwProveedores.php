@@ -68,8 +68,9 @@
 
 						<?php
                        		$aryProveedoresMensionados = $objProveedor->obtenerProveedoresXRubroYTipo(3,$_GET['id_rubro']);
-							$aryPaginasProveedores = array_chunk($aryProveedoresMensionados,15);
-							
+							if(count($aryPaginasProveedores) > 0){
+								$aryPaginasProveedores = array_chunk($aryProveedoresMensionados,15);
+							}
 						?>
 
 						<div class="contenedor-paginacion">
@@ -79,7 +80,12 @@
                                 <?php for($x = 0 ; $x < count($aryPaginasProveedores) ; $x++){ ?>
                                 	<a href="<?=_bs_?>proveedores/<?php echo $objProveedorRubro->id_proveedor_rubro ?>/<?php echo $x; ?>/<?php echo $objUtilitarios->procesar_url_2($objProveedorRubro->nombre_proveedor_rubro) ?>"><?php echo ($x+2); ?></a>
                                 <?php } ?>
-                                <a href="<?=_bs_?>proveedores/<?php echo $objProveedorRubro->id_proveedor_rubro ?>/<?php echo count($aryPaginasProveedores)-1; ?>/<?php echo $objUtilitarios->procesar_url_2($objProveedorRubro->nombre_proveedor_rubro) ?>">&raquo;</a>
+                                <a href="<?=_bs_?>proveedores/<?php echo $objProveedorRubro->id_proveedor_rubro ?>/<?php 
+								if(count($aryPaginasProveedores) > 0)
+									{ echo count($aryPaginasProveedores)-1; }
+								else
+									{ echo "a"; }
+								?>/<?php echo $objUtilitarios->procesar_url_2($objProveedorRubro->nombre_proveedor_rubro) ?>">&raquo;</a>
                             </div>
                         </div>
 
@@ -143,7 +149,6 @@
 							
                        		$aryProveedoresMensionados = $objProveedor->obtenerProveedoresXRubroYTipo(3,$_GET['id_rubro']);
 							$aryPaginasProveedores = array_chunk($aryProveedoresMensionados,15);
-
 							$aryProveedores = $aryPaginasProveedores[$_GET['pag']];
 							
 							for($x = 0 ; $x < count($aryProveedores) ; $x++){?>

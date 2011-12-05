@@ -221,15 +221,17 @@
 
 		public function updateusuario(){
 
-			if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-				if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
-					$img = date('His').'_'.$_FILES['fleLogo']['name'];
-					$logo = "foto_usuario_cliente = '".$img."',";
-					$fnImagen = 'aplication/webroot/imgs/usuarios_clientes/'.$img;
-					move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-				}
-			}else{ $logo = "foto_usuario_cliente = 'sin-imagen.jpg',"; }
-
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
+				if($_FILES['fleLogo']['type'] == 'image/jpeg'){
+					
+						$img = date('His').'_'.$_FILES['fleLogo']['name'];
+						$logo = "foto_usuario_cliente = '".$img."',";
+						$fnImagen = 'aplication/webroot/imgs/usuarios_clientes/'.$img;
+						move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
+					
+				}else{ $logo = "foto_usuario_cliente = 'sin-imagen.jpg',"; }
+			}
+		
 			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }
 
 			$sqlUpdate = " UPDATE usuarios_clientes SET 
@@ -317,6 +319,9 @@
 
 
 		public function faqs_usuario_cliente(){
+			
+			$objUsuarioCliente = new UsuarioCliente($_SESSION['login_usuario_cliente']);
+			
 			if(!isset($_SESSION['login_usuario_cliente'])){
 				?><script type="text/javascript">location.replace('<?=_bs_?>/');</script><?php
 			}
@@ -327,7 +332,7 @@
 
 					<?php if($objUsuarioCliente->id_tipo_cuenta == 1){ ?>
                         <div class="opciones-editarcuenta">
-                            <a href="#" class="item" id="activo">Información de perfil</a>
+                            <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de perfil</a>
                             <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item" id="activo">FAQ's</a> 
                         </div>
 					<?php }else{ ?>
@@ -445,16 +450,18 @@
 		}
 
 		public function updateinformacionempresa(){
-
-			if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-				if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
-					$img = date('His').'_'.$_FILES['fleLogo']['name'];
-					$logo = "logo_proveedor = '".$img."',";
-					$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
-					move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-				}
-			}else{ $logo = "logo_proveedor = 'sin-imagen.jpg',"; }
-
+			
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
+				if($_FILES['fleLogo']['type'] == 'image/jpeg'){
+					
+						$img = date('His').'_'.$_FILES['fleLogo']['name'];
+						$logo = "logo_proveedor = '".$img."',";
+						$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
+						move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
+					
+				}else{ $logo = "logo_proveedor = 'sin-imagen.jpg',"; }
+			}
+	
 			$Query = new Consulta(" UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										".$logo."

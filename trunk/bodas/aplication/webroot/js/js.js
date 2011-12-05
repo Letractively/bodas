@@ -388,7 +388,7 @@ $(document).ready(function() {
 					var record = response.data;
 					$('#loader, .aler_error, #sin_publicacion').remove();
 
-					$('#post'+var_c+' .lista_comentarios').append('<li><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nombre_usuario_cliente+' dijo: </b>'+record[0].comentario+'</li>');
+					$('#post'+var_c+' .lista_comentarios').append('<li id="comentario_'+record[0].id_comentario+'"><div class="del_comentario" id="'+record[0].id_comentario+'">x</div><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nombre_usuario_cliente+' dijo: </b>'+record[0].comentario+'</li>');
 
 				}, 'json'
 			);
