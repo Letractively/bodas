@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 05-12-2011 a las 03:11:43
+-- Tiempo de generación: 05-12-2011 a las 11:27:40
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -154,7 +154,7 @@ CREATE TABLE `proveedores` (
 
 INSERT INTO `proveedores` VALUES (16, 1, 4, 'Proveedor de ejemplo 01', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
 INSERT INTO `proveedores` VALUES (17, 2, 4, 'Proveedor de ejemplo 02 con Ã±', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 0);
-INSERT INTO `proveedores` VALUES (18, 1, 4, 'Proveedor de ejemplo 03', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
+INSERT INTO `proveedores` VALUES (18, 2, 4, 'Proveedor de ejemplo 03', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (19, 1, 4, 'Proveedor de ejemplo 04', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (20, 2, 4, 'proveedor ejemplo 05 con Ã±', '232043_chrome.jpg', 'proveedor ejemplo 05', '<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel congue purus. Nam velit urna, imperdiet id convallis non, sodales eu quam. Etiam id ante nec sapien volutpat euismod. Duis at fringilla nisi. Vestibulum in sem et nibh blandit luctus. Suspendisse eu dictum neque. Duis nulla leo, pellentesque bibendum semper ut, vulputate id mauris. Sed in turpis purus, id lacinia tellus. Vestibulum congue vulputate massa sit amet ornare.</p>\r\n', 'direccion', '12341324', '13241234', '13241324', '13241324', 'proveedor05@sitio.com', 'www.proveedor05.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A&output=embed"></iframe><br /><small><a href="http://maps.google.es/maps?f=q&source=embed&hl=es&geocode=&q=lima,+peru&sll=40.396764,-3.713379&sspn=9.234287,19.753418&vpsrc=6&ie=UTF8&hq=&hnear=Miraflores,+Lima,+Per%C3%BA&t=m&ll=-12.1175,-77.043056&spn=0.741162,1.234589&z=10&iwloc=A" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-11-23 12:18:44', 1);
 INSERT INTO `proveedores` VALUES (21, 3, 4, 'Proveedor de ejemplo 001', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
@@ -219,15 +219,19 @@ CREATE TABLE `proveedores_publicaciones` (
   `fecha_proveedor_publicacion` datetime NOT NULL,
   `estado_proveedor_publicacion` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones`
 -- 
 
+INSERT INTO `proveedores_publicaciones` VALUES (29, 20, 'asfewfaw efaw we ', '2011-12-05 10:24:18', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (23, 20, 'fasefasef', '2011-12-05 03:01:02', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (21, 20, 'adsf ewf adf ewf wawef awef awef awef awef awef aewf ', '2011-12-05 02:52:22', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (22, 20, ' dsafds fewf eawf awf weawef aw', '2011-12-05 02:53:29', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (26, 20, 'Escribe aqui tu publicacion', '2011-12-05 10:20:50', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (27, 20, '', '2011-12-05 10:20:52', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (28, 20, 'fasd dsaaw aewf awe  faew ', '2011-12-05 10:22:21', 1);
 
 -- --------------------------------------------------------
 
@@ -243,12 +247,16 @@ CREATE TABLE `proveedores_publicaciones_comentarios` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion_comentario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones_comentarios`
 -- 
 
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (5, 23, 3, 'dsfads fasdf aweawef awef adsf we faew', '2011-12-05 10:02:14', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (11, 29, 3, 'fger wgwerg wrgwer were', '2011-12-05 11:02:16', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (9, 22, 12, 'fd dsgsreg resg esr', '2011-12-05 10:18:26', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (10, 23, 12, 'fdv sfdvfds vs vsr', '2011-12-05 10:24:26', 1);
 
 -- --------------------------------------------------------
 
@@ -531,7 +539,7 @@ CREATE TABLE `usuarios_clientes` (
 -- Volcar la base de datos para la tabla `usuarios_clientes`
 -- 
 
-INSERT INTO `usuarios_clientes` VALUES (3, 1, 16, 'rece', '', '163752_indice.jpg', 'recemace@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:37:52', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (3, 1, 16, 'rece', 'mace', '100342_apple.jpg', 'recemace@hotmail.com', '123456', '996828889', '0000-00-00', 'Cinthia', '0000-00-00', '2011-11-21 04:37:52', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (4, 1, 16, 'mace', '', '180003_win7.jpg', 'macerece@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 04:38:07', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (8, 2, 16, 'mael', '', '185131_apple.jpg', 'mael@localhost.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:51:31', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (12, 2, 16, 'Administrador de proveedor 05', '', '145505_indice.jpg', 'recemace@hotmail.co', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-23 12:20:12', 0, 1, 1);
