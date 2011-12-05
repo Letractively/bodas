@@ -4,10 +4,11 @@ $(document).ready(function() {
 	
 	if($('#base').length > 0){
 		var base = $('#base').val();
+		var loader = '<img id="loader" src="' + base + 'aplication/webroot/imgs/icons/ajax-loader.gif" />';
 	}
 	
 	if($('#galleria').length > 0){
-		Galleria.loadTheme('http://local.bodas.com/aplication/webroot/js/galleria/galleria.classic.min.js');
+		Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
 		$('#galleria').galleria({
 			width:504,
 			height:356	
@@ -17,6 +18,24 @@ $(document).ready(function() {
 	if($('.dp').length > 0){ 
 		$('.dp').datepicker({dateFormat:'yy-mm-dd',changeMonth: true,changeYear: true, yearRange: '1970:2011', }); 
 	}
+	
+	if($('#des_2').length){
+		CKEDITOR.replace('des_2',
+			{
+			skin:'kama',
+			uiColor:'#e6edf3',
+			toolbar:[
+				['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],
+				['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
+				['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+				['Styles','Format','Font','FontSize','-','TextColor','BGColor'],
+				['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
+				['Link','Unlink','Anchor']
+			]
+		});
+	}	
 	
 	if($('#frmRegistrese').length > 0){ 
 		$('#frmRegistrese').validate({
@@ -111,6 +130,44 @@ $(document).ready(function() {
 		});
 	}
 
+	/*	Editar proveedor	*/
+	$('#frmEditarInformacionEmpresa').validate({
+		errorElement: 'label', errorClass: 'error',
+		rules:{
+			txtNombre: 'required',
+			fleLogo: { accept:'jpg|gif' },
+			txtDescripcionCorta: 'required'
+		},
+		messages:{
+			txtNombre: 'Ingresa un nombre.',
+			fleLogo: { accept:'solo se acepta archivos .jpg y .gif' },
+			txtDescripcionCorta: 'Ingrese una descripcion corta.'
+		}
+	});
+	
+	/*	Nuevo recomendado	*/
+	$('#frmNuevoRecomendado').validate({
+		errorElement: 'label', errorClass: 'error',
+		rules:{
+			fleLogo: { accept:'jpg|gif' },
+			txtLink: 'required'
+		},
+		messages:{
+			fleLogo: { accept:'solo se acepta archivos .jpg y .gif' },
+			txtLink: 'Ingrese una url.'
+		}
+	});
+
+	/*	Nuevo recomendado	*/
+	$('#frmNuevoRedSocial').validate({
+		errorElement: 'label', errorClass: 'error',
+		rules:{
+			txtLink: 'required'
+		},
+		messages:{
+			txtLink: 'Ingrese una url.'
+		}
+	});
 
 	/*	Acceso	*/
 	if($('.contenedor-login').length > 0){ 
@@ -147,5 +204,200 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$('.delete, .eliminar').click(function(){
+		if($(this).attr('class') == "delete" || $(this).attr('class') == "eliminar"){
+			if(!confirm("Esta completamente seguro?, recuerde que puede cambiar de estado el registro.")){
+				return false;
+			}else{
+				var url = base + '/' + $(this).attr('name') + '/' + $(this).attr('id')+'/';
+				location.replace(url);		
+			}		
+		}
+	});
+
+
+	var peso_proveedor = '50 KB';
+	var trig = false;
+	var gif = base + 'aplication/webroot/js/swfupload/ajax-loader.gif';
+	var sus = 'Archivo guardado!, espere...';
+	var flash_url = base + 'aplication/webroot/js/swfupload/swfupload.swf';
+	var button_image_url = base + 'aplication/webroot/js/swfupload/XPButtonUploadText_61x22.png';
+
+
+	$.fn.bindAll = function(options) { var $this = this; $.each(options, function(key, val){ $this.bind(key, val); }); return this; }
+
+
+	// Cargador de fotos del proveedor
+	var listeners_proveedor_imagenes = {
+		fileQueued: function(event, file){
+			$(this).swfupload('startUpload');
+		},
+		fileQueueError: function(event, file, errorCode, message){
+			try {
+				switch (errorCode) {
+					case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
+						alert("Solo se permite un archivo."); exit;
+					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
+						alert("El archivo '"+file.name+"' es demasiado pesado, el limite es 80 KB."); exit;
+					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
+						alert("El archivo esta vacio."); exit;
+					case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
+						alert("El archivo no tiene el tipo permitido."); exit;
+					default:
+						alert("A ocurrido un error en la carga de archivos, intentelo mas tarde."); exit;
+				}
+			} catch (e) {}
+			result = errorCode;
+		},
+		fileDialogStart: function(event){ },
+		fileDialogComplete: function(event, numFilesSelected, numFilesQueued){ },
+		uploadStart: function(event, file){ },
+		uploadProgress: function(event, file, bytesLoaded){ 
+			porciento = parseInt((bytesLoaded * 100 ) / file.size);
+			$('#load').remove();
+			$('.log').after('<b id="load"><img src="'+gif+'">'+file.name+' - Subiendo... '+ porciento +'%</b>');
+		},
+		uploadProgress: function(event, file, bytesLoaded){
+			porciento = parseInt((bytesLoaded * 100 ) / file.size);
+			$('#load').remove();
+			$('.log').after('<b id="load"><img src="'+gif+'">'+file.name+' - Subiendo... '+ porciento +'%</b>');
+		},
+		uploadSuccess: function(event, file, serverData){
+			regencoded = jQuery.parseJSON(serverData);
+			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">X</div><div class="nombre"><img src="' + base + 'aplication/utilities/tt.php?src=/aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80"></div></div>';
+			$('.cont_imagenes').append(newItemFoto);
+
+			$('#load').remove();
+			$('.log').after('<b id="load">'+file.name+' - Completado!!</b>');
+		},
+		uploadComplete: function(event, file){
+			$('#load').remove();
+			$('.log').after('<b id="load">Carga terminada, a la espera de mas archivos.</b>');
+			$(this).swfupload('startUpload'); 
+		},
+		uploadError: function(event, file, errorCode, message){ }
+	};
+
+
+	$('.swfupload-proveedor-imagenes').bindAll(listeners_proveedor_imagenes);
+	$('.swfupload-proveedor-imagenes').each(function(){
+		$(this).swfupload({
+			upload_url: base + "upload.php?proveedores_fotos&id_proveedor="+$('#id_proveedor').attr('value'),
+			file_size_limit : "50 KB",
+			file_types : "*.jpg",
+			file_types_description : "Imagenes",
+			file_upload_limit : "0",
+			flash_url : flash_url,
+			button_image_url : button_image_url,
+			button_width : 61,
+			button_height : 22,
+			button_placeholder : $('#upload_button', this)[0],
+			debug: false
+		});
+	});
+
+
+	if($('.eliminar_imagen').length > 0){
+		$(".eliminar_imagen").live("click", function(){
+			id_cls = $(this).parent(0).attr('id');
+			nom_foto = $(this).parent(0).attr('nom_foto');
+			id_foto = id_cls.substring(5);
+			$(this).html('<img src="' + base + 'aplication/webroot/js/swfupload/ajax-loader.gif">');
+			$.post(base + 'delete_imagen.php', 
+				{
+					opcion: 'foto',
+					id: id_foto,
+					nom_foto: nom_foto
+				},
+				function(response){
+					$('#foto_'+id_foto).remove();
+				}
+			);
+		});
+	}
+
+
+	$('#btnPublicar').click(function(){
+		if( $('#areaPublicacion').val() != ''){
+			$(loader).insertAfter( $('#btnPublicar') );
+			$('.aler_error').remove();
+			
+			$.post(base+'ajax.php',{
+					agregar_publicacion: 1,
+					id_proveedor: $('#id_proveedor').val(),
+					publicacion: $('#areaPublicacion').val()
+				},
+				function (response) {
+					var record = response.data;
+					$('#loader, .aler_error, #sin_publicacion').remove();
+					$('.cnt_actividad').prepend('<div id="post'+record[0].id_proveedor_publicacion+'" class="item"><div class="imagen"><img src="'+$('#img_proveedor').attr('src')+'" /></div><div class="contenido"><p class="texto">'+record[0].texto_proveedor_publicacion+'</p><p class="num_com">0 Comentarios '+record[0].fecha1+' '+record[0].fecha2+'</p><div class="del" id="'+record[0].id_proveedor_publicacion+'">x</div></div></div>');
+				}, 'json'
+			);
+			$('#areaPublicacion').val('');
+		}
+		return false;
+	});
+
+
+	$('.del').live("click", function(){
+		$.post(base+'ajax.php',{
+				eliminar_post_banda: 1,
+				idpublicacion: $(this).attr('id')
+			},
+			function (response) {}
+		);
+		$('#post'+$(this).attr('id')).remove();
+	});
+
+
+	var options = {
+		'maxCharacterSize': 80,  
+		'originalStyle': 'originalDisplayInfo',  
+		'warningStyle': 'warningDisplayInfo',    
+		'warningNumber': 40,  
+		'displayFormat': '#input / #max caracteres &nbsp;|&nbsp; #words Palabras.'  
+	};
+
+	if($('#areaPublicacion').length > 0){ 
+    	$('#areaPublicacion').textareaCount(options);
+	}
+	if($('.areaPublicacionComentario').length > 0){ 
+		$('.areaPublicacionComentario').textareaCount(options);  
+	}
+	if($('.labely').length > 0){ 
+		$(".labely").labelify({ labelledClass: "labelHighlight" });
+	}
+
+	$('.btnPublicarComentario').click(function(){
+
+		var var_c = $(this).attr('id');
+
+		if( $('#post'+var_c+' .areaPublicacionComentario').val() != '' && $('#post'+var_c+' .areaPublicacionComentario').val() != 'Comentario' ){
+
+			$(loader).insertAfter( $('#btnPublicar') );
+			$('.aler_error').remove();
+
+			$.post(url_full+'ajax.php',{
+					publicar_comentario_banda: 1,
+					id_banda_post: var_c,
+					id_user: $('#id_user').val(),
+					comentario: $('#post'+var_c+' .areaPublicacionComentario').val()
+				},
+				function (response) {
+					var record = response.data;
+					$('#loader, .aler_error, #sin_publicacion').remove();
+
+					$('#post'+var_c+' .lista_comentarios').append('<li><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nom_user+' dijo: </b>'+record[0].comentario+'</li>');
+
+				}, 'json'
+			);
+
+			$('#post'+var_c+' #sin_comentarios').remove();
+			$('#post'+var_c+' .num_com span').html($( '#post' + var_c + ' .lista_comentarios li').size()+1 );
+			$('#post'+var_c+' .areaPublicacionComentario').val('');
+		}
+		return false;
+	});
 
 });

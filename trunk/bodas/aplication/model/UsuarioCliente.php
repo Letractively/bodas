@@ -114,5 +114,23 @@
 			return $res;
 		}
 
+		public function obtenerProveedorXAdministrador($id){
+			$sql = "
+				SELECT 
+					p.id_proveedor
+				FROM usuarios_clientes_proveedores ucp 
+					JOIN proveedores p ON ucp.id_proveedor = p.id_proveedor
+				WHERE p.estado_cuenta_proveedor = 1
+				AND ucp.id_usuario_cliente = ".$id;
+
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_proveedor'	=> $rw['id_proveedor']
+				);
+			}
+			return $rst;		
+		}
+
 	}
 ?>

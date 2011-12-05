@@ -4,6 +4,7 @@
 
 		private $id_proveedor_publicacion_comentario;
 		private $id_proveedor_publicacion;
+		private $id_usuario_cliente;
 		private $comentario;
 		private $fecha;
 		private $estado_proveedor_publicacion;
@@ -17,6 +18,7 @@
 				if($qry->NumeroRegistros() > 0){
 					$rw = $qry->VerRegistro();
 					$this->id_proveedor_publicacion	= $rw['id_proveedor_publicacion'];
+					$this->id_usuario_cliente		= $rw['id_usuario_cliente'];
 					$this->comentario				= $rw['comentario'];
 					$this->fecha 					= $rw['fecha'];
 					$this->estado 					= $rw['estado'];
@@ -30,19 +32,57 @@
 		}
 
 
-		public function obtenerPublicacionesXPublicacion($id){
-			$sql = "SELECT * FROM proveedores_publicaciones_comentarios WHERE id_proveedor_publicacion = ".$id;
+		public function obtenerComentariosXPublicacion($id){
+			$sql = "SELECT * 
+				FROM proveedores_publicaciones_comentarios ppc
+					JOIN usuarios_clientes uc ON ppc.id_usuario_cliente = uc.id_usuario_cliente
+				WHERE id_proveedor_publicacion = ".$id;
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
-					'comentario'	=> $rw['comentario'],
-					'fecha'			=> $rw['fecha'],
-					'estado'		=> $rw['estado']
+					'id_usuario_cliente'	=> $rw['id_usuario_cliente'],
+					'foto_usuario_cliente'	=> $rw['foto_usuario_cliente'],
+					'nombre_usuario_cliente'	=> $rw['nombre_usuario_cliente'],
+					'comentario'			=> $rw['comentario'],
+					'fecha'					=> $rw['fecha'],
+					'estado'				=> $rw['estado']
 				);
 			}
 			return $rst;			
 		}
 
+		public function agregar_comentario(){
+			$texto_filtrado = $this->filtro_tags($_POST['comentario']);
+			$Query = new Consulta("INSERT INTO bandas_posts_comentarios VALUES('',
+				'".$_POST['id_banda_post']."',
+				'".$_POST['id_user']."',
+				'".$texto_filtrado."'
+			)");
+
+			$id = mysql_insert_id();
+			$respuesta['data'] = $this->getComentarioJson($id);
+			$respuesta['error'] = 'ok';
+
+			header('Content-type: text/plain');
+			return json_encode($respuesta);
+		}
+
+		public function getComentarioJson($id){
+
+			$sql = "SELECT * FROM bandas_posts_comentarios WHERE id_banda_post_comentario = ".$id;
+			$query = new Consulta($sql);
+
+			while( $row = $query->VerRegistro() ){
+
+				$objRiuser = new Riuser($row['id_user']);
+				$result[] = array(
+					'nom_user'		=> $objRiuser->nombre_user,
+					'comentario' 	=> $row['comentario']
+				);
+			}
+			return $result;
+
+		}
 
 	}
 ?>

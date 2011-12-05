@@ -20,6 +20,7 @@
 
 
 	// Modelos
+	require_once(_model_."RedSocial.php");
 	require_once(_model_."UsuarioCliente.php");
 	
 	require_once(_model_."ProveedorRubro.php");
@@ -27,6 +28,8 @@
 	require_once(_model_."ProveedorGaleria.php");
 	require_once(_model_."ProveedorRed.php");
 	require_once(_model_."ProveedorRecomendado.php");
+	require_once(_model_."ProveedorPublicacion.php");
+	require_once(_model_."ProveedorPublicacionComentario.php");
 	require_once(_model_."Proveedor.php");
 	require_once(_model_."Distrito.php");
 

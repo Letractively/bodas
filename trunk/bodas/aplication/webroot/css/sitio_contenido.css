@@ -130,6 +130,28 @@ width:auto; text-align:center; }
 .contenido-central-catalogo .regresar a:hover{ text-decoration:underline; }
 
 .contenido-central-catalogo .izquierda{ position:relative; float:left; width:505px; height:auto; padding:0 10px 0 0; }
+
+
+.contenido-central-catalogo .izquierda .frmPublicar{ position:relative; float:left; width:488px; border:2px solid #bd56c6; padding:5px; }
+.contenido-central-catalogo .izquierda .frmPublicar textarea{ width:485px; height:46px; border:1px solid #CCC; }
+.contenido-central-catalogo .izquierda .frmPublicar .originalDisplayInfo{ position:relative; float:left; width:auto !important; height:auto; margin:6px 0 0 0; }
+.contenido-central-catalogo .izquierda .frmPublicar #btnPublicar{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; }
+
+
+.contenido-central-catalogo .izquierda  .cnt_actividad{ position:relative; float:left; width:490px; padding:5px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item{ position:relative; float:left; width:100%; height:auto; border-top:1px solid #CCC; margin:15px 0 0 0; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .imagen{ position:relative; float:left; width:auto; height:auto; padding:5px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido{ position:relative; float:left; width:415px; height:auto; padding:5px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido b{ color:#000; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenido p{ margin:4px 0px; padding:0px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .del{ position:absolute; float:right; width:auto; height:auto; margin:5px; top:0px; right:0px; }
+
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios{ position:relative; float:left; width:488px; height:auto; padding:5px; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios textarea{ width:485px; height:46px; border:1px solid #CCC; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .originalDisplayInfo{ position:relative; float:left; width:auto !important; height:auto; margin:6px 0 0 0; }
+.contenido-central-catalogo .izquierda  .cnt_actividad .item .contenedor-comentarios .btnPublicarComentario{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; }
+
+
 .contenido-central-catalogo .texto{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; font-size:11px; font-family:Verdana, Geneva, sans-serif; }
 .contenido-central-catalogo .texto img{ padding:0 6px 6px 0; }
 
@@ -144,7 +166,6 @@ width:auto; text-align:center; }
 
 .contenido-central-catalogo .derecha .recomendados{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
 .contenido-central-catalogo .derecha .recomendados img{ padding:8px; }
-
 
 
 /*	Registrese	*/
@@ -189,6 +210,8 @@ width:auto; text-align:center; }
 .opciones-editarcuenta{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; }
 .opciones-editarcuenta .item{ position:relative; float:left; display:block; width:auto; height:auto; padding:3px 10px; border-top:1px solid #b16ec9; border-left:1px solid #b16ec9; border-right:1px solid #b16ec9; margin:3px 0 0 0; }
 .opciones-editarcuenta .btn-verperfil{ position:relative; float:right; width:auto; height:auto; background:#b16ec9; border:none; padding:3px 10px; margin:0 0 3px 0; color:#FFF; font-weight:bold; }
+.opciones-editarcuenta .btn-verperfil a{ color:#FFF; }
+.opciones-editarcuenta .btn-verperfil a:hover{ text-decoration:underline; }
 .opciones-editarcuenta #activo{ background:#f2f2f2; cursor:default; }
 
 .contenido-central-editarcuenta{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; font-size:12px; border:1px solid #b16ec9; }
@@ -201,10 +224,17 @@ width:auto; text-align:center; }
 .contenido-central-editarcuenta .formulario .itm input[type='file']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-editarcuenta .formulario .itm input[type='password']{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 .contenido-central-editarcuenta .formulario .itm input[type='submit']{ width:auto; border:none; padding:3px 20px; background:#a657c2; color:#FFF; font-size:10px; font-weight:bold; cursor:pointer; }
+.contenido-central-editarcuenta .formulario .itm textarea{ float:left; width:230px; border:1px solid #CCC; padding:3px; }
 
 .contenido-central-editarcuenta .formulario .itm2{ position:relative; float:left; width:64%; height:auto; padding:4px 0px 4px 60px; }
 .contenido-central-editarcuenta .formulario .itm2 input[type='checkbox']{ float:left; width:auto; margin:0px 4px; }
 .contenido-central-editarcuenta .formulario .itm2 label.error{ float:right; width:auto; height:auto; color:red; text-align:left; }
+
+.contenido-central-editarcuenta .izquierda .tabla-recomendados{ width:90%; margin:0 0 0 20px;  }
+.contenido-central-editarcuenta .izquierda .tabla-recomendados a{ cursor:pointer; }
+.contenido-central-editarcuenta .izquierda .tabla-recomendados a:hover{ text-decoration:underline; }
+.contenido-central-editarcuenta .izquierda .tabla-recomendados th{ border:1px solid #B16EC9; padding:4px 20px; }
+.contenido-central-editarcuenta .izquierda .tabla-recomendados td{ border:1px solid #B16EC9; padding:4px 20px; }
 
 /*	faqs	*/
 .contenido-central-faqs{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; font-size:12px; border:1px solid #b16ec9; }
@@ -215,3 +245,9 @@ width:auto; text-align:center; }
 .contenido-central-faqs .izquierda li{ position:relative; float:left; width:100%; height:auto; list-style:none; }
 .contenido-central-faqs .izquierda li p{ position:relative; float:left; width:100%; height:auto; padding:12px 0px;}
 .contenido-central-faqs .izquierda li b{ color:#a657c2; }
+
+/* Galeria */
+/*	Galeria de imagenes	*/
+.cont_imagenes{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; }
+.cont_imagenes .item_img{ position:relative; float:left; width:80px; height:80px; padding:9px; }
+.cont_imagenes .eliminar_imagen{ position:absolute; float:right; width:auto; height:auto; top:3px; right:3px; cursor:pointer; font-size:10px; }

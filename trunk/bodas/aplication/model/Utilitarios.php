@@ -23,6 +23,13 @@
 			return $nombre;
 		}
 
+		public function subirImagenCarpeta2($ftmp, $nombre, $carpeta){
+			$nombre = $this->procesar_nombre_imagen($nombre);
+			$fname = 'aplication/webroot/imgs/'.$carpeta.'/'.$nombre;
+			move_uploaded_file($ftmp, $fname);
+			return $nombre;
+		}
+
 		public function procesar_nombre_imagen($string) {
 			$string = substr($string,0, -4);
 			$string = utf8_decode($string);

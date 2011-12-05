@@ -35,6 +35,7 @@
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
+					'id_proveedor_recomendado'		=> $rw['id_proveedor_recomendado'],
 					'imagen_proveedor_recomendado'	=> $rw['imagen_proveedor_recomendado'],
 					'link_proveedor_recomendado'	=> $rw['link_proveedor_recomendado'],
 					'estado_proveedor_recomendado'	=> $rw['estado_proveedor_recomendado']
@@ -43,6 +44,11 @@
 			return $rst;			
 		}
 
+		public function eliminar($id){
+			if($id > 0){
+				$Query = new Consulta("DELETE FROM proveedores_recomendados WHERE id_proveedor_recomendado = ".$id."");
+			}
+		}
 
 	}
 ?>

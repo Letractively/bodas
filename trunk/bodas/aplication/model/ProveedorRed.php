@@ -36,6 +36,7 @@
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
+					'id_proveedor_red_social'	=> $rw['id_proveedor_red_social'],
 					'id_proveedor'				=> $rw['id_proveedor'],
 					'id_red_social'				=> $rw['id_red_social'],
 					'imagen_red_social'			=> $rw['imagen_red_social'],
@@ -45,6 +46,11 @@
 			return $rst;			
 		}
 
+		public function eliminar($id){
+			if($id > 0){
+				$Query = new Consulta("DELETE FROM proveedores_redes_sociales WHERE id_proveedor_red_social = ".$id."");
+			}
+		}
 
 	}
 ?>

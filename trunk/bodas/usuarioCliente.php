@@ -37,6 +37,41 @@
 							case 'faqs_usuario_cliente':
 								$objVwUsuarioCliente->faqs_usuario_cliente(); 
 							break;
+							case 'editar_informacion_empresa':
+								$objVwUsuarioCliente->editar_informacion_empresa(); 
+							break;
+							case 'updateinformacionempresa':
+								$objVwUsuarioCliente->updateinformacionempresa(); 
+							break;
+							
+							case 'faqs_usuario_cliente':
+								$objVwUsuarioCliente->faqs_usuario_cliente(); 
+							break;
+							
+							case 'listar_recomendados':
+								$objVwUsuarioCliente->listar_recomendados(); 
+							break;
+							case 'nuevo_recomendado':
+								$objVwUsuarioCliente->nuevo_recomendado(); 
+							break;
+							case 'guardar_recomendado':
+								$objVwUsuarioCliente->guardar_recomendado(); 
+							break;
+							
+							case 'listar_red_social':
+								$objVwUsuarioCliente->listar_red_social(); 
+							break;
+							case 'nuevo_red_social':
+								$objVwUsuarioCliente->nuevo_red_social(); 
+							break;
+							case 'guardar_red_social':
+								$objVwUsuarioCliente->guardar_red_social(); 
+							break;
+							
+							case 'galeria_proveedor':
+								$objVwUsuarioCliente->galeria_proveedor(); 
+							break;
+							
 							default:
 								$objVwUsuarioCliente->registrate();
 							break;
