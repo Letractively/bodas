@@ -23,5 +23,9 @@
     <script type="text/javascript" src="<?php echo _js_?>swfupload/jquery.swfupload.js"></script>
 	<script type="text/javascript" src="<?php echo _js_?>swfupload/swf_upload.js"></script>
 
+	<script type="text/javascript" src="<?php echo _js_?>jquery.textareaCounter.plugin.js"></script>
+    <script type="text/javascript" src="<?php echo _js_?>jquery.labelify.js"></script>
+
+
     <script type="text/javascript" src="<?php echo _js_?>js.js"></script>
 </head>

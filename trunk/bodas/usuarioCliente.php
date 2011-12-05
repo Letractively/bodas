@@ -72,6 +72,10 @@
 								$objVwUsuarioCliente->galeria_proveedor(); 
 							break;
 							
+							case 'resumen_estadisticas':
+								$objVwUsuarioCliente->resumen_estadisticas(); 
+							break;
+							
 							default:
 								$objVwUsuarioCliente->registrate();
 							break;

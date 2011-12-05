@@ -153,6 +153,7 @@
                             <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                             <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                             <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                            <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                             <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                             <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                         </div>
@@ -342,6 +343,7 @@
                             <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                             <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                             <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                            <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                             <a href="#" class="item" id="activo">FAQ's</a> 
                             <div class="btn-verperfil">VER PERFIL</div>
                         </div>
@@ -398,6 +400,7 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -496,6 +499,7 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item" id="activo">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -549,6 +553,7 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item" id="activo">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -616,6 +621,7 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item" id="activo">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -673,6 +679,7 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item" id="activo">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -724,6 +731,10 @@
 
 		public function galeria_proveedor(){
 
+			if(!isset($_SESSION['login_usuario_cliente'])){
+				?><script type="text/javascript">location.replace('<?=_bs_?>/');</script><?php
+			}
+
 			$objUsuarioCliente = new UsuarioCliente;
 			$id_proveedor = $objUsuarioCliente->obtenerProveedorXAdministrador($_SESSION['login_usuario_cliente']);
 
@@ -741,7 +752,9 @@
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item" id="activo">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
                         <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
+                        
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -770,6 +783,40 @@
                     </div>
                 </div>
 			<?php			
+		}
+
+		public function resumen_estadisticas(){
+			if(!isset($_SESSION['login_usuario_cliente'])){
+				?><script type="text/javascript">location.replace('<?=_bs_?>/');</script><?php
+			}
+			
+			?>
+				<div class="margen-index">
+
+                	<?php include(_inc_."inc.menu-rubros.php"); ?>
+
+                    <div class="opciones-editarcuenta">
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
+                        <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
+                        <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
+                        <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item" id="activo">Estadisticas</a> 
+                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> 
+                        
+                        <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
+                    </div>
+
+                    <div class="contenido-central-editarcuenta">
+
+                        <div class="izquierda">
+                        
+                        	
+                        
+                        </div>
+                    </div>
+                </div>
+            <?php
 		}
 
 	}

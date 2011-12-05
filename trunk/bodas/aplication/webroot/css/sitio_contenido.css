@@ -39,6 +39,7 @@
 .pie-fijo span.right{ position:relative; float:right; width:auto; height:auto; padding:9px 0 0 0; }
 .pie-fijo span input[type='text']{ width:155px; height:21px; border:1px solid #CCC; }
 .pie-fijo span input[type='button']{ background:#4d4d4d; color:#FFF; padding:3px 15px; border:none; border-radius:4px; cursor:pointer; }
+.pie-fijo span .labelHighlight{ color:#CCC; }
 
 /*	index	*/
 #menu-categorias .titulo{ position:relative; float:left; width:100%; height:auto; color:#FFF; padding:4px 0px; background:#b16ec9; font-weight:bold; font-size:12px; }
@@ -114,7 +115,7 @@
 .contenido-central-proveedor .proveedores-normal{ position:relative; float:left; width:100%; }
 .contenido-central-proveedor .proveedores-normal .titulo{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; margin:5px 0 0 0; background:#b370cb; color:#FFF; text-align:left; font-weight:bold; }
 .contenido-central-proveedor .proveedores-normal .titulo p{ padding:0 6px; }
-.contenido-central-proveedor .proveedores-normal .item{ position:relative; float:left; width:auto; height:138px; padding:5px 8px; }
+.contenido-central-proveedor .proveedores-normal .item{ position:relative; float:left; width:auto; height:auto; padding:5px 8px; }
 .contenido-central-proveedor .proveedores-normal .item img{ border:1px solid #b370cb; }
 .contenido-central-proveedor .proveedores-normal .item a{ color:#b370cb; }
 

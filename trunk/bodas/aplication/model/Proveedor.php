@@ -96,7 +96,8 @@
 				FROM proveedores p
 				WHERE p.estado_cuenta_proveedor = 1
 				AND p.id_proveedor_tipo = ".$id_tipo."
-				AND p.id_proveedor_rubro = ".$id_rubro;
+				AND p.id_proveedor_rubro = ".$id_rubro."
+				ORDER BY p.nombre_proveedor ASC";
 
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){

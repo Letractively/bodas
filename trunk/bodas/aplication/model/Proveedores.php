@@ -21,6 +21,7 @@
 				SELECT 
 					p.id_proveedor,
 					p.nombre_proveedor,
+					p.logo_proveedor,
 					pt.nombre_proveedor_tipo,
 					pr.nombre_proveedor_rubro,
 					uc.id_usuario_cliente,
@@ -46,6 +47,7 @@
                     <tr>
                     	<th>Id</th>
                         <th>Nombre</th>
+                        <th>Logo</th>
                         <th>Tipo</th>
                         <th>Rubro</th>
                         <th>Administrador</th>
@@ -59,9 +61,10 @@
                             <tr>
                             	<td><?php echo $rw[0]?></td>
                                 <td><?php echo $rw[1]?></td>
-                                <td><?php echo $rw[2]?></td>
+                                <td> <img src="<?php echo _tt_."src=/aplication/webroot/imgs/proveedores/".$rw[2]."&w=40";?>" /></td>
                                 <td><?php echo $rw[3]?></td>
-                                <td><a href="UsuarioCliente.php?id=<?php echo $rw[4]?>&opcion=editar" title="Editar cuenta del administrador"><?php echo $rw[5]?></a></td>
+                                <td><?php echo $rw[4]?></td>
+                                <td><a href="UsuarioCliente.php?id=<?php echo $rw[5]?>&opcion=editar" title="Editar cuenta del administrador"><?php echo $rw[6]?></a></td>
                                 <td align="center">
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                     <a href='Proveedor.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
@@ -148,8 +151,7 @@
 
 		public function agregar(){
 
-			if($_FILES['fleLogo']['type'] == 'image/jpeg'){ $img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'proveedores');
-			}else{ $img = "sin-imagen.jpg"; }
+			$img = $this->subirImagenCarpeta($_FILES['fleLogo']['tmp_name'], $_FILES['fleLogo']['name'], 'proveedores');
 
 			$Query = new Consulta("INSERT INTO proveedores VALUES('',
 				'".$_POST['selProveedorTipo']."',

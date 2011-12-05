@@ -27,11 +27,7 @@
 			$objProveedorPublicacionComentario = new ProveedorPublicacionComentario;
 			
 			?>
-            
-            <script type="text/javascript" src="<?=_bs_?>aplication/webroot/js/jquery.textareaCounter.plugin.js"></script>
-            <script type="text/javascript" src="<?=_bs_?>aplication/webroot/js/jquery.labelify.js"></script>
 
-            
 				<div class="margen-index">
                 
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
