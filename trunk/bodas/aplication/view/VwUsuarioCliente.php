@@ -90,12 +90,10 @@
 
 		public function agregar_usuario(){
 
-			if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-				if(isset($_FILES['fleLogo'])){
-					$img = date('His').'_'.$_FILES['fleLogo']['name'];
-					$fnImagen = 'aplication/webroot/imgs/usuarios_clientes/'.$img;
-					move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-				}
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
+				$img = date('His').'_'.$_FILES['fleLogo']['name'];
+				$fnImagen = 'aplication/webroot/imgs/usuarios_clientes/'.$img;
+				move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
 			}else{ $img = "sin-imagen.jpg"; }
 
 			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }
@@ -223,16 +221,12 @@
 		public function updateusuario(){
 
 			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
-				if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-					
 						$img = date('His').'_'.$_FILES['fleLogo']['name'];
 						$logo = "foto_usuario_cliente = '".$img."',";
 						$fnImagen = 'aplication/webroot/imgs/usuarios_clientes/'.$img;
 						move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-					
-				}else{ $logo = "foto_usuario_cliente = 'sin-imagen.jpg',"; }
-			}
-		
+			}else{ $logo = "foto_usuario_cliente = 'sin-imagen.jpg',"; }
+
 			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }
 
 			$sqlUpdate = " UPDATE usuarios_clientes SET 
@@ -455,16 +449,12 @@
 		public function updateinformacionempresa(){
 			
 			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
-				if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-					
-						$img = date('His').'_'.$_FILES['fleLogo']['name'];
-						$logo = "logo_proveedor = '".$img."',";
-						$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
-						move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-					
-				}else{ $logo = "logo_proveedor = 'sin-imagen.jpg',"; }
-			}
-	
+				$img = date('His').'_'.$_FILES['fleLogo']['name'];
+				$logo = "logo_proveedor = '".$img."',";
+				$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
+				move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
+			}else{ $logo = "logo_proveedor = 'sin-imagen.jpg',"; }
+
 			$Query = new Consulta(" UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										".$logo."
@@ -585,12 +575,10 @@
 			$objUsuarioCliente = new UsuarioCliente;
 			$id_proveedor = $objUsuarioCliente->obtenerProveedorXAdministrador($_SESSION['login_usuario_cliente']);
 
-			if($_FILES['fleLogo']['type'] == 'image/jpeg'){
-				if(isset($_FILES['fleLogo'])){
-					$img = date('His').'_'.$_FILES['fleLogo']['name'];
-					$fnImagen = 'aplication/webroot/imgs/proveedores_recomendados/'.$img;
-					move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
-				}
+			if(isset($_FILES['fleLogo']) && $_FILES['fleLogo'] != ''){
+				$img = date('His').'_'.$_FILES['fleLogo']['name'];
+				$fnImagen = 'aplication/webroot/imgs/proveedores_recomendados/'.$img;
+				move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
 			}else{ $img = "sin-imagen.jpg"; }
 
 			if($_POST['chkBoletin'] == 'on'){ $bol = 1; }else{ $bol = 0; }

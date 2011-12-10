@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 05-12-2011 a las 11:27:40
+-- Tiempo de generación: 09-12-2011 a las 19:09:03
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -146,7 +146,7 @@ CREATE TABLE `proveedores` (
   `fecha_registro_proveedor` datetime NOT NULL,
   `estado_cuenta_proveedor` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores`
@@ -181,6 +181,7 @@ INSERT INTO `proveedores` VALUES (41, 3, 4, 'Proveedor de ejemplo 021', '123917_
 INSERT INTO `proveedores` VALUES (42, 3, 4, 'Proveedor de ejemplo 022', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
 INSERT INTO `proveedores` VALUES (43, 3, 4, 'Proveedor de ejemplo 023', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (44, 3, 4, 'Proveedor de ejemplo 024', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
+INSERT INTO `proveedores` VALUES (45, 2, 4, 'Proveedor de prueba', '175706_deliza.gif.jpg', 'fg ewrq ger gewr g', '<p>\r\n	fa gwer gwer gwer gwer ga sdfg we fawe fawe few</p>\r\n', 'faew awef a', '12341234', '12341234', '12341234', '12341234', 'empresa@gian.com', 'gian.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/?ie=UTF8&ll=40.396764,-3.713379&spn=10.705296,16.940918&t=m&z=6&vpsrc=1&output=embed"></iframe><br /><small><a href="http://maps.google.es/?ie=UTF8&ll=40.396764,-3.713379&spn=10.705296,16.940918&t=m&z=6&vpsrc=1&source=embed" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-12-09 05:38:40', 1);
 
 -- --------------------------------------------------------
 
@@ -195,7 +196,7 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=113 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
@@ -205,6 +206,13 @@ INSERT INTO `proveedores_imagenes` VALUES (102, 20, '232322_apple.jpg', '2011-12
 INSERT INTO `proveedores_imagenes` VALUES (103, 20, '232435_chrome.jpg', '2011-12-04 11:24:35', 1);
 INSERT INTO `proveedores_imagenes` VALUES (104, 20, '232518_hp.jpg', '2011-12-04 11:25:18', 1);
 INSERT INTO `proveedores_imagenes` VALUES (105, 20, '232626_indice.jpg', '2011-12-04 11:26:26', 1);
+INSERT INTO `proveedores_imagenes` VALUES (106, 45, '174443_apple.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (107, 45, '174443_chrome.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (108, 45, '174443_firefox.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (109, 45, '174443_hp.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (110, 45, '174443_indice.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (111, 45, '174443_look.jpg', '2011-12-09 05:44:43', 1);
+INSERT INTO `proveedores_imagenes` VALUES (112, 45, '174443_win7.jpg', '2011-12-09 05:44:43', 1);
 
 -- --------------------------------------------------------
 
@@ -219,7 +227,7 @@ CREATE TABLE `proveedores_publicaciones` (
   `fecha_proveedor_publicacion` datetime NOT NULL,
   `estado_proveedor_publicacion` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones`
@@ -232,6 +240,8 @@ INSERT INTO `proveedores_publicaciones` VALUES (22, 20, ' dsafds fewf eawf awf w
 INSERT INTO `proveedores_publicaciones` VALUES (26, 20, 'Escribe aqui tu publicacion', '2011-12-05 10:20:50', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (27, 20, '', '2011-12-05 10:20:52', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (28, 20, 'fasd dsaaw aewf awe  faew ', '2011-12-05 10:22:21', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (30, 45, 'f rewa fgewarg are gseragaeg', '2011-12-09 17:47:23', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (31, 45, 'asdf wef awef', '2011-12-09 17:47:28', 1);
 
 -- --------------------------------------------------------
 
@@ -247,7 +257,7 @@ CREATE TABLE `proveedores_publicaciones_comentarios` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion_comentario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones_comentarios`
@@ -257,6 +267,10 @@ INSERT INTO `proveedores_publicaciones_comentarios` VALUES (5, 23, 3, 'dsfads fa
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (11, 29, 3, 'fger wgwerg wrgwer were', '2011-12-05 11:02:16', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (9, 22, 12, 'fd dsgsreg resg esr', '2011-12-05 10:18:26', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (10, 23, 12, 'fdv sfdvfds vs vsr', '2011-12-05 10:24:26', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (12, 30, 53, 'fdsf gaewr aew', '2011-12-09 05:48:02', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (13, 31, 53, 'a fwefaw efawe', '2011-12-09 05:48:04', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (14, 31, 53, 'af wef ', '2011-12-09 05:48:05', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (15, 30, 53, 'awef waef aw', '2011-12-09 05:48:07', 1);
 
 -- --------------------------------------------------------
 
@@ -271,7 +285,7 @@ CREATE TABLE `proveedores_recomendados` (
   `link_proveedor_recomendado` varchar(250) NOT NULL,
   `estado_proveedor_recomendado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_recomendado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_recomendados`
@@ -279,6 +293,7 @@ CREATE TABLE `proveedores_recomendados` (
 
 INSERT INTO `proveedores_recomendados` VALUES (9, 20, '220044_apple.jpg', 'http://www.holas.com.pe', 1);
 INSERT INTO `proveedores_recomendados` VALUES (10, 20, '232735_hp.jpg', 'http://www.hp.com', 1);
+INSERT INTO `proveedores_recomendados` VALUES (11, 45, 'sin-imagen.jpg', 'http://www.google.com.pe', 1);
 
 -- --------------------------------------------------------
 
@@ -293,7 +308,7 @@ CREATE TABLE `proveedores_redes_sociales` (
   `link_proveedor_red_social` text NOT NULL,
   `estado_proveedores_red_social` text NOT NULL,
   PRIMARY KEY  (`id_proveedor_red_social`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_redes_sociales`
@@ -302,6 +317,7 @@ CREATE TABLE `proveedores_redes_sociales` (
 INSERT INTO `proveedores_redes_sociales` VALUES (3, 20, 1, 'http://facebook.com/redsocial', '1');
 INSERT INTO `proveedores_redes_sociales` VALUES (4, 20, 2, 'http://twitter.com/twitter', '1');
 INSERT INTO `proveedores_redes_sociales` VALUES (5, 20, 1, 'http://facebook.com/bodas', '1');
+INSERT INTO `proveedores_redes_sociales` VALUES (6, 45, 1, 'facebook/gian', '1');
 
 -- --------------------------------------------------------
 
@@ -533,7 +549,7 @@ CREATE TABLE `usuarios_clientes` (
   `estado_registro_usuario_cliente` tinyint(1) NOT NULL,
   `estado_cuenta_usuario_cliente` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes`
@@ -546,6 +562,7 @@ INSERT INTO `usuarios_clientes` VALUES (12, 2, 16, 'Administrador de proveedor 0
 INSERT INTO `usuarios_clientes` VALUES (10, 2, 16, 'Asrael', '', '185218_hp.jpg', 'asrael@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-11-21 06:52:30', 0, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (51, 1, 16, 'mace', 'rece', '164813_win7.jpg', 'raulmace@hotmail.com', 'miterimos', '996828889', '1985-07-28', 'Cinthia', '2011-12-30', '2011-11-29 04:48:13', 1, 1, 1);
 INSERT INTO `usuarios_clientes` VALUES (52, 1, 20, 'macuco', 'macaco', '165738_apple.jpg', 'macuco@hotmail.com', '123456', '996828889', '2011-12-31', 'Katty', '2011-12-31', '2011-12-02 04:57:38', 0, 1, 1);
+INSERT INTO `usuarios_clientes` VALUES (53, 2, 16, 'gian', 'gian', '173938_apple.jpg', 'gian@hotmail.com', '123456', '', '0000-00-00', '', '0000-00-00', '2011-12-09 05:39:38', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -558,7 +575,7 @@ CREATE TABLE `usuarios_clientes_proveedores` (
   `id_usuario_cliente` int(11) NOT NULL,
   `id_proveedor` int(11) NOT NULL,
   PRIMARY KEY  (`id_usuario_cliente_proveedor`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuarios_clientes_proveedores`
@@ -567,6 +584,7 @@ CREATE TABLE `usuarios_clientes_proveedores` (
 INSERT INTO `usuarios_clientes_proveedores` VALUES (15, 10, 16);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (14, 8, 18);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (18, 12, 20);
+INSERT INTO `usuarios_clientes_proveedores` VALUES (19, 53, 45);
 
 -- --------------------------------------------------------
 
