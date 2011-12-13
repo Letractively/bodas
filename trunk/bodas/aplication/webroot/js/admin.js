@@ -3,7 +3,7 @@ $(document).ready(function(){
 	if($('.dp').length > 0){ $('.dp').datepicker({dateFormat:'yy-mm-dd'}); }
 	if($('.tp').length > 0){ $('.tp').timepicker({tepMinute: 10, ampm: true }); }
 	if($('.dtp').length > 0){ $('.dtp').datetimepicker({dateFormat:'yy-mm-dd'}); }
-
+ 
 	if($("#inicio, #termino").length > 0){ 
 		var dates = $("#inicio, #termino").datetimepicker({
 			minDate: 0,
