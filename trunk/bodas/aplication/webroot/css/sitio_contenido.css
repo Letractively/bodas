@@ -52,6 +52,7 @@
 #menu-categorias .lista li p{ padding:3px 0 3px 4px; }
 #menu-categorias .lista li a{ color:#333; }
 #menu-categorias .lista li a:hover{ color:#a657c2; }
+#menu-categorias .lista li #activo{ color:#a657c2; }
 
 /*	Contenido central	*/
 .contenido-central{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
@@ -259,3 +260,59 @@ width:auto; text-align:center; }
 .cont_imagenes{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; }
 .cont_imagenes .item_img{ position:relative; float:left; width:80px; height:80px; padding:9px; }
 .cont_imagenes .eliminar_imagen{ position:absolute; float:right; width:auto; height:auto; top:3px; right:3px; cursor:pointer; font-size:10px; }
+
+label.error_contacto{ float:left; width:auto; }
+
+/*	Contenido noticias	*/
+.contenido-central-noticias{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-noticias .titulo{ position:relative; float:left; width:100%; height:auto; background:#efefef; padding:4px 0px; }
+.contenido-central-noticias .titulo .nombre-rubro{ position:relative; float:left; width:auto; height:auto; padding:0 0 0 8px; color:#a657c2; text-transform: uppercase; font-weight:bold; }
+.contenido-central-noticias .titulo .regresar{ position:relative; float:right; width:auto; height:auto; padding:0 8px 0 0; color:#a657c2; }
+.contenido-central-noticias .titulo .regresar a{ color:#787878; }
+.contenido-central-noticias .titulo .regresar a:hover{ text-decoration:underline; }
+
+.contenido-central-noticias .contenedor-paginacion{ position:relative; float:right; width:auto; height:auto; padding:0 5px 0 0; }
+.contenido-central-noticias .contenedor-paginacion .paginacion{ margin:0 auto 0 auto;
+width:auto; text-align:center; }
+
+.contenido-central-noticias .listado-noticias{ position:relative; float:left; width:100%; height:auto; }
+.contenido-central-noticias .listado-noticias .item{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; margin:0 0 5px 0; border-bottom:1px solid #CCC;  }
+.contenido-central-noticias .listado-noticias .item .imagen{ position:relative; float:left; width:auto; height:auto; padding:5px; }
+.contenido-central-noticias .listado-noticias .item .texto{ position:relative; float:left; width:330px; height:auto; padding:3px; }
+.contenido-central-noticias .listado-noticias .item .texto .fecha-item{ color:#CCC; }
+.contenido-central-noticias .listado-noticias .item .texto .titulo-item{ font-size:16px; }
+
+/*	Detalle de noticia	*/
+.contenido-central-detalle-noticias{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-detalle-noticias .titulo{ position:relative; float:left; width:100%; height:auto; background:#efefef; padding:4px 0px; }
+.contenido-central-detalle-detalle-noticias .titulo .nombre-rubro{ position:relative; float:left; width:auto; height:auto; padding:0 0 0 8px; color:#a657c2; text-transform:uppercase; font-weight:bold; }
+.contenido-central-detalle-noticias .titulo .regresar{ position:relative; float:right; width:auto; height:auto; padding:0 8px 0 0; color:#a657c2; }
+.contenido-central-detalle-noticias .titulo .regresar a{ color:#787878; }
+.contenido-central-detalle-noticias .titulo .regresar a:hover{ text-decoration:underline; }
+
+.contenido-central-detalle-noticias .contenedor-paginacion{ position:relative; float:right; width:auto; height:auto; padding:0 5px 0 0; }
+.contenido-central-detalle-noticias .contenedor-paginacion .paginacion{ margin:0 auto 0 auto;
+width:auto; text-align:center; }
+
+.contenido-central-detalle-noticias .fecha{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; color:#999; font-size:10px; }
+.contenido-central-detalle-noticias .titulo-noticia{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; font-size:16px; color:#a657c2; font-weight:bold; }
+.contenido-central-detalle-noticias .texto{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; margin:0 0 3px 0; border-bottom:1px dotted #999999; }
+.contenido-central-detalle-noticias .imagen-noticia{ padding:5px; }
+
+.contenido-central-detalle-noticias .mas-noticias{ position:relative; float:right; width:100%; height:auto; padding:3px 0; }
+.contenido-central-detalle-noticias .mas-noticias .titulo-mas-noticias{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; font-size:13px; color:#a657c2; font-weight:bold; }
+
+.contenido-central-detalle-noticias .mas-noticias .lista{ position:relative; float:right; width:100%; height:auto; padding:3px 0; }
+.contenido-central-detalle-noticias .mas-noticias .lista .item{ position:relative; float:left; width:154px; height:auto; padding:3px; margin:3px; }
+.contenido-central-detalle-noticias .mas-noticias .lista .item img{ width:146px; height:86px; border:1px solid #a657c2; }
+
+.contenido-central-detalle-noticias .contenedor-comentarios{ position:relative; float:left; width:488px; height:auto; padding:5px; }
+.contenido-central-detalle-noticias .contenedor-comentarios textarea{ width:485px; height:46px; border:1px solid #CCC; }
+.contenido-central-detalle-noticias .contenedor-comentarios .originalDisplayInfo{ position:relative; float:left; width:auto !important; height:auto; margin:6px 0 0 0; }
+.contenido-central-detalle-noticias .contenedor-comentarios .btnPublicarComentarioNoticia{ position:relative; float:right; padding:3px 8px; background:#bd56c6; color:#FFF; border:none; border-radius:2px; margin:4px 0 0 0; cursor:pointer; }
+
+.contenido-central-detalle-noticias .contenedor-comentarios .lista-publicacion-comentarios{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-detalle-noticias .contenedor-comentarios .lista-publicacion-comentarios ul{ list-style:none; }
+.contenido-central-detalle-noticias .contenedor-comentarios .lista-publicacion-comentarios li{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; border-bottom:1px solid #CCC; background:#f3e9f7; }
+.contenido-central-detalle-noticias .contenedor-comentarios .lista-publicacion-comentarios li img{ padding:5px; }
+.contenido-central-detalle-noticias .contenedor-comentarios .del_comentario_noticia{ position:absolute; float:right; width:auto; height:auto; margin:5px; top:0px; right:0px; cursor:pointer; }

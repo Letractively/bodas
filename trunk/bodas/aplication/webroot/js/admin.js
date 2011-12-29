@@ -3,6 +3,7 @@ $(document).ready(function(){
 	if($('.dp').length > 0){ $('.dp').datepicker({dateFormat:'yy-mm-dd'}); }
 	if($('.tp').length > 0){ $('.tp').timepicker({tepMinute: 10, ampm: true }); }
 	if($('.dtp').length > 0){ $('.dtp').datetimepicker({dateFormat:'yy-mm-dd'}); }
+	if($('.dtp2').length > 0){ $('.dtp2').datetimepicker({dateFormat:'yy-mm-dd ', timeFormat: 'hh:mm:ss',}); }
  
 	if($("#inicio, #termino").length > 0){ 
 		var dates = $("#inicio, #termino").datetimepicker({
@@ -72,7 +73,7 @@ $(document).ready(function(){
 		});
 	}
 
-	$('.delete, .eliminar').click(function(){
+	$('.delete, .eliminar').live("click", function(){
 		if($(this).attr('class') == "delete" || $(this).attr('class') == "eliminar"){
 			if(!confirm("Esta completamente seguro?, recuerde que puede cambiar de estado el registro.")){
 				return false;

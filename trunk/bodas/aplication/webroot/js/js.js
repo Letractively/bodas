@@ -7,6 +7,13 @@ $(document).ready(function() {
 		var loader = '<img id="loader" src="' + base + 'aplication/webroot/imgs/icons/ajax-loader.gif" />';
 	}
 	
+	if($('#coin-slider').length > 0){
+		$('#coin-slider').coinslider({
+			width: 505,
+			height: 299
+		});
+	}	
+	
 	if($('#galleria').length > 0){
 		Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
 		$('#galleria').galleria({
@@ -217,7 +224,7 @@ $(document).ready(function() {
 	});
 
 
-	var peso_proveedor = '50 KB';
+	var peso_proveedor = '150 KB';
 	var trig = false;
 	var gif = base + 'aplication/webroot/js/swfupload/ajax-loader.gif';
 	var sus = 'Archivo guardado!, espere...';
@@ -284,7 +291,7 @@ $(document).ready(function() {
 	$('.swfupload-proveedor-imagenes').each(function(){
 		$(this).swfupload({
 			upload_url: base + "upload.php?proveedores_fotos&id_proveedor="+$('#id_proveedor').attr('value'),
-			file_size_limit : "50 KB",
+			file_size_limit : "150 KB",
 			file_types : "*.jpg",
 			file_types_description : "Imagenes",
 			file_upload_limit : "0",
@@ -409,5 +416,49 @@ $(document).ready(function() {
 		);
 		$('#comentario_'+$(this).attr('id')).remove();
 	});
+
+
+	/*	Detalle noticia	*/
+	$('.btnPublicarComentarioNoticia').click(function(){
+
+		var var_c = $(this).attr('id');
+
+		if( $('#post'+var_c+' .areaPublicacionComentario').val() != '' && $('#post'+var_c+' .areaPublicacionComentario').val() != 'Comentario' ){
+
+			$(loader).insertAfter( $('#btnPublicar') );
+			$('.aler_error').remove();
+
+			$.post(base+'ajax.php',{
+					agregar_publicacion_comentario_noticia: 1,
+					id_articulo: var_c,
+					id_usuario_cliente: $('#id_usuario_cliente').val(),
+					comentario: $('#post'+var_c+' .areaPublicacionComentario').val()
+				},
+				function (response) {
+					var record = response.data;
+					$('#loader, .aler_error, #sin_publicacion').remove();
+
+					$('#post'+var_c+' .lista_comentarios').append('<li id="comentario_'+record[0].id_comentario+'"><div class="del_comentario_noticia" id="'+record[0].id_comentario+'">x</div><img src="'+$('#hidImagenUser').val()+'" align="left" /><b>'+record[0].nombre_usuario_cliente+' dijo: </b>'+record[0].comentario+'</li>');
+
+				}, 'json'
+			);
+
+			$('#post'+var_c+' #sin_comentarios').remove();
+			$('#post'+var_c+' .num_com span').html($( '#post' + var_c + ' .lista_comentarios li').size()+1 );
+			$('#post'+var_c+' .areaPublicacionComentario').val('');
+		}
+		return false;
+	});
+
+	$('.del_comentario_noticia').live("click", function(){
+		$.post(base+'ajax.php',{
+				eliminar_comentario_noticia: 1,
+				id_comentario: $(this).attr('id')
+			},
+			function (response) {}
+		);
+		$('#comentario_'+$(this).attr('id')).remove();
+	});
+
 
 });

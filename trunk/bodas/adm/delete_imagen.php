@@ -7,4 +7,11 @@
 		$query = new Consulta($sql);
 		echo "La imagen fue suprimida del servidor.";
 	}
+	
+	if(isset($_POST['opcion']) && $_POST['opcion'] == 'foto_articulo'){
+		if($_POST['nom_foto'] != '') unlink('../aplication/webroot/imgs/articulos_fotos/'.$_POST['nom_foto']);
+		$sql = " DELETE FROM articulos_imagenes WHERE id_articulo_imagen = '".$id."' ";
+		$query = new Consulta($sql);
+		echo "La imagen fue suprimida del servidor.";
+	}
 ?>

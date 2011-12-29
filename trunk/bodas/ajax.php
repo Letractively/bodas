@@ -12,5 +12,11 @@
 	}else if( isset($_POST['eliminar_comentario']) && $_POST['eliminar_comentario'] == 1){
 		$objProveedorPublicacion = new ProveedorPublicacionComentario();
 		echo $objProveedorPublicacion->eliminar_comentario();
+	}else if( isset($_POST['agregar_publicacion_comentario_noticia']) && $_POST['agregar_publicacion_comentario_noticia'] == 1){
+		$objArticuloComentario = new ArticuloComentario();
+		echo $objArticuloComentario->agregar_comentario();
+	}else if( isset($_POST['eliminar_comentario_noticia']) && $_POST['eliminar_comentario_noticia'] == 1){
+		$objArticuloComentario = new ArticuloComentario();
+		echo $objArticuloComentario->eliminar_comentario();
 	}
 ?>

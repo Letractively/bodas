@@ -9,10 +9,10 @@
 					$res = $objUsuarioCliente->verificarUsuario( $_POST['txtUsuario'] ,$_POST['txtPassword'] );
 					if($res != 0){
 						$_SESSION['login_usuario_cliente'] = $res;
-						?><script type="text/javascript">location.replace('<?=$_POST['url_actual']?>');</script><?php
+						header("Location: ".$_POST['url_actual']);
 					}else{
 						$_SESSION['mensaje_error'] = 'Error en los datos';
-						?><script type="text/javascript">location.replace('<?=$_POST['url_actual']?>');</script><?php
+						header("Location: ".$_POST['url_actual']);
 					}
 				}
 			}		

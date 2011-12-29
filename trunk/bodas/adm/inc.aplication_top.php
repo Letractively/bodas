@@ -49,7 +49,21 @@
 	require_once(_model_."ProveedorTipo.php");
 	require_once(_model_."Proveedores.php");
 
-	
+	require_once(_model_."ArticuloTipo.php");
+	require_once(_model_."ArticulosTipos.php");
+	require_once(_model_."ArticuloGaleria.php");
+
+	require_once(_model_."Articulo.php");
+	require_once(_model_."Articulos.php");
+
+	require_once(_model_."ArticuloComentario.php");
+	require_once(_model_."ArticulosComentarios.php");
+
+	require_once(_model_."ArticuloPortada.php");
+	require_once(_model_."ArticulosPortadas.php");
+
+
+	require_once(_model_."RubrosArticulos.php");
 
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();

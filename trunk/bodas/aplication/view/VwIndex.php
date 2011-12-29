@@ -1,56 +1,65 @@
 <?php
-	class VwIndex{
+	class VwIndex extends Utiles{
 
 		public function __construct(){}
 
 		public function vista(){
+			
+			$objArticuloPortada = new ArticuloPortada;
+			$aryPortadas = $objArticuloPortada->obtener_portadas();
+			
+			$objProveedorPublicacion = new ProveedorPublicacion;
+			$aryUltimasPublicaciones = $objProveedorPublicacion->obtenerUltimasPublicaciones();
+			
 			?>
 				<div class="margen-index">
 
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="contenido-central">
-                    	<img src="<?php echo _img_?>galeria-index.png" />
+
+                        <div id='coin-slider'>
+                        	<?php for($x = 0 ; $x < 4 ; $x++){ ?>
+                                <a href="<?=_bs_."noticias_detalle/".$aryPortadas[$x]['id']."/".$this->procesar_url_2($aryPortadas[$x]['titulo'])?>">
+                                     <img src="<?php echo _tt_."src=../aplication/webroot/imgs/articulos_fotos/".$aryPortadas[$x]['imagen']."&w=505&h=299";?>" alt="<?php echo $aryPortadas[$x]['imagen_1']; ?>" />
+                                    <span><p><b><?php echo $aryPortadas[$x]['titulo']; ?></b><p><p><?php echo substr($aryPortadas[$x]['descripcion1'],0,150); ?></p></span>
+                                </a>
+							<?php } ?>
+                        </div>
+
                         <div class="columna columna1">
                         	<div class="item-portada">
                             	<p><b class="b1">Portada actual</b></p>
                                 <p><img src="<?php echo _img_?>revista-ejemplo.png" /></p>
                             </div>
-                        	<div class="item">
-                            	<p><b class="b1">Titulo</b></p>
-                                <p><img src="<?php echo _img_?>imagen-articulo-index.png" /></p>
-                                <p><b class="b2">Titulo</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit pharetra aliquam. Aliquam erat volutpat. Proin at condimentum nulla.<a href="#">Ver más</a></p>
-                            </div>
+                        	<p><b class="b1"><?php echo substr($aryPortadas[6]['titulo'],0,80) ?></b></p>
+                                <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[6]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[6]['imagen']."&w=161&h=120";?>"></a></p>
+                                <p><?php echo substr($aryPortadas[6]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[6]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>">Ver más</a></p>
                         </div>
 
                         <div class="columna columna1">
                        		<div class="item">
-                            	<p><b class="b1">Titulo</b></p>
-                                <p><img src="<?php echo _img_?>imagen-articulo-index.png" /></p>
-                                <p><b class="b2">Titulo</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit pharetra aliquam. Aliquam erat volutpat. Proin at condimentum nulla.<a href="#">Ver más</a></p>
+                            	<p><b class="b1"><?php echo substr($aryPortadas[4]['titulo'],0,80) ?></b></p>
+                                <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[4]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[4]['imagen']."&w=161&h=120";?>"></a></p>
+                                <p><?php echo substr($aryPortadas[4]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[4]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>">Ver más</a></p>
                             </div>
                             <div class="item">
-                            	<p><b class="b1">Titulo</b></p>
-                                <p><img src="<?php echo _img_?>imagen-articulo-index.png" /></p>
-                                <p><b class="b2">Titulo</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit pharetra aliquam. Aliquam erat volutpat. Proin at condimentum nulla.<a href="#">Ver más</a></p>
+                            	<p><b class="b1"><?php echo substr($aryPortadas[7]['titulo'],0,80) ?></b></p>
+                                <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[7]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[7]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[7]['imagen']."&w=161&h=120";?>"></a></p>
+                                <p><?php echo substr($aryPortadas[7]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[7]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[7]['titulo']) ?>">Ver más</a></p>
                             </div>
                         </div>
 
                         <div class="columna columna2">
                         	<div class="item">
-                            	<p><b class="b1">Titulo</b></p>
-                                <p><img src="<?php echo _img_?>imagen-articulo-index.png" /></p>
-                                <p><b class="b2">Titulo</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit pharetra aliquam. Aliquam erat volutpat. Proin at condimentum nulla.<a href="#">Ver más</a></p>
+                            	<p><b class="b1"><?php echo substr($aryPortadas[5]['titulo'],0,80) ?></b></p>
+                                <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[5]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[5]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[5]['imagen']."&w=161&h=120";?>"></a></p>
+                                <p><?php echo substr($aryPortadas[5]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[5]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[5]['titulo']) ?>">Ver más</a></p>
                             </div>
                             <div class="item">
-                            	<p><b class="b1">Titulo</b></p>
-                                <p><img src="<?php echo _img_?>imagen-articulo-index.png" /></p>
-                                <p><b class="b2">Titulo</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit pharetra aliquam. Aliquam erat volutpat. Proin at condimentum nulla.<a href="#">Ver más</a></p>
+                            	<p><b class="b1"><?php echo substr($aryPortadas[8]['titulo'],0,80) ?></b></p>
+                                <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[8]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[8]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[8]['imagen']."&w=161&h=120";?>"></a></p>
+                                <p><?php echo substr($aryPortadas[8]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[8]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[7]['titulo']) ?>">Ver más</a></p>
                             </div>
                         </div>
 
@@ -75,35 +84,12 @@
                         <div class="otros-items2">
                         	<div class="titulo"><img src="<?php echo _img_?>tit-index-posts.png"></div>
                             
-                            <div class="contenido">
-                            	<p class="nombre-proveedor">Proveedor</p>
-                                <p class="publicacion">Post publicado por el proveedor</p>
-                                <p class="rubro-proveedor">Rubro</p>
-                            </div>
-                            
-                            <div class="contenido">
-                            	<p class="nombre-proveedor">Proveedor</p>
-                                <p class="publicacion">Post publicado por el proveedor, Post publicado por el proveedor</p>
-                                <p class="rubro-proveedor">Rubro</p>
-                            </div>
-                            
-                            <div class="contenido">
-                            	<p class="nombre-proveedor">Proveedor</p>
-                                <p class="publicacion">Post publicado por el proveedor</p>
-                                <p class="rubro-proveedor">Rubro</p>
-                            </div>
-                            
-                            <div class="contenido">
-                            	<p class="nombre-proveedor">Proveedor</p>
-                                <p class="publicacion">Post publicado por el proveedor, Post publicado por el proveedor</p>
-                                <p class="rubro-proveedor">Rubro</p>
-                            </div>
-                            
-                            <div class="contenido">
-                            	<p class="nombre-proveedor">Proveedor</p>
-                                <p class="publicacion">Post publicado por el proveedor</p>
-                                <p class="rubro-proveedor">Rubro</p>
-                            </div>
+                            <?php for( $x = 0 ; $x < 8; $x++ ){ ?>
+                                <div class="contenido">
+                                    <p class="nombre-proveedor"><a href="<?=_bs_?>catalogo/<?php echo $aryUltimasPublicaciones[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryUltimasPublicaciones[$x]['nombre_proveedor']) ?>"><?php echo $aryUltimasPublicaciones[$x]['nombre_proveedor']?></a></p>
+                                    <p class="publicacion"><?php echo substr($aryUltimasPublicaciones[$x]['texto_proveedor_publicacion'],0,30)."..."; ?></p>
+                                </div>
+                            <?php } ?>
                             
                         </div>
 

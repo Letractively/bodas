@@ -48,15 +48,38 @@
 		}
 
 		public function nuevo(){
+			$objArticulo = new Articulo;
+			$aryArticulos = $objArticulo->getArticuloXTipo(1);
+
 			?>
                 <form id="frmProveedorRubrosNuevo" name="frmProveedorRubrosNuevo" action="" method="post">
                 	<h2>Nuevo rubro</h2>
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" /></div>
+                    
                     <div class="itm">
                     	<label>Estado: </label>
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0">Desactivado
                     </div>
+                    
+                    <div class="itm">
+                    	<label>Primera noticia relacionada: </label>
+                        <select id="noticia1" name="noticia1">
+                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos[$x]['id']?>"><?php echo $aryArticulos[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
+                    <div class="itm">
+                    	<label>Segunda noticia relacionada: </label>
+                        <select id="noticia2" name="noticia2">
+                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos[$x]['id']?>"><?php echo $aryArticulos[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
                     <div class="itm">
                         <input type="submit" id="ProveedorRubros_guardar_nuevo" value="Guardar y crear nuevo" />
                         <input type="submit" id="ProveedorRubros_guardar_listar" value="Guardar y listar" />
@@ -72,11 +95,24 @@
 				'".$_POST['txtNombre']."',
 				'".$_POST['rdoEstado']."'
 			)");
+
+			$id = mysql_insert_id();
+
+			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia1'].")");
+			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia2'].")");
+
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro insertado correctamente.</div><?php
 		}
 
 		public function editar($id){
 			$objProveedorRubro = new ProveedorRubro($id);
+			
+			$objArticulo = new Articulo;
+			$aryArticulos = $objArticulo->getArticuloXTipo(1);
+
+			$objRubrosArticulos = new RubrosArticulos;
+			$aryArticulosSel = $objRubrosArticulos->obtenerArticulosXRubro($id);
+
 			?>
                 <form id="frmProveedorRubrosEdita" name="frmProveedorRubrosEdita" action="" method="post">
                     <h2>Editar rubro</h2>
@@ -86,6 +122,29 @@
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objProveedorRubro->estado_proveedor_rubro !=1){ echo "checked='checked'"; }?>>Desactivado
                     </div>
+                    
+                    <div class="itm">
+                    	<label>Primera noticia relacionada: </label>
+                        <select id="noticia1" name="noticia1">
+                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos[$x]['id']?>"
+                                <?php if($aryArticulosSel[0]['id_articulo'] == $aryArticulos[$x]['id']){ echo "selected='selected'"; }?>
+                                ><?php echo $aryArticulos[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="itm">
+                    	<label>Segunda noticia relacionada: </label>
+                        <select id="noticia2" name="noticia2">
+                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos[$x]['id']?>"
+                                <?php if($aryArticulosSel[1]['id_articulo'] == $aryArticulos[$x]['id']){ echo "selected='selected'"; }?>
+                                ><?php echo $aryArticulos[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
                     <div class="itm">
                         <input type="hidden" id="id_proveedor_rubro" value="<?php echo $objProveedorRubro->id_proveedor_rubro; ?>" />
                         <input type="submit" id="ProveedorRubros_editar_listar" value="Editar y listar" />
@@ -101,6 +160,10 @@
 										nombre_proveedor_rubro = '".$_POST['txtNombre']."',
 										estado_proveedor_rubro = '".$_POST['rdoEstado']."'
 									WHERE id_proveedor_rubro = '".$id."'");
+
+			$Query = new Consulta("DELETE FROM rubros_articulos WHERE id_rubro = ".$id."");
+			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia1'].")");
+			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia2'].")");
 
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php
 		}

@@ -34,7 +34,7 @@
                     
                     <div class="contenido-central-catalogo">
 						<div class="titulo">
-							<?php echo $objProveedor->nombre_proveedor; ?>
+							<?php echo mb_strtoupper($objProveedor->nombre_proveedor,'utf-8'); ?>
                             <div class="regresar"><a href="<?=_bs_?>proveedores/<?php echo $objProveedorRubro2->id_proveedor_rubro ?>/1/<?php echo $objUtilitarios->procesar_url_2($objProveedorRubro2->nombre_proveedor_rubro) ?>">&laquo; Regresar a <?php echo $objProveedorRubro2->nombre_proveedor_rubro; ?></a></div>
                         </div>
 
@@ -206,7 +206,7 @@
                         	
                         	<div class="redes">
                             	<?php for($x = 0 ; $x < count($aryRedesSocuales) ; $x++){ ?>
-									<a href="<?php echo $aryRedesSocuales[$x]['link_proveedor_red_social']?>" target="_blank" title="<?php echo $aryRedesSocuales[$x]['link_proveedor_red_social']?>"><img src="<?php echo _img_?>/<?php echo $aryRedesSocuales[$x]['imagen_red_social']?>"></a>
+									<a href="http://<?php echo $aryRedesSocuales[$x]['link_proveedor_red_social']?>" target="_blank" title="<?php echo $aryRedesSocuales[$x]['link_proveedor_red_social']?>"><img src="<?php echo _img_?>/<?php echo $aryRedesSocuales[$x]['imagen_red_social']?>"></a>
 								<?php } ?>
                             </div>
                         
@@ -214,7 +214,7 @@
                         
                         	<div class="recomendados">
                             	<?php for($x = 0 ; $x < count($aryRecomendados) ; $x++){ ?>
-									<a href="<?php echo $aryRecomendados[$x]['link_proveedor_recomendado']?>" target="_blank" title="<?php echo $aryRecomendados[$x]['link_proveedor_recomendado']?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores_recomendados/".$aryRecomendados[$x]['imagen_proveedor_recomendado']."&w=54&h=54";?>"></a>
+									<a href="http://<?php echo $aryRecomendados[$x]['link_proveedor_recomendado']?>" target="_blank" title="<?php echo $aryRecomendados[$x]['link_proveedor_recomendado']?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores_recomendados/".$aryRecomendados[$x]['imagen_proveedor_recomendado']."&w=54&h=54";?>"></a>
 								<?php } ?>
                             </div>
                         

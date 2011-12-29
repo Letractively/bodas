@@ -2,51 +2,51 @@
 $(document).ready(function(){
 
 
-	$('#frmProveedorNuevo').validate({
+	$('#frmNuevo').validate({
 		errorElement: 'label', errorClass: 'error',
 		rules:{
-			txtNombre: 'required',
-			fleLogo: { required:true, accept:'jpg|gif' },
+			txtTitulo: 'required',
+			txtFecha: 'required',
 			txtDescripcionCorta: 'required'
 		},
 		messages:{
-			txtNombre: 'Ingresa un nombre.',
-			fleLogo: { required:'Seleccione un archivo', accept:'solo se acepta archivos .jpg y .gif' },
+			txtTitulo: 'Ingrese el titulo del articulo',
+			txtFecha: 'Ingrese la fecha del articulo',
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
 		}
 	});
 
 
-	$('#Proveedor_guardar_nuevo').click(function(){
-		$('#frmProveedorNuevo').attr('action','?opcion=add_new');
-		$('#frmProveedorNuevo').submit();
+	$('#guardar_nuevo').click(function(){
+		$('#frmNuevo').attr('action','?opcion=add_new');
+		$('#frmNuevo').submit();
 	});
 
 
-	$('#Proveedor_guardar_listar').click(function(){
-		$('#frmProveedorNuevo').attr('action','?opcion=add_list');
-		$('#frmProveedorNuevo').submit();
+	$('#guardar_listar').click(function(){
+		$('#frmNuevo').attr('action','?opcion=add_list');
+		$('#frmNuevo').submit();
 	});
 
 
-	$('#frmProveedorEdita').validate({
+	$('#frmEdita').validate({
 		errorElement: 'label', errorClass: 'error',
 		rules:{
-			txtNombre: 'required',
-			fleLogo: { accept:'jpg|gif' },
+			txtTitulo: 'required',
+			txtFecha: 'required',
 			txtDescripcionCorta: 'required'
 		},
 		messages:{
-			txtNombre: 'Ingresa un nombre.',
-			fleLogo: { accept:'solo se acepta archivos .jpg y .gif' },
+			txtTitulo: 'Ingrese el titulo del articulo',
+			txtFecha: 'Ingrese la fecha del articulo',
 			txtDescripcionCorta: 'Ingrese una descripcion corta.'
 		}
 	});
 
 
-	$('#Proveedor_editar_listar').click(function(){
-		$('#frmProveedorEdita').attr('action','?opcion=actualizar&id=' + $('#id_proveedor').attr('value') );
-		$('#frmProveedorEdita').submit();
+	$('#editar_lista').click(function(){
+		$('#frmEdita').attr('action','?opcion=actualizar&id=' + $('#id_articulo').attr('value') );
+		$('#frmEdita').submit();
 	});
 
 
@@ -98,7 +98,7 @@ $(document).ready(function(){
 		},
 		uploadSuccess: function(event, file, serverData){
 			regencoded = jQuery.parseJSON(serverData);
-			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">X</div><div class="nombre"><img src="../aplication/utilities/tt.php?src=../aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80"></div></div>';
+			newItemFoto = '<div id="foto_'+regencoded.data[0].id_articulo_imagen+'" nom_foto="'+regencoded.data[0].imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_articulo_imagen+'">X</div><div class="nombre"><img src="../aplication/utilities/tt.php?src=../aplication/webroot/imgs/articulos_fotos/'+regencoded.data[0].imagen+'&w=80"></div></div>';
 			$('.cont_imagenes').append(newItemFoto);
 
 			$('#load').remove();
@@ -113,10 +113,10 @@ $(document).ready(function(){
 	};
 
 
-	$('.swfupload-proveedor-imagenes').bindAll(listeners_proveedor_imagenes);
-	$('.swfupload-proveedor-imagenes').each(function(){
+	$('.swfupload-articulo-imagenes').bindAll(listeners_proveedor_imagenes);
+	$('.swfupload-articulo-imagenes').each(function(){
 		$(this).swfupload({
-			upload_url: "upload.php?proveedores_fotos&id_proveedor="+$('#id_proveedor').attr('value'),
+			upload_url: "upload.php?articulos_fotos&id_articulo="+$('#id_articulo').attr('value'),
 			file_size_limit : "150 KB",
 			file_types : "*.jpg",
 			file_types_description : "Imagenes",
@@ -139,7 +139,7 @@ $(document).ready(function(){
 			$(this).html('<img src="../aplication/webroot/js/swfupload/ajax-loader.gif">');
 			$.post('delete_imagen.php', 
 				{
-					opcion: 'foto',
+					opcion: 'foto_articulo',
 					id: id_foto,
 					nom_foto: nom_foto
 				},

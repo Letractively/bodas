@@ -5,7 +5,7 @@
     	<?php if(!isset($_SESSION['login_usuario_cliente'])){ ?>
             <div class="contenedor-cuenta"><a id="des_login" href="#">Inicia sesión</a> / <a href="<?=_bs_?>usuario/registrate/">Regístrate</a></div>
             <div class="contenedor-login" <?php if($_SESSION['mensaje_error'] != ''){ echo "style='display:block'"; }?>>
-                <form id="frmAcceso" name="frmAcceso" method="post" action="<?=_bs_?>usuario/login/">
+                <form id="frmAcceso" name="frmAcceso" method="post" action="<?=_bs_?>validacion/login/">
                     <p>E-mail</p>
                     <p><input type="text" id="txtUsuario" name="txtUsuario"></p>
                     <p>Contrase&ntilde;a</p>
@@ -20,7 +20,7 @@
                 </form>
             </div>
         <?php }else{ ?>
-        	<div class="contenedor-cuenta"><a id="des_login" href="<?=_bs_?>usuario/editar_cuenta/">Editar cuenta</a> / <a href="<?=_bs_?>usuario/salir/">Salir</a></div>
+        	<div class="contenedor-cuenta"><a id="des_login" href="<?=_bs_?>usuario/editar_cuenta/">Editar cuenta</a> / <a href="<?=_bs_?>validacion/salir/">Salir</a></div>
         <?php } ?>
         
         <div class="contenedor-buscar">
@@ -37,7 +37,7 @@
     <a href="#">Revista</a>
     <a href="#">Eventos</a>
     <a href="#">Tu Boda</a>
-    <a href="#">Noticias</a>
+    <a href="<?=_bs_?>noticias/0/">Noticias</a>
     <a href="#">Tendencias</a>
     <a href="#">Luna de Miel</a>
     <a href="#">Suscripción</a>

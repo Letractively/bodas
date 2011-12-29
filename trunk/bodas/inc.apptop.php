@@ -33,13 +33,29 @@
 	require_once(_model_."Proveedor.php");
 	require_once(_model_."Distrito.php");
 
+	require_once(_model_."ArticuloTipo.php");
+	require_once(_model_."ArticulosTipos.php");
+	require_once(_model_."ArticuloGaleria.php");
+
+	require_once(_model_."Articulo.php");
+	require_once(_model_."Articulos.php");
+
+	require_once(_model_."ArticuloComentario.php");
+	require_once(_model_."ArticulosComentarios.php");
+
+	require_once(_model_."ArticuloPortada.php");
+	require_once(_model_."ArticulosPortadas.php");
+
+	require_once(_model_."RubrosArticulos.php");
 
 	// Vistas
+	require_once(_view_."Utiles.php");
 	require_once(_view_."VwIndex.php");
 	require_once(_view_."VwProveedores.php");
 	require_once(_view_."VwCatalogo.php");
 	require_once(_view_."VwUsuarioCliente.php");
-	
+	require_once(_view_."VwNoticias.php");
+
 	session_start();
 
 	//Configuracion de base de datos.

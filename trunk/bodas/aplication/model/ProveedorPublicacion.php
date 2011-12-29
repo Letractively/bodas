@@ -35,7 +35,8 @@
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				$rst[] = array(
-					'id_proveedor_publicacion'	=> $rw['id_proveedor_publicacion'],
+					'id_proveedor_publicacion'		=> $rw['id_proveedor_publicacion'],
+					'id_proveedor'					=> $rw['id_proveedor'],
 					'texto_proveedor_publicacion'	=> $rw['texto_proveedor_publicacion'],
 					'fecha_proveedor_publicacion'	=> $rw['fecha_proveedor_publicacion'],
 					'estado_proveedor_publicacion'	=> $rw['estado_proveedor_publicacion']
@@ -43,6 +44,27 @@
 			}
 			return $rst;			
 		}
+
+
+		public function obtenerUltimasPublicaciones(){
+			$sql = "SELECT * FROM proveedores_publicaciones";
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				
+				$objProveedor = new Proveedor($rw['id_proveedor']);
+				
+				$rst[] = array(
+					'id_proveedor_publicacion'	=> $rw['id_proveedor_publicacion'],
+					'id_proveedor'					=> $rw['id_proveedor'],
+					'nombre_proveedor'				=> $objProveedor->nombre_proveedor,
+					'texto_proveedor_publicacion'	=> $rw['texto_proveedor_publicacion'],
+					'fecha_proveedor_publicacion'	=> $rw['fecha_proveedor_publicacion'],
+					'estado_proveedor_publicacion'	=> $rw['estado_proveedor_publicacion']
+				);
+			}
+			return $rst;			
+		}
+
 
 		public function agregar_publicacion(){
 			$texto_filtrado = $this->filtro_tags($_POST['publicacion']);
@@ -60,6 +82,7 @@
 			header('Content-type: text/plain');
 			return json_encode($respuesta);
 		}
+
 
 		public function getPublicacionJson($id){
 
@@ -95,10 +118,12 @@
 
 		}
 
+
 		public function eliminar_publicacion(){
 			$Query = new Consulta("DELETE FROM proveedores_publicaciones WHERE id_proveedor_publicacion = ".$_POST['idpublicacion']);
 			$Query = new Consulta("DELETE FROM proveedores_publicaciones_comentarios WHERE id_proveedor_publicacion = ".$_POST['idpublicacion']);
 		}
+
 
 	}
 ?>
