@@ -40,6 +40,21 @@
 
                         <div class="izquierda">
                         
+                        	<div style="position:relative; float:left; width:auto; height:auto; padding:6px 0px; ">
+                            
+                                <div style="position:relative; float:left; width:auto; height:auto; ">
+                                    <!-- AddThis Button BEGIN -->
+                                    <div class="addthis_toolbox addthis_default_style ">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                    </div>
+                                    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
+                                    <!-- AddThis Button END -->
+                                </div>
+                            
+                            </div>
+                        
+                        	<br clear="all">
+                        
 							<?php if(count($aryImagenesXProveedor) > 0){?>
                                 <div id="galleria">
                                     <?php for($x = 0 ; $x < count($aryImagenesXProveedor) ; $x++){?>
@@ -52,7 +67,8 @@
     
     						<div class="texto">
                             	<img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=150&h=80";?>" align="left">
-                                <?php echo $objProveedor->descripcion2_proveedor ?>
+                                <p><b><?php echo $objProveedor->nombre_proveedor ?></b></p>
+                                <p><?php echo $objProveedor->descripcion2_proveedor ?></p>
                             </div>
 
 							<?php if(isset($_SESSION['login_usuario_cliente'])){
@@ -63,7 +79,7 @@
 								<div class="frmPublicar">
                                     <form id="frmPublicar" name="frmPublicar">
                                         <img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" id="img_proveedor" style="display:none" />
-                                        <textarea id="areaPublicacion" name="areaPublicacion" title="Escribe aqui tu publicacion" class="labely"></textarea>
+                                        <textarea id="areaPublicacion" name="areaPublicacion" title="Actualiza tu estado..." class="labely"></textarea>
                                         <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $objProveedor->id_proveedor; ?>" />
                                         <div id="btnPublicar">Publicar</div>
                                     </form>
@@ -71,6 +87,8 @@
                             <?php }}} ?>
 
 							<div class="cnt_actividad">
+                            
+                            	<div class="titulo-actividad">Últimas actualizaciones</div>
 
 								<?php if(count($aryPosts) > 0){ 
                                     for( $x = 0 ; $x < count($aryPosts) ; $x++ ){
@@ -91,7 +109,7 @@
 												}else{
 													$a = explode ("-", substr($aryPosts[$x]['fecha_proveedor_publicacion'],0,10) );
 													$fecha_formateada = $a[2]." - ".$a[1]." - ".$a[0];
-													echo $fecha_formateada; 
+													echo $fecha_formateada." "; 
 												} 
 
 												if( substr($aryPosts[$x]['fecha_proveedor_publicacion'],11,5) == date('H:i') ){ 
@@ -155,7 +173,7 @@
                                             <?php if(isset($_SESSION['login_usuario_cliente'])){ ?>
                                                 <div class="frmComentarios">
                                                     <form id="frmComentarios" name="frmComentarios">
-                                                        <p><textarea id="areaPublicacionComentario<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" name="areaPublicacionComentario" title="Comentario" class="areaPublicacionComentario labely"></textarea></p>
+                                                        <p><textarea id="areaPublicacionComentario<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" name="areaPublicacionComentario" title="Escribe un comentario..." class="areaPublicacionComentario labely"></textarea></p>
                                                         <input type="hidden" id="id_proveedor_publicacion" name="id_proveedor_publicacion" value="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>">
                                                         <input type="hidden" id="id_usuario_cliente" name="id_usuario_cliente" value="<?php echo $_SESSION['login_usuario_cliente'] ?>">
                                                         <div id="<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" class="btnPublicarComentario">Publicar comentario</div>
@@ -179,13 +197,32 @@
 
                         <div class="derecha">
                         	
+                            <div class="redes">
+                            	
+                                <div style="position:relative; float:right; width:200px; height:auto; margin:6px 0px;">
+                                <div style="position:relative; float:left; width:auto; height:auto; ">Compartir: </div>
+                                <!-- AddThis Button BEGIN -->
+                                <div class="addthis_toolbox addthis_default_style ">
+                                <a class="addthis_button_preferred_1"></a>
+                                <a class="addthis_button_preferred_2"></a>
+                                <a class="addthis_button_preferred_3"></a>
+                                <a class="addthis_button_preferred_4"></a>
+                                <a class="addthis_button_compact"></a>
+                                <a class="addthis_counter addthis_bubble_style"></a>
+                                </div>
+                                <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
+                            <!-- AddThis Button END -->
+						</div>
+                            
+                            </div>
+                            
                             <div class="titulo">UBICANOS</div>
                             
                             <div class="datos-direccion">
-                            	<p><b>Direccion</b></p>
+                            	<p><b>Dirección</b></p>
                                 <p><?php echo $objProveedor->direccion_proveedor ?></p>
                                 
-                                <p><b>Telefono</b></p>
+                                <p><b>Teléfono</b></p>
                                 <p><?php echo $objProveedor->telefono1_proveedor ?></p>
                                 <p><?php echo $objProveedor->telefono2_proveedor ?></p>
                                 <p><?php echo $objProveedor->telefono3_proveedor ?></p>
@@ -195,7 +232,7 @@
                                 <p><?php echo $objProveedor->email_proveedor ?></p>
                                 
                                 <p><b>Web</b></p>
-                                <p><?php echo $objProveedor->web_proveedor ?></p>
+                                <p><a href="http://<?php echo $objProveedor->web_proveedor ?>" target="_blank"><?php echo $objProveedor->web_proveedor ?></p>
                             </div>
                         
                         	<div class="mapa">

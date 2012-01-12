@@ -17,4 +17,17 @@ Rewriterule ^eliminar_red_social/(.+)/.*$ eliminar_red_social.php?id_proveedor_r
 Rewriterule ^noticias/([0-9]+)/.*$ noticias.php?pag=$1 [L,QSA]
 Rewriterule ^noticias_detalle/([0-9]+)/.*$ noticias_detalle.php?id_articulo=$1 [L,QSA]
 
+Rewriterule ^eventos/.*$ eventos.php [L,QSA]
+Rewriterule ^luna_de_miel/.*$ lunamiel.php [L,QSA]
+Rewriterule ^tendencias/.*$ tendencias.php [L,QSA]
+
+Rewriterule ^contacto/.*$ contacto.php [L,QSA]
+Rewriterule ^suscripcion/.*$ suscripcion.php [L,QSA]
+Rewriterule ^revista/.*$ revistas.php [L,QSA]
+Rewriterule ^tu_boda/.*$ tuboda.php [L,QSA]
+
+Rewriterule ^requisitos/.*$ requisitos.php [L,QSA]
+Rewriterule ^municipalidades/.*$ municipalidades.php [L,QSA]
+Rewriterule ^iglesias/.*$ iglesias.php [L,QSA]
+
 ErrorDocument 404 http://local.bodas.com/error.php

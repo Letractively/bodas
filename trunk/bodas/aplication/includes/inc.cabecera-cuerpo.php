@@ -1,7 +1,7 @@
 
 <div class="logo-opciones">
-    <div class="logo"><img src="<?php echo _img_?>logo-cabecera.png"></div>
-    <div class="opciones">
+    <div class="logo"><img src="<?php echo _img_?>logo-bodas.jpg"></div>
+    <div class="opciones<?php if(isset($_SESSION['login_usuario_cliente'])){ echo "2"; } ?>">
     	<?php if(!isset($_SESSION['login_usuario_cliente'])){ ?>
             <div class="contenedor-cuenta"><a id="des_login" href="#">Inicia sesión</a> / <a href="<?=_bs_?>usuario/registrate/">Regístrate</a></div>
             <div class="contenedor-login" <?php if($_SESSION['mensaje_error'] != ''){ echo "style='display:block'"; }?>>
@@ -19,7 +19,10 @@
                     </p>
                 </form>
             </div>
-        <?php }else{ ?>
+        <?php }else{ 
+			$objNombre = new UsuarioCliente($_SESSION['login_usuario_cliente']);
+			?>
+            <div class="contenedor-cuenta"><span>Bienvenido: <?php echo $objNombre->nombre_usuario_cliente." ".$objNombre->apellido_usuario_cliente; ?></span></div>
         	<div class="contenedor-cuenta"><a id="des_login" href="<?=_bs_?>usuario/editar_cuenta/">Editar cuenta</a> / <a href="<?=_bs_?>validacion/salir/">Salir</a></div>
         <?php } ?>
         
@@ -34,12 +37,29 @@
 
 <div class="menu-general">
 	<a href="<?=_bs_?>portada/">Inicio</a>
-    <a href="#">Revista</a>
-    <a href="#">Eventos</a>
-    <a href="#">Tu Boda</a>
+    <a href="<?=_bs_?>revista/">Revista</a>
+    <a href="<?=_bs_?>eventos/">Eventos</a>
+    <a id="lnk-tuboda">Tu Boda</a>
     <a href="<?=_bs_?>noticias/0/">Noticias</a>
-    <a href="#">Tendencias</a>
-    <a href="#">Luna de Miel</a>
-    <a href="#">Suscripción</a>
-    <a href="#">Contacto</a>
+    <a href="<?=_bs_?>tendencias/">Tendencias</a>
+    <a href="<?=_bs_?>luna_de_miel/">Luna de Miel</a>
+    <a href="<?=_bs_?>suscripcion/">Suscripción</a>
+    <a href="<?=_bs_?>contacto/" style="width:112px;">Contacto</a>
+</div>
+
+<div id="menu-tuboda">
+	<p><a href="<?=_bs_?>requisitos/">Requisitos</a></p>
+    <p><a href="<?=_bs_?>municipalidades/">Municipalidades</a></p>
+    <p><a href="<?=_bs_?>iglesias/">Iglesias</a></p>
+    <p><a href="#">Paso a paso</a></p>
+    <p><a href="#">Shower</a></p>
+    <p><a href="#">Invitaciones y recuerdos</a></p>
+    <p><a href="#">Catering y tortas</a></p>
+    <p><a href="#">Decoración</a></p>
+    <p><a href="#">Bouquets</a></p>
+    <p><a href="#">La Fiesta</a></p>
+    <p><a href="#">Foto y Video</a></p>
+    <p><a href="#">Transporte</a></p>
+    <p><a href="#">Anuncios</a></p>
+    <p><a href="#">Bodas de Famosos</a></p>
 </div>

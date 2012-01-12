@@ -1,35 +1,40 @@
 // JavaScript Document
 
 $(document).ready(function() {
-	
+
 	if($('#base').length > 0){
 		var base = $('#base').val();
 		var loader = '<img id="loader" src="' + base + 'aplication/webroot/imgs/icons/ajax-loader.gif" />';
 	}
-	
+
 	if($('#coin-slider').length > 0){
 		$('#coin-slider').coinslider({
 			width: 505,
 			height: 299
 		});
 	}	
-	
+
 	if($('#galleria').length > 0){
 		Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
 		$('#galleria').galleria({
 			width:504,
-			height:356	
+			height:366	
 		});
 	}
 
 	if($('.dp').length > 0){ 
-		$('.dp').datepicker({dateFormat:'yy-mm-dd',changeMonth: true,changeYear: true, yearRange: '1970:2011', }); 
+		$('.dp').datepicker({dateFormat:'yy-mm-dd',changeMonth: true,changeYear: true, yearRange: '1970:2011', });
 	}
-	
+
+	if($('.dp2').length > 0){ 
+		$('.dp2').datepicker({dateFormat:'yy-mm-dd',changeMonth: true,changeYear: true, yearRange: '2012:2022', });
+	}
+
 	if($('#des_2').length){
 		CKEDITOR.replace('des_2',
 			{
 			skin:'kama',
+			width: '738px',
 			uiColor:'#e6edf3',
 			toolbar:[
 				['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],
@@ -43,7 +48,15 @@ $(document).ready(function() {
 			]
 		});
 	}	
-	
+
+	$("#lnk-tuboda").click(function () {
+		$("#menu-tuboda").slideToggle("normal");
+    });
+
+	$('#menu-tuboda').bind("mouseleave",function(){
+		$("#menu-tuboda").slideUp("normal");
+	});
+
 	if($('#frmRegistrese').length > 0){ 
 		$('#frmRegistrese').validate({
 			errorElement: 'label',
@@ -224,7 +237,7 @@ $(document).ready(function() {
 	});
 
 
-	var peso_proveedor = '150 KB';
+	var peso_proveedor = '500 KB';
 	var trig = false;
 	var gif = base + 'aplication/webroot/js/swfupload/ajax-loader.gif';
 	var sus = 'Archivo guardado!, espere...';
@@ -246,7 +259,7 @@ $(document).ready(function() {
 					case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
 						alert("Solo se permite un archivo."); exit;
 					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-						alert("El archivo '"+file.name+"' es demasiado pesado, el limite es 80 KB."); exit;
+						alert("El archivo '"+file.name+"' es demasiado pesado, el limite es 500 KB."); exit;
 					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
 						alert("El archivo esta vacio."); exit;
 					case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
@@ -272,7 +285,7 @@ $(document).ready(function() {
 		},
 		uploadSuccess: function(event, file, serverData){
 			regencoded = jQuery.parseJSON(serverData);
-			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">X</div><div class="nombre"><img src="' + base + 'aplication/utilities/tt.php?src=/aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80"></div></div>';
+			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">Eliminar imagen X</div><div class="nombre"><img src="' + base + 'aplication/utilities/tt.php?src=/aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80"></div></div>';
 			$('.cont_imagenes').append(newItemFoto);
 
 			$('#load').remove();
@@ -291,7 +304,7 @@ $(document).ready(function() {
 	$('.swfupload-proveedor-imagenes').each(function(){
 		$(this).swfupload({
 			upload_url: base + "upload.php?proveedores_fotos&id_proveedor="+$('#id_proveedor').attr('value'),
-			file_size_limit : "150 KB",
+			file_size_limit : "500 KB",
 			file_types : "*.jpg",
 			file_types_description : "Imagenes",
 			file_upload_limit : "0",
@@ -326,7 +339,7 @@ $(document).ready(function() {
 
 
 	$('#btnPublicar').click(function(){
-		if( $('#areaPublicacion').val() != '' && $('#areaPublicacion').val() != 'Escribe aqui tu publicacion' ){
+		if( $('#areaPublicacion').val() != '' && $('#areaPublicacion').val() != 'Actualiza tu estado...' ){
 			$(loader).insertAfter( $('#btnPublicar') );
 			$('.aler_error').remove();
 			
@@ -359,11 +372,11 @@ $(document).ready(function() {
 
 
 	var options = {
-		'maxCharacterSize': 80,  
+		'maxCharacterSize': 150,  
 		'originalStyle': 'originalDisplayInfo',  
 		'warningStyle': 'warningDisplayInfo',    
 		'warningNumber': 40,  
-		'displayFormat': '#input / #max caracteres &nbsp;|&nbsp; #words Palabras.'  
+		'displayFormat': '#input / #max caracteres'  
 	};
 
 	if($('#areaPublicacion').length > 0){ 
@@ -380,7 +393,7 @@ $(document).ready(function() {
 
 		var var_c = $(this).attr('id');
 
-		if( $('#post'+var_c+' .areaPublicacionComentario').val() != '' && $('#post'+var_c+' .areaPublicacionComentario').val() != 'Comentario' ){
+		if( $('#post'+var_c+' .areaPublicacionComentario').val() != '' && $('#post'+var_c+' .areaPublicacionComentario').val() != 'Escribe un comentario...' ){
 
 			$(loader).insertAfter( $('#btnPublicar') );
 			$('.aler_error').remove();
@@ -460,5 +473,91 @@ $(document).ready(function() {
 		$('#comentario_'+$(this).attr('id')).remove();
 	});
 
+	$('.pie-fijo span.cerrar').click(function(){
+		$('.pie-fijo').hide('fast');
+		$('.pie-fijo2').show('fast');
+	});
+
+	$('.pie-fijo2 span.abrir').click(function(){
+		$('.pie-fijo2').hide('fast');
+		$('.pie-fijo').show('fast');
+	});
+
+	/*	Suscripcion		*/
+	if($('#frmSuscripcion').length > 0){ 
+		if($('#frmSuscripcion').length > 0){ 
+			$('#frmSuscripcion').validate({
+				errorElement: 'label',
+				errorClass: 'error',
+				rules:{
+					txtNombre: 'required',
+					txtApellido: 'required',
+					txtDireccion: 'required',
+					txtFijo: 'required',
+					txtDireccionEntrega: 'required',
+					txtReferencia: 'required',
+					txtCumple: 'required'
+				},
+				messages:{
+					txtNombre: '',
+					txtApellido: '',
+					txtDireccion: '',
+					txtFijo: '',
+					txtDireccionEntrega: '',
+					txtReferencia: '',
+					txtCumple: ''
+				}
+			});
+		}
+	}
+
+	/*	Suscripcion		*/
+	if($('#frmContacto').length > 0){ 
+		$('#frmContacto').validate({
+			errorElement: 'label',
+			errorClass: 'error',
+			rules:{
+				txtNombre: 'required',
+				txtEmail: { required: true, email: true },
+				txtTelefono: 'required',
+				areaMensaje: 'required'
+			},
+			messages:{
+				txtNombre: '',
+				txtEmail: { required: '', email: '' },
+				txtTelefono: '',
+				areaMensaje: ''
+			}
+		});
+	}
+	
+	$.validator.addMethod(
+		"formatDate",
+		function(value, element) {
+			// put your own logic here, this is just a (crappy) example
+			return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+		},
+		''
+	);
+
+	/*	Boletin		*/
+	if($('#frmBoletin').length > 0){ 
+
+		$('#frmBoletin').validate({
+			errorElement: 'label',
+			errorClass: 'error',
+			rules:{
+				txtNombres: 'required',
+				txtEmail: { required: true, email: true },
+				txtFechaBoda: { required: true, formatDate: true }
+			},
+			messages:{
+				txtNombres: '',
+				txtEmail: { required: '', email: '' },
+				txtFechaBoda: { required: true, formatDate: 'Formato correcto <br> (dd/mm/yyyy)' }
+			}
+		});
+
+	}
 
 });

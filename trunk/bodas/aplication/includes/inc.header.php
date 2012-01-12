@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bodas</title>
+    <title>Revista Bodas</title>
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_general.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_estructura.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_contenido.css"/>
@@ -10,7 +10,7 @@
     <script type="text/javascript" src="<?php echo _js_?>jquery-1.7.1.min.js"></script>
     
     <?php if(_file_ == 'index.php'){?>
-			<script type="text/javascript" src="<?php echo _css_?>coin-slider/coin-slider.min.js"></script>
+		<script type="text/javascript" src="<?php echo _css_?>coin-slider/coin-slider.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo _css_?>coin-slider/coin-slider-styles.css" />	
 	<?php }?>
 
@@ -51,15 +51,31 @@
     
     <script type='text/javascript'>
 		googletag.cmd.push(function() {
-		googletag.defineSlot('/15180053/index_bodas', [300, 100], 'div-gpt-ad-1323706037489-0').addService(googletag.pubads());
-		googletag.defineSlot('/15180053/index_inferior', [300, 250], 'div-gpt-ad-1323706037489-1').addService(googletag.pubads());
-		googletag.defineSlot('/15180053/index_medio', [300, 250], 'div-gpt-ad-1323706037489-2').addService(googletag.pubads());
-		googletag.defineSlot('/15180053/index_principal', [300, 250], 'div-gpt-ad-1323706037489-3').addService(googletag.pubads());
-		googletag.defineSlot('/15180053/index_superior', [728, 90], 'div-gpt-ad-1323706037489-4').addService(googletag.pubads());
-		googletag.pubads().enableSingleRequest();
-		googletag.enableServices();
+			googletag.defineSlot('/15180053/index_bodas', [300, 100], 'div-gpt-ad-1325713113749-0').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/index_inferior', [300, 250], 'div-gpt-ad-1325713113749-1').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/index_medio', [300, 250], 'div-gpt-ad-1325713113749-2').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/index_principal', [300, 250], 'div-gpt-ad-1325713113749-3').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/index_superior', [728, 90], 'div-gpt-ad-1325713113749-4').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/interior_bodas', [300, 100], 'div-gpt-ad-1325713113749-5').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/interior_inferior', [300, 250], 'div-gpt-ad-1325713113749-6').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/interior_medio', [300, 250], 'div-gpt-ad-1325713113749-7').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/interior_principal', [300, 250], 'div-gpt-ad-1325713113749-8').addService(googletag.pubads());
+			googletag.defineSlot('/15180053/interior_superior', [728, 90], 'div-gpt-ad-1325713113749-9').addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+			googletag.enableServices();
 		});
     </script>
     
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', UA-8015730-1]);
+      _gaq.push(['_trackPageview']);
     
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
 </head>

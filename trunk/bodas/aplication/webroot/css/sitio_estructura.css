@@ -1,9 +1,9 @@
 /* CSS Document */
 
 #window{ width:100%; overflow:hidden; }
-#window-cabecera{ width:100%; overflow:hidden; background:#808080; }
+#window-cabecera{ width:100%; overflow:hidden; }
 #window-pie-menu{ width:100%; overflow:hidden; background:#b3b3b3; border-top:1px solid #3c363d; }
-#window-pie-datos{ width:100%; height:148px; overflow:hidden; background:#3c363d; padding:0 0 38px 0; }
+#window-pie-datos{ width:100%; height:108px; overflow:hidden; background:#3c363d; padding:0 0 38px 0; }
 
 #pagina{ position:relative; width:984px; height:auto; margin:0 auto 0 auto; }
 #cabecera{ position:relative; float:left; width:984px; height:auto; }

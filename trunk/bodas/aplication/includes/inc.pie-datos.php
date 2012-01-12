@@ -4,4 +4,4 @@
     <p>email: <a href="mailto:contacto@bodas.com.pe">contacto@bodas.com.pe</a></p>
 </div>
 
-<div class="logo"><img src="<?php echo _img_?>logo-pie.png"></div>
+<div class="logo"><img src="<?php echo _img_?>logo-bodas-chico.png"></div>

@@ -92,6 +92,36 @@
                         </div>
 
                         <div class="fecha"><?php echo $this->formatear_fecha($objArticulo->fecha); ?></div>
+                        
+                        <div class="fecha">
+                        
+                        <div style="position:relative; float:left; width:auto; height:auto; margin:4px 0 0 0;">
+                            <!-- AddThis Button BEGIN -->
+                            <div class="addthis_toolbox addthis_default_style ">
+                            	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                            	<a class="addthis_button_tweet"></a>
+                            </div>
+                            <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
+                            <!-- AddThis Button END -->
+						</div>
+					
+						<div style="position:relative; float:right; width:200px; height:auto; margin:6px 0px;">
+                        	<div style="position:relative; float:left; width:auto; height:auto; ">Compartir: </div>
+                            <!-- AddThis Button BEGIN -->
+                            <div class="addthis_toolbox addthis_default_style ">
+                            <a class="addthis_button_preferred_1"></a>
+                            <a class="addthis_button_preferred_2"></a>
+                            <a class="addthis_button_preferred_3"></a>
+                            <a class="addthis_button_preferred_4"></a>
+                            <a class="addthis_button_compact"></a>
+                            <a class="addthis_counter addthis_bubble_style"></a>
+                            </div>
+                            <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
+                            <!-- AddThis Button END -->
+						</div>
+
+                        </div>
+                        
                         <div class="titulo-noticia"><?php echo $objArticulo->titulo; ?></div>
                         <div class="texto">
                             <?php if(count($aryImagenesArticulo) == 1){ ?>
@@ -103,7 +133,7 @@
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <p><?php echo $objArticulo->descripcion1; ?></p>
+                            <?php echo $objArticulo->descripcion2; ?>
                         </div>
                         
                         <div class="mas-noticias">
@@ -111,7 +141,7 @@
                             <div class="lista">
                         	<?php for($z = 0 ; $z < 3 ; $z++){ ?>
                             	<div class="item">
-                                	<p><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryArticulosRelacionados[$z]['imagen']."&w=145&h=86";?>"></p>
+                                	<p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryArticulosRelacionados[$z]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryArticulosRelacionados[$z]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryArticulosRelacionados[$z]['imagen']."&w=145&h=86";?>"></a></p>
                                     <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryArticulosRelacionados[$z]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryArticulosRelacionados[$z]['titulo']) ?>"><?php echo $aryArticulosRelacionados[$z]['titulo']; ?></a></p>
                                 </div>
                             <?php } ?>

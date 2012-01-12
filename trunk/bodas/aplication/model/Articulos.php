@@ -58,7 +58,7 @@
                                     	<a href='articulo.php?id=<?php echo $rw[0]?>&opcion=editar' title="Editar"><img src="<?php echo _icn_ ?>x_edit.png"></a>
                                         <a href='articuloComentario.php?id_articulo=<?php echo $rw[0]?>' title="Comentarios"><img src="<?php echo _icn_ ?>publicaciones.png"></a>
 										<a href='articulo.php?id=<?php echo $rw[0]?>&opcion=imagenes' title="Imagenes"><img src="<?php echo _icn_ ?>images.png"></a>
-										<a title="Eliminar" class="eliminar" id="<?php echo $rw[2]?>" name="articulo.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
+										<a title="Eliminar" class="eliminar" id="<?php echo $rw[0]?>" name="articulo.php"><img src="<?php echo _icn_ ?>x_delete.png"></a>
                                 <?php echo "</td></tr>";
                             }
                         ?>

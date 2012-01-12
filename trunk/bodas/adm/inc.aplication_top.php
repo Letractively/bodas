@@ -62,8 +62,10 @@
 	require_once(_model_."ArticuloPortada.php");
 	require_once(_model_."ArticulosPortadas.php");
 
-
 	require_once(_model_."RubrosArticulos.php");
+
+	require_once(_model_."Revista.php");
+	require_once(_model_."Revistas.php");
 
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();

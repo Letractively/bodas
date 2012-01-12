@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 29-12-2011 a las 00:14:29
+-- Tiempo de generación: 12-01-2012 a las 14:13:48
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -237,7 +237,7 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
@@ -249,6 +249,7 @@ INSERT INTO `paginas` VALUES (20, 1, 'Proveedores', 'Proveedor.php');
 INSERT INTO `paginas` VALUES (21, 1, 'Usuarios registrados', 'UsuarioCliente.php');
 INSERT INTO `paginas` VALUES (22, 1, 'Tipos de articulo', 'articuloTipo.php');
 INSERT INTO `paginas` VALUES (23, 1, 'Articulos de portada', 'articulosPortada.php');
+INSERT INTO `paginas` VALUES (24, 1, 'Revista', 'revista.php');
 
 -- --------------------------------------------------------
 
@@ -352,13 +353,13 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
 -- 
 
-INSERT INTO `proveedores_imagenes` VALUES (102, 20, '232322_apple.jpg', '2011-12-04 11:23:22', 1);
+INSERT INTO `proveedores_imagenes` VALUES (116, 20, '115317_win7.jpg', '2012-01-05 11:53:17', 1);
 INSERT INTO `proveedores_imagenes` VALUES (103, 20, '232435_chrome.jpg', '2011-12-04 11:24:35', 1);
 INSERT INTO `proveedores_imagenes` VALUES (104, 20, '232518_hp.jpg', '2011-12-04 11:25:18', 1);
 INSERT INTO `proveedores_imagenes` VALUES (105, 20, '232626_indice.jpg', '2011-12-04 11:26:26', 1);
@@ -372,6 +373,7 @@ INSERT INTO `proveedores_imagenes` VALUES (112, 45, '174443_win7.jpg', '2011-12-
 INSERT INTO `proveedores_imagenes` VALUES (113, 1, '165439_apple.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (114, 1, '165439_chrome.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (115, 1, '165439_firefox.jpg', '2011-12-22 04:54:39', 1);
+INSERT INTO `proveedores_imagenes` VALUES (117, 20, '115412_look.jpg', '2012-01-05 11:54:12', 1);
 
 -- --------------------------------------------------------
 
@@ -386,7 +388,7 @@ CREATE TABLE `proveedores_publicaciones` (
   `fecha_proveedor_publicacion` datetime NOT NULL,
   `estado_proveedor_publicacion` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones`
@@ -401,6 +403,7 @@ INSERT INTO `proveedores_publicaciones` VALUES (27, 20, '', '2011-12-05 10:20:52
 INSERT INTO `proveedores_publicaciones` VALUES (28, 20, 'fasd dsaaw aewf awe  faew ', '2011-12-05 10:22:21', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (30, 45, 'f rewa fgewarg are gseragaeg', '2011-12-09 17:47:23', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (31, 45, 'asdf wef awef', '2011-12-09 17:47:28', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (32, 20, 'gsergesrgser', '2012-01-09 17:23:50', 1);
 
 -- --------------------------------------------------------
 
@@ -416,7 +419,7 @@ CREATE TABLE `proveedores_publicaciones_comentarios` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion_comentario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones_comentarios`
@@ -431,6 +434,7 @@ INSERT INTO `proveedores_publicaciones_comentarios` VALUES (13, 31, 53, 'a fwefa
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (14, 31, 53, 'af wef ', '2011-12-09 05:48:05', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (15, 30, 53, 'awef waef aw', '2011-12-09 05:48:07', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (18, 20, 3, '', '2011-12-26 09:49:28', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (19, 29, 12, 'afeefweaw eawef awef awe', '2012-01-09 05:57:22', 1);
 
 -- --------------------------------------------------------
 
@@ -603,6 +607,32 @@ INSERT INTO `redes_sociales` VALUES (1, 'Facebook', 'logo-facebook.png', 1);
 INSERT INTO `redes_sociales` VALUES (2, 'Twitter', 'logo-twitter.png', 1);
 INSERT INTO `redes_sociales` VALUES (3, 'Youtube', 'logo-youtube.png', 1);
 INSERT INTO `redes_sociales` VALUES (4, 'Vimeo', 'logo-vimeo.png', 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `revistas`
+-- 
+
+CREATE TABLE `revistas` (
+  `id_revista` int(11) NOT NULL auto_increment,
+  `link` text NOT NULL,
+  `titulo` text NOT NULL,
+  `imagen` text NOT NULL,
+  `descripcion` text NOT NULL,
+  `estado` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`id_revista`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+-- 
+-- Volcar la base de datos para la tabla `revistas`
+-- 
+
+INSERT INTO `revistas` VALUES (1, '', 'Edicion actual', '172447_apple.jpg', '<p>\r\n	dsa fawef ewaf eaw</p>\r\n', 1);
+INSERT INTO `revistas` VALUES (2, 'asdf.com.pe', 'otra edicion 1', '173828_hp.jpg', '', 1);
+INSERT INTO `revistas` VALUES (3, 'google.com.pe', 'otra edicion 2', '173820_apple.jpg', '', 1);
+INSERT INTO `revistas` VALUES (6, 'google.com.pe', 'aeffbxcfgb', '180130_firefox.jpg', '', 1);
+INSERT INTO `revistas` VALUES (7, 'issuu.com/bodas/docs/b63?mode=window&backgroundColor=%23222222', 'hnfghnfghngf', '180136_indice.jpg', '', 1);
 
 -- --------------------------------------------------------
 
@@ -785,6 +815,7 @@ CREATE TABLE `usuarios_paginas` (
 -- 
 
 INSERT INTO `usuarios_paginas` VALUES (2, 22);
+INSERT INTO `usuarios_paginas` VALUES (2, 24);
 INSERT INTO `usuarios_paginas` VALUES (2, 19);
 INSERT INTO `usuarios_paginas` VALUES (2, 20);
 INSERT INTO `usuarios_paginas` VALUES (2, 23);

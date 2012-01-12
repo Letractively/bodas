@@ -48,6 +48,9 @@
 
 	require_once(_model_."RubrosArticulos.php");
 
+	require_once(_model_."Revista.php");
+	require_once(_model_."Revistas.php");
+
 	// Vistas
 	require_once(_view_."Utiles.php");
 	require_once(_view_."VwIndex.php");
@@ -55,7 +58,18 @@
 	require_once(_view_."VwCatalogo.php");
 	require_once(_view_."VwUsuarioCliente.php");
 	require_once(_view_."VwNoticias.php");
+	require_once(_view_."VwContacto.php");
+	require_once(_view_."VwSuscripcion.php");
+	require_once(_view_."VwRevistas.php");
 
+	require_once(_view_."VwEventos.php");
+	require_once(_view_."VwLunaMiel.php");
+	require_once(_view_."VwTendencias.php");
+	require_once(_view_."VwTuboda.php");
+	require_once(_view_."VwRequisitos.php");
+	require_once(_view_."VwMunicipalidades.php");
+	require_once(_view_."VwIglesias.php");
+	
 	session_start();
 
 	//Configuracion de base de datos.

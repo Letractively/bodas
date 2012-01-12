@@ -47,7 +47,7 @@
 
 
 		public function obtenerUltimasPublicaciones(){
-			$sql = "SELECT * FROM proveedores_publicaciones";
+			$sql = "SELECT * FROM proveedores_publicaciones ORDER BY id_proveedor_publicacion DESC";
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
 				

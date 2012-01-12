@@ -4,13 +4,13 @@
 		public function __construct(){}
 
 		public function vista(){
-			
+
 			$objArticuloPortada = new ArticuloPortada;
 			$aryPortadas = $objArticuloPortada->obtener_portadas();
-			
+
 			$objProveedorPublicacion = new ProveedorPublicacion;
 			$aryUltimasPublicaciones = $objProveedorPublicacion->obtenerUltimasPublicaciones();
-			
+
 			?>
 				<div class="margen-index">
 
@@ -65,26 +65,27 @@
 
                         <div class="otros-items">
                             <div class="index-luna-miel">
-                                <div class="titulo"><img src="<?php echo _img_?>tit-index-lunamiel.png"></div>
+                                <div class="titulo"><a href="<?=_bs_?>luna_de_miel/"><img src="<?php echo _img_?>tit-index-lunamiel.png"></a></div>
                                 <div class="texto">
-                                    <img src="<?php echo _img_?>img-index-lunamiel.png" align="left">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis dignissim semper. Duis feugiat dui sit amet est hendrerit a blandit turpis ultricies. Quisque ut porttitor nibh. Fusce convallis adipiscing porttitor. Cras ut nisi a sem molestie accumsan. Suspendisse fringilla, erat eget blandit ultricies.</p>
+                                    <a href="<?=_bs_?>luna_de_miel/"><img src="<?php echo _img_?>img-index-lunamiel.png" align="left"></a>
+                                    <p>La luna de miel es el viaje más especial de tu vida, por ello Revista Bodas pone a tu disposición los destinos más exclusivos y personalizados para que disfrutes al máximo de tu viaje de novios. Conoce los mejores destinos, tips y recomendaciones.</p>
                                 </div>
                             </div>
 
                             <div class="index-eventos">
-                                <div class="titulo"><img src="<?php echo _img_?>tit-index-eventos.png"></div>
+                                <div class="titulo"><a href="<?=_bs_?>eventos/"><img src="<?php echo _img_?>tit-index-eventos.png"></a></div>
                                 <div class="texto">
-                                    <img src="<?php echo _img_?>img-index-eventos.png">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis dignissim semper. </p>
+                                    <a href="<?=_bs_?>eventos/"><img src="<?php echo _img_?>img-index-eventos.png"></a>
+                                    <p><b>Expobodas</b> Toda lo que buscas para tu boda te lo trae este gran evento....</p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="otros-items2">
-                        	<div class="titulo"><img src="<?php echo _img_?>tit-index-posts.png"></div>
+                        	<div class="titulo"><a href="<?=_bs_?>luna_de_miel/"><img src="<?php echo _img_?>tit-index-posts.png"></a></div>
                             
-                            <?php for( $x = 0 ; $x < 8; $x++ ){ ?>
+                            <?php for( $x = 0 ; $x < 7; $x++ ){ ?>
                                 <div class="contenido">
                                     <p class="nombre-proveedor"><a href="<?=_bs_?>catalogo/<?php echo $aryUltimasPublicaciones[$x]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($aryUltimasPublicaciones[$x]['nombre_proveedor']) ?>"><?php echo $aryUltimasPublicaciones[$x]['nombre_proveedor']?></a></p>
                                     <p class="publicacion"><?php echo substr($aryUltimasPublicaciones[$x]['texto_proveedor_publicacion'],0,30)."..."; ?></p>

@@ -17,7 +17,7 @@
 			}
 
 			$objRubrosArticulos = new RubrosArticulos;
-			$aryArticulosRelacionados = $objRubrosArticulos->obtenerRubrosArticulos();
+			$aryArticulosRelacionados = $objRubrosArticulos->obtenerArticulosXRubro($_GET['id_rubro']);
 
 			?>
 				<div class="margen-index">

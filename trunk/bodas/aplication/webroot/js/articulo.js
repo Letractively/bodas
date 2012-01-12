@@ -50,7 +50,7 @@ $(document).ready(function(){
 	});
 
 
-	var peso_proveedor = '150 KB';
+	var peso_proveedor = '500 KB';
 	var trig = false;
 	var gif = '../aplication/webroot/js/swfupload/ajax-loader.gif';
 	var sus = 'Archivo guardado!, espere...';
@@ -72,7 +72,7 @@ $(document).ready(function(){
 					case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
 						alert("Solo se permite un archivo."); exit;
 					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-						alert("El archivo '"+file.name+"' es demasiado pesado, el limite es 80 KB."); exit;
+						alert("El archivo '"+file.name+"' es demasiado pesado, el limite es 500 KB."); exit;
 					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
 						alert("El archivo esta vacio."); exit;
 					case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
@@ -117,7 +117,7 @@ $(document).ready(function(){
 	$('.swfupload-articulo-imagenes').each(function(){
 		$(this).swfupload({
 			upload_url: "upload.php?articulos_fotos&id_articulo="+$('#id_articulo').attr('value'),
-			file_size_limit : "150 KB",
+			file_size_limit : "500 KB",
 			file_types : "*.jpg",
 			file_types_description : "Imagenes",
 			file_upload_limit : "0",
