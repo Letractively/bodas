@@ -1,0 +1,93 @@
+Options All -Indexes
+Options +FollowSymlinks
+
+RewriteEngine on
+RewriteBase /
+
+Rewriterule ^portada/$ index.php [L,QSA]
+Rewriterule ^proveedores/([0-9]+)/(.+)/.*$ proveedores.php?id_rubro=$1&pag=$2 [L,QSA]
+Rewriterule ^catalogo/([0-9]+)/.*$ catalogo.php?id_proveedor=$1 [L,QSA]
+Rewriterule ^usuario/(.+)/.*$ usuarioCliente.php?opcion=$1 [L,QSA]
+
+Rewriterule ^validacion/(.+)/.*$ validacion.php?opcion=$1 [L,QSA]
+
+Rewriterule ^eliminar_recomendado/(.+)/.*$ eliminar_recomendado.php?id_proveedor_recomendado=$1 [L,QSA]
+Rewriterule ^eliminar_red_social/(.+)/.*$ eliminar_red_social.php?id_proveedor_red_social=$1 [L,QSA]
+
+Rewriterule ^noticias/([0-9]+)/.*$ noticias.php?pag=$1 [L,QSA]
+Rewriterule ^noticias_detalle/([0-9]+)/.*$ noticias_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^invitaciones-y-recuerdos/([0-9]+)/.*$ temas.php?pag=$1 [L,QSA]
+Rewriterule ^invitaciones-y-recuerdos-detalle/([0-9]+)/.*$ temas_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^paso-a-paso/([0-9]+)/.*$ paso_a_paso.php?pag=$1 [L,QSA]
+Rewriterule ^paso-a-paso-detalle/([0-9]+)/.*$ paso_a_paso_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^shower/([0-9]+)/.*$ shower.php?pag=$1 [L,QSA]
+Rewriterule ^shower-detalle/([0-9]+)/.*$ shower_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^invitaciones-y-recuerdos/([0-9]+)/.*$ invitaciones_y_recuerdos.php?pag=$1 [L,QSA]
+Rewriterule ^invitaciones-y-recuerdos-detalle/([0-9]+)/.*$ invitaciones_y_recuerdos_detalle.php?id_articulo=$1 [L,QSA]
+
+
+
+Rewriterule ^catering-y-tortas/([0-9]+)/.*$ catering_y_tortas.php?pag=$1 [L,QSA]
+Rewriterule ^catering-y-tortas-detalle/([0-9]+)/.*$ catering_y_tortas_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^decoracion/([0-9]+)/.*$ decoracion.php?pag=$1 [L,QSA]
+Rewriterule ^decoracion-detalle/([0-9]+)/.*$ decoracion_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^bouquets/([0-9]+)/.*$ bouquets.php?pag=$1 [L,QSA]
+Rewriterule ^bouquets-detalle/([0-9]+)/.*$ bouquets_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^la-fiesta/([0-9]+)/.*$ la_fiesta.php?pag=$1 [L,QSA]
+Rewriterule ^la-fiesta-detalle/([0-9]+)/.*$ la_fiesta_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^foto-y-video/([0-9]+)/.*$ foto_y_video.php?pag=$1 [L,QSA]
+Rewriterule ^foto-y-video-detalle/([0-9]+)/.*$ foto_y_video_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^transporte/([0-9]+)/.*$ transporte.php?pag=$1 [L,QSA]
+Rewriterule ^transporte-detalle/([0-9]+)/.*$ transporte_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^bodas-de-famosos/([0-9]+)/.*$ bodas_de_famosos.php?pag=$1 [L,QSA]
+Rewriterule ^bodas-de-famosos-detalle/([0-9]+)/.*$ bodas_de_famosos_detalle.php?id_articulo=$1 [L,QSA]
+
+
+
+Rewriterule ^vestidos-de-novia/([0-9]+)/.*$ vestidos_de_novia.php?pag=$1 [L,QSA]
+Rewriterule ^vestidos-de-novia-detalle/([0-9]+)/.*$ vestidos_de_novia_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^trajes-de-novio/([0-9]+)/.*$ trajes_de_novio.php?pag=$1 [L,QSA]
+Rewriterule ^trajes-de-novio-detalle/([0-9]+)/.*$ trajes_de_novio_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^joyeria-y-accesorios/([0-9]+)/.*$ joyeria_y_accesorios.php?pag=$1 [L,QSA]
+Rewriterule ^joyeria-y-accesorios-detalle/([0-9]+)/.*$ joyeria_y_accesorios_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^peinado-y-maquillaje/([0-9]+)/.*$ peinado_y_maquillaje.php?pag=$1 [L,QSA]
+Rewriterule ^peinado-y-maquillaje-detalle/([0-9]+)/.*$ peinado_y_maquillaje_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^belleza-y-salud/([0-9]+)/.*$ belleza_y_salud.php?pag=$1 [L,QSA]
+Rewriterule ^belleza-y-salud-detalle/([0-9]+)/.*$ belleza_y_salud_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^los-invitados/([0-9]+)/.*$ los_invitados.php?pag=$1 [L,QSA]
+Rewriterule ^los-invitados-detalle/([0-9]+)/.*$ los_invitados_detalle.php?id_articulo=$1 [L,QSA]
+
+
+
+
+Rewriterule ^eventos/.*$ eventos.php [L,QSA]
+Rewriterule ^luna_de_miel/.*$ lunamiel.php [L,QSA]
+Rewriterule ^tendencias/.*$ tendencias.php [L,QSA]
+
+Rewriterule ^contacto/.*$ contacto.php [L,QSA]
+Rewriterule ^suscripcion/.*$ suscripcion.php [L,QSA]
+Rewriterule ^revista/.*$ revistas.php [L,QSA]
+Rewriterule ^tu_boda/.*$ tuboda.php [L,QSA]
+
+Rewriterule ^requisitos/.*$ requisitos.php [L,QSA]
+Rewriterule ^municipalidades/.*$ municipalidades.php [L,QSA]
+Rewriterule ^iglesias/.*$ iglesias.php [L,QSA]
+Rewriterule ^quienes-somos/.*$ quienes_somos.php [L,QSA]
+Rewriterule ^anuncio/.*$ anuncio.php [L,QSA]
+
+ErrorDocument 404 http://www.bodas.com.pe/
