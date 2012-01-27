@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Revista Bodas</title>
     <link href="<?php echo _bs_?>favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    
+
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_general.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_estructura.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_contenido.css"/>
 
     <script type="text/javascript" src="<?php echo _js_?>jquery-1.7.1.min.js"></script>
-    
+
     <?php if(_file_ == 'index.php'){?>
 		<script type="text/javascript" src="<?php echo _css_?>coin-slider/coin-slider.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo _css_?>coin-slider/coin-slider-styles.css" />	
@@ -32,7 +32,6 @@
 
 	<script type="text/javascript" src="<?php echo _js_?>jquery.textareaCounter.plugin.js"></script>
     <script type="text/javascript" src="<?php echo _js_?>jquery.labelify.js"></script>
-
 
     <script type="text/javascript" src="<?php echo _js_?>js.js"></script>
     

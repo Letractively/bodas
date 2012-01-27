@@ -539,3 +539,31 @@ width:auto; text-align:center; }
 .contenedor_me_gusta .item_me_gusta{ position:relative; float:left; width:auto; height:auto; }
 .contenedor_me_gusta .item_me_gusta2 .lnk_me_gusta{ position:relative; float:right; width:auto; height:auto; background:#a657c2; color:#FFF; text-align:center; padding:4px 6px; cursor:pointer; border-radius:4px; }
 .contenedor_me_gusta .item_me_gusta2 .lnk_me_gusta a{ color:#FFF; }
+
+/*	Seccion estadistica		*/
+.contenido-central-estadistica{ position:relative; float:left; width:813px; height:auto; margin:0 0 0 8px; font-size:12px; border:1px solid #b16ec9; }
+.contenido-central-estadistica .izquierda{ position:relative; float:left; width:94%; height:auto; padding:30px 0px 0px 50px; }
+
+.contenido-central-estadistica .izquierda .itm_subtit{ position:relative; float:left; width:90%; height:auto; padding:4px 0px 10px 0px; color:#B16EC9; border-bottom:1px dotted #CCC; margin:20px 0 0 0; font-size:15px; }
+
+.contenido-central-estadistica .izquierda .itm_subtit2{ position:relative; float:left; width:90%; height:auto; padding:0 0 5px 0; color:#CCC; margin:20px 0 5px 0; font-style:italic; }
+
+.contenido-central-estadistica .izquierda .itm{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; margin:8px 0 0 0; color:#B16EC9; }
+.contenido-central-estadistica .izquierda .itm label{ float:left; width:140px; height:auto; text-align:right; padding:3px 33px 3px 0; }
+
+.contenido-central-estadistica .izquierda  .lnk_crear{ position:relative; float:left; width:auto; height:auto; padding:5px 20px; background:#B16EC9; border-radius:4px; color:#FFFFFF; margin:16px 0 25px 0; }
+
+.contenido-central-estadistica .izquierda .tabla-recomendados{ width:90%; margin:0 0 20px 20px;  }
+.contenido-central-estadistica .izquierda .tabla-recomendados a{ cursor:pointer; }
+.contenido-central-estadistica .izquierda .tabla-recomendados a:hover{ text-decoration:underline; }
+.contenido-central-estadistica .izquierda .tabla-recomendados th{ border:1px solid #B16EC9; padding:4px 20px; }
+.contenido-central-estadistica .izquierda .tabla-recomendados td{ border:1px solid #B16EC9; padding:4px 20px; }
+
+.contenido-central-estadistica .izquierda .lista-de-seguidores{ position:relative; float:left; width:100%; height:auto; margin:10px 0px 30px 0px; }
+.contenido-central-estadistica .izquierda .lista-de-seguidores .titulo-lista{ position:relative; float:left; width:100%; height:auto; text-align:center; font-size:16px; font-family:"Lucida Grande","Lucida Sans Unicode",Verdana,Arial,Helvetica,sans-serif; }
+
+.contenido-central-estadistica .izquierda .lista-de-seguidores .item-lista{ position:relative; float:left; width:54px; height:54px; padding:3px; margin:3px; border:1px solid #CCC; border-radius:4px; }
+
+.contenido-central-estadistica .izquierda .grafico-seguidores-diarios{ position:relative; float:left; width:100%; height:auto; margin:10px 0px; }
+.contenido-central-estadistica .izquierda .grafico-seguidores-diarios #container01{ width: 640px; height: 380px; margin: 0 auto; }
+.contenido-central-estadistica .izquierda .grafico-seguidores-diarios .mensaje-sin-seguidores{ position:relative; float:left; width:100%; height:auto; padding:10px 0px; }
