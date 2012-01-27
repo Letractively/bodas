@@ -88,13 +88,18 @@
 					uc.id_usuario_cliente,
 					uc.foto_usuario_cliente,
 					uc.nombre_usuario_cliente,
+					YEAR(ucp.fecha_me_gusta) as 'y_me_gusta',
+					MONTH(ucp.fecha_me_gusta) as 'm_me_gusta',
+					DAY(ucp.fecha_me_gusta) as 'd_me_gusta',
 					ucp.fecha_me_gusta,
-					pp.id_proveedor
+					pp.id_proveedor,
+					COUNT(*) as 'num_usuarios'
 				FROM usuarios_clientes_publicaciones ucp 
 					JOIN usuarios_clientes uc ON ucp.id_usuario_cliente = uc.id_usuario_cliente
 					JOIN proveedores_publicaciones pp ON ucp.id_publicacion = pp.id_proveedor_publicacion
 				WHERE pp.id_proveedor = ".$id_proveedor."
-				ORDER BY ucp.id_usuario_cliente_publicacion ASC";
+				GROUP BY YEAR(ucp.fecha_me_gusta) , MONTH(ucp.fecha_me_gusta), DAY(ucp.fecha_me_gusta)
+				ORDER BY ucp.id_usuario_cliente_publicacion ASC LIMIT 30";
 
 			$qry = new Consulta($sql);
 			while( $rw = $qry->VerRegistro() ){
@@ -103,7 +108,11 @@
 					'foto_usuario_cliente'		=> $rw['foto_usuario_cliente'],
 					'nombre_usuario_cliente'	=> $rw['nombre_usuario_cliente'],
 					'fecha_me_gusta'			=> $rw['fecha_me_gusta'],
-					'id_proveedor'				=> $rw['id_proveedor']
+					'id_proveedor'				=> $rw['id_proveedor'],
+					'y_me_gusta'				=> $rw['y_me_gusta'],
+					'm_me_gusta'				=> $rw['m_me_gusta'],
+					'd_me_gusta'				=> $rw['d_me_gusta'],
+					'num_usuarios'				=> $rw['num_usuarios']
 				);
 			}
 			return $rst;		
