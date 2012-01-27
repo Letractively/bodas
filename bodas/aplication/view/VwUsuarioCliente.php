@@ -825,12 +825,18 @@
 			$objUsuarioClientePublicacion = new UsuarioClientePublicacion;
 
 			$arySeguidores = $objUsuarioClienteMeGusta->obtenerSeguidoresSinLimit($id_proveedor[0]['id_proveedor']);
+			
+			$aryListaSeguidores = $objUsuarioClienteMeGusta->obtenerListaSeguidores($id_proveedor[0]['id_proveedor']);
+			
 			$arySeguidoresXPublicacion = $objUsuarioClientePublicacion->obtenerSeguidoresXPublicacionesSinLimit($id_proveedor[0]['id_proveedor']);
 
 			?>
 				<div class="margen-index">
 
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
+
+					<script type="text/javascript" src="<?php echo _js_?>hightcharts/highcharts.js"></script>
+                    <script type="text/javascript" src="<?php echo _js_?>hightcharts/modules/exporting.js"></script>
 
                     <div class="opciones-editarcuenta">
                         <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
@@ -844,24 +850,95 @@
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
-                    <div class="contenido-central-editarcuenta">
+                    <div class="contenido-central-estadistica">
 
                         <div class="izquierda">
 
-                            <?php for($x = 0 ; $x < count($arySeguidores) ; $x++){ ?>
-                                <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$arySeguidores[$x]['foto_usuario_cliente']."&w=54&h=54";?>" alt="<?php echo $arySeguidores[$x]['nombre_usuario_cliente']; ?>" title="<?php echo $arySeguidores[$x]['nombre_usuario_cliente']; ?>">
-                                <?php echo $arySeguidores[$x]['fecha_me_gusta'] ?><br>
-                            <?php } ?>
+							<div class="lista-de-seguidores">
+                            	<div class="titulo-lista">Lista de seguidores</div>
+                                
+								<?php for($x = 0 ; $x < count($aryListaSeguidores) ; $x++){ ?>
+                                    <div class="item-lista"><img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$aryListaSeguidores[$x]['foto_usuario_cliente']."&w=54&h=54";?>" alt="<?php echo $aryListaSeguidores[$x]['nombre_usuario_cliente']; ?>" title="<?php echo $aryListaSeguidores[$x]['nombre_usuario_cliente']; ?>"></div>
+                                <?php } ?>
+                            
+                            </div>
 
-                            <br clear="all">
-                            <br clear="all">
-                            <br clear="all">
-                            <br clear="all">
+							<div class="grafico-seguidores-diarios">
+                            	<?php if(count($arySeguidores)){ ?>
+									<script type="text/javascript">
+								var chart;
+								$(document).ready(function() {
+									chart = new Highcharts.Chart({
+										chart: {
+											renderTo: 'container01',
+											defaultSeriesType: 'line',
+											marginRight: 130,
+											marginBottom: 25
+										},
+										title: {
+											text: 'Usuario que le dan "Me gusta" al catalogo',
+											x: -20 //center
+										},
+										xAxis: {
+											categories: [
+												<?php 
+													for($x = 0 ; $x < count($arySeguidores) ; $x++){ 
+														echo "'".$arySeguidores[$x]['d_me_gusta']."-".$arySeguidores[$x]['m_me_gusta']."-".$arySeguidores[$x]['y_me_gusta']."'";
+														if($x != count($arySeguidores)-1){ echo ","; }
+													}
+												?>
+											]
+										},
+										yAxis: {
+											title: {
+												text: 'Cantidad de usuarios'
+											},
+											plotLines: [{
+												value: 0,
+												width: 1,
+												color: '#808080'
+											}]
+										},
+										tooltip: {
+											formatter: function() {
+													return '<b>'+ this.series.name +'</b><br/>'+
+													this.x +': '+ this.y;
+											}
+										},
+										legend: {
+											layout: 'vertical',
+											align: 'right',
+											verticalAlign: 'top',
+											x: -10,
+											y: 100,
+											borderWidth: 0
+										},
+										series: [{
+											name: 'Usuarios',
+											data: [
+												<?php 
+													for($x = 0 ; $x < count($arySeguidores) ; $x++){ 
+														echo $arySeguidores[$x]['num_usuarios'];
+														if($x != count($arySeguidores)-1){ echo ","; }
+													} 
+												?>
+											]
+										}]
+									});
 
-                            <?php for($x = 0 ; $x < count($arySeguidoresXPublicacion) ; $x++){ ?>
+								});
+									
+							</script>
+                            		<div id="container01"></div>
+                                <?php }else{ ?>
+                                	<div class="mensaje-sin-seguidores">No tiene seguidores aun</div>
+                                <?php } ?>
+							</div>
+
+                            <!--<?php for($x = 0 ; $x < count($arySeguidoresXPublicacion) ; $x++){ ?>
                                 <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$arySeguidoresXPublicacion[$x]['foto_usuario_cliente']."&w=54&h=54";?>" alt="<?php echo $arySeguidoresXPublicacion[$x]['nombre_usuario_cliente']; ?>" title="<?php echo $arySeguidoresXPublicacion[$x]['nombre_usuario_cliente']; ?>">
                                 <?php echo $arySeguidoresXPublicacion[$x]['fecha_me_gusta'] ?><br>
-                            <?php } ?>
+                            <?php } ?>-->
 
                         </div>
 

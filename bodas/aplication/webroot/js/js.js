@@ -49,7 +49,7 @@ $(document).ready(function() {
 		});
 	}	
 
-	$("#lnk-tuboda").mouseover(function () {
+	$("#lnk-tuboda").click(function(){
 		$("#menu-tendencias").slideUp("slow");
 		$("#menu-tuboda").slideDown("slow");
     });
@@ -58,7 +58,7 @@ $(document).ready(function() {
 		$("#menu-tuboda").slideUp("slow");
 	});
 
-	$("#lnk-tendencias").mouseover(function () {
+	$("#lnk-tendencias").click(function(){
 		$("#menu-tuboda").slideUp("slow");
 		$("#menu-tendencias").slideDown("slow");
     });
@@ -390,9 +390,11 @@ $(document).ready(function() {
 	if($('#areaPublicacion').length > 0){ 
     	$('#areaPublicacion').textareaCount(options);
 	}
+
 	if($('.areaPublicacionComentario').length > 0){ 
 		$('.areaPublicacionComentario').textareaCount(options);  
 	}
+
 	if($('.labely').length > 0){ 
 		$(".labely").labelify({ labelledClass: "labelHighlight" });
 	}
