@@ -935,10 +935,77 @@
                                 <?php } ?>
 							</div>
 
-                            <!--<?php for($x = 0 ; $x < count($arySeguidoresXPublicacion) ; $x++){ ?>
-                                <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$arySeguidoresXPublicacion[$x]['foto_usuario_cliente']."&w=54&h=54";?>" alt="<?php echo $arySeguidoresXPublicacion[$x]['nombre_usuario_cliente']; ?>" title="<?php echo $arySeguidoresXPublicacion[$x]['nombre_usuario_cliente']; ?>">
-                                <?php echo $arySeguidoresXPublicacion[$x]['fecha_me_gusta'] ?><br>
-                            <?php } ?>-->
+                            <div class="grafico-seguidores-diarios">
+                            	<?php if(count($arySeguidoresXPublicacion)){ ?>
+									<script type="text/javascript">
+								var chart;
+								$(document).ready(function() {
+									chart = new Highcharts.Chart({
+										chart: {
+											renderTo: 'container02',
+											defaultSeriesType: 'line',
+											marginRight: 130,
+											marginBottom: 25
+										},
+										title: {
+											text: 'Usuario que le dan "Me gusta" a las publicaciones',
+											x: -20 //center
+										},
+										xAxis: {
+											categories: [
+												<?php 
+													for($x = 0 ; $x < count($arySeguidoresXPublicacion) ; $x++){ 
+														echo "'".$arySeguidoresXPublicacion[$x]['d_me_gusta']."-".$arySeguidoresXPublicacion[$x]['m_me_gusta']."-".$arySeguidoresXPublicacion[$x]['y_me_gusta']."'";
+														if($x != count($arySeguidoresXPublicacion)-1){ echo ","; }
+													}
+												?>
+											]
+										},
+										yAxis: {
+											title: {
+												text: 'Cantidad de usuarios'
+											},
+											plotLines: [{
+												value: 0,
+												width: 1,
+												color: '#808080'
+											}]
+										},
+										tooltip: {
+											formatter: function() {
+													return '<b>'+ this.series.name +'</b><br/>'+
+													this.x +': '+ this.y;
+											}
+										},
+										legend: {
+											layout: 'vertical',
+											align: 'right',
+											verticalAlign: 'top',
+											x: -10,
+											y: 100,
+											borderWidth: 0
+										},
+										series: [{
+											name: 'Usuarios',
+											data: [
+												<?php 
+													for($x = 0 ; $x < count($arySeguidoresXPublicacion) ; $x++){ 
+														echo $arySeguidoresXPublicacion[$x]['num_usuarios'];
+														if($x != count($arySeguidoresXPublicacion)-1){ echo ","; }
+													} 
+												?>
+											]
+										}]
+									});
+
+								});
+									
+							</script>
+                            		<div id="container02"></div>
+                                <?php }else{ ?>
+                                	<div class="mensaje-sin-seguidores">No tiene seguidores aun</div>
+                                <?php } ?>
+							</div>
 
                         </div>
 
