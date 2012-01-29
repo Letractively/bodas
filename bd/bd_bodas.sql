@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 17-01-2012 a las 19:04:28
+-- Tiempo de generación: 29-01-2012 a las 11:53:03
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -28,37 +28,38 @@ CREATE TABLE `articulos` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   `estado_comentarios` tinyint(1) NOT NULL,
-  `estado_fecha` tinyint(1) NOT NULL,
+  `estado_fecha` tinyint(1) NOT NULL default '1',
   PRIMARY KEY  (`id_articulo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 -- 
 -- Volcar la base de datos para la tabla `articulos`
 -- 
 
-INSERT INTO `articulos` VALUES (1, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 0);
-INSERT INTO `articulos` VALUES (2, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 0);
-INSERT INTO `articulos` VALUES (3, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 0);
-INSERT INTO `articulos` VALUES (4, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 0);
-INSERT INTO `articulos` VALUES (5, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 0);
-INSERT INTO `articulos` VALUES (6, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 0);
-INSERT INTO `articulos` VALUES (7, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 0);
-INSERT INTO `articulos` VALUES (8, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 0);
-INSERT INTO `articulos` VALUES (9, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 0);
-INSERT INTO `articulos` VALUES (10, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 0);
-INSERT INTO `articulos` VALUES (11, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 0);
-INSERT INTO `articulos` VALUES (12, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 0);
-INSERT INTO `articulos` VALUES (13, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 0);
-INSERT INTO `articulos` VALUES (14, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 0);
-INSERT INTO `articulos` VALUES (15, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 0);
-INSERT INTO `articulos` VALUES (16, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 0);
-INSERT INTO `articulos` VALUES (17, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 0);
-INSERT INTO `articulos` VALUES (18, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 0);
-INSERT INTO `articulos` VALUES (19, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 0);
-INSERT INTO `articulos` VALUES (20, 1, 'qqqq qqqq qqqqqq qqqqqq', 'qqqqq qqqq qqqq qqqqqqqqqq', '<p>\r\n	qqqq qqqqqqqqqq qqqqqqqqqq</p>\r\n', '2011-12-26 00:00:00', 1, 1, 0);
-INSERT INTO `articulos` VALUES (21, 1, 'r', 'ds', '<p>\r\n	vr</p>\r\n', '2012-01-31 07:30:15', 1, 1, 0);
-INSERT INTO `articulos` VALUES (22, 9, 'fsaew', 'awe fawef awe', '<p>\r\n	&nbsp;fawe fawe fawef awe</p>\r\n', '2012-01-13 06:49:51', 1, 1, 0);
-INSERT INTO `articulos` VALUES (23, 12, 'aaaaaaaaaaa', 'aaaaaaaaaaaa', '<p>\r\n	aaaaaaaaaaaaaaa</p>\r\n', '2012-01-17 05:41:41', 1, 1, 0);
+INSERT INTO `articulos` VALUES (1, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 1);
+INSERT INTO `articulos` VALUES (2, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 1);
+INSERT INTO `articulos` VALUES (3, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 1);
+INSERT INTO `articulos` VALUES (4, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 1);
+INSERT INTO `articulos` VALUES (5, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 1);
+INSERT INTO `articulos` VALUES (6, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 1);
+INSERT INTO `articulos` VALUES (7, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 1);
+INSERT INTO `articulos` VALUES (8, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 1);
+INSERT INTO `articulos` VALUES (9, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 1);
+INSERT INTO `articulos` VALUES (10, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 1);
+INSERT INTO `articulos` VALUES (11, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 1);
+INSERT INTO `articulos` VALUES (12, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 1);
+INSERT INTO `articulos` VALUES (13, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 1);
+INSERT INTO `articulos` VALUES (14, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 1);
+INSERT INTO `articulos` VALUES (15, 1, 'z vzxcv zxcv zxc', 'vzxcv zxcvzv xz', '<p>\r\n	xzcvxz zxcv zxcv</p>\r\n', '2011-12-22 05:42:16', 1, 1, 1);
+INSERT INTO `articulos` VALUES (16, 2, 'zxcvzxcv', 'zcxvzxcv zxc v', '<p>\r\n	zxc vzxc vzsdv zxcvzsdv zcxv</p>\r\n', '2011-12-22 04:30:11', 1, 1, 1);
+INSERT INTO `articulos` VALUES (17, 2, 'qewrqwe rqwe rq', 'qwe rqwe rqwe rqwe r', '<p>\r\n	qwe rqwer qwer qwer qwer</p>\r\n', '2011-12-22 04:56:53', 1, 1, 1);
+INSERT INTO `articulos` VALUES (18, 1, 'asefas eas', 'af asef asef ', '<p>\r\n	asef dsf aewsfwaef awef</p>\r\n', '2011-12-22 05:42:04', 1, 1, 1);
+INSERT INTO `articulos` VALUES (19, 1, 'qewr qew rqwe', 'r qwer qwer', '<p>\r\n	qwe rqwe rqwer qwer qwer</p>\r\n', '2011-12-22 05:42:10', 1, 1, 1);
+INSERT INTO `articulos` VALUES (20, 1, 'qqqq qqqq qqqqqq qqqqqq', 'qqqqq qqqq qqqq qqqqqqqqqq', '<p>\r\n	qqqq qqqqqqqqqq qqqqqqqqqq</p>\r\n', '2011-12-26 00:00:00', 1, 1, 1);
+INSERT INTO `articulos` VALUES (21, 1, 'r', 'ds', '<p>\r\n	vr</p>\r\n', '2012-01-31 07:30:15', 1, 1, 1);
+INSERT INTO `articulos` VALUES (22, 9, 'fsaew', 'awe fawef awe', '<p>\r\n	&nbsp;fawe fawe fawef awe</p>\r\n', '2012-01-13 06:49:51', 1, 1, 1);
+INSERT INTO `articulos` VALUES (23, 12, 'aaaaaaaaaaa', 'aaaaaaaaaaaa', '<p>\r\n	aaaaaaaaaaaaaaa</p>\r\n', '2012-01-17 05:41:41', 1, 1, 1);
+INSERT INTO `articulos` VALUES (24, 16, 'jjjjjjjjjjjjjj', 'jjjjjjjjjjjj', '<p>\r\n	jjjjjjjjjjjjjjjjjjjj</p>\r\n', '2012-01-20 10:33:53', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,7 @@ CREATE TABLE `articulos_imagenes` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_articulo_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 -- 
 -- Volcar la base de datos para la tabla `articulos_imagenes`
@@ -137,6 +138,9 @@ INSERT INTO `articulos_imagenes` VALUES (33, 23, '174203_firefox.jpg', '2012-01-
 INSERT INTO `articulos_imagenes` VALUES (34, 23, '174203_hp.jpg', '2012-01-17 05:42:03', 1);
 INSERT INTO `articulos_imagenes` VALUES (35, 23, '174203_indice.jpg', '2012-01-17 05:42:03', 1);
 INSERT INTO `articulos_imagenes` VALUES (36, 23, '174203_win7.jpg', '2012-01-17 05:42:03', 1);
+INSERT INTO `articulos_imagenes` VALUES (37, 24, '103517_chrome.jpg', '2012-01-20 10:35:17', 1);
+INSERT INTO `articulos_imagenes` VALUES (38, 24, '103518_firefox.jpg', '2012-01-20 10:35:18', 1);
+INSERT INTO `articulos_imagenes` VALUES (39, 24, '103518_win7.jpg', '2012-01-20 10:35:18', 1);
 
 -- --------------------------------------------------------
 
@@ -385,13 +389,12 @@ CREATE TABLE `proveedores_imagenes` (
   `fecha_registro_proveedor_imagen` datetime NOT NULL,
   `estado_proveedor_imagen` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_imagen`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
 -- 
 
-INSERT INTO `proveedores_imagenes` VALUES (116, 20, '115317_win7.jpg', '2012-01-05 11:53:17', 1);
 INSERT INTO `proveedores_imagenes` VALUES (103, 20, '232435_chrome.jpg', '2011-12-04 11:24:35', 1);
 INSERT INTO `proveedores_imagenes` VALUES (104, 20, '232518_hp.jpg', '2011-12-04 11:25:18', 1);
 INSERT INTO `proveedores_imagenes` VALUES (105, 20, '232626_indice.jpg', '2011-12-04 11:26:26', 1);
@@ -405,7 +408,6 @@ INSERT INTO `proveedores_imagenes` VALUES (112, 45, '174443_win7.jpg', '2011-12-
 INSERT INTO `proveedores_imagenes` VALUES (113, 1, '165439_apple.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (114, 1, '165439_chrome.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (115, 1, '165439_firefox.jpg', '2011-12-22 04:54:39', 1);
-INSERT INTO `proveedores_imagenes` VALUES (117, 20, '115412_look.jpg', '2012-01-05 11:54:12', 1);
 
 -- --------------------------------------------------------
 
@@ -420,7 +422,7 @@ CREATE TABLE `proveedores_publicaciones` (
   `fecha_proveedor_publicacion` datetime NOT NULL,
   `estado_proveedor_publicacion` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones`
@@ -430,12 +432,15 @@ INSERT INTO `proveedores_publicaciones` VALUES (29, 20, 'asfewfaw efaw we ', '20
 INSERT INTO `proveedores_publicaciones` VALUES (23, 20, 'fasefasef', '2011-12-05 03:01:02', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (21, 20, 'adsf ewf adf ewf wawef awef awef awef awef awef aewf ', '2011-12-05 02:52:22', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (22, 20, ' dsafds fewf eawf awf weawef aw', '2011-12-05 02:53:29', 1);
-INSERT INTO `proveedores_publicaciones` VALUES (26, 20, 'Escribe aqui tu publicacion', '2011-12-05 10:20:50', 1);
-INSERT INTO `proveedores_publicaciones` VALUES (27, 20, '', '2011-12-05 10:20:52', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (28, 20, 'fasd dsaaw aewf awe  faew ', '2011-12-05 10:22:21', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (30, 45, 'f rewa fgewarg are gseragaeg', '2011-12-09 17:47:23', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (31, 45, 'asdf wef awef', '2011-12-09 17:47:28', 1);
 INSERT INTO `proveedores_publicaciones` VALUES (32, 20, 'gsergesrgser', '2012-01-09 17:23:50', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (33, 20, 'qwefreqfqwe', '2012-01-20 11:51:01', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (34, 20, 'gfbrbrbrt', '2012-01-20 11:51:11', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (35, 20, 'ergergersg', '2012-01-20 11:51:34', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (36, 20, 'dsafafsddfsa', '2012-01-20 11:53:46', 1);
+INSERT INTO `proveedores_publicaciones` VALUES (37, 20, 'gtrbrdbtrdtb', '2012-01-20 11:54:07', 1);
 
 -- --------------------------------------------------------
 
@@ -451,7 +456,7 @@ CREATE TABLE `proveedores_publicaciones_comentarios` (
   `fecha` datetime NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id_proveedor_publicacion_comentario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
 -- 
 -- Volcar la base de datos para la tabla `proveedores_publicaciones_comentarios`
@@ -467,6 +472,42 @@ INSERT INTO `proveedores_publicaciones_comentarios` VALUES (14, 31, 53, 'af wef 
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (15, 30, 53, 'awef waef aw', '2011-12-09 05:48:07', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (18, 20, 3, '', '2011-12-26 09:49:28', 1);
 INSERT INTO `proveedores_publicaciones_comentarios` VALUES (19, 29, 12, 'afeefweaw eawef awef awe', '2012-01-09 05:57:22', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (20, 29, 12, 'ewafawef', '2012-01-20 11:43:07', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (21, 29, 12, 'asefasefsa ef\n', '2012-01-20 11:43:18', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (22, 29, 12, 'dfsafewfawefawef', '2012-01-20 11:43:21', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (23, 29, 12, 'gsdgregserg', '2012-01-20 11:43:23', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (24, 29, 12, 'dgbdtbrdtr', '2012-01-20 11:43:25', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (25, 29, 12, 'efewfawfeawfe', '2012-01-20 11:43:27', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (26, 29, 12, 'asefaesfwafe', '2012-01-20 11:45:26', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (27, 29, 12, 'safwf', '2012-01-20 11:45:29', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (28, 32, 12, 'fewrfwerf\nfewqef', '2012-01-20 11:50:56', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (29, 32, 12, 'refewrf', '2012-01-20 11:50:58', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (30, 37, 12, 'afesfewf', '2012-01-20 11:55:38', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (31, 37, 12, 'trgrtret', '2012-01-20 11:55:40', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (32, 37, 12, 'mgymnyumyug', '2012-01-20 11:55:51', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (33, 37, 12, 'yunyutuy', '2012-01-20 11:55:54', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (34, 37, 12, 'dfhrthrdth', '2012-01-20 11:55:56', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (35, 37, 12, 'mghjmhjh', '2012-01-20 11:55:58', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (36, 37, 12, 'sergserg', '2012-01-20 11:55:59', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (37, 37, 12, 'qwerqwedqew', '2012-01-20 11:56:01', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (38, 37, 12, 'ferrtvrtv', '2012-01-20 11:56:05', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (39, 37, 12, 'arvrtv', '2012-01-20 11:56:11', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (40, 37, 12, 'rtvreqew', '2012-01-20 11:56:12', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (41, 37, 12, 'Â´wrevwervÃ©rÂ´qewrtÂ´regÂ´wÃ©wrÂ´tÃ©Â´Ã‘Ã‘Ã‘', '2012-01-20 11:56:21', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (42, 27, 12, 'afseafse', '2012-01-20 12:16:02', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (43, 36, 12, 'seafsefeawf', '2012-01-20 12:47:52', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (44, 35, 12, 'awefawefawef', '2012-01-20 12:47:55', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (45, 35, 12, 'awefawef', '2012-01-20 12:47:57', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (46, 36, 12, 'awefawef', '2012-01-20 12:47:59', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (47, 35, 12, 'zvxcxzcvzvdsvzd', '2012-01-20 12:48:15', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (48, 37, 12, 'vrtsvesrvesr', '2012-01-20 01:10:02', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (49, 37, 12, 'tgrbretb', '2012-01-20 01:10:04', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (50, 37, 12, 'jhmymj', '2012-01-20 01:10:09', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (51, 29, 12, 'jjjjjjjjj', '2012-01-20 01:10:17', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (52, 29, 12, 'kkkkkk', '2012-01-20 01:10:20', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (53, 34, 12, 'yhth tyh tyd h', '2012-01-20 01:47:28', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (54, 34, 12, 'f nfgnfg nfg', '2012-01-20 01:47:31', 1);
+INSERT INTO `proveedores_publicaciones_comentarios` VALUES (55, 34, 12, 'srgs se ser gser gser', '2012-01-20 01:47:33', 1);
 
 -- --------------------------------------------------------
 
@@ -812,6 +853,26 @@ INSERT INTO `usuarios_clientes` VALUES (53, 2, 16, 'gian', 'gian', '173938_apple
 -- --------------------------------------------------------
 
 -- 
+-- Estructura de tabla para la tabla `usuarios_clientes_me_gusta`
+-- 
+
+CREATE TABLE `usuarios_clientes_me_gusta` (
+  `id_usuario_cliente_me_gusta` int(11) NOT NULL auto_increment,
+  `id_usuario_cliente` int(11) NOT NULL,
+  `id_proveedor` int(11) NOT NULL,
+  `fecha_me_gusta` datetime NOT NULL,
+  PRIMARY KEY  (`id_usuario_cliente_me_gusta`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios_clientes_me_gusta`
+-- 
+
+INSERT INTO `usuarios_clientes_me_gusta` VALUES (8, 12, 20, '2012-01-24 03:23:26');
+
+-- --------------------------------------------------------
+
+-- 
 -- Estructura de tabla para la tabla `usuarios_clientes_proveedores`
 -- 
 
@@ -830,6 +891,27 @@ INSERT INTO `usuarios_clientes_proveedores` VALUES (15, 10, 16);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (14, 8, 18);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (18, 12, 20);
 INSERT INTO `usuarios_clientes_proveedores` VALUES (19, 53, 45);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios_clientes_publicaciones`
+-- 
+
+CREATE TABLE `usuarios_clientes_publicaciones` (
+  `id_usuario_cliente_publicacion` int(11) NOT NULL auto_increment,
+  `id_usuario_cliente` int(11) NOT NULL,
+  `id_publicacion` int(11) NOT NULL,
+  `fecha_me_gusta` datetime NOT NULL,
+  PRIMARY KEY  (`id_usuario_cliente_publicacion`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios_clientes_publicaciones`
+-- 
+
+INSERT INTO `usuarios_clientes_publicaciones` VALUES (1, 12, 37, '2012-01-29 11:49:03');
+INSERT INTO `usuarios_clientes_publicaciones` VALUES (2, 12, 36, '2012-01-29 11:49:04');
 
 -- --------------------------------------------------------
 
@@ -853,3 +935,22 @@ INSERT INTO `usuarios_paginas` VALUES (2, 20);
 INSERT INTO `usuarios_paginas` VALUES (2, 23);
 INSERT INTO `usuarios_paginas` VALUES (2, 1);
 INSERT INTO `usuarios_paginas` VALUES (2, 21);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuario_cliente_publicacion`
+-- 
+
+CREATE TABLE `usuario_cliente_publicacion` (
+  `id_usuario_cliente_publicacion` int(11) NOT NULL auto_increment,
+  `id_usuario_cliente` int(11) NOT NULL,
+  `id_publicacion` int(11) NOT NULL,
+  `fecha_me_gusta` datetime NOT NULL,
+  PRIMARY KEY  (`id_usuario_cliente_publicacion`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuario_cliente_publicacion`
+-- 
+
