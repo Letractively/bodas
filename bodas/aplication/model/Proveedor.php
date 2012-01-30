@@ -92,7 +92,9 @@
 					p.id_proveedor,
 					p.nombre_proveedor,
 					p.logo_proveedor,
-					p.descripcion1_proveedor
+					p.descripcion1_proveedor,
+					p.telefono1_proveedor,
+					p.telefono2_proveedor
 				FROM proveedores p
 				WHERE p.estado_cuenta_proveedor = 1
 				AND p.id_proveedor_tipo = ".$id_tipo."
@@ -105,7 +107,9 @@
 					'id_proveedor'				=> $rw['id_proveedor'],
 					'nombre_proveedor'			=> $rw['nombre_proveedor'],
 					'logo_proveedor'			=> $rw['logo_proveedor'],
-					'descripcion1_proveedor'	=> $rw['descripcion1_proveedor']
+					'descripcion1_proveedor'	=> $rw['descripcion1_proveedor'],
+					'telefono1_proveedor'	=> $rw['telefono1_proveedor'],
+					'telefono2_proveedor'	=> $rw['telefono2_proveedor']
 				);
 			}
 			return $rst;		

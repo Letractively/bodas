@@ -25,7 +25,8 @@ $(document).ready(function(){
 	if($('.reporte2').length){ 
 		$('.reporte2').dataTable({
 			"sPaginationType": "full_numbers",
-			"aaSorting": [[ 0, "desc" ]]
+			"aaSorting": [[ 0, "desc" ]],
+			"iDisplayLength": 25
 		}); 
 	}
 

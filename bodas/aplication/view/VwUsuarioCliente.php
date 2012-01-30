@@ -61,7 +61,7 @@
                                     <div class="itm"><label>* Confirmas contraseña:</label><input type="password" id="txtPassword2" name="txtPassword2"></div>
                                     <div class="itm"><label>* Fecha de cumpleaños:</label><input type="text" id="txtFechaCumple" name="txtFechaCumple" class="dp" readonly="readonly"></div>
                                     <div class="itm"><label>* Nombre de tu pareja:</label><input type="text" id="txtNombrePareja" name="txtNombrePareja"></div>
-                                    <div class="itm"><label>* Fecha de boda:</label><input type="text" id="txtFechaBoda" name="txtFechaBoda" class="dp" readonly="readonly"></div>
+                                    <div class="itm"><label>* Fecha de boda:</label><input type="text" id="txtFechaBoda" name="txtFechaBoda" class="dp2" readonly="readonly"></div>
                                     <div class="itm">
                                     	<label>* Distrito:</label>
                                     	<select id="sleDistritos" name="sleDistritos">

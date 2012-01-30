@@ -293,7 +293,7 @@ $(document).ready(function() {
 		},
 		uploadSuccess: function(event, file, serverData){
 			regencoded = jQuery.parseJSON(serverData);
-			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">Eliminar imagen X</div><div class="nombre"><img src="' + base + 'aplication/utilities/tt.php?src=/aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80"></div></div>';
+			newItemFoto = '<div id="foto_'+regencoded.data[0].id_proveedor_imagen+'" nom_foto="'+regencoded.data[0].imagen_proveedor_imagen+'" class="item_img"><div class="eliminar_imagen" title="'+regencoded.data[0].id_proveedor_imagen+'">Eliminar imagen X</div><div class="nombre"><img src="' + base + 'aplication/utilities/tt.php?src=/aplication/webroot/imgs/proveedores_fotos/'+regencoded.data[0].imagen_proveedor_imagen+'&w=80&h=80"></div></div>';
 			$('.cont_imagenes').append(newItemFoto);
 
 			$('#load').remove();
@@ -502,6 +502,7 @@ $(document).ready(function() {
 				rules:{
 					txtNombre: 'required',
 					txtApellido: 'required',
+					txtEmail: { required: true, email: true },
 					txtDireccion: 'required',
 					txtFijo: 'required',
 					txtDireccionEntrega: 'required',
@@ -511,6 +512,7 @@ $(document).ready(function() {
 				messages:{
 					txtNombre: '',
 					txtApellido: '',
+					txtEmail: { required: '', email: '' },
 					txtDireccion: '',
 					txtFijo: '',
 					txtDireccionEntrega: '',

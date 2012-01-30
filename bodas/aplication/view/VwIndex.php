@@ -37,7 +37,7 @@
                             </div>
                         	<p><b class="b1"><?php echo substr($aryPortadas[6]['titulo'],0,80) ?></b></p>
                                 <p><a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[6]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>"><img src="<?=_tt_."src=/aplication/webroot/imgs/articulos_fotos/".$aryPortadas[6]['imagen']."&w=161&h=120";?>"></a></p>
-                                <p><?php echo substr($aryPortadas[6]['descripcion1'],0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[6]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>">Ver más</a></p>
+                                <p><?php echo substr(utf8_encode($aryPortadas[6]['descripcion1']),0,120); ?> <a href="<?=_bs_?>noticias_detalle/<?php echo $aryPortadas[6]['id']?>/<?php echo $objUtilitarios->procesar_url_2($aryPortadas[4]['titulo']) ?>">Ver más</a></p>
                         </div>
 
                         <div class="columna columna1">
