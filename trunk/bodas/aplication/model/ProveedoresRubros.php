@@ -55,13 +55,13 @@
                 <form id="frmProveedorRubrosNuevo" name="frmProveedorRubrosNuevo" action="" method="post">
                 	<h2>Nuevo rubro</h2>
                 	<div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" /></div>
-                    
+
                     <div class="itm">
                     	<label>Estado: </label>
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0">Desactivado
                     </div>
-                    
+
                     <div class="itm">
                     	<label>Primera noticia relacionada: </label>
                         <select id="noticia1" name="noticia1">

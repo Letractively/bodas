@@ -65,11 +65,11 @@
                                         <input type="hidden" id="hdi_id_usuario" value="<?php echo $_SESSION['login_usuario_cliente'] ?>">
                                         <input type="hidden" id="hdi_id_proveedor" value="<?php echo $objProveedor->id_proveedor ?>">
 									<?php if($bool == "true"){ ?>
-										<a class="lnk_me_gusta" id="lnk_no_me_gusta" style="background:#CCC !important;">Me gusta</a>
-                                        <a class="lnk_me_gusta" id="lnk_me_gusta" style="display:none">Me gusta</a>
+										<a class="lnk_me_gusta" id="lnk_no_me_gusta" style="background:#CCC !important;">Seguir proveedor</a>
+                                        <a class="lnk_me_gusta" id="lnk_me_gusta" style="display:none">Seguir proveedor</a>
                                     <?php }else{ ?>
-                                    	<a class="lnk_me_gusta" id="lnk_no_me_gusta" style="display:none; background:#CCC !important;" >Me gusta</a>
-										<a class="lnk_me_gusta" id="lnk_me_gusta">Me gusta</a>
+                                    	<a class="lnk_me_gusta" id="lnk_no_me_gusta" style="display:none; background:#CCC !important;" >Seguir proveedor</a>
+										<a class="lnk_me_gusta" id="lnk_me_gusta">Seguir proveedor</a>
 									<?php }} ?>
                                 </div>
 

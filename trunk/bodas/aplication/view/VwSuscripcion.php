@@ -14,6 +14,7 @@
 
 El Señor(a): ".$_POST['txtNombre']." ".$_POST['txtApellido']." envio a travez del formulario de suscripcion de bodas los siguientes datos:
 Direccion: ".$_POST['txtDireccion']." 
+Email: ".$_POST['txtEmail']." 
 Fijo: ".$_POST['txtFijo']."
 Anexo: ".$_POST['txtAnexo']."
 Celular: ".$_POST['txtCelular']."
@@ -56,6 +57,7 @@ BODAS";
                         	<form id="frmSuscripcion" name="frmSuscripcion" method="post">
                                 <div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" value=""></div>
                                 <div class="itm"><label>Apellido: </label><input type="text" id="txtApellido" name="txtApellido" value=""></div>
+                                <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" value=""></div>
                                 <div class="itm"><label>Dirección (Según DNI): </label><input type="text" id="txtDireccion" name="txtDireccion" value=""></div>
                                 <div class="itm"><label>Teléfono fijo: </label><input type="text" id="txtFijo" name="txtFijo" value=""></div>
                                 <div class="itm"><label>Anexo: </label><input type="text" id="txtAnexo" name="txtAnexo" value=""></div>

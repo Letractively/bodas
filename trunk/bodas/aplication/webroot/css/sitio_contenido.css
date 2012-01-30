@@ -134,9 +134,14 @@
 
 
 .contenido-central-proveedor .proveedores-normal{ position:relative; float:left; width:100%; }
+
 .contenido-central-proveedor .proveedores-normal .titulo{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; margin:5px 0 0 0; background:#b370cb; color:#FFF; text-align:left; font-weight:bold; }
+
+.contenido-central-proveedor .proveedores-normal .texto-descriptivo{ position:relative; float:left; width:100%; height:auto; padding:5px; color:#999; text-align:center; }
+
 .contenido-central-proveedor .proveedores-normal .titulo p{ padding:0 6px; }
 .contenido-central-proveedor .proveedores-normal .item{ position:relative; float:left; width:150px; height:118px; padding:5px 8px; overflow:hidden; }
+.contenido-central-proveedor .proveedores-normal .item .tel{ font-size:10px; color:#999; }
 .contenido-central-proveedor .proveedores-normal .item img{ border:1px solid #b370cb; }
 .contenido-central-proveedor .proveedores-normal .item a{ color:#b370cb; }
 
@@ -210,6 +215,8 @@ width:auto; text-align:center; }
 .contenido-central-catalogo .derecha .recomendados{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
 .contenido-central-catalogo .derecha .recomendados img{ padding:8px; }
 
+.contenido-central-catalogo .derecha .seguidores{ position:relative; float:left; width:300px; height:auto; padding:0 0 4px 0; margin:3px 0px; }
+.contenido-central-catalogo .derecha .seguidores img{ padding:8px; }
 
 /*	Registrese	*/
 .contenido-central-registrese{ position:relative; float:left; width:815px; height:auto; padding:0 0 0 8px; font-size:12px; }
