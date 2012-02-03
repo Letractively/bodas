@@ -86,6 +86,7 @@
 			return $rst;			
 		}
 
+
 		public function obtenerProveedoresXRubroYTipo($id_tipo, $id_rubro){
 			$sql = "
 				SELECT 
@@ -114,6 +115,38 @@
 			}
 			return $rst;		
 		}
+
+
+		public function obtenerProveedoresXTexto($id_tipo, $texto){
+			$sql = "
+				SELECT 
+					p.id_proveedor,
+					p.nombre_proveedor,
+					p.logo_proveedor,
+					p.descripcion1_proveedor,
+					p.telefono1_proveedor,
+					p.telefono2_proveedor
+				FROM proveedores p, proveedores_rubros pr
+				WHERE p.estado_cuenta_proveedor = 1
+				AND p.id_proveedor_rubro = pr.id_proveedor_rubro
+				AND p.id_proveedor_tipo = ".$id_tipo."
+				".$texto."
+				ORDER BY p.nombre_proveedor ASC";
+
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id_proveedor'				=> $rw['id_proveedor'],
+					'nombre_proveedor'			=> $rw['nombre_proveedor'],
+					'logo_proveedor'			=> $rw['logo_proveedor'],
+					'descripcion1_proveedor'	=> $rw['descripcion1_proveedor'],
+					'telefono1_proveedor'		=> $rw['telefono1_proveedor'],
+					'telefono2_proveedor'		=> $rw['telefono2_proveedor']
+				);
+			}
+			return $rst;		
+		}
+
 
 	}
 ?>

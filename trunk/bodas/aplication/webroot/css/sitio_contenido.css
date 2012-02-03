@@ -6,17 +6,24 @@
 #cuerpo .logo-opciones{ position:relative; float:left; width:100%; height:auto; padding:23px 0 0 0; }
 #cuerpo .logo-opciones .logo{ position:relative; float:left; width:auto; height:auto; padding:0 0 0 23px; }
 
-#cuerpo .logo-opciones .opciones{ position:relative; float:right; width:auto; height:auto; right:12px; padding:60px 0 0 0; }
-#cuerpo .logo-opciones .opciones2{ position:relative; float:right; width:auto; height:auto; right:12px; padding:30px 0 0 0; }
+#cuerpo .logo-opciones .opciones{ position:relative; float:right; width:auto; height:auto; right:12px; padding:30px 0 0 0; }
+#cuerpo .logo-opciones .opciones2{ position:relative; float:right; width:auto; height:auto; right:12px; padding:10px 0 0 0; }
 #cuerpo .logo-opciones .contenedor-cuenta{ position:relative; float:right; width:100%; height:auto; padding:4px 0px; text-align:right; }
 #cuerpo .logo-opciones .contenedor-cuenta{ color:#a657c2; font-weight:bold; font-size:12px; }
 #cuerpo .logo-opciones .contenedor-cuenta span{ color:#CCCCCC; }
 #cuerpo .logo-opciones .contenedor-cuenta a{ color:#a657c2; }
 #cuerpo .logo-opciones .contenedor-cuenta a:hover{ text-decoration:underline; }
 
+#cuerpo .logo-opciones .contenedor-criterio-busqueda{ position:relative; float:right; width:100%; height:auto; padding:6px 0 0 0; text-align:right; }
+#cuerpo .logo-opciones .contenedor-criterio-busqueda .cnt_crit{ position:relative; float:right; width:125px; height:auto; }
+#cuerpo .logo-opciones .contenedor-criterio-busqueda .cnt_crit input[type='radio']{ position:relative; float:left; width:auto; height:auto; padding:0px 5px; }
+#cuerpo .logo-opciones .contenedor-criterio-busqueda .cnt_crit span{ position:relative; float:left; width:auto; height:auto; padding:0px 5px; }
+
 #cuerpo .logo-opciones .contenedor-buscar{ position:relative; float:right; width:auto; height:auto; padding:5px; background:#999999; text-align:right; }
 #cuerpo .logo-opciones .contenedor-buscar input[type='text']{ position:relative; float:left; width:203px; height:18px; }
+#cuerpo .logo-opciones .contenedor-buscar input[type='text'].error{ border:1px solid #F00; }
 #cuerpo .logo-opciones .contenedor-buscar #btnBuscar{ position:relative; float:left; width:auto; height:auto; display:block; padding:1px 0 0 4px; }
+#cuerpo .logo-opciones .contenedor-buscar .labelHighlight{ color:#999; }
 
 #cuerpo .menu-general{ position:relative; float:left; width:100%; height:30px; background:url(../imgs/fondo-menu-general.png) repeat-x center center; margin:7px 0px 9px 0; }
 
@@ -496,7 +503,7 @@ width:auto; text-align:center; }
 .contenido-central-iglesias .texto .item ul{ padding:0 0 0 15px; color:#A657C2; }
 .contenido-central-iglesias .texto .item p{ color:#333; }
 
-#coin-slider p b{ font-size:14px; color:#B16EC9; }
+#coin-slider p b{ font-size:14px; color:#B16EC9; font-weight:normal; }
 
 /*	Quienes somos	*/
 .contenido-central-quienes-somos{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
@@ -574,3 +581,5 @@ width:auto; text-align:center; }
 .contenido-central-estadistica .izquierda .grafico-seguidores-diarios{ position:relative; float:left; width:100%; height:auto; margin:10px 0px 40px 0px; }
 .contenido-central-estadistica .izquierda .grafico-seguidores-diarios #container01{ width: 640px; height: 380px; margin: 0 auto; }
 .contenido-central-estadistica .izquierda .grafico-seguidores-diarios .mensaje-sin-seguidores{ position:relative; float:left; width:100%; height:auto; padding:10px 0px; }
+
+#cs-buttons-coin-slider{ display:none; }

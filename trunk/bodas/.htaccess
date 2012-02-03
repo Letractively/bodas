@@ -72,7 +72,7 @@ Rewriterule ^belleza-y-salud-detalle/([0-9]+)/.*$ belleza_y_salud_detalle.php?id
 Rewriterule ^los-invitados/([0-9]+)/.*$ los_invitados.php?pag=$1 [L,QSA]
 Rewriterule ^los-invitados-detalle/([0-9]+)/.*$ los_invitados_detalle.php?id_articulo=$1 [L,QSA]
 
-
+Rewriterule ^resultados/([0-9]+)/.*$ resultados.php?pag=$1 [L,QSA]
 
 Rewriterule ^eventos/.*$ eventos.php [L,QSA]
 Rewriterule ^luna_de_miel/.*$ lunamiel.php [L,QSA]

@@ -90,6 +90,7 @@
                                     <div class="item">
                                         <p><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$aryProveedores[$x]['logo_proveedor']."&w=150&h=80";?>"></p>
                                         <p><b><?php echo $aryProveedores[$x]['nombre_proveedor'] ?></b></p>
+                                        <p class="tel"><?php echo $aryProveedores[$x]['telefono1_proveedor'] ?><?php if($aryProveedores[$x]['telefono2_proveedor'] != '') {echo " / ".$aryProveedores[$x]['telefono2_proveedor']; } ?></p>
                                     </div>
                                 <?php } ?>
                             </div>

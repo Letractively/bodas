@@ -10,7 +10,9 @@ $(document).ready(function() {
 	if($('#coin-slider').length > 0){
 		$('#coin-slider').coinslider({
 			width: 505,
-			height: 299
+			height: 299,
+			hoverPause: true,
+			delay: 10000
 		});
 	}	
 
@@ -621,5 +623,18 @@ $(document).ready(function() {
 		);
 		$(this).hide();
 	});
+
+	if($('#frmBuscar').length > 0){ 
+		$('#frmBuscar').validate({
+			errorElement: 'label',
+			errorClass: 'error',
+			rules:{
+				txtBuscar: 'required'
+			},
+			messages:{
+				txtBuscar: ''
+			}
+		});
+	}
 
 });

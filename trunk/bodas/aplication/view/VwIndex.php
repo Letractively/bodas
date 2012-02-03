@@ -25,7 +25,7 @@
                         	<?php for($x = 0 ; $x < 4 ; $x++){ ?>
                                 <a href="<?=_bs_."noticias_detalle/".$aryPortadas[$x]['id']."/".$this->procesar_url_2($aryPortadas[$x]['titulo'])?>">
                                      <img src="<?php echo _tt_."src=../aplication/webroot/imgs/articulos_fotos/".$aryPortadas[$x]['imagen']."&w=505&h=299";?>" alt="<?php echo $aryPortadas[$x]['imagen_1']; ?>" />
-                                    <span><p><b><?php echo $aryPortadas[$x]['titulo']; ?></b><p><p><?php echo substr($aryPortadas[$x]['descripcion1'],0,150); ?></p></span>
+                                    <span><p><b><?php echo $aryPortadas[$x]['titulo']; ?></b><p><p><?php echo substr($aryPortadas[$x]['descripcion1'],0,90); ?>...</p></span>
                                 </a>
 							<?php } ?>
                         </div>

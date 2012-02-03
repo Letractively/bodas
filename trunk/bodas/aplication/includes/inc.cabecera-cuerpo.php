@@ -26,12 +26,13 @@
         	<div class="contenedor-cuenta"><a id="des_login" href="<?=_bs_?>usuario/editar_cuenta/">Editar cuenta</a> / <a href="<?=_bs_?>validacion/salir/">Salir</a></div>
         <?php } ?>
         
-        <div class="contenedor-buscar">
-        	<form id="frmBuscar" name="frmBuscar">
-            	<input type="text" id="txtBuscar" name="txtBuscar" />
-                <a id="btnBuscar"><img src="<?php echo _img_?>imgBuscar.png" alt="Buscar"></a>
-            </form>
-        </div>
+        <form id="frmBuscar" name="frmBuscar" method="post" action="<?=_bs_?>resultados/0/">
+            <div class="contenedor-buscar">
+                    <input type="text" id="txtBuscar" name="txtBuscar" class="labely" title="Buscar proveedor..." />
+                    <input type="image" src="<?php echo _img_?>imgBuscar.png" id="btnBuscar">
+            </div>
+            <div class="contenedor-criterio-busqueda"><div class="cnt_crit"><input type="radio" id="rdoOpc" name="rdoOpc" value="rubros" checked="checked"><span>Rubro</span> <input type="radio" id="rdoOpc" name="rdoOpc" value="proveedores" <?php if( $_SESSION['rdoOpc'] == 'proveedores' ){ echo "checked='checked'"; } ?>> <span>Proveedor</span> </div></div>
+        </form>
     </div>
 </div>
 

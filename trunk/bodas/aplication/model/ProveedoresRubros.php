@@ -49,7 +49,11 @@
 
 		public function nuevo(){
 			$objArticulo = new Articulo;
+			$objArticuloTipo = new ArticuloTipo;
+			
 			$aryArticulos = $objArticulo->getArticuloXTipo(1);
+
+			$aryArticulosTipos = $objArticuloTipo->getColeccionTipo();
 
 			?>
                 <form id="frmProveedorRubrosNuevo" name="frmProveedorRubrosNuevo" action="" method="post">
@@ -62,11 +66,33 @@
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0">Desactivado
                     </div>
 
+					<div class="itm">
+                    	<label>Tipo de articulo</label>
+                        <select id="sleRubrosArticulos1" name="sleRubrosArticulos1">
+                        	<?php for($x = 0 ; $x < count($aryArticulosTipos); $x++){ ?>
+                            	<option 
+                                <?php if($aryArticulosTipos[$x]['id'] == 1){ echo "selected='selected'";}?>
+                                value="<?php echo $aryArticulosTipos[$x]['id']?>"><?php echo $aryArticulosTipos[$x]['nombre']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
                     <div class="itm">
                     	<label>Primera noticia relacionada: </label>
                         <select id="noticia1" name="noticia1">
                         	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
                             	<option value="<?php echo $aryArticulos[$x]['id']?>"><?php echo $aryArticulos[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
+					<div class="itm">
+                    	<label>Tipo de articulo</label>
+                        <select id="sleRubrosArticulos2" name="sleRubrosArticulos2">
+                        	<?php for($x = 0 ; $x < count($aryArticulosTipos); $x++){ ?>
+                            	<option 
+                                <?php if($aryArticulosTipos[$x]['id'] == 1){ echo "selected='selected'";}?>
+                                value="<?php echo $aryArticulosTipos[$x]['id']?>"><?php echo $aryArticulosTipos[$x]['nombre']?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -105,13 +131,33 @@
 		}
 
 		public function editar($id){
+
 			$objProveedorRubro = new ProveedorRubro($id);
-			
-			$objArticulo = new Articulo;
-			$aryArticulos = $objArticulo->getArticuloXTipo(1);
 
 			$objRubrosArticulos = new RubrosArticulos;
 			$aryArticulosSel = $objRubrosArticulos->obtenerArticulosXRubro($id);
+
+			$objArticuloSeleccionado1 = new Articulo($aryArticulosSel[0]['id_articulo']);
+			$objArticuloSeleccionado2 = new Articulo($aryArticulosSel[1]['id_articulo']);
+
+			$objArticulo = new Articulo;
+
+			if($objArticuloSeleccionado1->id_articulo_tipo != ''){
+				$aryArticulos1 = $objArticulo->getArticuloXTipo($objArticuloSeleccionado1->id_articulo_tipo);
+			}else{
+				$aryArticulos1 = $objArticulo->getArticuloXTipo(1);	
+			}
+
+			if($objArticuloSeleccionado2->id_articulo_tipo != ''){
+				$aryArticulos2 = $objArticulo->getArticuloXTipo($objArticuloSeleccionado2->id_articulo_tipo);
+			}else{
+				$aryArticulos2 = $objArticulo->getArticuloXTipo(1);	
+			}
+
+			$objArticulo = new Articulo();
+
+			$objArticuloTipo = new ArticuloTipo;
+			$aryArticulosTipos = $objArticuloTipo->getColeccionTipo();
 
 			?>
                 <form id="frmProveedorRubrosEdita" name="frmProveedorRubrosEdita" action="" method="post">
@@ -122,14 +168,36 @@
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="1" checked="checked">Activado |
                         <input type="radio" id="rdoEstado" name="rdoEstado" value="0" <?php if($objProveedorRubro->estado_proveedor_rubro !=1){ echo "checked='checked'"; }?>>Desactivado
                     </div>
-                    
+
+					<div class="itm">
+                    	<label>Tipo de articulo</label>
+                        <select id="sleRubrosArticulos1" name="sleRubrosArticulos1">
+                        	<?php for($x = 0 ; $x < count($aryArticulosTipos); $x++){ ?>
+                            	<option 
+                                <?php if($aryArticulosTipos[$x]['id'] == $objArticuloSeleccionado1->id_articulo_tipo){ echo "selected='selected'";}?>
+                                value="<?php echo $aryArticulosTipos[$x]['id']?>"><?php echo $aryArticulosTipos[$x]['nombre']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
                     <div class="itm">
                     	<label>Primera noticia relacionada: </label>
                         <select id="noticia1" name="noticia1">
-                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
-                            	<option value="<?php echo $aryArticulos[$x]['id']?>"
-                                <?php if($aryArticulosSel[0]['id_articulo'] == $aryArticulos[$x]['id']){ echo "selected='selected'"; }?>
-                                ><?php echo $aryArticulos[$x]['titulo']?></option>
+                        	<?php for($x = 0 ; $x < count($aryArticulos1); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos1[$x]['id']?>"
+                                <?php if($aryArticulosSel[0]['id_articulo'] == $aryArticulos1[$x]['id']){ echo "selected='selected'"; }?>
+                                ><?php echo $aryArticulos1[$x]['titulo']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+					<div class="itm">
+                    	<label>Tipo de articulo</label>
+                        <select id="sleRubrosArticulos2" name="sleRubrosArticulos2">
+                        	<?php for($x = 0 ; $x < count($aryArticulosTipos); $x++){ ?>
+                            	<option 
+                                <?php if($aryArticulosTipos[$x]['id'] == $objArticuloSeleccionado2->id_articulo_tipo){ echo "selected='selected'";}?>
+                                value="<?php echo $aryArticulosTipos[$x]['id']?>"><?php echo $aryArticulosTipos[$x]['nombre']?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -137,10 +205,10 @@
                     <div class="itm">
                     	<label>Segunda noticia relacionada: </label>
                         <select id="noticia2" name="noticia2">
-                        	<?php for($x = 0 ; $x < count($aryArticulos); $x++){ ?>
-                            	<option value="<?php echo $aryArticulos[$x]['id']?>"
-                                <?php if($aryArticulosSel[1]['id_articulo'] == $aryArticulos[$x]['id']){ echo "selected='selected'"; }?>
-                                ><?php echo $aryArticulos[$x]['titulo']?></option>
+                        	<?php for($x = 0 ; $x < count($aryArticulos2); $x++){ ?>
+                            	<option value="<?php echo $aryArticulos2[$x]['id']?>"
+                                <?php if($aryArticulosSel[1]['id_articulo'] == $aryArticulos2[$x]['id']){ echo "selected='selected'"; }?>
+                                ><?php echo $aryArticulos2[$x]['titulo']?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -162,8 +230,8 @@
 									WHERE id_proveedor_rubro = '".$id."'");
 
 			$Query = new Consulta("DELETE FROM rubros_articulos WHERE id_rubro = ".$id."");
-			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia1'].")");
 			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia2'].")");
+			$Query = new Consulta("INSERT INTO rubros_articulos VALUES('',".$id.",".$_POST['noticia1'].")");
 
 			?><div class='ok'><img src="<?php echo _icn_?>ok.png"> Registro editado correctamente.</div><?php
 		}
