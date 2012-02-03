@@ -38,4 +38,38 @@
 			$('#frmProveedorRubrosEdita').submit();
 		});
 
+		$("#sleRubrosArticulos1").change(function(){
+			$.post('ajax.php',{
+					ver_articulos: 1,
+					id_articulo_tipo: $(this).val()
+				},
+				function (response) {
+					$('#noticia1').html('');
+					var record = response.data;
+					var x = 0;
+					for(x = 0 ; x < record.length ; x++){
+						$('#noticia1').append('<option value="'+record[x].id+'">'+record[x].titulo+'</option>');
+					}
+
+				}, 'json'
+			);
+		});
+
+		$("#sleRubrosArticulos2").change(function(){
+			$.post('ajax.php',{
+					ver_articulos: 1,
+					id_articulo_tipo: $(this).val()
+				},
+				function (response) {
+					$('#noticia2').html('');
+					var record = response.data;
+					var x = 0;
+					for(x = 0 ; x < record.length ; x++){
+						$('#noticia2').append('<option value="'+record[x].id+'">'+record[x].titulo+'</option>');
+					}
+
+				}, 'json'
+			);
+		});
+
 	});

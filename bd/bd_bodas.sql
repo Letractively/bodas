@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 30-01-2012 a las 18:44:20
+-- Tiempo de generación: 03-02-2012 a las 18:31:24
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -359,7 +359,7 @@ INSERT INTO `proveedores` VALUES (26, 3, 4, 'Proveedor de ejemplo 006', '123903_
 INSERT INTO `proveedores` VALUES (27, 3, 4, 'Proveedor de ejemplo 007', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (28, 3, 4, 'Proveedor de ejemplo 008', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (29, 3, 4, 'Proveedor de ejemplo 009', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
-INSERT INTO `proveedores` VALUES (30, 3, 4, 'Proveedor de ejemplo 010', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (30, 3, 9, 'Proveedor de ejemplo 010', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
 INSERT INTO `proveedores` VALUES (31, 3, 4, 'Proveedor de ejemplo 011', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (32, 3, 4, 'Proveedor de ejemplo 012', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (33, 3, 4, 'Proveedor de ejemplo 013', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
@@ -367,11 +367,11 @@ INSERT INTO `proveedores` VALUES (34, 3, 4, 'Proveedor de ejemplo 014', '123903_
 INSERT INTO `proveedores` VALUES (35, 3, 4, 'Proveedor de ejemplo 015', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (36, 3, 4, 'Proveedor de ejemplo 016', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (37, 3, 4, 'Proveedor de ejemplo 017', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
-INSERT INTO `proveedores` VALUES (38, 3, 4, 'Proveedor de ejemplo 018', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (38, 2, 23, 'Proveedor de ejemplo 018', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
 INSERT INTO `proveedores` VALUES (39, 3, 4, 'Proveedor de ejemplo 019', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (40, 3, 4, 'Proveedor de ejemplo 020', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (41, 3, 4, 'Proveedor de ejemplo 021', '123917_radiohead.jpg', 'Proveedor de ejemplo 01', '', '', '', '', '', '', '', '', '', '2011-11-10 06:11:04', 1);
-INSERT INTO `proveedores` VALUES (42, 3, 4, 'Proveedor de ejemplo 022', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
+INSERT INTO `proveedores` VALUES (42, 2, 5, 'Proveedor de ejemplo 022', '123903_colette.jpg', 'Proveedor de ejemplo 02', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:25', 1);
 INSERT INTO `proveedores` VALUES (43, 3, 4, 'Proveedor de ejemplo 023', '123828_vanessa.jpg', 'Proveedor de ejemplo 03', '', '', '', '', '', '', '', '', '', '2011-11-11 03:26:43', 1);
 INSERT INTO `proveedores` VALUES (44, 3, 4, 'Proveedor de ejemplo 024', '123850_aerosmith-en-lima.jpg', 'Proveedor de ejemplo 04', '', '', '', '', '', '', '', '', '', '2011-11-11 04:17:19', 1);
 INSERT INTO `proveedores` VALUES (45, 2, 4, 'Proveedor de prueba', '175706_deliza.gif.jpg', 'fg ewrq ger gewr g', '<p>\r\n	fa gwer gwer gwer gwer ga sdfg we fawe fawe few</p>\r\n', 'faew awef a', '12341234', '12341234', '12341234', '12341234', 'empresa@gian.com', 'gian.com', '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/?ie=UTF8&ll=40.396764,-3.713379&spn=10.705296,16.940918&t=m&z=6&vpsrc=1&output=embed"></iframe><br /><small><a href="http://maps.google.es/?ie=UTF8&ll=40.396764,-3.713379&spn=10.705296,16.940918&t=m&z=6&vpsrc=1&source=embed" style="color:#0000FF;text-align:left">Ver mapa mÃ¡s grande</a></small>', '2011-12-09 05:38:40', 1);
@@ -395,7 +395,6 @@ CREATE TABLE `proveedores_imagenes` (
 -- Volcar la base de datos para la tabla `proveedores_imagenes`
 -- 
 
-INSERT INTO `proveedores_imagenes` VALUES (116, 20, '115317_win7.jpg', '2012-01-05 11:53:17', 1);
 INSERT INTO `proveedores_imagenes` VALUES (103, 20, '232435_chrome.jpg', '2011-12-04 11:24:35', 1);
 INSERT INTO `proveedores_imagenes` VALUES (104, 20, '232518_hp.jpg', '2011-12-04 11:25:18', 1);
 INSERT INTO `proveedores_imagenes` VALUES (105, 20, '232626_indice.jpg', '2011-12-04 11:26:26', 1);
@@ -409,15 +408,6 @@ INSERT INTO `proveedores_imagenes` VALUES (112, 45, '174443_win7.jpg', '2011-12-
 INSERT INTO `proveedores_imagenes` VALUES (113, 1, '165439_apple.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (114, 1, '165439_chrome.jpg', '2011-12-22 04:54:39', 1);
 INSERT INTO `proveedores_imagenes` VALUES (115, 1, '165439_firefox.jpg', '2011-12-22 04:54:39', 1);
-INSERT INTO `proveedores_imagenes` VALUES (117, 20, '115412_look.jpg', '2012-01-05 11:54:12', 1);
-INSERT INTO `proveedores_imagenes` VALUES (118, 20, '105931_apple.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (119, 20, '105931_chrome.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (120, 20, '105931_firefox.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (121, 20, '105931_hp.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (122, 20, '105931_indice.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (123, 20, '105931_look.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (124, 20, '105931_win7.jpg', '2012-01-20 10:59:31', 1);
-INSERT INTO `proveedores_imagenes` VALUES (125, 20, '123204_220px-brick-wall-old.jpg', '2012-01-27 12:32:04', 1);
 
 -- --------------------------------------------------------
 
@@ -767,16 +757,16 @@ CREATE TABLE `rubros_articulos` (
   `id_rubro` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
   PRIMARY KEY  (`id_rubro_noticia`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 -- 
 -- Volcar la base de datos para la tabla `rubros_articulos`
 -- 
 
-INSERT INTO `rubros_articulos` VALUES (6, 49, 15);
-INSERT INTO `rubros_articulos` VALUES (5, 49, 19);
-INSERT INTO `rubros_articulos` VALUES (7, 4, 20);
-INSERT INTO `rubros_articulos` VALUES (8, 4, 19);
+INSERT INTO `rubros_articulos` VALUES (59, 47, 24);
+INSERT INTO `rubros_articulos` VALUES (58, 47, 16);
+INSERT INTO `rubros_articulos` VALUES (57, 49, 24);
+INSERT INTO `rubros_articulos` VALUES (56, 49, 2);
 
 -- --------------------------------------------------------
 

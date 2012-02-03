@@ -21,7 +21,7 @@ $(document).ready(function(){
 		});
 	}
 
-	if($('.reporte').length){ $('.reporte').dataTable({"sPaginationType": "full_numbers"}); }
+	if($('.reporte').length){ $('.reporte').dataTable({"sPaginationType": "full_numbers", "iDisplayLength": 25}); }
 	if($('.reporte2').length){ 
 		$('.reporte2').dataTable({
 			"sPaginationType": "full_numbers",

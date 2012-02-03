@@ -136,7 +136,6 @@
 
 			header('Content-type: text/plain');
 			return json_encode($respuesta);
-
 		}
 
 	}

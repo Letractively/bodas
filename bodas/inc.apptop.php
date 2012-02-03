@@ -91,9 +91,18 @@
 	require_once(_view_."VwPeinadoYMaquillaje.php");
 	require_once(_view_."VwBellezaYSalud.php");
 	require_once(_view_."VwLosInvitados.php");
+	require_once(_view_."VwResultados.php");
 
 	session_start();
 
-	//Configuracion de base de datos.
+	// Configuracion de base de datos.
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']); 
+	
+	// Buscar
+	if(isset($_POST['rdoOpc'])){
+		$_SESSION['rdoOpc'] = $_POST['rdoOpc'];
+	}else if(!isset($_SESSION['rdoOpc'])){
+		$_SESSION['rdoOpc'] = "rub";
+	}
+	
 ?>

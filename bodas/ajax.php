@@ -30,4 +30,5 @@
 		$objUsuarioClientePublicacion = new UsuarioClientePublicacion;
 		echo $objUsuarioClientePublicacion->agregar_me_gusta($_POST['id_usuario'], $_POST['id_publicacion']);
 	}
+	
 ?>
