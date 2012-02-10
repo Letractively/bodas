@@ -43,7 +43,7 @@
                     <div class="contenido-central-catalogo">
 
 						<div class="titulo">
-							<?php echo mb_strtoupper($objProveedor->nombre_proveedor,'utf-8'); ?>
+							<span id="tit-pag"><?php echo mb_strtoupper($objProveedor->nombre_proveedor,'utf-8'); ?></span>
                             <div class="regresar"><a href="<?=_bs_?>proveedores/<?php echo $objProveedorRubro2->id_proveedor_rubro ?>/0/<?php echo $objUtilitarios->procesar_url_2($objProveedorRubro2->nombre_proveedor_rubro) ?>">&laquo; Regresar a <?php echo $objProveedorRubro2->nombre_proveedor_rubro; ?></a></div>
                         </div>
 
@@ -52,7 +52,7 @@
                         	<div class="contenedor_me_gusta">
                                 <div class="item_me_gusta">
                                     <!-- AddThis Button BEGIN -->
-                                    <div class="addthis_toolbox addthis_default_style ">
+                                    <div class="addthis_toolbox addthis_default_style">
                                         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                     </div>
                                     <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
@@ -352,16 +352,16 @@
                                 <div style="position:relative; float:right; width:200px; height:auto; margin:6px 0px;">
                                 <div style="position:relative; float:left; width:auto; height:auto; ">Compartir: </div>
                                 <!-- AddThis Button BEGIN -->
-                                <div class="addthis_toolbox addthis_default_style ">
-                                <a class="addthis_button_preferred_1"></a>
-                                <a class="addthis_button_preferred_2"></a>
-                                <a class="addthis_button_preferred_3"></a>
-                                <a class="addthis_button_preferred_4"></a>
-                                <a class="addthis_button_compact"></a>
-                                <a class="addthis_counter addthis_bubble_style"></a>
-                                </div>
-                                <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
-                            <!-- AddThis Button END -->
+                                	<div class="addthis_toolbox addthis_default_style">
+                                        <a class="addthis_button_preferred_1"></a>
+                                        <a class="addthis_button_preferred_2"></a>
+                                        <a class="addthis_button_preferred_3"></a>
+                                        <a class="addthis_button_preferred_4"></a>
+                                        <a class="addthis_button_compact"></a>
+                                        <a class="addthis_counter addthis_bubble_style"></a>
+                                    </div>
+                                    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f04b6af30eeab4f"></script>
+                                <!-- AddThis Button END -->
 						</div>
                             
                             </div>

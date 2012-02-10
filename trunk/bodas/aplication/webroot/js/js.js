@@ -19,6 +19,7 @@ $(document).ready(function() {
 	if($('#galleria').length > 0){
 		Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
 		$('#galleria').galleria({
+			autoplay: 5000,
 			width:504,
 			height:366	
 		});
@@ -636,5 +637,6 @@ $(document).ready(function() {
 			}
 		});
 	}
+
 
 });

@@ -1,10 +1,12 @@
 <?php
 	class ArticuloPortada{
 
+
 		private $id;
 		private $nombre;
 		private $id_articulo;
 		private $id_articulo_tipo;			
+
 
 		public function __construct($id = 0){
 			$this->id = $id;

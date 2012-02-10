@@ -27,17 +27,16 @@
 
 #cuerpo .menu-general{ position:relative; float:left; width:100%; height:30px; background:url(../imgs/fondo-menu-general.png) repeat-x center center; margin:7px 0px 9px 0; }
 
-#cuerpo .menu-general a{ position:relative; float:left; width:109px; height:auto; text-align:center; padding:6px 0px 7px 0; color:#FFF; font-size:14px; }
+#cuerpo .menu-general a{ position:relative; float:left; width:auto; height:auto; text-align:center; padding:6px 20px 7px 19px; color:#FFF; font-size:14px; }
 #cuerpo .menu-general a:hover{ background:url(../imgs/menu-general-hover.png) repeat; }
 
-
 #cuerpo .menu-general #lnk-tuboda{ cursor:pointer; }
-#cuerpo #menu-tuboda{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:172px; left:327px; z-index:10000; border:1px solid #999; display:none; }
+#cuerpo #menu-tuboda{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:255px; z-index:10000; border:1px solid #999; display:none; }
 #cuerpo #menu-tuboda a{ position:relative; float:left; display:block; width:92%; height:auto; padding:4px 6px; color:#666666; border-top:1px solid #FFF; }
 #cuerpo #menu-tuboda a:hover{ background:#a657c2; color:#FFF; }
 
 #cuerpo .menu-general #lnk-tendencias{ cursor:pointer; }
-#cuerpo #menu-tendencias{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:172px; left:545px; z-index:10000; border:1px solid #999; display:none; }
+#cuerpo #menu-tendencias{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:435px; z-index:10000; border:1px solid #999; display:none; }
 #cuerpo #menu-tendencias a{ position:relative; float:left; display:block; width:92%; height:auto; padding:4px 6px; color:#666666; border-top:1px solid #FFF; }
 #cuerpo #menu-tendencias a:hover{ background:#a657c2; color:#FFF; }
 
@@ -583,3 +582,75 @@ width:auto; text-align:center; }
 .contenido-central-estadistica .izquierda .grafico-seguidores-diarios .mensaje-sin-seguidores{ position:relative; float:left; width:100%; height:auto; padding:10px 0px; }
 
 #cs-buttons-coin-slider{ display:none; }
+
+/*	Contenido noticias	*/
+.contenido-central-lunademiel{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-lunademiel .titulo{ position:relative; float:left; width:98%; height:auto; background:#efefef; padding:2px 6px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-lunademiel .texto{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+
+.contenido-central-lunademiel .tit-luna{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-lunademiel .descripcion{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-lunademiel .imagen-central{ position:relative; float:left; width:100%; height:auto; padding:5px 0px 10px 0px; margin:0 0 10px 0; border-bottom:1px #CCC dotted; }
+.contenido-central-lunademiel .cnt-destinos{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-lunademiel .des-destinos{ position:relative; float:left; width:230px; height:auto; background:#edddf3; padding:8px; }
+.contenido-central-lunademiel .item2{ margin:0 0 0 10px; }
+.contenido-central-lunademiel .des-destinos .des-tit{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; font-size:14px; color:#A657C2; }
+.contenido-central-lunademiel .des-destinos .des-tit{ position:relative; float:left; width:100%; height:auto; padding:4px 0px;}
+.contenido-central-lunademiel .des-destinos .des-des{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; font-size:13px; }
+
+.contenido-central-lunademiel .cnt-mas-notas{ position:relative; float:left; width:100%; height:auto; padding:5px 0px 10px 0px; border-bottom:1px #CCC dotted; margin:0 0 10px 0; }
+.contenido-central-lunademiel .cnt-mas-notas .tit-mas-notas{ position:relative; float:left; width:100%; height:auto; padding:5px 0px 10px 0px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-lunademiel .cnt-mas-notas ul{ position:relative; float:left; width:100%; height:auto; margin:0 0 0 20px; }
+.contenido-central-lunademiel .cnt-mas-notas ul li{ position:relative; float:left; width:100%; height:auto; padding:2px 0px; }
+
+.contenido-central-lunademiel .cnt-otros{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+
+.contenido-central-lunademiel .cnt-otros .des-otros{ position:relative; float:left; width:230px; height:auto; background:#e2e2e2; padding:8px; }
+
+.contenido-central-lunademiel .cnt-otros .des-otros .otr-tit{ position:relative; float:left; width:100%; height:auto; padding:4px 0px; font-size:14px; color:#A657C2; font-style:italic; font-weight:bold; }
+.contenido-central-lunademiel .cnt-otros .des-otros .otr-img{ position:relative; float:left; width:auto; height:auto; padding:3px; }
+
+.contenido-central-lunademiel .cnt-otros .des-otros .otr-des{ position:relative; float:left; width:120px; height:auto; padding:3px; text-align:justify; }
+
+/*	Check list	*/
+.contenido-central-checklist{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-checklist .titulo{ position:relative; float:left; width:98%; height:auto; background:#efefef; padding:2px 6px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-checklist .texto{ position:relative; float:left; width:100%; height:auto; }
+.contenido-central-checklist .texto .item{ position:relative; float:left; width:97%; height:auto; padding:12px; }
+.contenido-central-checklist .texto .item b{ position:relative; float:left; width:100%; height:auto; padding:3px 0px 6px 0px; font-size:12px; border-bottom:1px dotted #CCC; margin:0 0 6px 0; }
+.contenido-central-checklist .texto .item span{ position:relative; float:left; width:100%; height:auto; padding:6px 0px 3px 0px; color:#a657c2; font-weight:bold; font-size:12px; }
+.contenido-central-checklist .texto .item ul{ padding:0 0 0 15px; color:#A657C2; }
+.contenido-central-checklist .texto .item p{ color:#333; }
+
+.contenido-central-checklist .texto .clista{ display:none; }
+.contenido-central-checklist .texto .titlista{ cursor:pointer; }
+
+/*	Requisitos	*/
+.contenido-central-recomendaciones{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-recomendaciones .texto{ position:relative; float:left; width:100%; height:auto; padding:7px 0px; }
+
+.contenido-central-recomendaciones .titulo{ position:relative; float:left; width:98%; height:auto; background:#efefef; padding:2px 6px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-recomendaciones  p{ position:relative; float:left; width:100%; height:auto; margin:4px 0px; text-align:justify; }
+.contenido-central-recomendaciones span{ position:relative; float:left; width:100%; height:auto; font-size:14px; font-family:Verdana, Geneva, sans-serif; color:#a657c2; margin:8px 0 0 0; }
+.contenido-central-recomendaciones b{ position:relative; float:left; width:100%; height:auto; padding:10px 0px 7px 0px; }
+
+/*	Eventos	*/
+.contenido-central-eventos{ position:relative; float:left; width:505px; height:auto; padding:0px 8px; }
+.contenido-central-eventos .texto{ position:relative; float:left; width:100%; height:auto; padding:7px 0px; }
+
+.contenido-central-eventos .titulo{ position:relative; float:left; width:98%; height:auto; background:#efefef; padding:2px 6px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
+.contenido-central-eventos .redes{ position:relative; float:left; width:100%; height:auto; padding:7px 0px; }
+.contenido-central-eventos .imagen{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; }
+
+.contenido-central-eventos p span{ position:relative; float:left; width:100%; height:auto; font-weight:bold; font-size:14px; text-transform:uppercase; padding:8px 0px; }
+
+.contenido-central-eventos .cnt-tabs{ position:relative; float:left; width:100%; height:auto; padding:3px 0px; }
+.contenido-central-eventos .cnt-tabs .menu-tabs{ position:relative; float:left; width:100%; height:auto; }
+.contenido-central-eventos .cnt-tabs .menu-tabs a{ position:relative; float:left; width:auto; height:auto; display:block; border:1px solid #CCC; background:#efefef; padding:4px 11px; color:#333; font-weight:bold; cursor:pointer; }
+
+.contenido-central-eventos .cnt-tabs .cnttab{ position:relative; float:left; width:96%; height:auto; padding:9px; border:1px solid #CCC; display:none; }
+
+.contenido-central-eventos .cnt-tabs table{ position:relative; float:left; width:100%; height:auto; }
+.contenido-central-eventos .cnt-tabs .tbls1 td{ border:1px solid #CCC; padding:3px; }
+.contenido-central-eventos .cnt-tabs .tbls2 td{ border:none; }
+.contenido-central-eventos .cnt-tabs form input[type='text']{ width:100%; border:none; }

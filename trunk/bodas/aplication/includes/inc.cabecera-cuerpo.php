@@ -37,15 +37,16 @@
 </div>
 
 <div class="menu-general">
-	<a href="<?=_bs_?>portada/">Inicio</a>
+	<a href="<?=_bs_?>portada/" style="width:40px;">Inicio</a>
     <a href="<?=_bs_?>revista/">Revista</a>
     <a href="<?=_bs_?>eventos/">Eventos</a>
     <a id="lnk-tuboda">Tu Boda</a>
     <a href="<?=_bs_?>noticias/0/">Noticias</a>
     <a id="lnk-tendencias">Tendencias</a>
     <a href="<?=_bs_?>luna_de_miel/">Luna de Miel</a>
+    <a href="<?=_bs_?>entrevistas/0/">Entrevistas</a>
     <a href="<?=_bs_?>suscripcion/">Suscripción</a>
-    <a href="<?=_bs_?>contacto/" style="width:112px;">Contacto</a>
+    <a href="<?=_bs_?>contacto/">Contacto</a>
 </div>
 
 <div id="menu-tuboda">

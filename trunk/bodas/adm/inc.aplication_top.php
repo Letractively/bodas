@@ -67,6 +67,9 @@
 	require_once(_model_."Revista.php");
 	require_once(_model_."Revistas.php");
 
+	require_once(_model_."Variado.php");
+	require_once(_model_."Variados.php");
+
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();
 ?>

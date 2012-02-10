@@ -11,7 +11,7 @@
 			BODAS
 		";
 
-		@mail('atencionalcliente@bodas.com.pe','Consulta',$mens,'from: Incripcion boletin BODAS');
+		@mail('contacto@bodas.com.pe','Consulta',$mens,'from: Incripcion boletin BODAS');
 		?><script type="text/javascript">alert('Su mensaje fue enviado, en breve nos comunicaremos con usted.');</script><?php
 	}
 ?>

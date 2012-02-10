@@ -53,6 +53,9 @@
 	require_once(_model_."UsuarioClienteMeGusta.php");
 	require_once(_model_."UsuarioClientePublicacion.php");
 
+	require_once(_model_."Variado.php");
+	require_once(_model_."Variados.php");
+
 	// Vistas
 	require_once(_view_."Utiles.php");
 	require_once(_view_."VwIndex.php");
@@ -92,7 +95,13 @@
 	require_once(_view_."VwBellezaYSalud.php");
 	require_once(_view_."VwLosInvitados.php");
 	require_once(_view_."VwResultados.php");
-
+	require_once(_view_."VwLunaDeMiel.php");
+	require_once(_view_."VwDestinosPeru.php");
+	require_once(_view_."VwDestinosExtranjero.php");
+	require_once(_view_."VwEntrevistas.php");
+	require_once(_view_."VwCheckList.php");
+	require_once(_view_."VwRecomendaciones.php");
+	
 	session_start();
 
 	// Configuracion de base de datos.
