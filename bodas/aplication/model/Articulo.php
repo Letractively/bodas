@@ -138,5 +138,25 @@
 			return json_encode($respuesta);
 		}
 
+		public function getArticuloXViaje(){
+			$sql = "SELECT * FROM articulos WHERE id_articulo_tipo IN (18,19) ORDER BY id_articulo DESC";
+			$qry = new Consulta($sql);
+			while( $rw = $qry->VerRegistro() ){
+				$rst[] = array(
+					'id'					=> $rw['id_articulo'],
+					'id_articulo_tipo'		=> $rw['id_articulo_tipo'],
+					'titulo'				=> $rw['titulo'],
+					'descripcion1'			=> $rw['descripcion1'],
+					'descripcion2'			=> $rw['descripcion2'],
+					'fecha'					=> $rw['fecha'],
+					'estado'				=> $rw['estado'],
+					'estado_comentarios'	=> $rw['estado_comentarios'],
+					'estado_fecha'			=> $rw['estado_fecha']
+				);
+			}
+
+			return $rst;
+		}
+
 	}
 ?>

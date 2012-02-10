@@ -19,7 +19,7 @@
 						
 				";
 
-				@mail('contact@bodas.com.pe','Consulta',$mens,'from: Web site BODAS');
+				@mail('claudia@bodas.com.pe','Consulta',$mens,'from: Portal BODAS');
 				$msj = "Su mensaje fue enviado, en breve nos comunicaremos con usted.";
 			}
 
@@ -48,12 +48,12 @@
 
 						<div class="datos-contacto">
                         	<p><span>Central Telefónica</span> (511) 717 3737</p>
-                            <p><span>Celular / Nextel</span> (99) 405*4086</p>
-                            <p><span>Atención al cliente</span> atencionalcliente@bodas.com.pe</p>
+                            <p><span>Celular / Nextel</span> (98) 104*5865</p>
+                            <p><span>Atención al cliente</span> contacto@bodas.com.pe</p>
                             <p><span>Suscripciones</span> suscripciones@bodas.com.pe</p>
 							<br>
                             <p><b>Si desea anunciar en nuestro portal web o revista</b></p>
-                            <p><b>contáctenos a <a href="mailto:ventas@bodas.com.pe">ventas@bodas.com.pe</a></b></p>
+                            <p><b>contáctenos a <u>contacto@bodas.com.pe</u></b></p>
                             <br>
                             <p><span>Dirección</span> Teodosio Parreño 429 - Barranco, Lima - Perú</p>
                             <p><iframe width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps/ms?msa=0&msid=212443072502452155323.0004b41406026c5c86591&hl=es&ie=UTF8&ll=-12.13246,-77.020022&spn=0,0&t=m&vpsrc=6&output=embed"></iframe></p>

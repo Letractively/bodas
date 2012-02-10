@@ -72,10 +72,19 @@ Rewriterule ^belleza-y-salud-detalle/([0-9]+)/.*$ belleza_y_salud_detalle.php?id
 Rewriterule ^los-invitados/([0-9]+)/.*$ los_invitados.php?pag=$1 [L,QSA]
 Rewriterule ^los-invitados-detalle/([0-9]+)/.*$ los_invitados_detalle.php?id_articulo=$1 [L,QSA]
 
+Rewriterule ^destinos-peru/([0-9]+)/.*$ destinos_peru.php?pag=$1 [L,QSA]
+Rewriterule ^destinos-peru_detalle/([0-9]+)/.*$ destinos_peru_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^destinos-extranjero/([0-9]+)/.*$ destinos_extranjero.php?pag=$1 [L,QSA]
+Rewriterule ^destinos-extranjero_detalle/([0-9]+)/.*$ destinos_extranjero_detalle.php?id_articulo=$1 [L,QSA]
+
+Rewriterule ^entrevistas/([0-9]+)/.*$ entrevistas.php?pag=$1 [L,QSA]
+Rewriterule ^entrevistas_detalle/([0-9]+)/.*$ entrevistas_detalle.php?id_articulo=$1 [L,QSA]
+
+
 Rewriterule ^resultados/([0-9]+)/.*$ resultados.php?pag=$1 [L,QSA]
 
 Rewriterule ^eventos/.*$ eventos.php [L,QSA]
-Rewriterule ^luna_de_miel/.*$ lunamiel.php [L,QSA]
 Rewriterule ^tendencias/.*$ tendencias.php [L,QSA]
 
 Rewriterule ^contacto/.*$ contacto.php [L,QSA]
@@ -88,5 +97,10 @@ Rewriterule ^municipalidades/.*$ municipalidades.php [L,QSA]
 Rewriterule ^iglesias/.*$ iglesias.php [L,QSA]
 Rewriterule ^quienes-somos/.*$ quienes_somos.php [L,QSA]
 Rewriterule ^anuncio/.*$ anuncio.php [L,QSA]
+
+Rewriterule ^check_list/.*$ check_list.php [L,QSA]
+Rewriterule ^recomendaciones/.*$ recomendaciones.php [L,QSA]
+
+Rewriterule ^luna_de_miel/.*$ luna_de_miel.php [L,QSA]
 
 ErrorDocument 404 http://local.bodas.com/error.php

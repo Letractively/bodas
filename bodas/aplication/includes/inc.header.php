@@ -2,7 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Revista Bodas</title>
+
+	<?php if(_file_ == 'catalogo.php'){ 
+		$objProveedorTit = new Proveedor($_GET['id_proveedor']);
+		?>
+    	<title>Revista bodas - <?php echo $objProveedorTit->nombre_proveedor ?></title>
+   <?php }else if(isset($_GET['id_articulo'])){ 
+		$objArticuloTit = new Articulo($_GET['id_articulo']);
+		?>
+        <title>Revista bodas - <?php echo $objArticuloTit->titulo ?></title>
+    <?php }else{ ?>
+    	<title>Revista Bodas</title>
+    <?php } ?>
+    
     <link href="<?php echo _bs_?>favicon.ico" type="image/x-icon" rel="shortcut icon" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>sitio_general.css"/>
@@ -35,7 +47,47 @@
 
     <script type="text/javascript" src="<?php echo _js_?>js.js"></script>
     
+	
+
+	
+    
+    <!--DOUBLE CLICK-->
+    
+    <script type='text/javascript'>
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + 
+	'//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+	})();
+	</script>
+
 	<script type='text/javascript'>
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/15180053/index-inferior', [300, 250], 'div-gpt-ad-1328744417031-0').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/index-interno', [300, 100], 'div-gpt-ad-1328744417031-1').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/index-medio', [300, 250], 'div-gpt-ad-1328744417031-2').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/index-principal', [300, 250], 'div-gpt-ad-1328744417031-3').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/index-superior', [728, 90], 'div-gpt-ad-1328744417031-4').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/interiores-inferior', [300, 250], 'div-gpt-ad-1328744417031-5').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/interiores-interno', [300, 100], 'div-gpt-ad-1328744417031-6').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/interiores-medio', [300, 250], 'div-gpt-ad-1328744417031-7').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/interiores-principal', [300, 250], 'div-gpt-ad-1328744417031-8').addService(googletag.pubads());
+    googletag.defineSlot('/15180053/interiores-superior', [728, 90], 'div-gpt-ad-1328744417031-9').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+    });
+    </script>
+
+
+
+	<!--<script type='text/javascript'>
 		var googletag = googletag || {};
 		googletag.cmd = googletag.cmd || [];
 		(function() {
@@ -48,9 +100,9 @@
 		var node = document.getElementsByTagName('script')[0];
 		node.parentNode.insertBefore(gads, node);
 		})();
-    </script>
-
-    <script type='text/javascript'>
+    </script>-->
+    
+   <!-- <script type='text/javascript'>
 		googletag.cmd.push(function() {
 			googletag.defineSlot('/15180053/index_bodas', [300, 100], 'div-gpt-ad-1325713113749-0').addService(googletag.pubads());
 			googletag.defineSlot('/15180053/index_inferior', [300, 250], 'div-gpt-ad-1325713113749-1').addService(googletag.pubads());
@@ -65,8 +117,11 @@
 			googletag.pubads().enableSingleRequest();
 			googletag.enableServices();
 		});
-    </script>
+    </script>-->
 
+	 <!--DOUBLE CLICK-->
+     
+     
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', UA-8015730-1]);

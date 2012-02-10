@@ -47,7 +47,7 @@
                             <p>Certificado Domiciliario emitido por la comisaría del Distrito.</p>
                             <p>Certificado médicos correspondientes.</p>
                             <p>Requisitos mencionados en ítems 2,3,4 según el estado civil de los contrayentes.</p>
-                        
+
                         	<p><span>Boda Religiosa</span></p>
                         
                         	<p>La Boda debe ser celebrada en la iglesia perteneciente al distrito donde resida uno de los contrayentes, de lo contrario deberán realizar los trámites correspondientes al traslado y efectuar el pago respectivo por cambio de iglesia, el cual varía según distrito.</p>

@@ -10,7 +10,6 @@
             <div id="pagina">
                 <div id="cuerpo">
                         <?php include(_inc_.'inc.cabecera-cuerpo.php'); ?>
-                        <?php include(_inc_.'inc.izquierda-catalogo.php'); ?>
                         <?php $objVwCatalogo->vista(); ?>
                 </div>
             </div>

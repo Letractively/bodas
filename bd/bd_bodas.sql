@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 03-02-2012 a las 18:31:24
+-- Tiempo de generación: 10-02-2012 a las 14:30:41
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -30,7 +30,7 @@ CREATE TABLE `articulos` (
   `estado_comentarios` tinyint(1) NOT NULL,
   `estado_fecha` tinyint(1) NOT NULL default '1',
   PRIMARY KEY  (`id_articulo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 -- 
 -- Volcar la base de datos para la tabla `articulos`
@@ -60,6 +60,12 @@ INSERT INTO `articulos` VALUES (21, 1, 'r', 'ds', '<p>\r\n	vr</p>\r\n', '2012-01
 INSERT INTO `articulos` VALUES (22, 9, 'fsaew', 'awe fawef awe', '<p>\r\n	&nbsp;fawe fawe fawef awe</p>\r\n', '2012-01-13 06:49:51', 1, 1, 1);
 INSERT INTO `articulos` VALUES (23, 12, 'aaaaaaaaaaa', 'aaaaaaaaaaaa', '<p>\r\n	aaaaaaaaaaaaaaa</p>\r\n', '2012-01-17 05:41:41', 1, 1, 1);
 INSERT INTO `articulos` VALUES (24, 16, 'jjjjjjjjjjjjjj', 'jjjjjjjjjjjj', '<p>\r\n	jjjjjjjjjjjjjjjjjjjj</p>\r\n', '2012-01-20 10:33:53', 1, 0, 1);
+INSERT INTO `articulos` VALUES (25, 18, 'asef', 'asfe', '<p>\r\n	afsefsae</p>\r\n', '2012-02-08 10:10:01', 1, 1, 1);
+INSERT INTO `articulos` VALUES (26, 18, 'fvsdv', 'erve', '<p>\r\n	rvwerv</p>\r\n', '2012-02-08 10:10:07', 1, 1, 1);
+INSERT INTO `articulos` VALUES (27, 19, 'seaf', 'fesa', '<p>\r\n	fsea</p>\r\n', '2012-02-08 10:10:21', 1, 1, 1);
+INSERT INTO `articulos` VALUES (28, 19, 'zxvczxvc', 'zxvc', '<p>\r\n	zxcvxzcv</p>\r\n', '2012-02-08 10:10:26', 1, 1, 1);
+INSERT INTO `articulos` VALUES (29, 19, 'xzvxd', 'zxdv', '<p>\r\n	zxdvvxzdxzdv</p>\r\n', '2012-02-08 10:10:32', 1, 1, 1);
+INSERT INTO `articulos` VALUES (30, 20, 'titulo', 'descr', '<p>\r\n	cesc</p>\r\n', '2012-02-08 11:54:46', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -152,7 +158,7 @@ CREATE TABLE `articulos_tipos` (
   `id_articulo_tipo` int(11) NOT NULL auto_increment,
   `nombre` text NOT NULL,
   PRIMARY KEY  (`id_articulo_tipo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 -- 
 -- Volcar la base de datos para la tabla `articulos_tipos`
@@ -175,6 +181,9 @@ INSERT INTO `articulos_tipos` VALUES (14, 'Joyeria y accesorios');
 INSERT INTO `articulos_tipos` VALUES (15, 'Peinado y maquillaje');
 INSERT INTO `articulos_tipos` VALUES (16, 'Belleza y salud');
 INSERT INTO `articulos_tipos` VALUES (17, 'Los  invitados');
+INSERT INTO `articulos_tipos` VALUES (18, 'Destinos Perú');
+INSERT INTO `articulos_tipos` VALUES (19, 'Destinos Extranjero');
+INSERT INTO `articulos_tipos` VALUES (20, 'Entrevistas');
 
 -- --------------------------------------------------------
 
@@ -273,7 +282,7 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
@@ -286,6 +295,7 @@ INSERT INTO `paginas` VALUES (21, 1, 'Usuarios registrados', 'UsuarioCliente.php
 INSERT INTO `paginas` VALUES (22, 1, 'Tipos de articulo', 'articuloTipo.php');
 INSERT INTO `paginas` VALUES (23, 1, 'Articulos de portada', 'articulosPortada.php');
 INSERT INTO `paginas` VALUES (24, 1, 'Revista', 'revista.php');
+INSERT INTO `paginas` VALUES (25, 1, 'Variados', 'variados.php');
 
 -- --------------------------------------------------------
 
@@ -948,10 +958,32 @@ CREATE TABLE `usuarios_paginas` (
 -- Volcar la base de datos para la tabla `usuarios_paginas`
 -- 
 
+INSERT INTO `usuarios_paginas` VALUES (2, 21);
 INSERT INTO `usuarios_paginas` VALUES (2, 22);
 INSERT INTO `usuarios_paginas` VALUES (2, 24);
 INSERT INTO `usuarios_paginas` VALUES (2, 19);
 INSERT INTO `usuarios_paginas` VALUES (2, 20);
 INSERT INTO `usuarios_paginas` VALUES (2, 23);
 INSERT INTO `usuarios_paginas` VALUES (2, 1);
-INSERT INTO `usuarios_paginas` VALUES (2, 21);
+INSERT INTO `usuarios_paginas` VALUES (2, 25);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `variados`
+-- 
+
+CREATE TABLE `variados` (
+  `id_variado` int(11) NOT NULL auto_increment,
+  `titulo` text NOT NULL,
+  `descripcion` text NOT NULL,
+  `imagen` text NOT NULL,
+  `link` text NOT NULL,
+  PRIMARY KEY  (`id_variado`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Volcar la base de datos para la tabla `variados`
+-- 
+
+INSERT INTO `variados` VALUES (1, 'Promociones luna de miel', 'Este es un espacio para las agencias de viajes que deseen promocionar algÃºn paquete turÃ­stico en especifico para lunas de miel, nos pueden contactar.', '113818_img-lunademiel.jpg', 'http://www.bodas.com.pe');
