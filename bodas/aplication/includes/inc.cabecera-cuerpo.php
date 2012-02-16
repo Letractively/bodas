@@ -3,7 +3,8 @@
     <div class="logo"><img src="<?php echo _img_?>logo-bodas.jpg"></div>
     <div class="opciones<?php if(isset($_SESSION['login_usuario_cliente'])){ echo "2"; } ?>">
     	<?php if(!isset($_SESSION['login_usuario_cliente'])){ ?>
-            <div class="contenedor-cuenta"><a id="des_login" href="#">Inicia sesión</a> / <a href="<?=_bs_?>usuario/registrate/">Regístrate</a></div>
+        
+            <div class="contenedor-cuenta"><a id="des_login">Inicia sesión</a> / <a href="<?=_bs_?>usuario/registrate/">Regístrate</a></div>
             <div class="contenedor-login" <?php if($_SESSION['mensaje_error'] != ''){ echo "style='display:block'"; }?>>
                 <form id="frmAcceso" name="frmAcceso" method="post" action="<?=_bs_?>validacion/login/">
                     <p>E-mail</p>
@@ -19,11 +20,14 @@
                     </p>
                 </form>
             </div>
+            <br clear="all">
         <?php }else{ 
 			$objNombre = new UsuarioCliente($_SESSION['login_usuario_cliente']);
 			?>
+            
             <div class="contenedor-cuenta"><span>Bienvenido: <?php echo $objNombre->nombre_usuario_cliente." ".$objNombre->apellido_usuario_cliente; ?></span></div>
         	<div class="contenedor-cuenta"><a id="des_login" href="<?=_bs_?>usuario/editar_cuenta/">Editar cuenta</a> / <a href="<?=_bs_?>validacion/salir/">Salir</a></div>
+            
         <?php } ?>
         
         <form id="frmBuscar" name="frmBuscar" method="post" action="<?=_bs_?>resultados/0/">
@@ -37,9 +41,9 @@
 </div>
 
 <div class="menu-general">
-	<a href="<?=_bs_?>portada/" style="width:40px;">Inicio</a>
+	<a href="<?=_bs_?>portada/" style="width:36px;">Inicio</a>
     <a href="<?=_bs_?>revista/">Revista</a>
-    <a href="<?=_bs_?>eventos/">Eventos</a>
+    <!--<a href="<?=_bs_?>eventos/">Eventos</a>-->
     <a id="lnk-tuboda">Tu Boda</a>
     <a href="<?=_bs_?>noticias/0/">Noticias</a>
     <a id="lnk-tendencias">Tendencias</a>

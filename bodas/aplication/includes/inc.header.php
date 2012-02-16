@@ -30,6 +30,7 @@
 
     <?php if(_file_ == 'catalogo.php' || _file_ == 'noticias_detalle.php' || _file_ == 'paso_a_paso_detalle.php' || _file_ == 'la_fiesta_detalle.php' || _file_ == 'catering_y_tortas_detalle.php' || _file_ == 'bodas_de_famosos_detalle.php' || _file_ == 'bouquets_detalle.php' || _file_ == 'decoracion_detalle.php' || _file_ == 'foto_y_video_detalle.php' || _file_ == 'paso_a_paso_detalle.php' || _file_ == 'shower_detalle.php' || _file_ == 'temas_detalle.php' || _file_ == 'transporte_detalle.php' || _file_ == 'vestidos_de_novia_detalle.php' || _file_ == 'trajes_de_novio_detalle.php' || _file_ == 'joyeria_y_accesorios_detalle.php' || _file_ == 'peinado_y_maquillaje_detalle.php' || _file_ == 'belleza_y_salud_detalle.php' || _file_ == 'los_invitados_detalle.php'){?>
     	<script type="text/javascript" src="<?php echo _js_?>galleria/galleria-1.2.5.min.js"></script>
+    	<script type="text/javascript" src="<?php echo _js_?>galleria/galleria.classic.min.js"></script>
 	<?php }?>
 
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>smoothness/jquery-ui-1.8.16.custom.css"/>
@@ -124,7 +125,7 @@
      
     <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', UA-8015730-1]);
+      _gaq.push(['_setAccount','UA-8015730-1']);
       _gaq.push(['_trackPageview']);
     
       (function() {

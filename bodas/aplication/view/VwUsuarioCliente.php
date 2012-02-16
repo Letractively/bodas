@@ -147,7 +147,7 @@
                         </div>
 					<?php }else{ ?>
                         <div class="opciones-editarcuenta">
-                            <a href="<?=_bs_?>usuario/editar_cuenta/" class="item" id="activo">Información del administrador</a>
+                            <a href="<?=_bs_?>usuario/editar_cuenta/" class="item" id="activo">Información de usuario</a>
                             <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                             <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                             <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
@@ -165,13 +165,14 @@
                             <form id="frmEditarCuenta" name="frmEditarCuenta" method="post" enctype="multipart/form-data" autocomplete='off' action="<?=_bs_?>usuario/updateusuario/">
                                 <div class="formulario">
                                 
-                                	<div class="itm_subtit">Información Basica</div>
+                                	<div class="itm_subtit">Información basica</div>
                                 
-                                    <div class="itm"><label>Foto:</label><input type="file" id="fleLogo" name="fleLogo"></div>
-                                    <div class="itm_subtit2">Esta imagen debe tener un peso de hasta 150kb y dimensiones de 150x80 pixeles. </div>
+                                    <div class="itm"><label>Foto de usuario:</label><input type="file" id="fleLogo" name="fleLogo"></div>
+                                    <div class="itm_subtit2">(Un peso de 150kb maximo y dimensiones de 55x55 pixeles.) </div>
                                     <div class="itm">
-                                        <label>Foto actual: </label>
-                                        <img src="<?php echo _tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objUsuarioCliente->foto_usuario_cliente."&w=150&h=80";?>" alt="<?php echo $objUsuarioCliente->nombre_usuario_cliente; ?>" />
+                                        <label style="color:#FFF;">.</label>
+                                        <p style="color:#333; padding:2px 0px;">Previsualización de la imagen</p>
+                                        <img src="<?php echo _tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objUsuarioCliente->foto_usuario_cliente."&w=55&h=55";?>" alt="<?php echo $objUsuarioCliente->nombre_usuario_cliente; ?>" align="left" /><p class="itm_subtit20">Esta imagen se mostrara en sus actualizaciones de estado y comentarios de articulos u otros perfiles.</p>
                                         <div class="itm_subtit2"><?php echo $objUsuarioCliente->foto_usuario_cliente; ?></div>
                                     </div>
                                     <div class="itm"><label>Nombre:</label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objUsuarioCliente->nombre_usuario_cliente; ?>"></div>
@@ -348,13 +349,13 @@
                         </div>
 					<?php }else{ ?>
                         <div class="opciones-editarcuenta">
-                            <a href="<?=_bs_?>usuario/editar_cuenta/" class="item" >Información del administrador</a>
+                            <a href="<?=_bs_?>usuario/editar_cuenta/" class="item" >Información de usuario</a>
                             <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                             <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                             <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                             <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
-                            <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                            <a href="#" class="item" id="activo">FAQ's</a> -->
+                            <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                            <!--<a href="#" class="item" id="activo">FAQ's</a>-->
                             <div class="btn-verperfil">VER PERFIL</div>
                         </div>
                     <?php } ?>
@@ -403,13 +404,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item" id="activo">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -424,26 +425,31 @@
 
                                     <div class="itm"><label>Nombre: </label><input type="text" id="txtNombre" name="txtNombre" value="<?php echo $objProveedor->nombre_proveedor; ?>" /></div>
                                     <div class="itm">
-                                        <label>Logo: </label>
+                                        <label>Logo o foto de perfil: </label>
                                         <input type="file" id="fleLogo" name="fleLogo" accept="image/jpeg"/>
                                     </div>
                                     <div class="itm_subtit2">Esta imagen debe tener un peso de hasta 150kb y dimensiones de 150x80 pixeles. </div>
                                     <div class="itm">
-                                        <label>Logo actual: </label>
-                                        <img src="<?php echo _tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=150&h=80";?>" alt="<?php echo $objProveedor->nombre_proveedor; ?>" />
+                                        <label>.</label>
+                                        <p>Previsualización foto perfil</p>
+                                        <img src="<?php echo _tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=150&h=80";?>" alt="<?php echo $objProveedor->nombre_proveedor; ?>"/>
                                         <div class="itm_subtit2"><?php echo $objProveedor->logo_proveedor; ?></div>
                                     </div>
+                                    
+                                    
                                     <div class="itm">
                                         <label>Descripción corta: </label>
                                         <textarea id="txtDescripcionCorta" name="txtDescripcionCorta"><?php echo $objProveedor->descripcion1_proveedor; ?></textarea>
                                     </div>
-                                    <div class="itm_subtit2">Esta descripción se mostrará en el catálogo de proveedores</div>
+                                    <div class="itm_subtit2">Esta descripción se mostrará en el listado de proveedores.</div>
+                                    
+                                    
                                     <div class="itm">
                                         <label>Descripción larga: </label>
-                                        <label class="texto_boletin2">Esta descripción se mostrará en el perfil de la empresa.</label>
-                                        <br clear="all">
-                                        <textarea id="des_2" name="des_2"><?php echo $objProveedor->descripcion2_proveedor; ?></textarea>
+                                        <textarea id="txtDescripcionLarga" name="txtDescripcionLarga"><?php echo $objProveedor->descripcion2_proveedor; ?></textarea>
                                     </div>
+                                    <div class="itm_subtit2">Esta descripción se mostrará en el perfil de la empresa.</div>
+                                    
                                     <div class="itm"><label>Dirección: </label><input type="text" id="txtDireccion" name="txtDireccion" value="<?php echo $objProveedor->direccion_proveedor; ?>"/></div>
                                     <div class="itm"><label>Teléfono 1: </label><input type="text" id="txtTelefono1" name="txtTelefono1" value="<?php echo $objProveedor->telefono1_proveedor; ?>"/></div>
                                     <div class="itm"><label>Teléfono 2: </label><input type="text" id="txtTelefono2" name="txtTelefono2" value="<?php echo $objProveedor->telefono2_proveedor; ?>"/></div>
@@ -451,8 +457,50 @@
                                     <div class="itm"><label>Teléfono 4: </label><input type="text" id="txtTelefono4" name="txtTelefono4" value="<?php echo $objProveedor->telefono4_proveedor; ?>"/></div>
                                     <div class="itm"><label>Email: </label><input type="text" id="txtEmail" name="txtEmail" value="<?php echo $objProveedor->email_proveedor; ?>"/></div>
                                     <div class="itm"><label>Web: </label><input type="text" id="txtWeb" name="txtWeb" value="<?php echo $objProveedor->web_proveedor; ?>"/></div>
-                                    <div class="itm"><label>Mapa: </label><textarea id="txtMapa" name="txtMapa"><?php echo $objProveedor->mapa_proveedor; ?></textarea></div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="itm">
+                                    	<label>Mapa 1: </label>
+                                        <textarea id="txtMapa1" name="txtMapa1"><?php echo $objProveedor->mapa_codigo1; ?></textarea>
+                                    </div>
                                     <div class="itm_subtit2">Ingrese codigo HTML de Google Maps</div>
+                                    
+                                    <div class="itm">
+                                        <label>Imagen de mapa 1: </label>
+                                        <input type="file" id="fleMapa1" name="fleMapa1" accept="image/jpeg"/><?php echo $objProveedor->mapa_imagen1 ?>
+                                    </div>
+                                    <div class="itm_subtit2">Dimensiones sugeridas 300 x 300 pixeles.</div>
+                                    
+                                    <div class="itm">
+                                    	<label>Estado de mapa 1: </label>
+                                        <input type="radio" id="rdoEstMap1" name="rdoEstMap1" value="1" checked="checked"> <span>Mapa</span> | <input type="radio" id="rdoEstMap1" name="rdoEstMap1" value="0" <?php if($objProveedor->mapa_estado1 == 0){ echo "checked = 'checked'";  } ?>> <span>Imagen</span>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="itm">
+                                    	<label>Mapa 2: </label>
+                                        <textarea id="txtMapa2" name="txtMapa2"><?php echo $objProveedor->mapa_codigo2; ?></textarea>
+                                    </div>
+                                    <div class="itm_subtit2">Ingrese codigo HTML de Google Maps</div>
+                                    
+                                    <div class="itm">
+                                        <label>Estado de mapa 1: </label>
+                                        <input type="file" id="fleMapa2" name="fleMapa2" accept="image/jpeg"/><?php echo $objProveedor->mapa_imagen2 ?>
+                                    </div>
+                                    <div class="itm_subtit2">Dimensiones sugeridas 300 x 300 pixeles.</div>
+                                    
+                                    <div class="itm">
+                                    	<label>Mapa estado 2: </label>
+                                        <input type="radio" id="rdoEstMap2" name="rdoEstMap2" value="1" checked="checked"> <span>Mapa</span> | <input type="radio" id="rdoEstMap2" name="rdoEstMap2" value="0" <?php if($objProveedor->mapa_estado2 == 0){ echo "checked = 'checked'";  } ?>> <span>Imagen</span>
+                                    </div>
+
+
+
+
                                     <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $objProveedor->id_proveedor; ?>">
                                     <div class="itm"><label class="advertencia"><input type="submit" value="Guardar Cambios"></label></div>
                         		</div>
@@ -475,11 +523,25 @@
 				move_uploaded_file($_FILES['fleLogo']['tmp_name'], $fnImagen);
 			}
 
+			if(isset($_FILES['fleMapa1']) && $_FILES['fleMapa1']['name'] != ''){
+				$img = date('His').'_'.$_FILES['fleMapa1']['name'];
+				$mapa1 = "mapa_imagen1 = '".$img."',";
+				$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
+				move_uploaded_file($_FILES['fleMapa1']['tmp_name'], $fnImagen);
+			}
+			
+			if(isset($_FILES['fleMapa2']) && $_FILES['fleMapa2']['name'] != ''){
+				$img = date('His').'_'.$_FILES['fleMapa2']['name'];
+				$mapa2 = "mapa_imagen2 = '".$img."',";
+				$fnImagen = 'aplication/webroot/imgs/proveedores/'.$img;
+				move_uploaded_file($_FILES['fleMapa2']['tmp_name'], $fnImagen);
+			}
+
 			$sql = " UPDATE proveedores SET 
 										nombre_proveedor = '".$_POST['txtNombre']."',
 										".$logo."
 										descripcion1_proveedor = '".$_POST['txtDescripcionCorta']."',
-										descripcion2_proveedor = '".$_POST['des_2']."',
+										descripcion2_proveedor = '".$_POST['txtDescripcionLarga']."',
 										direccion_proveedor = '".$_POST['txtDireccion']."',
 										telefono1_proveedor = '".$_POST['txtTelefono1']."',
 										telefono2_proveedor = '".$_POST['txtTelefono2']."',
@@ -487,7 +549,15 @@
 										telefono4_proveedor = '".$_POST['txtTelefono4']."',
 										email_proveedor = '".$_POST['txtEmail']."',
 										web_proveedor = '".$_POST['txtWeb']."',
-										mapa_proveedor = '".$_POST['txtMapa']."'
+										
+										".$mapa1."
+										mapa_codigo1 = '".$_POST['txtMapa1']."',
+										mapa_estado1 = '".$_POST['rdoEstMap1']."',
+										
+										".$mapa2."
+										mapa_codigo2 = '".$_POST['txtMapa2']."',
+										mapa_estado2 = '".$_POST['rdoEstMap2']."'
+										
 									WHERE id_proveedor = '".$_POST['id_proveedor']."'";
 
 			$Query = new Consulta($sql);
@@ -506,13 +576,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item" id="activo">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -564,13 +634,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item" id="activo">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -630,13 +700,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item" id="activo">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -692,13 +762,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item" id="activo">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
 
@@ -765,13 +835,13 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item" id="activo">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>
                         <a href="<?=_bs_?>usuario/listar_red_social/" class="item">Redes sociales</a>
-                        <!--<a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
-                        <a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
+                        <a href="<?=_bs_?>usuario/resumen_estadisticas/" class="item">Estadisticas</a> 
+                        <!--<a href="<?=_bs_?>usuario/faqs_usuario_cliente/" class="item">FAQ's</a> -->
                         
                         <div class="btn-verperfil"><a href="<?=_bs_?>catalogo/<?=$id_proveedor[0]['id_proveedor']?>/<?php echo $objUtilitarios->procesar_url_2($objProveedor->nombre_proveedor) ?>" target="_blank">VER PERFIL</a></div>
                     </div>
@@ -782,7 +852,7 @@
 
 							<div class="itm_subtit">Galeria de fotos</div>
 
-							<div class="itm_subtit2">Las imagenes para la galeria no deben sobrepasar los 250kb de peso. Dimensiones recomendadas 500x290 pixeles.</div>
+							<div class="itm_subtit2">Las imagenes para la galeria no deben sobrepasar los 250kb de peso. Dimensiones recomendadas 504 x 306 pixeles.</div>
 
                             <div class="itm">
                                 <label>Elegir imagenes: </label>
@@ -839,7 +909,7 @@
                     <script type="text/javascript" src="<?php echo _js_?>hightcharts/modules/exporting.js"></script>
 
                     <div class="opciones-editarcuenta">
-                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información del administrador</a>
+                        <a href="<?=_bs_?>usuario/editar_cuenta/" class="item">Información de usuario</a>
                         <a href="<?=_bs_?>usuario/editar_informacion_empresa/" class="item">Informacion de la empresa</a>
                         <a href="<?=_bs_?>usuario/galeria_proveedor/" class="item">Galeria</a>
                         <a href="<?=_bs_?>usuario/listar_recomendados/" class="item">Recomendados</a>

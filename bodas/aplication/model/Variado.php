@@ -8,6 +8,7 @@
 		private $imagen;
 		private $link;
 
+
 		public function __construct($id = 0){
 			$this->id = $id;
 			if($this->id > 0){

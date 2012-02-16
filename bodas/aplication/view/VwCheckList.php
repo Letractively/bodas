@@ -20,9 +20,7 @@
                 	<?php include(_inc_."inc.menu-rubros.php"); ?>
                     
                     <div class="contenido-central-checklist">
-
-						<div class="titulo">Check List</div>
-                        
+						<div class="titulo">Check List<span><a href="<?=_bs_?>luna_de_miel/">Regresar</a></span></div>
                         <div class="texto">
 
 							<div class="item">

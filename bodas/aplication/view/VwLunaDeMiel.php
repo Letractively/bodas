@@ -92,8 +92,8 @@
                                     <div class="otr-des">Aquí podras acceder a una lista de todo lo indispensable que necesitas llevar a tu luna miel ...<a href="<?=_bs_?>check_list/">ver más</a></div>
                                 </div>
                                 <div class="des-otros item2">
-	                                <div class="otr-tit"><a href="<?=_bs_?>check_list/">Recomendaciones</a></div>
-                                	<div class="otr-img"><a href="<?=_bs_?>check_list/"><img src="<?=_img_?>img-reco.png"></a></div>
+	                                <div class="otr-tit"><a href="<?=_bs_?>recomendaciones/">Recomendaciones</a></div>
+                                	<div class="otr-img"><a href="<?=_bs_?>recomendaciones/"><img src="<?=_img_?>img-reco.png"></a></div>
                                     <div class="otr-des">Si vas al extranjero o a destinos muy inhóspitos hay recomendaciones básicas a seguir ...<a href="<?=_bs_?>recomendaciones/">ver más</a></div>
                                 </div>
                             </div>
