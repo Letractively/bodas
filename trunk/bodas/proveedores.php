@@ -11,20 +11,7 @@
                 <div id="cuerpo">
                         <?php include(_inc_.'inc.cabecera-cuerpo.php'); ?>
                         <?php 
-							switch($_GET['pag']){
-								case 'a':
-									$objVwProveedores->vista(); 
-								break;
-								case $_GET['pag'] == 0:
-									$objVwProveedores->mensionados($_GET['pag']); 
-								break;
-								case $_GET['pag'] > 0:
-									$objVwProveedores->mensionados($_GET['pag']); 
-								break;
-								default:
-									$objVwProveedores->vista(); 
-								break;
-							}
+							$objVwProveedores->vista(); 
 						?>
                 </div>
             </div>

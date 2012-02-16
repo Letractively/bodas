@@ -29,6 +29,12 @@
 	}else if( $_POST['pub_me_gusta'] == 1 && isset($_POST['id_usuario']) && isset($_POST['id_publicacion']) ){
 		$objUsuarioClientePublicacion = new UsuarioClientePublicacion;
 		echo $objUsuarioClientePublicacion->agregar_me_gusta($_POST['id_usuario'], $_POST['id_publicacion']);
+	}else if( $_POST['enviar_correo_evento'] == 1){
+		$objEvento = new Evento;
+		echo $objEvento->enviar_correo();
+	}else if( $_POST['enviar_correo_index'] == 1){
+		$objEvento = new Evento;
+		echo $objEvento->enviar_correo_index();
 	}
 	
 ?>

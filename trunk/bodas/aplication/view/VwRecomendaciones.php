@@ -11,7 +11,7 @@
                     
                     <div class="contenido-central-recomendaciones">
 
-						<div class="titulo">Recomendaciones</div>
+						<div class="titulo">Recomendaciones<span><a href="<?=_bs_?>luna_de_miel/">Regresar</a></span></div>
                         
                         <div class="texto">
 

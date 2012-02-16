@@ -34,6 +34,10 @@
 			$arySeguidores = $objUsuarioClienteMeGusta->obtenerSeguidores($_GET['id_proveedor']);
 			
 
+			$objUsuarioClienteProveedor = new UsuarioClienteProveedor;
+			$aryAdmin = $objUsuarioClienteProveedor->obtenerUsuarioClienteAdministradorXProveedor($_GET['id_proveedor']);
+			$objAdministrador = new UsuarioCliente($aryAdmin[0]['id_usuario_cliente']);
+
 			?>
 
 				<div class="margen-index">
@@ -77,20 +81,44 @@
 
                         	<br clear="all">
 
-							<?php if(count($aryImagenesXProveedor) > 0){?>
-                                <div id="galleria">
+							<!--<link rel="stylesheet" type="text/css" href="<?=_js_?>pikachoose/bottom.css"/>
+                            <script src="<?=_js_?>pikachoose/jquery.pikachoose.full.js"></script>
+
+                            <div class="pikachoose">
+                                <ul id="pikame" class="jcarousel-skin-pika">
                                     <?php for($x = 0 ; $x < count($aryImagenesXProveedor) ; $x++){?>
-                                        <a href="<?php echo _img_?>proveedores_fotos/<?php echo $aryImagenesXProveedor[$x]['imagen_proveedor_imagen']?>">
-                                            <img src="<?php echo _img_?>proveedores_fotos/<?php echo $aryImagenesXProveedor[$x]['imagen_proveedor_imagen']?>">
-                                        </a>
+                                            <li><a href="http://www.bodas.com.pe"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores_fotos/".$aryImagenesXProveedor[$x]['imagen_proveedor_imagen']."&w=504";?>"></a></li>
                                     <?php } ?>
-                                </div>
-                            <?php } ?>
+                                </ul>
+                            </div>-->
+
+							<style> .galleria-errors{ visibility:hidden; display:none; } </style>
+
+
+                            <div id="galleria">
+                                <?php for($x = 0 ; $x < count($aryImagenesXProveedor) ; $x++){?>
+                                    <img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores_fotos/".$aryImagenesXProveedor[$x]['imagen_proveedor_imagen']."&w=504";?>">
+                                <?php } ?>
+                            </div>
+
+							<script>
+								Galleria.loadTheme('<?php echo _js_?>galleria/galleria.classic.min.js');
+								$('#galleria').Galleria({
+									autoplay: 5000,
+									width:504,
+									height:366	
+								});
+							</script>
 
     						<div class="texto">
                             	<img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=150&h=80";?>" align="left">
                                 <p><b><?php echo $objProveedor->nombre_proveedor ?></b></p>
-                                <p><?php echo $objProveedor->descripcion2_proveedor ?></p>
+                                <style>
+                                	.descripcion_dos{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
+									.descripcion_dos p{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
+									.descripcion_dos p span{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
+                                </style>
+                                <p><div class="descripcion_dos"><?php echo $objProveedor->descripcion2_proveedor ?></div></p>
                             </div>
 
 							<?php if(isset($_SESSION['login_usuario_cliente'])){
@@ -100,7 +128,7 @@
 								?>
 								<div class="frmPublicar">
                                     <form id="frmPublicar" name="frmPublicar">
-                                        <img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" id="img_proveedor" style="display:none" />
+                                        <img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objAdministrador->foto_usuario_cliente."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" id="img_proveedor" style="display:none" />
                                         <textarea id="areaPublicacion" name="areaPublicacion" title="Actualiza tu estado..." class="labely"></textarea>
                                         <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $objProveedor->id_proveedor; ?>" />
                                         <div id="btnPublicar">Publicar</div>
@@ -116,7 +144,7 @@
                                     for( $x = 0 ; $x < count($aryPosts) ; $x++ ){
                                 ?>
                                     <div id="post<?php echo $aryPosts[$x]['id_proveedor_publicacion'] ?>" class="item">
-                                        <div class="imagen"><img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" /></div>
+                                        <div class="imagen"><img src="<?=_tt_."src=/aplication/webroot/imgs/usuarios_clientes/".$objAdministrador->foto_usuario_cliente."&w=55&h=55";?>" alt="<?=$objProveedor->nombre_proveedor ?>" /></div>
                                         <div class="contenido">
 											<p><b><?php echo $objProveedor->nombre_proveedor; ?></b></p>
 
@@ -410,7 +438,17 @@
                             </div>
 
                             <div class="mapa">
-                            	<?php echo $objProveedor->mapa_proveedor ?>
+                            	<?php 
+								if($objProveedor->mapa_estado1 == 1){ echo $objProveedor->mapa_codigo1;
+								}else{ echo "<img src='"._tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->mapa_imagen1."&w=300' />"; }
+								?>
+                            </div>
+
+                            <div class="mapa">
+                            	<?php 
+								if($objProveedor->mapa_estado2 == 1){ echo $objProveedor->mapa_codigo2;
+								}else{ echo "<img src='"._tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->mapa_imagen2."&w=300' />"; }
+								?>
                             </div>
 
                         </div>   

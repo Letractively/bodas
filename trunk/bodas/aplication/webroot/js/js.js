@@ -1,5 +1,9 @@
 // JavaScript Document
 
+$("#galleria img").css("display", "none");
+$("#galleria img").css("border-width", "0px");
+$("#galleria").css("display", "");
+
 $(document).ready(function() {
 
 	if($('#base').length > 0){
@@ -17,14 +21,32 @@ $(document).ready(function() {
 	}	
 
 	if($('#galleria').length > 0){
-		Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
-		$('#galleria').galleria({
-			autoplay: 5000,
-			width:504,
-			height:366	
-		});
-	}
+		
+		var aaaaa = "Fatal error: No theme found.";
+		while (aaaaa == "Fatal error: No theme found." || aaaaa == "Fatal error: Theme at '"+base+"aplication/webroot/js/galleria/galleria.classic.min.js' could not be load") {
+	
+			aaaaa = "";
+	
+			try {
+				window.setTimeout(function(){
+					Galleria.loadTheme(base+'aplication/webroot/js/galleria/galleria.classic.min.js');
+					$('#galleria').galleria({
+						autoplay: 5000,
+						width:504,
+						height:366	
+					});
+				}, 2000);
+			} catch (b) {
+				aaaaa = b.Message;
+			}
+		}
 
+	}
+	
+	if($('#pikame').length > 0){
+		$("#pikame").PikaChoose({carousel:true});
+	}
+	
 	if($('.dp').length > 0){ 
 		$('.dp').datepicker({dateFormat:'yy-mm-dd',changeMonth: true,changeYear: true, yearRange: '1900:2011' });
 	}
@@ -169,12 +191,16 @@ $(document).ready(function() {
 		rules:{
 			txtNombre: 'required',
 			fleLogo: { accept:'jpg|gif' },
-			txtDescripcionCorta: 'required'
+			txtDescripcionCorta: 'required',
+			fleMapa1: { accept:'jpg|gif' },
+			fleMapa2: { accept:'jpg|gif' }
 		},
 		messages:{
 			txtNombre: 'Ingresa un nombre.',
 			fleLogo: { accept:'solo se acepta archivos .jpg y .gif' },
-			txtDescripcionCorta: 'Ingrese una descripcion corta.'
+			txtDescripcionCorta: 'Ingrese una descripcion corta.',
+			fleMapa1: { accept:'solo se acepta archivos .jpg y .gif' },
+			fleMapa2: { accept:'solo se acepta archivos .jpg y .gif' }
 		}
 	});
 	
@@ -625,7 +651,7 @@ $(document).ready(function() {
 		$(this).hide();
 	});
 
-	if($('#frmBuscar').length > 0){ 
+	if($('#frmBuscar').length > 0){
 		$('#frmBuscar').validate({
 			errorElement: 'label',
 			errorClass: 'error',
@@ -637,6 +663,5 @@ $(document).ready(function() {
 			}
 		});
 	}
-
 
 });

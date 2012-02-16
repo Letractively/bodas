@@ -16,7 +16,12 @@
 		private $telefono4_proveedor;
 		private $email_proveedor;
 		private $web_proveedor;
-		private $mapa_proveedor;
+		private $mapa_codigo1;
+		private $mapa_imagen1;
+		private $mapa_estado1;
+		private $mapa_codigo2;
+		private $mapa_imagen2;
+		private $mapa_estado2;
 		private $fecha_registro_proveedor;
 		private $estado_cuenta_proveedor;
 
@@ -41,7 +46,12 @@
 					$this->telefono4_proveedor 		= $rw['telefono4_proveedor'];
 					$this->email_proveedor 			= $rw['email_proveedor'];
 					$this->web_proveedor 			= $rw['web_proveedor'];
-					$this->mapa_proveedor 			= $rw['mapa_proveedor'];
+					$this->mapa_codigo1 			= $rw['mapa_codigo1'];
+					$this->mapa_imagen1 			= $rw['mapa_imagen1'];
+					$this->mapa_estado1 			= $rw['mapa_estado1'];
+					$this->mapa_codigo2 			= $rw['mapa_codigo2'];
+					$this->mapa_imagen2 			= $rw['mapa_imagen2'];
+					$this->mapa_estado2 			= $rw['mapa_estado2'];
 					$this->fecha_registro_proveedor = $rw['fecha_registro_proveedor'];
 					$this->estado_cuenta_proveedor 	= $rw['estado_cuenta_proveedor'];
 				}					

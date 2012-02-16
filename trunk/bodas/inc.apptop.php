@@ -21,6 +21,7 @@
 	// Modelos
 	require_once(_model_."RedSocial.php");
 	require_once(_model_."UsuarioCliente.php");
+	require_once(_model_."UsuarioClienteProveedor.php");
 	
 	require_once(_model_."ProveedorRubro.php");
 	require_once(_model_."ProveedorTipo.php");
@@ -55,6 +56,9 @@
 
 	require_once(_model_."Variado.php");
 	require_once(_model_."Variados.php");
+
+	require_once(_model_."Evento.php");
+	require_once(_model_."Eventos.php");
 
 	// Vistas
 	require_once(_view_."Utiles.php");
