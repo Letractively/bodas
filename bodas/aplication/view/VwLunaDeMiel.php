@@ -53,9 +53,21 @@
 
                             <div class="tit-luna"><?=$objVariado->titulo?></div>
                             
-                            <div class="descripcion"><?=$objVariado->descripcion?> <a href="<?=$objVariado->link?>" target="_blank">ver más</a></div>
-                            
                             <div class="imagen-central"><a href="<?=$objVariado->link?>" target="_blank"><img src="<?=_img_?>variados/<?=$objVariado->imagen?>"></a></div>
+                            <style>
+                            	#ver_mas_des{ cursor:pointer; }
+                            </style>
+							<script type="text/javascript">
+                            	$(document).ready(function() {
+									$("#ver_mas_des").click(function(){
+										$(".descripcion1").hide();
+										$(".descripcion2").show();
+									});
+								});
+							</script>
+                            
+                            <div class="descripcion1"><?=$objVariado->descripcion?> <a id="ver_mas_des">ver más</a></div>
+                            <div class="descripcion2" style="display:none"><?=$objVariado->descripcion_larga?></div>
 
                             <div class="cnt-destinos">
                                 <div class="des-destinos item1">

@@ -186,14 +186,16 @@
 
                             <div class="cnttab" id="cnt4">
                             
-                                <div class="faqtit1">PREGUNTAS FRECUENTES SOBRE EL EVENTO EXPOBODAS ORGANIZADO POR REVISTA BODAS</div>
+                                <div class="faqtit1">PREGUNTAS FRECUENTES SOBRE EL EVENTO BODAS & NOVIOS ORGANIZADO POR REVISTA BODAS</div>
                                 
                                 <div class="faqtit2">SOBRE EL EVENTO</div>
                                 
-                                <div class="faqtit3">¿Qué es EXPOBODAS?</div>
-                                <div class="faqtext">Es la feria de novios donde encontrarás todos los productos y servicios que necesitas para la elaboración de tu boda. Este evento es organizado por revista BODAS</div>
-                                <div class="faqtit3">¿Cómo puedo asistir al EXPOBODAS?</div>
-                                <div class="faqtext">Inscribiéndote a nuestro portal: www.bodas.com.pe, enviándonos un correo a: contacto@bodas.com.pe o llamándonos al 717 3737</div>
+                                <div class="faqtit3">¿Qué es Bodas & Novios?</div>
+                                <div class="faqtext">Es la feria de novios donde encontrarás todos los productos y servicios que necesitas para la elaboración de tu boda. Este evento es organizado por Revista BODAS</div>
+                                <div class="faqtit3">¿Cómo puedo asistir al Bodas & Novios?</div>
+                                <div class="faqtext">Inscribiéndote en nuestro portal: <a href="http://www.bodas.com.pe" target="_blank">www.bodas.com.pe</a>
+Enviándonos un correo a: <a href="mailto:contacto@bodas.com.pe">contacto@bodas.com.pe</a> o llamándonos al 717 3737
+</div>
                                 <div class="faqtit3">Si ya me registré y no me llegó la confirmación ¿Igual estoy inscrita?</div>
                                 <div class="faqtext">No, si la confirmación no llegó correctamente puede que algún dato no haya sido ingresado de manera correcta. En ese caso comunícate con nosotros al 717 3737 para confirmar tu inscripción.</div>
                                 
@@ -201,7 +203,7 @@
                                 
                                 <div class="faqtit3">¿Puedo ir acompañada?</div>
                                 <div class="faqtext">Si, puedes ir acompañada de tu novio, familiares o amigos.</div>
-                                <div class="faqtit3">¿Tengo que registrar a todos los que me acompañen al EXPOBODAS?</div>
+                                <div class="faqtit3">¿Tengo que registrar a todos los que me acompañen a BODAS & NOVIOS?</div>
                                 <div class="faqtext">No, sólo es necesario la inscripción de la novia.</div>
                                 <div class="faqtit3">¿Debo presentar algún documento al ingreso?</div>
                                 <div class="faqtext">No es necesario presentar algún documento para el ingreso.</div>
@@ -221,11 +223,11 @@
                                 <div class="faqtit3">¿Habrá exposición de coros?</div>
                                 <div class="faqtext">Si, podrás disfrutar de los grupos corales en diferentes horarios.</div>
                                 <div class="faqtit3">¿Qué coros se presentan y a qué horas?</div>
-                                <div class="faqtext">La información la podrás encontrar en: www.bodas.com.pe/expobodas2011</div>
+                                <div class="faqtext">La información la podrás encontrar en: <a href="http://www.bodas.com.pe/eventos/" target="_blank">www.bodas.com.pe/eventos/</a></div>
                                 
-                                <div class="faqtit2">SOBRE ESTACIONAMIENTO</div>
+                                <!--<div class="faqtit2">SOBRE ESTACIONAMIENTO</div>
                                 <div class="faqtit3">¿Hay estacionamiento?</div>
-                                <div class="faqtext">Si, el Centro de Convenciones Atlantic City pone a tu disposición el estacionamiento con una tarifa plana especial de S/.10 para los asistentes al evento.</div>
+                                <div class="faqtext">Si, el Centro de Convenciones Atlantic City pone a tu disposición el estacionamiento con una tarifa plana especial de S/.10 para los asistentes al evento.</div>-->
 
                             </div>
 

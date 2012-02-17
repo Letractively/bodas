@@ -1,40 +1,35 @@
 <div class="contenido-derecha">
 	<!--<div class="banner-300-100">
-    
-			<?php if( _file_ == 'index.php'){ ?>
+		<?php if( _file_ == 'index.php'){ ?>
+            <div id='div-gpt-ad-1328744417031-1' style='width:300px; height:100px;'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-1'); });
+            </script>
+            </div>
+        <?php }else{ ?>
+            <div id='div-gpt-ad-1328744417031-1' style='width:300px; height:100px;'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-1'); });
+            </script>
+            </div>
 
-                <div id='div-gpt-ad-1328744417031-1' style='width:300px; height:100px;'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-1'); });
-                </script>
-                </div>
-
-            <?php }else{ ?>
-                
-                <div id='div-gpt-ad-1328744417031-1' style='width:300px; height:100px;'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-1'); });
-                </script>
-                </div>
-                
-
-                <div id='div-gpt-ad-1328744417031-6' style='width:300px; height:100px;'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-6'); });
-                </script>
-                </div>
-
-            <?php } ?>
-        
+            <div id='div-gpt-ad-1328744417031-6' style='width:300px; height:100px;'>
+            <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1328744417031-6'); });
+            </script>
+            </div>
+        <?php } ?>
     </div>-->
 
-	<?php if( _file_ != 'index.php'){ ?>
-    <div class="banner-300-100">
-    	<img src="<?=_img_?>bodasynovios.jpg">
-    </div>
-    <?php } ?>
+	<?php if( _file_ != 'index.php'){ 
+		if(_file_ != 'eventos.php'){
+		?>
+        <div class="banner-300-100">
+            <img src="<?=_img_?>bodasynovios.jpg">
+        </div>
+    <?php }} ?>
 
-    <?php if( _file_ == 'index.php'){ ?>
+    <?php if( _file_ == 'index.php' || _file_ == 'eventos.php'){ ?>
         <div class="banner-libre">
             <img src="<?=_img_?>head_formindex.jpg">
             <br clear="all">
@@ -82,7 +77,8 @@
 										txtITelefono: $('#txtITelefono').attr('value'),
 										txtICelular: $('#txtICelular').attr('value'),
 										txtIEmail: $('#txtIEmail').attr('value'),
-										txtIFechaBoda: $('#txtIFechaBoda').attr('value')
+										txtIFechaBoda: $('#txtIFechaBoda').attr('value'),
+										rdoEntero: $('#rdoEntero:checked').val(),
 									},
 									function (response) {
 									}, 'json'
@@ -104,6 +100,17 @@
                     <label>Celular:</label><input type="text" id="txtICelular" name="txtICelular"><br clear="all">
                     <label>E-mail:</label><input type="text" id="txtIEmail" name="txtIEmail"><br clear="all">
                     <label>Fecha de boda:</label><input type="text" id="txtIFechaBoda" name="txtIFechaBoda" class="dp2"><br clear="all">
+                    <label>Como se entero:</label>
+                    <table>
+                        <tr>
+                            <td><input type="radio" id="rdoEntero" name="rdoEntero" value="Portal" checked="checked">Portal</td>
+                            <td><input type="radio" id="rdoEntero" name="rdoEntero" value="Revista">Revista</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" id="rdoEntero" name="rdoEntero" value="Cartelera">Cartelera</td>
+                            <td><input type="radio" id="rdoEntero" name="rdoEntero" value="Otros">Otros</td>
+                        </tr>
+                    </table>
 					<input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar">
                     <div id="submit-ok">Su mensaje fue enviado correctamente</div>
                 </form>
@@ -112,7 +119,9 @@
         </div>
     <?php } ?>
 
-	<?php if( _file_ != 'index.php'){ ?>
+	<?php if( _file_ != 'index.php' ){ 
+		if(_file_ != 'eventos.php'){
+		?>
         <div class="banner-300-250">
             <?php if( _file_ == 'index.php'){ ?>
     
@@ -141,7 +150,7 @@
     
             <?php } ?>
         </div>
-    <?php } ?>
+    <?php }} ?>
     
     <div class="video-semana">
     	<p class="titulo"><img src="<?php echo _img_?>titulo-index-video.png"></p>

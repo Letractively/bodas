@@ -5,6 +5,7 @@
 		private $id;
 		private $titulo;
 		private $descripcion;
+		private $descripcion_larga;
 		private $imagen;
 		private $link;
 
@@ -17,6 +18,7 @@
 						v.id_variado,
 						v.titulo,
 						v.descripcion,
+						v.descripcion_larga,
 						v.imagen,
 						v.link
 					FROM variados v
@@ -28,6 +30,7 @@
 					$this->id 			= $rw['id_variado'];
 					$this->titulo		= $rw['titulo'];
 					$this->descripcion	= $rw['descripcion'];
+					$this->descripcion_larga	= $rw['descripcion_larga'];
 					$this->imagen		= $rw['imagen'];
 					$this->link			= $rw['link'];
 				}					

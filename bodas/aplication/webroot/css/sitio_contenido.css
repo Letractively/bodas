@@ -31,12 +31,12 @@
 #cuerpo .menu-general a:hover{ background:url(../imgs/menu-general-hover.png) repeat; }
 
 #cuerpo .menu-general #lnk-tuboda{ cursor:pointer; }
-#cuerpo #menu-tuboda{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:184px; z-index:10000; border:1px solid #999; display:none; }
+#cuerpo #menu-tuboda{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:252px; z-index:10000; border:1px solid #999; display:none; }
 #cuerpo #menu-tuboda a{ position:relative; float:left; display:block; width:92%; height:auto; padding:4px 6px; color:#666666; border-top:1px solid #FFF; }
 #cuerpo #menu-tuboda a:hover{ background:#a657c2; color:#FFF; }
 
 #cuerpo .menu-general #lnk-tendencias{ cursor:pointer; }
-#cuerpo #menu-tendencias{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:386px; z-index:10000; border:1px solid #999; display:none; }
+#cuerpo #menu-tendencias{ position:absolute; float:left; width:146px; height:auto; background:#f2f2f2; top:165px; left:432px; z-index:10000; border:1px solid #999; display:none; }
 #cuerpo #menu-tendencias a{ position:relative; float:left; display:block; width:92%; height:auto; padding:4px 6px; color:#666666; border-top:1px solid #FFF; }
 #cuerpo #menu-tendencias a:hover{ background:#a657c2; color:#FFF; }
 
@@ -113,9 +113,10 @@
 .contenido-derecha .banner-300-100{ position:relative; float:left; width:300px; height:100px; margin:0 0 10px 0; }
 .contenido-derecha .banner-300-250{ position:relative; float:left; width:300px; height:250px; margin:10px 0 4px 0; }
 
-.contenido-derecha .banner-libre{ position:relative; float:left; width:300px; height:auto; margin:4px 0 4px 0; border:1px solid #666; }
+.contenido-derecha .banner-libre{ position:relative; float:left; width:300px; height:auto; margin:0 0 4px 0; border:1px solid #666; }
 
 .contenido-derecha .banner-libre .cnt_inscripcion{ position:relative; float:left; width:95%; height:auto; padding:8px 8px 8px 8px; }
+.contenido-derecha .banner-libre .cnt_inscripcion td{ width:120px; }
 .contenido-derecha .banner-libre .cnt_inscripcion label{ position:relative; float:left; width:119px; height:auto; padding:5px 3px; text-align:right; color:#999; }
 .contenido-derecha .banner-libre .cnt_inscripcion input[type='text']{ position:relative; float:left; width:150px; height:auto; padding:3px 0px; border:1px solid #969; margin:3px 0px; }
 .contenido-derecha .banner-libre .cnt_inscripcion #btnEnviar{ position:relative; float:right; width:auto; height:auto; border-radius:4px; background:#909; color:#FFF; text-align:center; padding:2px 4px; font-weight:bold; margin:0 111px 0 0; border:none; }
@@ -609,7 +610,8 @@ width:auto; text-align:center; }
 .contenido-central-lunademiel .texto{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
 
 .contenido-central-lunademiel .tit-luna{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; color:#a657c2; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; }
-.contenido-central-lunademiel .descripcion{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-lunademiel .descripcion1{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
+.contenido-central-lunademiel .descripcion2{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
 .contenido-central-lunademiel .imagen-central{ position:relative; float:left; width:100%; height:auto; padding:5px 0px 10px 0px; margin:0 0 10px 0; border-bottom:1px #CCC dotted; }
 .contenido-central-lunademiel .cnt-destinos{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; }
 .contenido-central-lunademiel .des-destinos{ position:relative; float:left; width:230px; height:auto; background:#edddf3; padding:8px; }
@@ -709,3 +711,10 @@ width:auto; text-align:center; }
 .contenido-central-eventos .faqtit3{ position:relative; float:left; width:100%; height:auto; padding:5px 0px; color:#c1358a; font-weight:bold; }
 .contenido-central-eventos .faqtext{ position:relative; float:left; width:100%; height:auto; padding:8px 0px; }
 .contenido-central-eventos input[type='text'].error{ border:1px solid #F00 !important; }
+
+.popup{ position:fixed; float:left; width:100%; height:auto; bottom:190px; z-index:100; overflow:hidden; border:none; z-index:10000; text-align:center; padding:10px 0px; }
+.popup .imagen{ position:relative; width:500px; height:auto; padding:0px; margin:0 auto; }
+.popup #close-popup{ position:absolute; float:left; width:auto; height:auto; top:-10px; right:-10px; cursor:pointer; border-radius:8px; background:#FFF; border:1px solid #B370CB; color:#B370CB; padding:2px 4px; font-weight:bold; }
+.popup img{ border:1px solid #B370CB; }
+
+.background-page{ position:fixed; float:left; width:100%; height:100%; z-index:1000; top:0; left:0; background:url(../imgs/bg-opaco.png) repeat; }

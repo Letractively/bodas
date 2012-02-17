@@ -60,8 +60,6 @@
 						
 				";
 
-				echo $mens;
-
 				@mail('contacto@bodas.com.pe','Eventos',$mens,'from: Eventos Portal BODAS');
 		}
 
@@ -76,15 +74,27 @@
 					Celular: ".$_POST['txtICelular']." 
 					Email: ".$_POST['txtIEmail']." 
 					Fecha de boda: ".$_POST['txtIFechaBoda']."
+					Como se entero: ".$_POST['rdoEntero']."
 
 					BODAS
-
 				";
 
-				echo $mens;
+				$Query = new Consulta("INSERT INTO incripciones_index VALUES('',
+					'".strtoupper( $this->stripAccents($_POST['txtINombres']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtIDireccion']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtIDistrito']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtITelefono']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtICelular']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtIEmail']) )."',
+					'".strtoupper( $this->stripAccents($_POST['txtIFechaBoda']) )."',
+					'".strtoupper( $this->stripAccents($_POST['rdoEntero']) )."'
+				)");
 
 				@mail('contacto@bodas.com.pe','Eventos',$mens,'from: Formulario Portal BODAS');
 		}
 
+		public function stripAccents($string){
+			return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+		}
 	}
 ?>

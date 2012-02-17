@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 16-02-2012 a las 18:22:14
+-- Tiempo de generación: 17-02-2012 a las 18:00:05
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -271,7 +271,36 @@ CREATE TABLE `eventos` (
 -- Volcar la base de datos para la tabla `eventos`
 -- 
 
-INSERT INTO `eventos` VALUES (1, '<p>\r\n	Bodas &amp; Novios, un evento dirigido a todas las parejas de novios donde podr&aacute;n encontrar una variada y atractiva oferta de productos y servicios para su boda.<br />\r\n	<br />\r\n	Los asistentes podr&aacute;n disfrutar de exhibici&oacute;n de&nbsp; agrupaciones corales, sorteos, premios y desfiles.<br />\r\n	<br />\r\n	Una vez m&aacute;s, Revista BODAS complace a sus novias poniendo a su alcance interesantes propuestas de reconocidos proveedores as&iacute; como actividades atractivas para quienes se encuentran pr&oacute;ximos a unirse en matrimonio.</p>\r\n', '181132_img-eventos.jpg', '<p>\r\n	Participar&aacute;n empresas de productos y servicios para bodas de los diferentes rubros: vestidos de novia, trajes de novio, tratamientos de belleza, maquillaje y peinado, tiaras y joyas, partes e invitaciones, tortas, coros, flores, fotograf&iacute;a y video, equipos de sonido y orquestas, organizaci&oacute;n de eventos y catering, agencias de viaje, y muchos rubros que sin duda ser&aacute;n del inter&eacute;s de los asistentes.</p>\r\n<p>\r\n	RELACI&Oacute;N DE EXPOSITORES QUE PARTICIPAR&Aacute;N EN EL EVENTO.</p>\r\n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						afseasfe</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				<ul>\r\n					<li>\r\n						RUBRO</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	desfile</p>\r\n', '<p>\r\n	coro</p>\r\n', '<p>\r\n	charlas</p>\r\n');
+INSERT INTO `eventos` VALUES (1, '<p>\r\n	Bodas &amp; Novios, un evento dirigido a todas las parejas de novios donde podr&aacute;n encontrar una variada y atractiva oferta de productos y servicios para su boda.<br />\r\n	<br />\r\n	Los asistentes podr&aacute;n disfrutar de exhibici&oacute;n de&nbsp; agrupaciones corales, sorteos, premios y desfiles.<br />\r\n	<br />\r\n	Una vez m&aacute;s, Revista BODAS complace a sus novias poniendo a su alcance interesantes propuestas de reconocidos proveedores as&iacute; como actividades atractivas para quienes se encuentran pr&oacute;ximos a unirse en matrimonio.</p>\r\n', '181132_img-eventos.jpg', '<p>\r\n	Participar&aacute;n empresas de productos y servicios para bodas de los diferentes rubros: vestidos de novia, trajes de novio, tratamientos de belleza, maquillaje y peinado, tiaras y joyas, partes e invitaciones, tortas, coros, flores, fotograf&iacute;a y video, equipos de sonido y orquestas, organizaci&oacute;n de eventos y catering, agencias de viaje, y muchos rubros que sin duda ser&aacute;n del inter&eacute;s de los asistentes.</p>\r\n<p>\r\n	<span style="color:#a657c2;">RELACI&Oacute;N DE EXPOSITORES QUE PARTICIPAR&Aacute;N EN EL EVENTO.</span></p>\r\n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				RUBRO\r\n				<ul>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				RUBRO\r\n				<ul>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				RUBRO\r\n				<ul>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				RUBRO\r\n				<ul>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n			<td>\r\n				RUBRO\r\n				<ul>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n					<li>\r\n						cliente</li>\r\n				</ul>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	Como cierre se realizar&aacute; el desfile, que tendr&aacute; lugar en los jardines del Swissotel.<br />\r\n	Bellas modelos desfilar&aacute;n por las pasarelas los trajes de novia m&aacute;s exclusivos de cada colecci&oacute;n.<br />\r\n	Posteriormente, todos los asistentes y expositores podr&aacute;n compartir el fin de fiesta.</p>\r\n<p>\r\n	<span style="color:#a657c2;">EMPRESAS PARTICIPANTES EN EL DESFILE</span></p>\r\n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	Como cierre se realizar&aacute; el desfile, que tendr&aacute; lugar en los jardines del Swissotel.<br />\r\n	Bellas modelos desfilar&aacute;n por las pasarelas los trajes de novia m&aacute;s exclusivos de cada colecci&oacute;n.<br />\r\n	Posteriormente, todos los asistentes y expositores podr&aacute;n compartir el fin de fiesta.</p>\r\n<p>\r\n	<span style="color:#a657c2;">EMPRESAS PARTICIPANTES EN EL CORO</span></p>\r\n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	Como cierre se realizar&aacute; el desfile, que tendr&aacute; lugar en los jardines del Swissotel.<br />\r\n	Bellas modelos desfilar&aacute;n por las pasarelas los trajes de novia m&aacute;s exclusivos de cada colecci&oacute;n.<br />\r\n	Posteriormente, todos los asistentes y expositores podr&aacute;n compartir el fin de fiesta.</p>\r\n<p>\r\n	<span style="color:#a657c2;">EMPRESAS PARTICIPANTES EN LA CHARLA</span></p>\r\n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n			<td>\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente<br />\r\n				Nombre cliente</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `incripciones_index`
+-- 
+
+CREATE TABLE `incripciones_index` (
+  `id_registro` int(11) NOT NULL auto_increment,
+  `nombre` text NOT NULL,
+  `direccion` text NOT NULL,
+  `distrito` text NOT NULL,
+  `telefono` text NOT NULL,
+  `celular` text NOT NULL,
+  `email` text NOT NULL,
+  `fecha_boda` date NOT NULL,
+  `medio` text NOT NULL,
+  PRIMARY KEY  (`id_registro`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- 
+-- Volcar la base de datos para la tabla `incripciones_index`
+-- 
+
+INSERT INTO `incripciones_index` VALUES (1, 'rece', 'direccion', 'distrito', '3601665', '996828889', 'raulmace@hotmail.com', '2012-02-17', '');
+INSERT INTO `incripciones_index` VALUES (2, 'rece', 'direccion', 'distrito', '3601665', '996828889', 'raulmace@hotmail.com', '2012-02-17', '');
+INSERT INTO `incripciones_index` VALUES (3, 'rece', 'direccion', 'distrito', '3601665', '996828889', 'raulmace@hotmail.com', '2012-02-17', 'Portal');
+INSERT INTO `incripciones_index` VALUES (4, 'mace', 'direccion', 'distrito', '3601665', '996828889', 'raulmace@hotmail.com', '2012-02-17', 'Portal');
+INSERT INTO `incripciones_index` VALUES (5, 'rece', 'direccion', 'distrito', '3601665', '996828889', 'raulmace@hotmail.com', '2012-02-17', 'Otros');
 
 -- --------------------------------------------------------
 
@@ -305,7 +334,7 @@ CREATE TABLE `paginas` (
   `nombre_pagina` text NOT NULL,
   `url_pagina` varchar(50) character set latin1 NOT NULL default '',
   PRIMARY KEY  (`id_pagina`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 -- 
 -- Volcar la base de datos para la tabla `paginas`
@@ -320,6 +349,28 @@ INSERT INTO `paginas` VALUES (23, 1, 'Articulos de portada', 'articulosPortada.p
 INSERT INTO `paginas` VALUES (24, 1, 'Revista', 'revista.php');
 INSERT INTO `paginas` VALUES (25, 1, 'Variados', 'variados.php');
 INSERT INTO `paginas` VALUES (26, 1, 'Eventos', 'eventos.php');
+INSERT INTO `paginas` VALUES (27, 1, 'Inscripciones formulario index', 'inscripcionesIndex.php');
+INSERT INTO `paginas` VALUES (29, 1, 'popup', 'popups.php');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `popup`
+-- 
+
+CREATE TABLE `popup` (
+  `id_popup` int(11) NOT NULL auto_increment,
+  `imagen` text NOT NULL,
+  `link` text NOT NULL,
+  `estado` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`id_popup`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Volcar la base de datos para la tabla `popup`
+-- 
+
+INSERT INTO `popup` VALUES (1, '163835_byn2012popup.jpg', 'http://www.google.com.pe', 1);
 
 -- --------------------------------------------------------
 
@@ -1002,6 +1053,8 @@ INSERT INTO `usuarios_paginas` VALUES (2, 22);
 INSERT INTO `usuarios_paginas` VALUES (2, 24);
 INSERT INTO `usuarios_paginas` VALUES (2, 19);
 INSERT INTO `usuarios_paginas` VALUES (2, 20);
+INSERT INTO `usuarios_paginas` VALUES (2, 29);
+INSERT INTO `usuarios_paginas` VALUES (2, 27);
 INSERT INTO `usuarios_paginas` VALUES (2, 26);
 INSERT INTO `usuarios_paginas` VALUES (2, 23);
 INSERT INTO `usuarios_paginas` VALUES (2, 1);
@@ -1017,6 +1070,7 @@ CREATE TABLE `variados` (
   `id_variado` int(11) NOT NULL auto_increment,
   `titulo` text NOT NULL,
   `descripcion` text NOT NULL,
+  `descripcion_larga` text NOT NULL,
   `imagen` text NOT NULL,
   `link` text NOT NULL,
   PRIMARY KEY  (`id_variado`)
@@ -1026,4 +1080,4 @@ CREATE TABLE `variados` (
 -- Volcar la base de datos para la tabla `variados`
 -- 
 
-INSERT INTO `variados` VALUES (1, 'Promociones luna de miel', 'Este es un espacio para las agencias de viajes que deseen promocionar algÃºn paquete turÃ­stico en especifico para lunas de miel, nos pueden contactar.', '113818_img-lunademiel.jpg', 'http://www.bodas.com.pe');
+INSERT INTO `variados` VALUES (1, 'Promociones luna de miel', 'Este es un espacio para las agencias de viajes que deseen promocionar algÃºn paquete turÃ­stico en especifico para lunas de miel, nos pueden contactar.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et arcu et nulla tempus ultrices. Aenean vulputate varius consectetur. Donec vitae turpis risus. Curabitur eu lectus sed mi aliquet convallis sed eget ligula. Ut et commodo diam. Maecenas lacinia convallis metus sit amet adipiscing.', '113818_img-lunademiel.jpg', 'http://www.bodas.com.pe');

@@ -38,3 +38,21 @@
     	<span class="abrir"></span>
     </div>
 </div>
+<?php if( _file_ == 'index.php'){ ?>
+	<?php
+        $objPopup = new Popup(1);
+        if($objPopup->estado == 1){
+    ?>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#close-popup").click(function(){
+                    $(".popup").hide();
+                    $(".background-page").hide();
+                });
+            });
+        </script>
+        <div class="popup">
+            <div class="imagen"><a href="<?php echo $objPopup->link; ?>" target="_blank"><img src="<?=_img_?>popup/<?php echo $objPopup->imagen; ?>"></a><div id="close-popup">X</div></div>
+        </div>
+    <?php } ?>
+<?php } ?>

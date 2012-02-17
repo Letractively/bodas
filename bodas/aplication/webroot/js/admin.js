@@ -30,6 +30,18 @@ $(document).ready(function(){
 		}); 
 	}
 
+	if($('.reporte3').length){ 
+		$('.reporte3').dataTable({
+			"sPaginationType": "full_numbers",
+			"aaSorting": [[ 0, "desc" ]],
+			"iDisplayLength": 25,
+			"sDom": 'T<"clear">lfrtip',
+			"oTableTools": {
+				"sSwfPath": "../aplication/webroot/js/tabletools/swf/copy_cvs_xls_pdf.swf"
+			}
+		}); 
+	}
+
 	$('.coment').tooltip({
 		track: true,
 		delay: 0,

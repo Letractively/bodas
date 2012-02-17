@@ -114,9 +114,10 @@
                             	<img src="<?=_tt_."src=/aplication/webroot/imgs/proveedores/".$objProveedor->logo_proveedor."&w=150&h=80";?>" align="left">
                                 <p><b><?php echo $objProveedor->nombre_proveedor ?></b></p>
                                 <style>
-                                	.descripcion_dos{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
-									.descripcion_dos p{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
-									.descripcion_dos p span{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; }
+                                	.descripcion_dos{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; font-style:normal !important; color:#000 !important; }
+									.descripcion_dos p{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; font-style:normal !important; color:#000 !important; }
+									.descripcion_dos p span{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; font-style:normal !important; color:#000 !important; }
+									.descripcion_dos p em{ font-family:Verdana, Geneva, sans-serif !important; font-size:11px !important; font-style:normal !important; color:#000 !important; }
                                 </style>
                                 <p><div class="descripcion_dos"><?php echo $objProveedor->descripcion2_proveedor ?></div></p>
                             </div>
