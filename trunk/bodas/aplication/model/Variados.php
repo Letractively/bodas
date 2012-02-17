@@ -66,6 +66,11 @@
                     	<label>Descripción: </label>
                     	<textarea id="txtDescripcion" name="txtDescripcion"><?php echo $obj->descripcion; ?></textarea>
                     </div>
+                    
+                    <div class="itm">
+                    	<label>Descripción larga: </label>
+                    	<textarea id="txtDescripcionLarga" name="txtDescripcionLarga"><?php echo $obj->descripcion_larga; ?></textarea>
+                    </div>
 
                     <div class="itm">
                     	<label>Imagen: </label>
@@ -102,6 +107,7 @@
 				titulo = '".$_POST['txtTitulo']."',
 				".$logo."
 				descripcion = '".$_POST['txtDescripcion']."',
+				descripcion_larga = '".$_POST['txtDescripcionLarga']."',
 				link = '".$_POST['txtLink']."'
 			WHERE id_variado = '".$id."'");
 

@@ -60,6 +60,9 @@
 	require_once(_model_."Evento.php");
 	require_once(_model_."Eventos.php");
 
+	require_once(_model_."Popup.php");
+	require_once(_model_."Popups.php");
+
 	// Vistas
 	require_once(_view_."Utiles.php");
 	require_once(_view_."VwIndex.php");

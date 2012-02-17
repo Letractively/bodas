@@ -16,7 +16,10 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo _css_?>datatables/css/demo_page.css">
     <link rel="stylesheet" type="text/css" href="<?php echo _css_?>datatables/css/demo_table.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo _js_?>tabletools/css/TableTools.css">
 	<script type="text/javascript" src="<?php echo _js_?>jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="<?php echo _js_?>ZeroClipboard.js"></script>
+    <script type="text/javascript" src="<?php echo _js_?>TableTools.js"></script>
 
     <script type="text/javascript" src="<?php echo _js_?>swfupload/swfupload.js"></script>
     <script type="text/javascript" src="<?php echo _js_?>swfupload/jquery.swfupload.js"></script>

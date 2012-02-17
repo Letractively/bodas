@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="otros-items2">
-                        	<div class="titulo"><a href="<?=_bs_?>luna_de_miel/"><img src="<?php echo _img_?>tit-index-posts.png"></a></div>
+                        	<div class="titulo"><img src="<?php echo _img_?>tit-index-posts.png"></div>
                             
                             <?php for( $x = 0 ; $x < 7; $x++ ){ ?>
                                 <div class="contenido">

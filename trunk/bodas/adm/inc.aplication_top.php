@@ -73,6 +73,12 @@
 	require_once(_model_."Evento.php");
 	require_once(_model_."Eventos.php");
 
+	require_once(_model_."Popup.php");
+	require_once(_model_."Popups.php");
+
+	require_once(_model_."InscripcionIndex.php");
+	require_once(_model_."InscripcionesIndex.php");
+
 	$link = new Conexion($_cfg['bd']['host'],$_cfg['bd']['user'],$_cfg['bd']['password'],$_cfg['bd']['bd']);
 	session_start();
 ?>

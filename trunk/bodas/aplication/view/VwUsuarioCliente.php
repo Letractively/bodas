@@ -947,7 +947,7 @@
 										},
 										colors: [
 											'#B16EC9'
-										], 
+										],
 										title: {
 											text: 'Usuario que le dan "Me gusta" a su perfil',
 											x: -20 //center
@@ -971,7 +971,7 @@
 												width: 1,
 												color: '#B16EC9',
 											}],
-											tickInterval:1,
+											tickInterval:1
 										},
 										tooltip: {
 											formatter: function() {
@@ -1046,9 +1046,9 @@
 												value: 0,
 												width: 1,
 												color: '#B16EC9'
-											}]
+											}],
+											tickInterval:1
 										},
-										tickInterval:1,
 										tooltip: {
 											formatter: function() {
 													return '<b>'+ this.series.name +'</b><br/>'+
