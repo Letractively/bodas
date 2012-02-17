@@ -43,7 +43,7 @@
 <div class="menu-general">
 	<a href="<?=_bs_?>portada/" style="width:36px;">Inicio</a>
     <a href="<?=_bs_?>revista/">Revista</a>
-    <!--<a href="<?=_bs_?>eventos/">Eventos</a>-->
+    <a href="<?=_bs_?>eventos/">Eventos</a>
     <a id="lnk-tuboda">Tu Boda</a>
     <a href="<?=_bs_?>noticias/0/">Noticias</a>
     <a id="lnk-tendencias">Tendencias</a>

@@ -27,7 +27,7 @@
 
 #cuerpo .menu-general{ position:relative; float:left; width:100%; height:30px; background:url(../imgs/fondo-menu-general.png) repeat-x center center; margin:7px 0px 9px 0; z-index:100; }
 
-#cuerpo .menu-general a{ position:relative; float:left; width:auto; height:auto; text-align:center; padding:6px 24px 7px 25px; color:#FFF; font-size:14px; z-index:100; }
+#cuerpo .menu-general a{ position:relative; float:left; width:auto; height:auto; text-align:center; padding:6px 19px 7px 20px; color:#FFF; font-size:14px; z-index:100; }
 #cuerpo .menu-general a:hover{ background:url(../imgs/menu-general-hover.png) repeat; }
 
 #cuerpo .menu-general #lnk-tuboda{ cursor:pointer; }
@@ -678,6 +678,18 @@ width:auto; text-align:center; }
 .contenido-central-eventos .cnt-tabs #cnt2 td{ border:none; vertical-align:top; padding:5px 0px; }
 .contenido-central-eventos .cnt-tabs #cnt2 tr{ border:none; }
 .contenido-central-eventos .cnt-tabs #cnt2 ul{ padding:0 0 0 15px; }
+
+.contenido-central-eventos .cnt-tabs #cnt3 p{ line-height:16px; font-size:11px; color:#666; padding:4px 0px; }
+.contenido-central-eventos .cnt-tabs #cnt3 table{ border:none; }
+.contenido-central-eventos .cnt-tabs #cnt3 td{ border:none; vertical-align:top; padding:5px 0px; }
+.contenido-central-eventos .cnt-tabs #cnt3 tr{ border:none; }
+.contenido-central-eventos .cnt-tabs #cnt3 ul{ padding:0 0 0 15px; }
+
+.contenido-central-eventos .cnt-tabs #cnt3 .submenutab{ position:relative; float:left; width:auto; height:auto; padding:10px 135px; text-align:center; }
+.contenido-central-eventos .cnt-tabs #cnt3 .submenutab .itm{ position:relative; float:left; color:#666; cursor:pointer; }
+.contenido-central-eventos .cnt-tabs #cnt3 .submenutab .sep{ position:relative; float:left; color:#A657C2; bottom:0px; padding:0px 18px; }
+.contenido-central-eventos .cnt-tabs #cnt3 .submenutab .itmactivo{ color:#A657C2; }
+.contenido-central-eventos .cnt-tabs #cnt3 .subcnttab{ display:none; }
 
 .contenido-central-eventos .cnt-tabs .menu-tabs{ position:relative; float:left; width:100%; height:auto; }
 .contenido-central-eventos .cnt-tabs .menu-tabs a{ position:relative; float:left; width:auto; height:auto; display:block; border:1px solid #CCC; background:#efefef; padding:4px 11px; color:#333; font-weight:bold; cursor:pointer; }

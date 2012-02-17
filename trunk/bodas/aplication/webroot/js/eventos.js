@@ -10,6 +10,7 @@ $(document).ready(function(){
 				['Undo','Redo','-','Find','Replace','-','SelectAll'],
 				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
 				['Table','NumberedList','BulletedList'],
+				['Styles','Format','Font','FontSize','-','TextColor'],
 				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 				['Link','Unlink','Anchor']
 			]
@@ -25,6 +26,7 @@ $(document).ready(function(){
 				['Undo','Redo','-','Find','Replace','-','SelectAll'],
 				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
 				['Table','NumberedList','BulletedList'],
+				['Styles','Format','Font','FontSize','-','TextColor'],
 				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 				['Link','Unlink','Anchor']
 			]
@@ -40,6 +42,7 @@ $(document).ready(function(){
 				['Undo','Redo','-','Find','Replace','-','SelectAll'],
 				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
 				['Table','NumberedList','BulletedList'],
+				['Styles','Format','Font','FontSize','-','TextColor'],
 				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 				['Link','Unlink','Anchor']
 			]
@@ -54,6 +57,7 @@ $(document).ready(function(){
 				['Undo','Redo','-','Find','Replace','-','SelectAll'],
 				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
 				['Table','NumberedList','BulletedList'],
+				['Styles','Format','Font','FontSize','-','TextColor'],
 				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 				['Link','Unlink','Anchor']
 			]
@@ -68,6 +72,7 @@ $(document).ready(function(){
 				['Undo','Redo','-','Find','Replace','-','SelectAll'],
 				['Source','-','Bold','Italic','Underline','-','Find','SelectAll','-'],
 				['Table','NumberedList','BulletedList'],
+				['Styles','Format','Font','FontSize','-','TextColor'],
 				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 				['Link','Unlink','Anchor']
 			]
