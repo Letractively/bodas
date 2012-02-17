@@ -945,8 +945,11 @@
 											marginRight: 130,
 											marginBottom: 25
 										},
+										colors: [
+											'#B16EC9'
+										], 
 										title: {
-											text: 'Usuario que le dan "Me gusta" al catalogo',
+											text: 'Usuario que le dan "Me gusta" a su perfil',
 											x: -20 //center
 										},
 										xAxis: {
@@ -966,8 +969,9 @@
 											plotLines: [{
 												value: 0,
 												width: 1,
-												color: '#808080'
-											}]
+												color: '#B16EC9',
+											}],
+											tickInterval:1,
 										},
 										tooltip: {
 											formatter: function() {
@@ -1017,8 +1021,11 @@
 											marginRight: 130,
 											marginBottom: 25
 										},
+										colors: [
+											'#B16EC9'
+										], 
 										title: {
-											text: 'Usuario que le dan "Me gusta" a las publicaciones',
+											text: 'Usuario que le dan "Me gusta" a sus publicaciones',
 											x: -20 //center
 										},
 										xAxis: {
@@ -1038,9 +1045,10 @@
 											plotLines: [{
 												value: 0,
 												width: 1,
-												color: '#808080'
+												color: '#B16EC9'
 											}]
 										},
+										tickInterval:1,
 										tooltip: {
 											formatter: function() {
 													return '<b>'+ this.series.name +'</b><br/>'+
