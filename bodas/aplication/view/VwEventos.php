@@ -140,29 +140,51 @@
 									}
 								});
 
+                                $(".itm").click(function(){
+                                    $(".subcnttab").hide();
+                                    $( "#subcnt" + $(this).attr('id') ).show();
+
+									$(".itm").removeClass("itmactivo");
+									$(this).addClass("itmactivo");
+                                });
+
                             });
                         </script>
 
 						<div class="cnt-tabs">
 
                         	<div class="menu-tabs">
-                                <a class="mnutab" id="1" style="width:104px">Acerca del evento</a>
+                                <a class="mnutab tabactivo" id="1" style="width:104px">Acerca del evento</a>
                                 <a class="mnutab" id="2">Expositores</a>
                                 <a class="mnutab" id="3">Programa</a>
-                                <a class="mnutab tabactivo" id="4">Preguntas frecuentes</a>
+                                <a class="mnutab" id="4">Preguntas frecuentes</a>
                                 <a class="mnutab" id="5">Prensa</a>
                             </div>
 
-                            <div class="cnttab" id="cnt1">
+                            <div class="cnttab" id="cnt1" style="display:block;">
                                 <?php echo "<img src='"._tt_."src=/aplication/webroot/imgs/eventos/".$objEvento->imagen_acerca."&w=267' align='right' />"; ?>
                                 <p><?php echo $objEvento->texto_acerca; ?></p>
                             </div>
 
                             <div class="cnttab" id="cnt2"><?php echo $objEvento->texto_expo; ?></div>
                             
-                            <div class="cnttab" id="cnt3"><?php echo $objEvento->texto_desfile; ?></div>
+                            <div class="cnttab" id="cnt3">
+                            
+								<div class="submenutab">
+                                	<span id="1" class="itm itmactivo"><b>DESFILE</b></span>
+                                    <span class="sep">*</span>
+                                    <span id="2" class="itm"><b>COROS</b></span>
+                                    <span class="sep">*</span>
+                                    <span id="3" class="itm"><b>CHARLAS</b></span>
+                                </div>
 
-                            <div class="cnttab" id="cnt4" style="display:block">
+    							<div class="subcnttab" id="subcnt1" style="display:block;"><?php echo $objEvento->texto_desfile; ?></div>
+                                <div class="subcnttab" id="subcnt2"><?php echo $objEvento->texto_coro; ?></div>
+                                <div class="subcnttab" id="subcnt3"><?php echo $objEvento->texto_charlas; ?></div>
+                            
+                            </div>
+
+                            <div class="cnttab" id="cnt4">
                             
                                 <div class="faqtit1">PREGUNTAS FRECUENTES SOBRE EL EVENTO EXPOBODAS ORGANIZADO POR REVISTA BODAS</div>
                                 
